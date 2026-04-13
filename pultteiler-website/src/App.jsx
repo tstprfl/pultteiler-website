@@ -267,10 +267,13 @@ function CartSidebar({ onClose }) {
               {region === "AT" && <input type="text" name="UID-Nummer" placeholder="UID-Nummer (optional, für steuerfreie Lieferung nach DE)" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>}
               <input type="text" name="Einkäufergruppe" placeholder="Einkäufergruppe (optional, für österr. Bundesschulen)" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <textarea name="Anmerkungen" placeholder="Anmerkungen zur Bestellung (optional)" rows={3} style={{ ...inp, resize: "vertical" }} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
-              <button type="submit" style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", marginTop: 8 }}>
+              <label style={{ display: "flex", alignItems: "flex-start", gap: 10, marginTop: 8, marginBottom: 16, cursor: "pointer" }}>
+                <input type="checkbox" name="Zahlung" value="Rechnung" required style={{ marginTop: 3, accentColor: C.accent, width: 16, height: 16, flexShrink: 0 }}/>
+                <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5 }}>Zahlung per Rechnung — Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.</span>
+              </label>
+              <button type="submit" style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>
                 WEITER ZUR KONTROLLE →
               </button>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>Zahlung per Rechnung. Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.</p>
             </form>
           </div>
         )}
