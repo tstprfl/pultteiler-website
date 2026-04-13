@@ -11,11 +11,11 @@ const CartCtx = createContext();
 function CartProvider({ children }) {
   const [items, setItems] = useState([]);
   const [region, setRegion] = useState("AT");
-  const add = (product) => {
+  const add = (product, qty = 1) => {
     setItems(prev => {
       const exists = prev.find(i => i.id === product.id);
-      if (exists) return prev.map(i => i.id === product.id ? { ...i, qty: i.qty + 1 } : i);
-      return [...prev, { ...product, qty: 1 }];
+      if (exists) return prev.map(i => i.id === product.id ? { ...i, qty: i.qty + qty } : i);
+      return [...prev, { ...product, qty }];
     });
   };
   const remove = (id) => setItems(prev => prev.filter(i => i.id !== id));
@@ -42,9 +42,9 @@ const loadEmailJS = () => {
 };
 
 const SETS = [
-  { id: "gelb-vs", name: "SET GELB — BIS 5. SCHULJAHR", short: "Gelb bis 5. SJ", desc: "1 Holzkoffer mit 12 Teilerplatten (50×30 cm) und 12 Klammern. Empfohlen bis zum 5. Schuljahr.", priceAT: 241, priceCH: 238, tag: "", color: "#C08B2D", img: "/images/koffer-gelb.jpg" },
-  { id: "gelb-ms", name: "SET GELB — AB 6. SCHULJAHR", short: "Gelb ab 6. SJ", desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern. Empfohlen ab dem 6. Schuljahr.", priceAT: 255, priceCH: 252, tag: "", color: "#C08B2D", img: "/images/koffer-gelb.jpg" },
-  { id: "grau-ms", name: "SET GRAU — AB 6. SCHULJAHR", short: "Grau ab 6. SJ", desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern. Empfohlen ab dem 6. Schuljahr.", priceAT: 255, priceCH: 252, tag: "", color: "#777", img: "/images/koffer-grau.jpg" },
+  { id: "gelb-vs", name: "SET A — GELB — BIS 5. SCHULJAHR", short: "Set A Gelb", desc: "1 Holzkoffer mit 12 Teilerplatten (50×30 cm) und 12 Klammern. Empfohlen bis zum 5. Schuljahr.", priceAT: 241, priceCH: 238, tag: "", color: "#C08B2D", img: "/images/koffer-gelb.jpg" },
+  { id: "gelb-ms", name: "SET B — GELB — AB 6. SCHULJAHR", short: "Set B Gelb", desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern. Empfohlen ab dem 6. Schuljahr.", priceAT: 255, priceCH: 252, tag: "", color: "#C08B2D", img: "/images/koffer-gelb.jpg" },
+  { id: "grau-ms", name: "SET B — GRAU — AB 6. SCHULJAHR", short: "Set B Grau", desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern. Empfohlen ab dem 6. Schuljahr.", priceAT: 255, priceCH: 252, tag: "", color: "#777", img: "/images/koffer-grau.jpg" },
 ];
 
 const PARTS = [
@@ -416,8 +416,16 @@ function RegionToggle() {
 function AddToCartBtn({ product }) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
-  const handleAdd = () => { add(product); setAdded(true); setTimeout(() => setAdded(false), 1500); };
-  return <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s", textTransform: "uppercase" }}>{added ? "✓ HINZUGEFÜGT" : "IN DEN WARENKORB"}</button>;
+  const [qty, setQty] = useState(1);
+  const handleAdd = () => { add(product, qty); setAdded(true); setTimeout(() => { setAdded(false); setQty(1); }, 1500); };
+  return <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+    <div style={{ display: "flex", alignItems: "center", border: `1px solid ${C.border}`, background: C.bgCard }}>
+      <button onClick={() => setQty(q => Math.max(1, q - 1))} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
+      <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 28, textAlign: "center" }}>{qty}</span>
+      <button onClick={() => setQty(q => q + 1)} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
+    </div>
+    <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s", textTransform: "uppercase" }}>{added ? "✓ HINZUGEFÜGT" : "IN DEN WARENKORB"}</button>
+  </div>;
 }
 
 // ─── Pages ───
@@ -436,13 +444,13 @@ function Home({ go }) {
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <Reveal delay={0.1}><div className="hero-plates" style={{ display: "flex", gap: 12, justifyContent: "center" }}>
                 <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 10, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(-3deg)", border: "2px solid #D4AD2E" }}>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10.5, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>E-RECHNUNGEN<br/>FÜR BUNDES-<br/>SCHULEN<br/>MIT IHRER EKG</span>
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇦🇹<br/>E-RECHNUNGEN<br/>FÜR BUNDES-<br/>SCHULEN<br/>MIT IHRER EKG</span>
                 </div>
                 <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 10, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(2deg)", border: "2px solid #D4AD2E" }}>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10.5, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>MIT DEUTSCHER<br/>UID-NUMMER<br/>STEUERFREI</span>
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 8, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇩🇪<br/>MIT DEUTSCHER<br/>UID-NUMMER<br/>STEUERFREI<br/>DE-BANKKONTO<br/>VORHANDEN</span>
                 </div>
                 <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 10, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(-1deg)", border: "2px solid #D4AD2E" }}>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10.5, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>STEUERFREIE<br/>UNVERZOLLTE<br/>LIEFERUNG IN<br/>DIE SCHWEIZ</span>
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇨🇭<br/>STEUERFREIE<br/>UNVERZOLLTE<br/>LIEFERUNG IN<br/>DIE SCHWEIZ</span>
                 </div>
               </div></Reveal>
               <Reveal delay={0.15}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><img src="/images/meduni-innsbruck_2.jpeg" alt="Meduni Innsbruck Labor" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
@@ -541,15 +549,15 @@ function Produkte({ go }) {
           <Heading overline="ONLINE-SHOP" title="PRODUKTE" sub={region === "CH" ? "" : "Alle Preise inkl. MwSt und Lieferung für Österreich und Deutschland."}/>
           {region === "AT" && <Reveal><div className="shop-plates" style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
             <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 12, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(-3deg)", border: "2px solid #D4AD2E" }}>
-              <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>E-RECHNUNGEN<br/>FÜR BUNDES-<br/>SCHULEN<br/>MIT IHRER EKG</span>
+              <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9.5, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇦🇹<br/>E-RECHNUNGEN<br/>FÜR BUNDES-<br/>SCHULEN<br/>MIT IHRER EKG</span>
             </div>
             <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 12, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(2deg)", border: "2px solid #D4AD2E" }}>
-              <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>MIT DEUTSCHER<br/>UID-NUMMER<br/>STEUERFREI</span>
+              <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 8.5, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇩🇪<br/>MIT DEUTSCHER<br/>UID-NUMMER<br/>STEUERFREI<br/>DE-BANKKONTO<br/>VORHANDEN</span>
             </div>
           </div></Reveal>}
           {region === "CH" && <Reveal><div className="shop-plates" style={{ display: "flex", gap: 16, marginBottom: 32, flexWrap: "wrap" }}>
             <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 12, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(-2deg)", border: "2px solid #D4AD2E" }}>
-              <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>STEUERFREIE<br/>UNVERZOLLTE<br/>LIEFERUNG IN<br/>DIE SCHWEIZ</span>
+              <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇨🇭<br/>STEUERFREIE<br/>UNVERZOLLTE<br/>LIEFERUNG IN<br/>DIE SCHWEIZ</span>
             </div>
             <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 12, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(2deg)", border: "2px solid #D4AD2E" }}>
               <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>LIEFERUNG<br/>INKLUSIVE</span>
