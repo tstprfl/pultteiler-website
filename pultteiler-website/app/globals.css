@@ -1,0 +1,22 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: #E4F0F0; }
+::selection { background: #1A9E9E; color: #FFF; }
+
+@media (max-width: 768px) {
+  .desk-nav { display: none !important; }
+  .mob-btn { display: block !important; }
+  .hero-g, .prod-card, .contact-g { grid-template-columns: 1fr !important; }
+  .hero-circle { display: none !important; }
+  .hero-plates { flex-wrap: wrap !important; justify-content: center !important; }
+  .hero-plates > div { width: 130px !important; height: 85px !important; }
+  .hero-plates span { font-size: 9px !important; }
+  .region-btns { flex-direction: column !important; align-items: center !important; }
+  .region-btns button { width: 100% !important; max-width: 320px !important; }
+  .shop-plates { flex-wrap: wrap !important; justify-content: center !important; }
+  .shop-plates > div { width: 130px !important; height: 85px !important; }
+  .shop-plates span { font-size: 9px !important; }
+  section { padding-left: 16px !important; padding-right: 16px !important; }
+  .hero-g { gap: 32px !important; }
+  h1 { font-size: clamp(36px, 10vw, 56px) !important; }
+  .gallery-grid { grid-template-columns: 1fr !important; min-width: 0 !important; }
+}
