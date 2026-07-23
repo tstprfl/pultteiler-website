@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { C } from "@/lib/colors";
-import { SCHOOLS_COUNT, YEARS, TESTIMONIALS, COUNTRY_INFO, AUDIENCES } from "@/lib/site";
+import { SCHOOLS_TEXT, YEARS, TESTIMONIALS, COUNTRY_INFO, AUDIENCES } from "@/lib/site";
 import { ARTICLES } from "@/lib/articles";
 import { Reveal, Badge, Heading, Btn } from "@/components/ui";
 
@@ -15,7 +15,7 @@ export default function Home() {
             <div>
               <Reveal><Badge>DIREKT VOM HERSTELLER — SEIT ÜBER {YEARS} JAHREN</Badge></Reveal>
               <Reveal delay={0.1}><h1 style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>PULTTEILER</span><br/>FÜR <span style={{ color: "#F0C645" }}>SCHULTISCHE.</span><br/><span style={{ color: C.textMuted, fontSize: "0.6em" }}>DER SICHTSCHUTZ FÜR FAIRE PRÜFUNGEN.</span></h1></Reveal>
-              <Reveal delay={0.2}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>Die bewährte Trennwand für Schultische bei Schularbeiten, Klassenarbeiten und Prüfungen: verhindert Abschreiben, schafft einen reizarmen Arbeitsplatz — und steht dank Stecksystem in zwei Minuten. Über {SCHOOLS_COUNT} Schulen in Österreich, Deutschland und der Schweiz vertrauen darauf. Passend für alle gängigen Schultische bis 3 cm Plattenstärke.</p></Reveal>
+              <Reveal delay={0.2}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>Die bewährte Trennwand für Schultische bei Schularbeiten, Klassenarbeiten und Prüfungen: verhindert Abschreiben, schafft einen reizarmen Arbeitsplatz — und steht dank Stecksystem in zwei Minuten. {SCHOOLS_TEXT} vertrauen darauf. Passend für alle gängigen Schultische bis 3 cm Plattenstärke.</p></Reveal>
               <Reveal delay={0.3}><div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/angebot">ANGEBOT ANFORDERN →</Btn><Btn href="/produkte" variant="secondary">ZUM SHOP</Btn></div></Reveal>
               <Reveal delay={0.35}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginTop: 24 }}>✓ Kauf auf Rechnung — keine Kreditkarte, keine Vorkasse</p></Reveal>
             </div>
@@ -43,7 +43,7 @@ export default function Home() {
       <section style={{ background: C.dark, padding: "56px 32px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 32 }}>
           {[
-            { val: `${SCHOOLS_COUNT}+`, label: "SCHULEN IN AT, DE & CH" },
+            { val: "HUNDERTE", label: "SCHULEN IN AT, DE & CH" },
             { val: `${YEARS}+`, label: "JAHRE HERSTELLER-ERFAHRUNG" },
             { val: "100%", label: "DIREKTVERTRIEB — OHNE ZWISCHENHANDEL" },
             { val: "✓", label: "KAUF AUF RECHNUNG" },
@@ -101,27 +101,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ KUNDENSTIMMEN ═══ */}
+      {/* ═══ DAS ORIGINAL — DIREKT VOM PRODUZENTEN ═══ */}
       <section style={{ padding: "96px 32px", background: C.bg, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Heading overline="REFERENZEN" title="DAS SAGEN SCHULEN ÜBER DEN PULTTEILER" sub={`Über ${SCHOOLS_COUNT} Schulen in Österreich, Deutschland und der Schweiz arbeiten mit unseren Teilern — einige Stimmen:`}/>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: 2 }}>
-            {TESTIMONIALS.map((t, i) => (
-              <Reveal key={i} delay={i * 0.07}>
-                <figure style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "32px 30px", margin: 0, height: "100%", display: "flex", flexDirection: "column" }}>
-                  <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 44, color: C.accent, lineHeight: 0.6, marginBottom: 16 }}>„</div>
-                  <blockquote style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, lineHeight: 1.7, margin: "0 0 20px", flex: 1 }}>{t.quote}</blockquote>
-                  <figcaption>
-                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, color: C.text }}>{t.name}</div>
-                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted }}>{t.role} · {t.school}</div>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
+          <div className="hero-g" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 56, alignItems: "center" }}>
+            <div>
+              <Heading overline="DAS ORIGINAL" title="DIREKT VOM PRODUZENTEN — OHNE UMWEG"/>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "-24px 0 18px" }}>
+                Den Pultteiler gibt es auch im Schulausstatter-Katalog — hergestellt wird er aber nur an einem Ort: bei uns in Altmünster am Traunsee. Auf pultteiler.eu kaufen Sie das Original direkt an der Quelle.
+              </p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "0 0 24px" }}>
+                In unserer Heimat Oberösterreich gehört der Pultteiler seit Jahrzehnten zur Standardausstattung der Schulen — und von hier aus beliefern wir {SCHOOLS_TEXT.charAt(0).toLowerCase() + SCHOOLS_TEXT.slice(1)}.
+              </p>
+              <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                {[
+                  "Beratung direkt vom Hersteller — wir kennen jedes Detail unseres Produkts",
+                  "Alle Ersatzteile ab Werk, auch noch nach vielen Jahren",
+                  "Sonderwünsche möglich: z. B. Koffer mit mehr als 12 Teilern",
+                ].map((l, i) => (
+                  <li key={i} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text, lineHeight: 1.6, padding: "6px 0" }}>✓ {l}</li>
+                ))}
+              </ul>
+              <div style={{ marginTop: 28 }}><Btn href="/galerie" variant="secondary">REFERENZEN & EINSATZBILDER ANSEHEN →</Btn></div>
+            </div>
+            <Reveal delay={0.1}>
+              <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}>
+                <img src="/images/nahaufnahme.jpeg" alt="Nahaufnahme der Pultteiler-Trennwände — das Original vom Hersteller" loading="lazy" style={{ width: "100%", height: 380, objectFit: "cover", display: "block" }}/>
+              </div>
+            </Reveal>
           </div>
-          <Reveal delay={0.2}><div style={{ marginTop: 32, textAlign: "center" }}><Btn href="/galerie" variant="secondary">REFERENZEN & EINSATZBILDER ANSEHEN →</Btn></div></Reveal>
         </div>
       </section>
+
+      {/* ═══ KUNDENSTIMMEN (blendet sich aus, solange keine Zitate in lib/site.js eingetragen sind) ═══ */}
+      {TESTIMONIALS.length > 0 && (
+        <section style={{ padding: "96px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <Heading overline="REFERENZEN" title="DAS SAGEN SCHULEN ÜBER DEN PULTTEILER" sub={`${SCHOOLS_TEXT} arbeiten mit unseren Teilern — einige Stimmen:`}/>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(300px, 100%), 1fr))", gap: 2 }}>
+              {TESTIMONIALS.map((t, i) => (
+                <Reveal key={i} delay={i * 0.07}>
+                  <figure style={{ background: C.bg, border: `1px solid ${C.border}`, padding: "32px 30px", margin: 0, height: "100%", display: "flex", flexDirection: "column" }}>
+                    <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 44, color: C.accent, lineHeight: 0.6, marginBottom: 16 }}>„</div>
+                    <blockquote style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, lineHeight: 1.7, margin: "0 0 20px", flex: 1 }}>{t.quote}</blockquote>
+                    <figcaption>
+                      {t.name && <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, color: C.text }}>{t.name}</div>}
+                      <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted }}>{t.role} · {t.school}</div>
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={0.2}><div style={{ marginTop: 32, textAlign: "center" }}><Btn href="/galerie" variant="secondary">REFERENZEN & EINSATZBILDER ANSEHEN →</Btn></div></Reveal>
+          </div>
+        </section>
+      )}
 
       {/* ═══ LÄNDER / BESTELLUNG ═══ */}
       <section style={{ padding: "96px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>

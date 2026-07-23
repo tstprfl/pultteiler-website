@@ -3,7 +3,7 @@ import { CartProvider } from "@/components/CartProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ScrollToTop } from "@/components/ui";
-import { SCHOOLS_COUNT, YEARS, CONTACT } from "@/lib/site";
+import { YEARS, CONTACT } from "@/lib/site";
 
 export const metadata = {
   metadataBase: new URL("https://www.pultteiler.eu"),
@@ -11,7 +11,7 @@ export const metadata = {
     default: "Pultteiler — Sichtschutz für Schultische bei Klassenarbeiten & Prüfungen",
     template: "%s — Pultteiler",
   },
-  description: `Sichtschutz-Trennwände für Schultische: Abschreiben bei Schularbeiten, Klassenarbeiten und Prüfungen verhindern. Direkt vom Hersteller, seit über ${YEARS} Jahren, über ${SCHOOLS_COUNT} Schulen in AT, DE & CH. Kauf auf Rechnung.`,
+  description: `Sichtschutz-Trennwände für Schultische: Abschreiben bei Schularbeiten, Klassenarbeiten und Prüfungen verhindern. Direkt vom Hersteller, seit über ${YEARS} Jahren, mehrere hundert Schulen in AT, DE & CH. Kauf auf Rechnung.`,
   icons: { icon: "/images/Klammer_2.png" },
   openGraph: {
     type: "website",
@@ -28,7 +28,7 @@ const orgJsonLd = {
   alternateName: "Pultteiler",
   url: "https://www.pultteiler.eu",
   logo: "https://www.pultteiler.eu/images/Klammer_2.png",
-  description: `Hersteller von Pultteilern — Sichtschutz-Trennwänden für Schultische bei schriftlichen Prüfungen. Seit über ${YEARS} Jahren, über ${SCHOOLS_COUNT} Schulen in Österreich, Deutschland und der Schweiz.`,
+  description: `Hersteller von Pultteilern — Sichtschutz-Trennwänden für Schultische bei schriftlichen Prüfungen. Seit über ${YEARS} Jahren, mehrere hundert Schulen in Österreich, Deutschland und der Schweiz.`,
   address: {
     "@type": "PostalAddress",
     streetAddress: CONTACT.street,

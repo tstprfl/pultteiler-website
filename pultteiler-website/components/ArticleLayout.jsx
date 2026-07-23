@@ -2,7 +2,7 @@
 // Ladezeit und saubere Indexierung. Enthält Article-JSON-LD und Breadcrumbs.
 import Link from "next/link";
 import { C } from "@/lib/colors";
-import { SCHOOLS_COUNT, YEARS } from "@/lib/site";
+import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
 import { Btn } from "@/components/ui";
 
 // Typografie für Artikel-Inhalte — in den Artikel-Dateien wiederverwenden
@@ -70,7 +70,7 @@ export default function ArticleLayout({ meta, children, related = [] }) {
           <aside style={{ background: C.dark, padding: "36px 40px", marginTop: 2 }}>
             <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.white, margin: "0 0 8px", letterSpacing: "0.03em" }}>SICHTSCHUTZ DIREKT VOM HERSTELLER</h2>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, margin: "0 0 24px" }}>
-              Über {SCHOOLS_COUNT} Schulen in Österreich, Deutschland und der Schweiz arbeiten mit dem Pultteiler — seit über {YEARS} Jahren, Kauf auf Rechnung.
+              {SCHOOLS_TEXT} arbeiten mit dem Pultteiler — seit über {YEARS} Jahren, direkt vom Produzenten, Kauf auf Rechnung.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href="/angebot" style={{ background: C.accent, color: C.white, padding: "13px 28px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>ANGEBOT ANFORDERN →</a>

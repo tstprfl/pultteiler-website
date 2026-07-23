@@ -2,7 +2,7 @@
 // (Volksschule, Sekundarstufe, Hochschulen). Reines HTML/CSS — kein Client-JS,
 // damit die Seiten schnell laden und sauber indexiert werden.
 import { C } from "@/lib/colors";
-import { COUNTRY_INFO, SCHOOLS_COUNT, YEARS } from "@/lib/site";
+import { COUNTRY_INFO, SCHOOLS_TEXT_SHORT, YEARS } from "@/lib/site";
 import { Btn } from "@/components/ui";
 
 const f = {
@@ -30,7 +30,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
                 <Btn href="/produkte" variant="secondary">ZUM SHOP</Btn>
               </div>
               <p style={{ ...f.small, marginTop: 24, fontWeight: 600, color: C.text }}>
-                ✓ Kauf auf Rechnung&nbsp;&nbsp;·&nbsp;&nbsp;✓ Direkt vom Hersteller&nbsp;&nbsp;·&nbsp;&nbsp;✓ Über {SCHOOLS_COUNT} Schulen in AT, DE & CH&nbsp;&nbsp;·&nbsp;&nbsp;✓ Seit über {YEARS} Jahren
+                ✓ Kauf auf Rechnung&nbsp;&nbsp;·&nbsp;&nbsp;✓ Direkt vom Hersteller&nbsp;&nbsp;·&nbsp;&nbsp;✓ {SCHOOLS_TEXT_SHORT}&nbsp;&nbsp;·&nbsp;&nbsp;✓ Seit über {YEARS} Jahren
               </p>
             </div>
             <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}>

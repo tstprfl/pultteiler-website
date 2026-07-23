@@ -7,39 +7,23 @@
 //     Diese Datei ist die EINZIGE Stelle, an der diese Werte gepflegt werden.
 // ═══════════════════════════════════════════════════════════════════════════
 
-// [PLATZHALTER] Echte Anzahl der belieferten Schulen eintragen (nur Zahl/Text):
-export const SCHOOLS_COUNT = "300";
+// Belegbar über Rechnungen — bewusst ohne exakte Zahl formuliert:
+export const SCHOOLS_TEXT = "Mehrere hundert Schulen in Österreich, Deutschland und der Schweiz";
+export const SCHOOLS_TEXT_SHORT = "Mehrere hundert Schulen in AT, DE & CH";
 
 export const YEARS = "40";
 
-// [PLATZHALTER] Echte Kundenzitate mit echten Namen/Schulen einsetzen.
-// Zitate nur mit Einverständnis der zitierten Person veröffentlichen!
-export const TESTIMONIALS = [
-  {
-    quote: "[PLATZHALTER ZITAT 1 — z. B.: Seit wir die Pultteiler bei Schularbeiten einsetzen, ist das Thema Abschreiben bei uns kein Thema mehr. Aufbau in zwei Minuten, die Kinder akzeptieren es völlig selbstverständlich.]",
-    name: "Dir. Maria Mustermann",
-    role: "Direktorin",
-    school: "Volksschule Musterstadt (AT)",
-  },
-  {
-    quote: "[PLATZHALTER ZITAT 2 — z. B.: Wir nutzen die Teiler seit Jahren für alle Klassenarbeiten der Unter- und Mittelstufe. Robust, schnell aufgebaut und die Ersatzteile kommen zuverlässig.]",
-    name: "OStR Max Mustermann",
-    role: "Lehrer, Fachschaft Mathematik",
-    school: "Gymnasium Musterstadt (DE)",
-  },
-  {
-    quote: "[PLATZHALTER ZITAT 3 — z. B.: Für unsere schriftlichen Prüfungen mit über 200 Teilnehmenden brauchen wir eine Lösung, die in kürzester Zeit steht. Der Pultteiler leistet das seit Jahren.]",
-    name: "Mag. Erika Musterfrau",
-    role: "Prüfungskoordination",
-    school: "Hochschule Musterstadt (AT)",
-  },
-  {
-    quote: "[PLATZHALTER ZITAT 4 — z. B.: Einzelne Kinder mit erhöhtem Ablenkungsrisiko arbeiten mit dem Teiler deutlich ruhiger und konzentrierter — auch außerhalb von Prüfungen.]",
-    name: "Petra Musterfrau",
-    role: "Sonderpädagogin",
-    school: "Grundschule Musterdorf (CH)",
-  },
-];
+// Kundenzitate: aktuell leer — die Zitat-Sektion auf der Startseite blendet
+// sich automatisch aus, solange hier keine Einträge stehen.
+// Echte (auch anonyme) Zitate später einfach so eintragen:
+//   {
+//     quote: "Wortlaut des Zitats …",
+//     role: "Direktorin",                       // Funktion
+//     school: "Volksschule in Oberösterreich",  // Schultyp + Region/Land
+//     name: "",                                 // optional — leer lassen für anonym
+//   },
+// Wichtig: Nur echte Zitate mit Einverständnis der zitierten Person verwenden.
+export const TESTIMONIALS = [];
 
 // Länderspezifische Liefer- & Steuerhinweise (echte Daten aus dem Bestand)
 export const COUNTRY_INFO = [

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { C } from "@/lib/colors";
-import { SCHOOLS_COUNT, YEARS } from "@/lib/site";
+import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
 
 const COLS = [
   {
@@ -45,7 +45,7 @@ export default function Footer() {
             <img src="/images/Klammer_2.png" alt="Pultteiler Klammer" loading="lazy" style={{ width: 44, height: 44, objectFit: "contain", borderRadius: 4 }}/>
             <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.text, letterSpacing: "0.05em" }}>PULTTEILER</span>
           </div>
-          <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Der bewährte Sichtschutz für Schultische — direkt vom Hersteller, seit über {YEARS} Jahren. Über {SCHOOLS_COUNT} Schulen in Österreich, Deutschland und der Schweiz.</p>
+          <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Der bewährte Sichtschutz für Schultische — direkt vom Produzenten, seit über {YEARS} Jahren. {SCHOOLS_TEXT}.</p>
           <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginTop: 12 }}>✓ Kauf auf Rechnung</p>
         </div>
         {COLS.map(col => (
