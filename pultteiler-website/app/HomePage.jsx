@@ -43,7 +43,7 @@ export default function Home() {
       <section style={{ background: C.dark, padding: "56px 32px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 32 }}>
           {[
-            { val: "HUNDERTE", label: "SCHULEN IN AT, DE & CH" },
+            { val: "AT·DE·CH", label: "MEHRERE HUNDERT SCHULEN BELIEFERT" },
             { val: `${YEARS}+`, label: "JAHRE HERSTELLER-ERFAHRUNG" },
             { val: "100%", label: "DIREKTVERTRIEB — OHNE ZWISCHENHANDEL" },
             { val: "✓", label: "KAUF AUF RECHNUNG" },
@@ -63,7 +63,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: 2 }}>
             {AUDIENCES.map((a, i) => (
               <Reveal key={a.id} delay={i * 0.08}>
-                <Link href={a.href} style={{ background: C.bgCard, border: `1px solid ${C.border}`, textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
+                <Link href={a.href} className="hover-lift hover-zoom" style={{ background: C.bgCard, border: `1px solid ${C.border}`, textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <div style={{ height: 190, overflow: "hidden", borderBottom: `1px solid ${C.border}` }}>
                     <img src={a.img} alt={a.imgAlt} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                   </div>
@@ -184,7 +184,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 2 }}>
             {ARTICLES.map((a, i) => (
               <Reveal key={a.slug} delay={i * 0.07}>
-                <Link href={`/ratgeber/${a.slug}`} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 28px 30px", textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
+                <Link href={`/ratgeber/${a.slug}`} className="hover-lift" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 28px 30px", textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, color: C.text, lineHeight: 1.45, margin: "0 0 12px" }}>{a.title}</h3>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: "0 0 16px", flex: 1 }}>{a.teaser}</p>
                   <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accent }}>LESEN →</span>

@@ -21,7 +21,7 @@ export default function Page() {
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(400px, 100%), 1fr))", gap: 2 }}>
             {ARTICLES.map((a) => (
-              <Link key={a.slug} href={`/ratgeber/${a.slug}`} style={{ background: C.bgCard, border: `1px solid ${C.border}`, textDecoration: "none", display: "flex", flexDirection: "column" }}>
+              <Link key={a.slug} href={`/ratgeber/${a.slug}`} className="hover-lift hover-zoom" style={{ background: C.bgCard, border: `1px solid ${C.border}`, textDecoration: "none", display: "flex", flexDirection: "column" }}>
                 <div style={{ height: 200, overflow: "hidden", borderBottom: `1px solid ${C.border}` }}>
                   <img src={a.img} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                 </div>

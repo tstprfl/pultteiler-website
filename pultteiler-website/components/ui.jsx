@@ -39,10 +39,11 @@ export function Btn({ children, onClick, href, variant = "primary", full = false
   const p = variant === "primary";
   const style = { background: p ? C.dark : "transparent", color: p ? C.white : C.text, border: p ? "none" : `1.5px solid ${C.borderLight}`, padding: "14px 32px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", transition: "all 0.2s", width: full ? "100%" : "auto", textDecoration: "none", display: "inline-block", textAlign: "center" };
 
+  const cls = p ? "btn-primary" : "btn-secondary";
   if (href) {
-    return <a href={href} style={style}>{children}</a>;
+    return <a href={href} className={cls} style={style}>{children}</a>;
   }
-  return <button onClick={onClick} style={style}>{children}</button>;
+  return <button onClick={onClick} className={cls} style={style}>{children}</button>;
 }
 
 export function AddToCartBtn({ product }) {

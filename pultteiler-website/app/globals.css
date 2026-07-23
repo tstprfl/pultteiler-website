@@ -2,6 +2,16 @@
 body { margin: 0; background: #E4F0F0; }
 ::selection { background: #1A9E9E; color: #FFF; }
 
+/* Dezente Hover-Effekte — nur mit Maus und wenn keine reduzierte Bewegung gewünscht ist */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26,42,42,0.22); }
+  .btn-secondary:hover { transform: translateY(-2px); border-color: #1A9E9E !important; color: #1A9E9E !important; }
+  .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease; }
+  .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(26,42,42,0.12); }
+  .hover-zoom img { transition: transform 0.45s ease; }
+  .hover-zoom:hover img { transform: scale(1.05); }
+}
+
 /* Navigation bricht früher um, da sie mehr Einträge hat */
 @media (max-width: 1120px) {
   .desk-nav { display: none !important; }

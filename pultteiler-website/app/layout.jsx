@@ -17,6 +17,11 @@ export const metadata = {
     type: "website",
     locale: "de_AT",
     siteName: "Pultteiler — Schulmittel Blaschegg",
+    images: [{ url: "/images/pultteiler-einsatz.jpg", alt: "Pultteiler — Sichtschutz-Trennwände auf Schultischen" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/pultteiler-einsatz.jpg"],
   },
   robots: { index: true, follow: true },
 };
