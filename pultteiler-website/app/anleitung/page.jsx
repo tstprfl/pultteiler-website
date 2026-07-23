@@ -1,3 +1,7 @@
 import AnleitungPage from "./AnleitungPage";
-export const metadata = { title: "So funktioniert's", description: "Aufbauanleitung für den Pultteiler — Teilerplatte und Pultklammer in 3 Schritten aufgestellt." };
+export const metadata = {
+  title: "So funktioniert der Pultteiler — Aufbau in 3 Schritten ohne Werkzeug",
+  description: "Aufbauanleitung für den Pultteiler: Klammer auf die Tischplatte stecken, Teilerplatte einschieben — der Sichtschutz für den Schultisch steht in Sekunden, ganz ohne Werkzeug.",
+  alternates: { canonical: "/anleitung" },
+};
 export default function Page() { return <AnleitungPage />; }
