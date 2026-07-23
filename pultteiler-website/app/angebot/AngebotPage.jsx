@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { C } from "@/lib/colors";
-import { loadEmailJS } from "@/lib/emailjs";
+import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, TEMPLATE_ANGEBOT_CONFIRM } from "@/lib/emailjs";
 import { CONTACT } from "@/lib/site";
 import { Reveal, Heading, Btn } from "@/components/ui";
 
@@ -41,21 +41,32 @@ export default function AngebotPage() {
       `Menge:            ${d["Menge"] || "–"}`,
     ].join("\n");
 
+    const params = {
+      kunde_email: d["email"] || "",
+      order_nr: "ANGEBOTSANFRAGE",
+      region: d["Land"] || "–",
+      bestellung,
+      versand: "–",
+      gesamt: "Angebot wird erstellt",
+      adresse: [d["Schulname"], d["Ansprechperson"]].filter(Boolean).join("\n"),
+      telefon: d["Telefon"] || "–",
+      uid: d["UID-Nummer"] || "–",
+      einkaufergruppe: d["EKG-Nummer"] || "–",
+      anmerkungen: d["Nachricht"] || "–",
+    };
+
     try {
       await loadEmailJS();
-      await window.emailjs.send("service_cobcbsg", "template_7kke6e4", {
-        kunde_email: d["email"] || "",
-        order_nr: "ANGEBOTSANFRAGE",
-        region: d["Land"] || "–",
-        bestellung,
-        versand: "–",
-        gesamt: "Angebot wird erstellt",
-        adresse: [d["Schulname"], d["Ansprechperson"]].filter(Boolean).join("\n"),
-        telefon: d["Telefon"] || "–",
-        uid: d["UID-Nummer"] || "–",
-        einkaufergruppe: d["EKG-Nummer"] || "–",
-        anmerkungen: d["Nachricht"] || "–",
-      });
+      // 1) Benachrichtigung an Schulmittel Blaschegg
+      await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANFRAGE, params);
+      // 2) Eingangsbestätigung an die anfragende Schule (nur wenn Vorlage konfiguriert)
+      if (TEMPLATE_ANGEBOT_CONFIRM) {
+        try {
+          await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANGEBOT_CONFIRM, params);
+        } catch (confErr) {
+          console.warn("Bestätigungsmail an Anfragenden konnte nicht gesendet werden:", confErr);
+        }
+      }
       setSent(true);
     } catch (err) {
       setError(`Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an ${CONTACT.email}`);
@@ -91,7 +102,9 @@ export default function AngebotPage() {
                   <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 48, color: C.green }}>✓</div>
                   <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text, margin: "12px 0 8px" }}>ANFRAGE EINGEGANGEN</h3>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6 }}>
-                    Vielen Dank! Wir melden uns kurzfristig mit Ihrem Angebot.<br/>Bei Rückfragen erreichen Sie uns unter {CONTACT.phone1}.
+                    Vielen Dank! Wir melden uns kurzfristig mit Ihrem Angebot.
+                    {TEMPLATE_ANGEBOT_CONFIRM ? <><br/>Eine Eingangsbestätigung ist an Ihre E-Mail-Adresse unterwegs.</> : null}
+                    <br/>Bei Rückfragen erreichen Sie uns unter {CONTACT.phone1}.
                   </p>
                 </div>
               ) : (
