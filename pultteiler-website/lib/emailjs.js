@@ -18,9 +18,9 @@ export const TEMPLATE_ANFRAGE = "template_7kke6e4";   // Benachrichtigung an Bla
 //   CONFIRM_SERVICE    → Email Services → Service-ID (z. B. service_xxxxxxx)
 //   CONFIRM_TEMPLATE   → Email Templates → Template-ID (To Email = {{kunde_email}})
 // Solange einer der Werte leer ist, wird KEINE Bestätigung versendet.
-export const CONFIRM_PUBLIC_KEY = "";
-export const CONFIRM_SERVICE = "";
-export const CONFIRM_TEMPLATE = "";
+export const CONFIRM_PUBLIC_KEY = "4ArIDu6wgLlsklooH";
+export const CONFIRM_SERVICE = "";   // TODO: Service-ID aus neuem Account (service_xxxxxxx)
+export const CONFIRM_TEMPLATE = "";  // TODO: Template-ID aus neuem Account (template_xxxxxxx)
 
 // Lädt das EmailJS-SDK und initialisiert es mit dem ALTEN Account.
 // (Für die Bestätigung wird der neue Public Key pro Versand separat mitgegeben.)
