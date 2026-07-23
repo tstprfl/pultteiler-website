@@ -1,7 +1,10 @@
 "use client";
 import { useState } from "react";
 import { C } from "@/lib/colors";
-import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, TEMPLATE_ANGEBOT_CONFIRM } from "@/lib/emailjs";
+import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, CONFIRM_PUBLIC_KEY, CONFIRM_SERVICE, CONFIRM_TEMPLATE } from "@/lib/emailjs";
+
+// Bestätigung nur senden, wenn der neue Account vollständig hinterlegt ist
+const CONFIRM_ENABLED = Boolean(CONFIRM_PUBLIC_KEY && CONFIRM_SERVICE && CONFIRM_TEMPLATE);
 import { CONTACT } from "@/lib/site";
 import { Reveal, Heading, Btn } from "@/components/ui";
 
@@ -57,12 +60,12 @@ export default function AngebotPage() {
 
     try {
       await loadEmailJS();
-      // 1) Benachrichtigung an Schulmittel Blaschegg
+      // 1) Benachrichtigung an Schulmittel Blaschegg (ALTER Account, per init gesetzt)
       await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANFRAGE, params);
-      // 2) Eingangsbestätigung an die anfragende Schule (nur wenn Vorlage konfiguriert)
-      if (TEMPLATE_ANGEBOT_CONFIRM) {
+      // 2) Eingangsbestätigung an die anfragende Schule (NEUER Account, eigener Public Key)
+      if (CONFIRM_ENABLED) {
         try {
-          await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANGEBOT_CONFIRM, params);
+          await window.emailjs.send(CONFIRM_SERVICE, CONFIRM_TEMPLATE, params, { publicKey: CONFIRM_PUBLIC_KEY });
         } catch (confErr) {
           console.warn("Bestätigungsmail an Anfragenden konnte nicht gesendet werden:", confErr);
         }
@@ -103,7 +106,7 @@ export default function AngebotPage() {
                   <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text, margin: "12px 0 8px" }}>ANFRAGE EINGEGANGEN</h3>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6 }}>
                     Vielen Dank! Wir melden uns kurzfristig mit Ihrem Angebot.
-                    {TEMPLATE_ANGEBOT_CONFIRM ? <><br/>Eine Eingangsbestätigung ist an Ihre E-Mail-Adresse unterwegs.</> : null}
+                    {CONFIRM_ENABLED ? <><br/>Eine Eingangsbestätigung ist an Ihre E-Mail-Adresse unterwegs.</> : null}
                     <br/>Bei Rückfragen erreichen Sie uns unter {CONTACT.phone1}.
                   </p>
                 </div>
