@@ -24,10 +24,25 @@ export const GALLERY = [
 
 export const NAV = [
   { id: "home", label: "START", href: "/" },
+  {
+    id: "schule",
+    label: "FÜR IHRE SCHULE",
+    children: [
+      { id: "volksschule", label: "VOLKSSCHULE & PRIMARSTUFE", href: "/volksschule" },
+      { id: "sekundarstufe", label: "SEKUNDARSTUFE & GYMNASIUM", href: "/sekundarstufe" },
+      { id: "hochschulen", label: "HOCHSCHULEN & PRÜFUNGSZENTREN", href: "/hochschulen" },
+    ],
+  },
   { id: "produkte", label: "SHOP", href: "/produkte" },
+  { id: "ratgeber", label: "RATGEBER", href: "/ratgeber" },
   { id: "anleitung", label: "SO FUNKTIONIERT'S", href: "/anleitung" },
-  { id: "galerie", label: "REFERENZEN", href: "/galerie" },
   { id: "ueber-uns", label: "ÜBER UNS", href: "/ueber-uns" },
-  { id: "versand", label: "VERSAND & RÜCKGABE", href: "/versand" },
   { id: "kontakt", label: "KONTAKT", href: "/kontakt" },
+];
+
+// Weitere Seiten (nur im Footer verlinkt)
+export const NAV_SECONDARY = [
+  { id: "galerie", label: "REFERENZEN & GALERIE", href: "/galerie" },
+  { id: "versand", label: "VERSAND & RÜCKGABE", href: "/versand" },
+  { id: "angebot", label: "ANGEBOT ANFORDERN", href: "/angebot" },
 ];

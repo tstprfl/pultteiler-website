@@ -2,9 +2,13 @@
 body { margin: 0; background: #E4F0F0; }
 ::selection { background: #1A9E9E; color: #FFF; }
 
-@media (max-width: 768px) {
+/* Navigation bricht früher um, da sie mehr Einträge hat */
+@media (max-width: 1120px) {
   .desk-nav { display: none !important; }
   .mob-btn { display: block !important; }
+}
+
+@media (max-width: 768px) {
   .hero-g, .prod-card, .contact-g { grid-template-columns: 1fr !important; }
   .hero-circle { display: none !important; }
   .hero-plates { flex-wrap: wrap !important; justify-content: center !important; }
