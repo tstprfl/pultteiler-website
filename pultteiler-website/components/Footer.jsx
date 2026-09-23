@@ -39,20 +39,41 @@ const COLS = [
   },
 ];
 
-// Englische Testseiten: nur die drei englischen Seiten, Rechtstexte bleiben deutsch
+// Englische Seiten (/en): eigene Spalten; Impressum bleibt deutsch
 const COLS_EN = [
   {
-    title: "PULTTEILER",
+    title: "FOR YOUR SCHOOL",
     links: [
+      { href: "/en/primary-schools", label: "Primary schools" },
+      { href: "/en/secondary-schools", label: "Secondary schools" },
       { href: "/en/universities", label: "Universities & exam centres" },
-      { href: "/en/products", label: "Products" },
       { href: "/en/quote", label: "Request a quote" },
-      { href: "/", label: "Deutsche Website" },
+      { href: "/en/products", label: "Products" },
+    ],
+  },
+  {
+    title: "GUIDE",
+    links: [
+      { href: "/en/guide/privacy-screens-for-exams", label: "Privacy screens for class tests" },
+      { href: "/en/guide/desk-dividers-for-exams", label: "Desk dividers for exams" },
+      { href: "/en/guide/prevent-cheating-in-exams", label: "Preventing copying" },
+      { href: "/en/guide/low-distraction-workspace", label: "Low-distraction workspace" },
+      { href: "/en/guide", label: "All articles" },
+    ],
+  },
+  {
+    title: "SERVICE",
+    links: [
+      { href: "/en/how-it-works", label: "How it works" },
+      { href: "/en/gallery", label: "References & gallery" },
+      { href: "/en/shipping", label: "Shipping & returns" },
+      { href: "/en/about", label: "About us" },
+      { href: "/en/contact", label: "Contact" },
     ],
   },
 ];
 const LEGAL_DE = [{ href: "/impressum", label: "Impressum" }, { href: "/agb", label: "AGB" }, { href: "/datenschutz", label: "Datenschutz" }];
-const LEGAL_EN = [{ href: "/impressum", label: "Imprint (German)" }, { href: "/agb", label: "Terms (German)" }, { href: "/datenschutz", label: "Privacy (German)" }];
+const LEGAL_EN = [{ href: "/impressum", label: "Imprint (German)" }, { href: "/en/terms", label: "Terms" }, { href: "/en/privacy", label: "Privacy" }, { href: "/", label: "Deutsch" }];
 
 export default function Footer() {
   const en = isEnPath(usePathname());

@@ -20,13 +20,13 @@ export default function Nav() {
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 20); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   useEffect(() => { setOpen(false); setDdOpen(false); }, [pathname]);
 
-  // Englische Testseiten: eigene, schlanke Navigation ohne Warenkorb
+  // Englische Seiten: eigene Navigation ohne Warenkorb (Bestellung per Angebot)
   const en = isEnPath(pathname);
   const items = en ? NAV_EN : NAV;
   const quote = en ? { href: "/en/quote", short: "QUOTE →", long: "REQUEST A QUOTE →" } : { href: "/angebot", short: "ANGEBOT →", long: "ANGEBOT ANFORDERN →" };
   const langLink = en ? { label: "DE", title: "Deutsche Version" } : { label: "EN", title: "English version" };
 
-  const isActive = (href) => href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href) => (href === "/" || href === "/en") ? pathname === href : pathname.startsWith(href);
   const groupActive = (n) => n.children?.some((c) => isActive(c.href));
 
   const linkStyle = (active) => ({ background: active ? C.surface : "none", border: "none", padding: "8px 14px", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: active ? C.text : C.textMuted, transition: "all 0.2s", textDecoration: "none", whiteSpace: "nowrap", cursor: "pointer" });

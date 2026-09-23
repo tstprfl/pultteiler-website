@@ -2,12 +2,13 @@ import Link from "next/link";
 import { C } from "@/lib/colors";
 import { ARTICLES } from "@/lib/articles";
 import Img from "@/components/Img";
+import { alternatesFor } from "@/lib/i18n";
 
 export const metadata = {
   title: "Ratgeber für Schulen: Faire Prüfungen",
   description:
     "Praxiswissen für Schulen: Abschreiben bei Klassenarbeiten verhindern, Trennwände richtig auswählen, reizarme Arbeitsplätze für ADHS und Inklusion.",
-  alternates: { canonical: "/ratgeber" },
+  alternates: alternatesFor("/ratgeber"),
 };
 
 export default function Page() {

@@ -1,10 +1,11 @@
 import AudienceLayout, { faqJsonLd } from "@/components/AudienceLayout";
+import { alternatesFor } from "@/lib/i18n";
 
 export const metadata = {
   title: "Trennwand für Schultische bei Klassenarbeiten",
   description:
     "Trennwände für Schultische ab dem 6. Schuljahr: kein Abschreiben bei Klassenarbeiten und Tests. 50×40 cm, Aufbau ohne Werkzeug, Kauf auf Rechnung.",
-  alternates: { canonical: "/sekundarstufe" },
+  alternates: alternatesFor("/sekundarstufe"),
 };
 
 const FAQ = [

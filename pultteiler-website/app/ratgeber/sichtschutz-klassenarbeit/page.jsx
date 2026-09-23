@@ -1,13 +1,14 @@
 import Link from "next/link";
 import ArticleLayout, { A } from "@/components/ArticleLayout";
 import { ARTICLES } from "@/lib/articles";
+import { alternatesFor } from "@/lib/i18n";
 
 const meta = { ...ARTICLES.find((a) => a.slug === "sichtschutz-klassenarbeit"), short: "Sichtschutz für die Klassenarbeit", imgAlt: "Sichtschutz auf Schultischen während einer Klassenarbeit" };
 
 export const metadata = {
   title: meta.seoTitle || meta.title,
   description: meta.description,
-  alternates: { canonical: `/ratgeber/${meta.slug}` },
+  alternates: alternatesFor("/ratgeber/sichtschutz-klassenarbeit"),
 };
 
 export default function Page() {

@@ -1,13 +1,14 @@
 import Link from "next/link";
 import ArticleLayout, { A } from "@/components/ArticleLayout";
 import { ARTICLES } from "@/lib/articles";
+import { alternatesFor } from "@/lib/i18n";
 
 const meta = { ...ARTICLES.find((a) => a.slug === "abschreiben-verhindern-schularbeit"), short: "Abschreiben verhindern", imgAlt: "Klassenraum mit Sichtschutz-Trennwänden während einer Schularbeit" };
 
 export const metadata = {
   title: meta.seoTitle || meta.title,
   description: meta.description,
-  alternates: { canonical: `/ratgeber/${meta.slug}` },
+  alternates: alternatesFor("/ratgeber/abschreiben-verhindern-schularbeit"),
 };
 
 export default function Page() {

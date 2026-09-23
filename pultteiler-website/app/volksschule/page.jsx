@@ -1,10 +1,11 @@
 import AudienceLayout, { faqJsonLd } from "@/components/AudienceLayout";
+import { alternatesFor } from "@/lib/i18n";
 
 export const metadata = {
   title: "Sichtschutz für Volksschule und Grundschule",
   description:
     "Sichtschutz für Schultische in Volksschule und Grundschule: kein Abschreiben bei Schularbeiten, kindgerechte Höhe. Kauf auf Rechnung, direkt vom Hersteller.",
-  alternates: { canonical: "/volksschule" },
+  alternates: alternatesFor("/volksschule"),
 };
 
 const FAQ = [

@@ -147,7 +147,7 @@ export default function QuotePage() {
                   </div>
                   <Btn onClick={() => {}} full>{sending ? "SENDING..." : "REQUEST A QUOTE →"}</Btn>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
-                    Non-binding and free of charge. We use your data only to prepare your quote, see our <a href="/datenschutz" style={{ color: C.accent }}>privacy policy</a> (in German).
+                    Non-binding and free of charge. We use your data only to prepare your quote, see our <a href="/en/privacy" style={{ color: C.accent }}>privacy policy</a>.
                   </p>
                   {error && (
                     <div style={{ background: "#FEF2F2", border: `1px solid ${C.red}`, padding: "12px 16px", marginTop: 12 }}>

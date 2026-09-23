@@ -1,13 +1,14 @@
 import Link from "next/link";
 import ArticleLayout, { A } from "@/components/ArticleLayout";
 import { ARTICLES } from "@/lib/articles";
+import { alternatesFor } from "@/lib/i18n";
 
 const meta = { ...ARTICLES.find((a) => a.slug === "reizarmer-arbeitsplatz-schule"), short: "Reizarmer Arbeitsplatz", imgAlt: "Schüler arbeitet konzentriert an einem reizarm gestalteten Arbeitsplatz mit Sichtschutz" };
 
 export const metadata = {
   title: meta.seoTitle || meta.title,
   description: meta.description,
-  alternates: { canonical: `/ratgeber/${meta.slug}` },
+  alternates: alternatesFor("/ratgeber/reizarmer-arbeitsplatz-schule"),
 };
 
 export default function Page() {

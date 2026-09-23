@@ -1,3 +1,4 @@
 import DatenschutzPage from "./DatenschutzPage";
-export const metadata = { title: "Datenschutz", description: "Datenschutzerklärung von pultteiler.eu." };
+import { alternatesFor } from "@/lib/i18n";
+export const metadata = { alternates: alternatesFor("/datenschutz"), title: "Datenschutz", description: "Datenschutzerklärung von pultteiler.eu." };
 export default function Page() { return <DatenschutzPage />; }
