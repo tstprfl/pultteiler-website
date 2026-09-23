@@ -1,6 +1,7 @@
 "use client";
 import { C } from "@/lib/colors";
 import { Reveal, Heading, Btn } from "@/components/ui";
+import Img from "@/components/Img";
 
 export default function AnleitungPage() {
   return (
@@ -29,7 +30,7 @@ export default function AnleitungPage() {
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.7, margin: 0 }}>Der Pultteiler steht stabil und schafft einen eigenen, abgeschirmten Arbeitsplatz. Nach der Prüfung einfach abnehmen und zurück in den Holzkoffer.</p>
                 </div>
                 <div style={{ background: C.bgElevated, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, minHeight: 240 }}>
-                  <img src="/images/koffer-gelb.jpg" alt="Holzkoffer mit Pultteilern" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 240, display: "block" }}/>
+                  <Img sizes="(max-width: 768px) 100vw, 480px" src="/images/koffer-gelb.jpg" alt="Holzkoffer mit Pultteilern" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 240, display: "block" }}/>
                 </div>
               </div>
             </Reveal>

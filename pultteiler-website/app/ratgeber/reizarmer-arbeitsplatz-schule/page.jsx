@@ -5,7 +5,7 @@ import { ARTICLES } from "@/lib/articles";
 const meta = { ...ARTICLES.find((a) => a.slug === "reizarmer-arbeitsplatz-schule"), short: "Reizarmer Arbeitsplatz", imgAlt: "Schüler arbeitet konzentriert an einem reizarm gestalteten Arbeitsplatz mit Sichtschutz" };
 
 export const metadata = {
-  title: meta.title,
+  title: meta.seoTitle || meta.title,
   description: meta.description,
   alternates: { canonical: `/ratgeber/${meta.slug}` },
 };

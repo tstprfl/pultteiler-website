@@ -3,6 +3,7 @@ import { useState } from "react";
 import { C } from "@/lib/colors";
 import { loadEmailJS } from "@/lib/emailjs";
 import { useCart } from "@/components/CartProvider";
+import Img from "@/components/Img";
 
 export default function CartSidebar({ onClose }) {
   const { items, updateQty, remove, total, count, region, getPrice, shipping, clear } = useCart();
@@ -98,7 +99,7 @@ export default function CartSidebar({ onClose }) {
             ) : items.map(item => (
               <div key={item.id} style={{ borderBottom: `1px solid ${C.border}`, padding: "20px 0", display: "flex", gap: 16, alignItems: "flex-start" }}>
                 <div style={{ width: 64, height: 64, background: C.bgCard, border: `1px solid ${C.border}`, flexShrink: 0, overflow: "hidden" }}>
-                  <img src={item.img} alt={item.short} style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={e => e.target.style.display = "none"}/>
+                  <Img sizes="80px" src={item.img} alt={item.short} style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={e => e.target.style.display = "none"}/>
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginBottom: 4 }}>{item.short}</div>

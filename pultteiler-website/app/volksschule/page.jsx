@@ -1,9 +1,9 @@
 import AudienceLayout, { faqJsonLd } from "@/components/AudienceLayout";
 
 export const metadata = {
-  title: "Pultteiler für die Volksschule & Grundschule — Sichtschutz für Schularbeiten",
+  title: "Sichtschutz für Volksschule und Grundschule",
   description:
-    "Sichtschutz für Schultische in Volksschule & Primarstufe: Abschreiben bei Schularbeiten verhindern, reizarmer Arbeitsplatz für konzentriertes Arbeiten. Kindgerechte Höhe, Kauf auf Rechnung, direkt vom Hersteller.",
+    "Sichtschutz für Schultische in Volksschule und Grundschule: kein Abschreiben bei Schularbeiten, kindgerechte Höhe. Kauf auf Rechnung, direkt vom Hersteller.",
   alternates: { canonical: "/volksschule" },
 };
 

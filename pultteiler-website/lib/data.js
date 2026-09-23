@@ -13,6 +13,10 @@ export const PARTS = [
 ];
 
 export const GALLERY = [
+  { src: "/images/kurhaus-saal-totale.jpg", label: "KURHAUS BAD KROZINGEN — PRÜFUNGSSAAL", cat: "PRÜFUNGSZENTRUM" },
+  { src: "/images/kurhaus-tischreihe.jpg", label: "KURHAUS BAD KROZINGEN — TISCHREIHE", cat: "PRÜFUNGSZENTRUM" },
+  { src: "/images/kurhaus-klammer-detail.jpg", label: "KURHAUS BAD KROZINGEN — KLAMMER AN DER TISCHKANTE", cat: "DETAIL" },
+  { src: "/images/kurhaus-blick-buehne.jpg", label: "KURHAUS BAD KROZINGEN — BLICK ZUR BÜHNE", cat: "PRÜFUNGSZENTRUM" },
   { src: "/images/klassenzimmer.png", label: "KLASSENZIMMER IM EINSATZ", cat: "PRAXIS" },
   { src: "/images/meduni-innsbruck_2.jpeg", label: "MEDUNI INNSBRUCK — LABOR", cat: "HOCHSCHULE" },
   { src: "/images/pultteiler-einsatz.jpg", label: "EDV-RAUM MIT PULTTEILER", cat: "PRAXIS" },

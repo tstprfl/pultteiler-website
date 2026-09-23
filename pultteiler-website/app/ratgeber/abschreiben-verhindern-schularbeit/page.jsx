@@ -5,7 +5,7 @@ import { ARTICLES } from "@/lib/articles";
 const meta = { ...ARTICLES.find((a) => a.slug === "abschreiben-verhindern-schularbeit"), short: "Abschreiben verhindern", imgAlt: "Klassenraum mit Sichtschutz-Trennwänden während einer Schularbeit" };
 
 export const metadata = {
-  title: meta.title,
+  title: meta.seoTitle || meta.title,
   description: meta.description,
   alternates: { canonical: `/ratgeber/${meta.slug}` },
 };

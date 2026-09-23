@@ -4,6 +4,7 @@ import Link from "next/link";
 import { C } from "@/lib/colors";
 import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
 import { Btn } from "@/components/ui";
+import Img from "@/components/Img";
 
 // Typografie für Artikel-Inhalte — in den Artikel-Dateien wiederverwenden
 export const A = {
@@ -58,7 +59,7 @@ export default function ArticleLayout({ meta, children, related = [] }) {
 
           {meta.img && (
             <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard, marginBottom: 36 }}>
-              <img src={meta.img} alt={meta.imgAlt || meta.title} style={{ width: "100%", height: 340, objectFit: "cover", display: "block" }}/>
+              <Img sizes="(max-width: 900px) 100vw, 900px" src={meta.img} alt={meta.imgAlt || meta.title} style={{ width: "100%", height: 340, objectFit: "cover", display: "block" }}/>
             </div>
           )}
 

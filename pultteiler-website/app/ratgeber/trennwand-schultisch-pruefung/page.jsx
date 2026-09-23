@@ -5,7 +5,7 @@ import { ARTICLES } from "@/lib/articles";
 const meta = { ...ARTICLES.find((a) => a.slug === "trennwand-schultisch-pruefung"), short: "Trennwand für den Schultisch", imgAlt: "Nahaufnahme einer Trennwand mit Klammerbefestigung auf einem Schultisch" };
 
 export const metadata = {
-  title: meta.title,
+  title: meta.seoTitle || meta.title,
   description: meta.description,
   alternates: { canonical: `/ratgeber/${meta.slug}` },
 };

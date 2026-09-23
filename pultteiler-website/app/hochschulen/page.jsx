@@ -1,9 +1,9 @@
 import AudienceLayout, { faqJsonLd } from "@/components/AudienceLayout";
 
 export const metadata = {
-  title: "Sichtschutz für Prüfungen an Hochschulen & Prüfungszentren — Großbestellungen vom Hersteller",
+  title: "Sichtschutz für Prüfungen an Hochschulen",
   description:
-    "Trennwände für schriftliche Prüfungen in Hörsälen und Prüfungszentren: hohe Stückzahlen, schneller Auf- und Abbau, Referenz MedUni Innsbruck. Individuelle Angebote direkt vom Hersteller, Kauf auf Rechnung.",
+    "Trennwände für Prüfungen in Hörsälen und Prüfungszentren: hohe Stückzahlen, schneller Aufbau, Referenz MedUni Innsbruck. Angebot direkt vom Hersteller.",
   alternates: { canonical: "/hochschulen" },
 };
 
@@ -38,8 +38,8 @@ export default function Page() {
         overline="FÜR UNIVERSITÄTEN, FACHHOCHSCHULEN & PRÜFUNGSZENTREN"
         h1={<>SICHTSCHUTZ FÜR PRÜFUNGEN IN HÖRSAAL & PRÜFUNGSZENTRUM</>}
         intro="Wenn hunderte Studierende gleichzeitig schreiben, muss die Prüfungsaufsicht sich auf die Ausstattung verlassen können. Unsere Trennwände sichern schriftliche Prüfungen in Hörsälen, Seminarräumen und Prüfungszentren — in hohen Stückzahlen, direkt vom Hersteller, im Einsatz u. a. an der MedUni Innsbruck."
-        img="/images/meduni-innsbruck_2.jpeg"
-        imgAlt="Pultteiler-Trennwände im Prüfungseinsatz an der Medizinischen Universität Innsbruck"
+        img="/images/kurhaus-saal-totale.jpg"
+        imgAlt="Prüfungssaal im Kurhaus Bad Krozingen, alle Tische mit Pultteilern ausgestattet"
         situation={{
           title: "DIE SITUATION BEI GROSSPRÜFUNGEN",
           paragraphs: [

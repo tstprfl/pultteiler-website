@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { C } from "@/lib/colors";
 import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
+import Img from "@/components/Img";
 
 const COLS = [
   {
@@ -42,7 +43,7 @@ export default function Footer() {
       <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 48 }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-            <img src="/images/Klammer_2.png" alt="Pultteiler Klammer" loading="lazy" style={{ width: 44, height: 44, objectFit: "contain", borderRadius: 4 }}/>
+            <Img sizes="44px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" loading="lazy" style={{ width: 44, height: 44, objectFit: "contain", borderRadius: 4 }}/>
             <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.text, letterSpacing: "0.05em" }}>PULTTEILER</span>
           </div>
           <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Der bewährte Sichtschutz für Schultische — direkt vom Produzenten, seit über {YEARS} Jahren. {SCHOOLS_TEXT}.</p>

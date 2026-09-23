@@ -4,6 +4,7 @@
 import { C } from "@/lib/colors";
 import { COUNTRY_INFO, SCHOOLS_TEXT_SHORT, YEARS } from "@/lib/site";
 import { Btn } from "@/components/ui";
+import Img from "@/components/Img";
 
 const f = {
   overline: { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: C.accent, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" },
@@ -34,7 +35,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
               </p>
             </div>
             <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}>
-              <img src={img} alt={imgAlt} loading="eager" style={{ width: "100%", height: 380, objectFit: "cover", display: "block" }}/>
+              <Img src={img} alt={imgAlt} priority style={{ width: "100%", height: 380, objectFit: "cover", display: "block" }}/>
             </div>
           </div>
         </div>
@@ -72,7 +73,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
             {products.items.map((p, i) => (
               <div key={i} style={{ background: C.bg, border: `1px solid ${C.border}`, display: "flex", flexDirection: "column" }}>
                 <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, height: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
-                  <img src={p.img} alt={p.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}/>
+                  <Img sizes="300px" src={p.img} alt={p.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}/>
                 </div>
                 <div style={{ padding: "24px 26px 30px", display: "flex", flexDirection: "column", flex: 1 }}>
                   <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, color: C.text, margin: "0 0 8px" }}>{p.name}</h3>

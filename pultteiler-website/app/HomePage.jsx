@@ -4,6 +4,7 @@ import { C } from "@/lib/colors";
 import { SCHOOLS_TEXT, YEARS, TESTIMONIALS, COUNTRY_INFO, AUDIENCES } from "@/lib/site";
 import { ARTICLES } from "@/lib/articles";
 import { Reveal, Badge, Heading, Btn } from "@/components/ui";
+import Img from "@/components/Img";
 
 export default function Home() {
   return (
@@ -31,9 +32,9 @@ export default function Home() {
                   <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇨🇭<br/>STEUERFREIE<br/>UNVERZOLLTE<br/>LIEFERUNG IN<br/>DIE SCHWEIZ</span>
                 </div>
               </div></Reveal>
-              <Reveal delay={0.15}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><img src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler im Prüfungseinsatz an der MedUni Innsbruck" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
-              <Reveal delay={0.25}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><img src="/images/klassenzimmer.png" alt="Sichtschutz auf Schultischen im Klassenzimmer" loading="lazy" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
-              <Reveal delay={0.35}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><img src="/images/pultteiler-einsatz.jpg" alt="Trennwände auf Schultischen im EDV-Raum" loading="lazy" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
+              <Reveal delay={0.15}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler im Prüfungseinsatz an der MedUni Innsbruck" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
+              <Reveal delay={0.25}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/klassenzimmer.png" alt="Sichtschutz auf Schultischen im Klassenzimmer" loading="lazy" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
+              <Reveal delay={0.35}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/kurhaus-tischreihe.jpg" alt="Tischreihe mit Pultteilern im Prüfungssaal des Kurhauses Bad Krozingen" loading="lazy" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
             </div>
           </div>
         </div>
@@ -65,7 +66,7 @@ export default function Home() {
               <Reveal key={a.id} delay={i * 0.08}>
                 <Link href={a.href} className="hover-lift hover-zoom" style={{ background: C.bgCard, border: `1px solid ${C.border}`, textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <div style={{ height: 190, overflow: "hidden", borderBottom: `1px solid ${C.border}` }}>
-                    <img src={a.img} alt={a.imgAlt} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
+                    <Img sizes="(max-width: 768px) 100vw, 33vw" src={a.img} alt={a.imgAlt} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                   </div>
                   <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
                     <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.text, margin: "0 0 10px", letterSpacing: "0.02em", lineHeight: 1.05 }}>{a.title.toUpperCase()}</h3>
@@ -126,7 +127,7 @@ export default function Home() {
             </div>
             <Reveal delay={0.1}>
               <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}>
-                <img src="/images/nahaufnahme.jpeg" alt="Nahaufnahme der Pultteiler-Trennwände — das Original vom Hersteller" loading="lazy" style={{ width: "100%", height: 380, objectFit: "cover", display: "block" }}/>
+                <Img src="/images/nahaufnahme.jpeg" alt="Nahaufnahme der Pultteiler-Trennwände — das Original vom Hersteller" loading="lazy" style={{ width: "100%", height: 380, objectFit: "cover", display: "block" }}/>
               </div>
             </Reveal>
           </div>

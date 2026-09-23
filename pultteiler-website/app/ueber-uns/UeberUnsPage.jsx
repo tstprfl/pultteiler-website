@@ -1,6 +1,7 @@
 "use client";
 import { C } from "@/lib/colors";
 import { Reveal, Heading, Btn } from "@/components/ui";
+import Img from "@/components/Img";
 
 export default function UeberUnsPage() {
   return (
@@ -8,7 +9,7 @@ export default function UeberUnsPage() {
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Heading overline="ÜBER UNS" title={"SCHULMITTEL BLASCHEGG\nAUS ALTMÜNSTER AM TRAUNSEE"} sub="Direkt vom Hersteller — seit über 40 Jahren für Schulen — europaweit."/>
-          <Reveal><div style={{ border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 2, background: C.bgCard }}><img src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler im Einsatz" style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}/></div></Reveal>
+          <Reveal><div style={{ border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 2, background: C.bgCard }}><Img sizes="(max-width: 900px) 100vw, 900px" src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler im Einsatz" style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}/></div></Reveal>
           {[
             { title: "DIE IDEE HINTER DEM PULTTEILER", texts: ["Michael Blaschegg war selbst Lehrer — und kennt die Herausforderungen im Schulalltag aus erster Hand. Tag für Tag werden an unseren Schulen Schularbeiten, informelle Tests, Kontrollarbeiten und Diktate abgehalten. Bei diesen Arbeiten wollen unsere Schüler konzentriert, ungestört und ruhig ihre Leistung zeigen.", "Aus dieser Erfahrung heraus entstand der Pultteiler — eine stabile Trennwand für Schultische, die sowohl Arbeitserleichterung für den Lehrer als auch Unterstützung für die Schüler ist."] },
             { title: "WARUM DER PULTTEILER FUNKTIONIERT", texts: ["Es ist nicht mehr notwendig, die Klasse bei einer schriftlichen Lernzielkontrolle in verschiedene Gruppen zu unterteilen — die Möglichkeit der gerechten Benotung ist durch den Sichtschutz garantiert. Vorbesprechung, Nachbesprechung und Verbesserung der Arbeiten erledigt die Klasse gemeinsam.", "Das Wandern in einen größeren Klassenraum mit einzelnen Pulten ist nicht mehr notwendig. Die Schüler fühlen sich in der gewohnten Umgebung ihres Klassenraums bei Arbeiten am wohlsten.", "Der stabile Pultteiler schafft Ordnung und einen eigenen Arbeitsplatz. Die Schüler werden von ihren Sitznachbarn nicht abgelenkt, sie können konzentriert ihre Aufgaben erledigen. Die Klammer aus hochwertigem, dauerelastischem Kunststoff ermöglicht einen sicheren Stand der Trennplatte und ist rasch aufgesteckt."] },

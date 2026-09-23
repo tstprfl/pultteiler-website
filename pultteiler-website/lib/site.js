@@ -88,8 +88,8 @@ export const AUDIENCES = [
     title: "Hochschulen & Prüfungszentren",
     teaser: "Große Stückzahlen für Hörsäle und Prüfungszentren — individuelle Angebote, Referenz MedUni Innsbruck, Lieferung europaweit.",
     heading: "PULTTEILER FÜR HOCHSCHULEN & PRÜFUNGSZENTREN",
-    img: "/images/meduni-innsbruck_2.jpeg",
-    imgAlt: "Pultteiler im Prüfungseinsatz an der MedUni Innsbruck",
+    img: "/images/kurhaus-saal-totale.jpg",
+    imgAlt: "Prüfungssaal im Kurhaus Bad Krozingen, alle Tische mit Pultteilern ausgestattet",
   },
 ];
 

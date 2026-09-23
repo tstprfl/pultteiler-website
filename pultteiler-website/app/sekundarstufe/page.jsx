@@ -1,9 +1,9 @@
 import AudienceLayout, { faqJsonLd } from "@/components/AudienceLayout";
 
 export const metadata = {
-  title: "Trennwand für Schultische in der Sekundarstufe — Sichtschutz für Klassenarbeiten & Tests",
+  title: "Trennwand für Schultische bei Klassenarbeiten",
   description:
-    "Abschreiben bei Klassenarbeiten, Schularbeiten und Tests verhindern: Sichtschutz-Trennwände für Schultische ab dem 6. Schuljahr. 50×40 cm, werkzeugloser Aufbau, Kauf auf Rechnung — direkt vom Hersteller.",
+    "Trennwände für Schultische ab dem 6. Schuljahr: kein Abschreiben bei Klassenarbeiten und Tests. 50×40 cm, Aufbau ohne Werkzeug, Kauf auf Rechnung.",
   alternates: { canonical: "/sekundarstufe" },
 };
 

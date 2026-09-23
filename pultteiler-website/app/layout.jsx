@@ -9,9 +9,9 @@ export const metadata = {
   metadataBase: new URL("https://www.pultteiler.eu"),
   title: {
     default: "Pultteiler — Sichtschutz für Schultische bei Klassenarbeiten & Prüfungen",
-    template: "%s — Pultteiler",
+    template: "%s | Pultteiler",
   },
-  description: `Sichtschutz-Trennwände für Schultische: Abschreiben bei Schularbeiten, Klassenarbeiten und Prüfungen verhindern. Direkt vom Hersteller, seit über ${YEARS} Jahren, mehrere hundert Schulen in AT, DE & CH. Kauf auf Rechnung.`,
+  description: `Sichtschutz für Schultische: verhindert Abschreiben bei Schularbeiten und Prüfungen. Direkt vom Hersteller, seit über ${YEARS} Jahren. Kauf auf Rechnung.`,
   icons: { icon: "/images/Klammer_2.png" },
   openGraph: {
     type: "website",

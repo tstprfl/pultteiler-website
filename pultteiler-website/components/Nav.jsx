@@ -6,6 +6,7 @@ import { C } from "@/lib/colors";
 import { NAV } from "@/lib/data";
 import { useCart } from "@/components/CartProvider";
 import CartSidebar from "@/components/CartSidebar";
+import Img from "@/components/Img";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Nav() {
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : "transparent", borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-            <img src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
+            <Img sizes="56px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
             <span style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>PULTTEILER</span>
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>

@@ -2,9 +2,9 @@ import ProduktePage from "./ProduktePage";
 import { SETS } from "@/lib/data";
 
 export const metadata = {
-  title: "Pultteiler kaufen — Sets & Preise direkt vom Hersteller",
+  title: { absolute: "Pultteiler kaufen: Sets und Preise vom Hersteller" },
   description:
-    "Pultteiler-Sets und Ersatzteile direkt vom Hersteller kaufen: Sichtschutz-Trennwände für Schultische im Holzkoffer (12 Systeme). Kauf auf Rechnung — Lieferung nach Österreich, Deutschland und in die Schweiz.",
+    "Pultteiler-Sets im Holzkoffer (12 Systeme) und Ersatzteile direkt vom Hersteller. Kauf auf Rechnung, Lieferung nach Österreich, Deutschland und in die Schweiz.",
   alternates: { canonical: "/produkte" },
 };
 

@@ -5,7 +5,7 @@ import { ARTICLES } from "@/lib/articles";
 const meta = { ...ARTICLES.find((a) => a.slug === "sichtschutz-klassenarbeit"), short: "Sichtschutz für die Klassenarbeit", imgAlt: "Sichtschutz auf Schultischen während einer Klassenarbeit" };
 
 export const metadata = {
-  title: meta.title,
+  title: meta.seoTitle || meta.title,
   description: meta.description,
   alternates: { canonical: `/ratgeber/${meta.slug}` },
 };
