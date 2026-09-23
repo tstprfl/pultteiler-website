@@ -34,7 +34,7 @@ export default function Home() {
               </div></Reveal>
               <Reveal delay={0.15}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler im Prüfungseinsatz an der MedUni Innsbruck" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
               <Reveal delay={0.25}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/klassenzimmer.png" alt="Sichtschutz auf Schultischen im Klassenzimmer" loading="lazy" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
-              <Reveal delay={0.35}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/kurhaus-tischreihe.jpg" alt="Tischreihe mit Pultteilern im Prüfungssaal des Kurhauses Bad Krozingen" loading="lazy" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
+              <Reveal delay={0.35}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/pultteiler-einsatz.jpg" alt="Trennwände auf Schultischen im EDV-Raum" loading="lazy" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
             </div>
           </div>
         </div>
