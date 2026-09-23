@@ -15,7 +15,23 @@ const f = {
   small: { fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 },
 };
 
-export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situation, benefits, products, faq, ctaTitle, ctaSub }) {
+// Beschriftungen und Links — Standard deutsch; die englische Seite übergibt eigene Werte über `ui`.
+const UI_DE = {
+  quoteHref: "/angebot",
+  quoteCta: "ANGEBOT ANFORDERN →",
+  shopHref: "/produkte",
+  shopCta: "ZUM SHOP",
+  contactHref: "/kontakt",
+  contactCta: "KONTAKT",
+  trust: ["Kauf auf Rechnung", "Direkt vom Hersteller", SCHOOLS_TEXT_SHORT, `Seit über ${YEARS} Jahren`],
+  orderTitle: "SO EINFACH BESTELLEN SCHULEN BEI UNS",
+  orderSub: "Kein Kreditkarten-Checkout, keine Vorkasse: Sie bestellen per Anfrage oder direkt im Shop — und zahlen bequem auf Rechnung, wie es Schulen und Schulerhalter gewohnt sind.",
+  countries: COUNTRY_INFO,
+  faqTitle: "HÄUFIGE FRAGEN",
+};
+
+export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situation, benefits, products, faq, ctaTitle, ctaSub, ui: uiOverride }) {
+  const ui = { ...UI_DE, ...uiOverride };
   return (
     <div style={{ paddingTop: 72 }}>
       {/* Hero */}
@@ -27,11 +43,11 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
               <h1 style={f.h1}>{h1}</h1>
               <p style={{ ...f.body, fontSize: 17, maxWidth: 560 }}>{intro}</p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 28 }}>
-                <Btn href="/angebot">ANGEBOT ANFORDERN →</Btn>
-                <Btn href="/produkte" variant="secondary">ZUM SHOP</Btn>
+                <Btn href={ui.quoteHref}>{ui.quoteCta}</Btn>
+                <Btn href={ui.shopHref} variant="secondary">{ui.shopCta}</Btn>
               </div>
               <p style={{ ...f.small, marginTop: 24, fontWeight: 600, color: C.text }}>
-                ✓ Kauf auf Rechnung&nbsp;&nbsp;·&nbsp;&nbsp;✓ Direkt vom Hersteller&nbsp;&nbsp;·&nbsp;&nbsp;✓ {SCHOOLS_TEXT_SHORT}&nbsp;&nbsp;·&nbsp;&nbsp;✓ Seit über {YEARS} Jahren
+                {ui.trust.map((t) => `✓ ${t}`).join("  ·  ")}
               </p>
             </div>
             <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}>
@@ -80,7 +96,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
                   <p style={{ ...f.small, marginBottom: 16, flex: 1 }}>{p.desc}</p>
                   {p.price && <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 30, color: C.text, marginBottom: 4 }}>{p.price}</div>}
                   {p.note && <p style={{ ...f.small, fontSize: 12, marginBottom: 16 }}>{p.note}</p>}
-                  <div><Btn href={p.href || "/produkte"} variant={p.primary ? "primary" : "secondary"}>{p.cta || "ZUM SHOP"}</Btn></div>
+                  <div><Btn href={p.href || ui.shopHref} variant={p.primary ? "primary" : "secondary"}>{p.cta || ui.shopCta}</Btn></div>
                 </div>
               </div>
             ))}
@@ -91,10 +107,10 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
       {/* Bestellung & Länderhinweise */}
       <section style={{ padding: "80px 32px", background: C.bg, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 1160, margin: "0 auto" }}>
-          <h2 style={{ ...f.h2, marginBottom: 8 }}>SO EINFACH BESTELLEN SCHULEN BEI UNS</h2>
-          <p style={{ ...f.body, maxWidth: 640 }}>Kein Kreditkarten-Checkout, keine Vorkasse: Sie bestellen per Anfrage oder direkt im Shop — und zahlen bequem auf Rechnung, wie es Schulen und Schulerhalter gewohnt sind.</p>
+          <h2 style={{ ...f.h2, marginBottom: 8 }}>{ui.orderTitle}</h2>
+          <p style={{ ...f.body, maxWidth: 640 }}>{ui.orderSub}</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 2, marginTop: 32 }}>
-            {COUNTRY_INFO.map((c) => (
+            {ui.countries.map((c) => (
               <div key={c.code} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 26px" }}>
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{c.flag}</div>
                 <h3 style={f.h3}>{c.name.toUpperCase()}</h3>
@@ -110,7 +126,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
       {/* FAQ */}
       <section style={{ padding: "80px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
-          <h2 style={{ ...f.h2, marginBottom: 32 }}>HÄUFIGE FRAGEN</h2>
+          <h2 style={{ ...f.h2, marginBottom: 32 }}>{ui.faqTitle}</h2>
           {faq.map((item, i) => (
             <details key={i} style={{ background: C.bg, border: `1px solid ${C.border}`, marginBottom: 2, padding: "0 26px" }}>
               <summary style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, padding: "20px 0", cursor: "pointer", listStylePosition: "inside" }}>{item.q}</summary>
@@ -126,8 +142,8 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
           <h2 style={f.h2}>{ctaTitle}</h2>
           <p style={{ ...f.body, maxWidth: 560, margin: "0 auto 32px" }}>{ctaSub}</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Btn href="/angebot">ANGEBOT ANFORDERN →</Btn>
-            <Btn href="/kontakt" variant="secondary">KONTAKT</Btn>
+            <Btn href={ui.quoteHref}>{ui.quoteCta}</Btn>
+            <Btn href={ui.contactHref} variant="secondary">{ui.contactCta}</Btn>
           </div>
         </div>
       </section>

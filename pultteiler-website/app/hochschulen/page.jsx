@@ -1,10 +1,11 @@
 import AudienceLayout, { faqJsonLd } from "@/components/AudienceLayout";
+import { alternatesFor } from "@/lib/i18n";
 
 export const metadata = {
   title: "Sichtschutz für Prüfungen an Hochschulen",
   description:
     "Trennwände für Prüfungen in Hörsälen und Prüfungszentren: hohe Stückzahlen, schneller Aufbau, Referenz MedUni Innsbruck. Angebot direkt vom Hersteller.",
-  alternates: { canonical: "/hochschulen" },
+  alternates: alternatesFor("/hochschulen"),
 };
 
 const FAQ = [

@@ -1,11 +1,12 @@
 import ProduktePage from "./ProduktePage";
 import { SETS } from "@/lib/data";
+import { alternatesFor } from "@/lib/i18n";
 
 export const metadata = {
   title: { absolute: "Pultteiler kaufen: Sets und Preise vom Hersteller" },
   description:
     "Pultteiler-Sets im Holzkoffer (12 Systeme) und Ersatzteile direkt vom Hersteller. Kauf auf Rechnung, Lieferung nach Österreich, Deutschland und in die Schweiz.",
-  alternates: { canonical: "/produkte" },
+  alternates: alternatesFor("/produkte"),
 };
 
 // Versand und Rückgabe gemäß /versand und AGB: Koffer-Sets nach AT, DE, CH versandkostenfrei,

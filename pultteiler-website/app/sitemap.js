@@ -1,4 +1,5 @@
 import { ARTICLES } from "@/lib/articles";
+import { PAGE_PAIRS } from "@/lib/i18n";
 
 export default function sitemap() {
   const base = "https://www.pultteiler.eu";
@@ -19,6 +20,7 @@ export default function sitemap() {
     { url: `${base}/impressum`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/agb`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/datenschutz`, changeFrequency: "yearly", priority: 0.3 },
+    ...PAGE_PAIRS.map((p) => ({ url: `${base}${p.en}`, changeFrequency: "monthly", priority: 0.6 })),
   ];
   return pages.map(p => ({ ...p, lastModified: new Date() }));
 }

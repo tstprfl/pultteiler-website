@@ -7,6 +7,7 @@ import { NAV } from "@/lib/data";
 import { useCart } from "@/components/CartProvider";
 import CartSidebar from "@/components/CartSidebar";
 import Img from "@/components/Img";
+import { NAV_EN, EN_START, isEnPath, switchTarget } from "@/lib/i18n";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -19,6 +20,12 @@ export default function Nav() {
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 20); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   useEffect(() => { setOpen(false); setDdOpen(false); }, [pathname]);
 
+  // Englische Testseiten: eigene, schlanke Navigation ohne Warenkorb
+  const en = isEnPath(pathname);
+  const items = en ? NAV_EN : NAV;
+  const quote = en ? { href: "/en/quote", short: "QUOTE →", long: "REQUEST A QUOTE →" } : { href: "/angebot", short: "ANGEBOT →", long: "ANGEBOT ANFORDERN →" };
+  const langLink = en ? { label: "DE", title: "Deutsche Version" } : { label: "EN", title: "English version" };
+
   const isActive = (href) => href === "/" ? pathname === "/" : pathname.startsWith(href);
   const groupActive = (n) => n.children?.some((c) => isActive(c.href));
 
@@ -28,13 +35,13 @@ export default function Nav() {
     <>
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : "transparent", borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+          <Link href={en ? EN_START : "/"} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
             <Img sizes="56px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
             <span style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>PULTTEILER</span>
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
             <div className="desk-nav" style={{ display: "flex", gap: 2, alignItems: "center" }}>
-              {NAV.map(n => n.children ? (
+              {items.map(n => n.children ? (
                 <div key={n.id} style={{ position: "relative" }} onMouseEnter={() => setDdOpen(true)} onMouseLeave={() => setDdOpen(false)}>
                   <button onClick={() => setDdOpen(v => !v)} aria-expanded={ddOpen} aria-haspopup="true" style={linkStyle(groupActive(n))}>
                     {n.label} <span aria-hidden="true" style={{ fontSize: 8, verticalAlign: 1 }}>▼</span>
@@ -50,20 +57,21 @@ export default function Nav() {
               ) : (
                 <Link key={n.id} href={n.href} style={linkStyle(isActive(n.href))}>{n.label}</Link>
               ))}
-              <Link href="/angebot" style={{ background: C.dark, color: C.white, padding: "10px 18px", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap", marginLeft: 8 }}>ANGEBOT →</Link>
+              <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "10px 18px", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap", marginLeft: 8 }}>{quote.short}</Link>
             </div>
-            <button onClick={() => setCartOpen(true)} aria-label="Warenkorb öffnen" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
+            <Link href={switchTarget(pathname)} title={langLink.title} hrefLang={en ? "de" : "en"} style={{ ...linkStyle(false), padding: "8px 10px" }}>{langLink.label}</Link>
+            {!en && <button onClick={() => setCartOpen(true)} aria-label="Warenkorb öffnen" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               {count > 0 && <span style={{ position: "absolute", top: 2, right: 4, background: C.accent, color: C.white, width: 18, height: 18, borderRadius: "50%", fontSize: 10, fontWeight: 700, fontFamily: "'Inter Tight', sans-serif", display: "flex", alignItems: "center", justifyContent: "center" }}>{count}</span>}
-            </button>
-            <button onClick={() => setOpen(!open)} className="mob-btn" aria-label="Menü" aria-expanded={open} style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 8 }}>
+            </button>}
+            <button onClick={() => setOpen(!open)} className="mob-btn" aria-label={en ? "Menu" : "Menü"} aria-expanded={open} style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 8 }}>
               <svg width="24" height="24" viewBox="0 0 24 24" stroke={C.text} strokeWidth="2" fill="none">{open ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></>}</svg>
             </button>
           </div>
         </div>
         {open && (
           <div style={{ background: C.bg, borderBottom: `1px solid ${C.border}`, padding: "8px 32px 20px", maxHeight: "calc(100vh - 72px)", overflow: "auto" }}>
-            {NAV.map(n => n.children ? (
+            {items.map(n => n.children ? (
               <div key={n.id}>
                 <div style={{ padding: "14px 16px 6px", fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted }}>{n.label}</div>
                 {n.children.map(c => (
@@ -73,7 +81,7 @@ export default function Nav() {
             ) : (
               <Link key={n.id} href={n.href} style={{ display: "block", width: "100%", textAlign: "left", background: isActive(n.href) ? C.surface : "none", padding: "14px 16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.1em", color: isActive(n.href) ? C.text : C.textMuted, textDecoration: "none" }}>{n.label}</Link>
             ))}
-            <Link href="/angebot" style={{ display: "block", textAlign: "center", background: C.dark, color: C.white, padding: "15px 16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", marginTop: 12 }}>ANGEBOT ANFORDERN →</Link>
+            <Link href={quote.href} style={{ display: "block", textAlign: "center", background: C.dark, color: C.white, padding: "15px 16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", marginTop: 12 }}>{quote.long}</Link>
           </div>
         )}
       </nav>
