@@ -8,21 +8,44 @@ export const metadata = {
   alternates: { canonical: "/produkte" },
 };
 
+// Versand und Rückgabe gemäß /versand und AGB: Koffer-Sets nach AT, DE, CH versandkostenfrei,
+// 14 Tage Widerruf, Rücksendekosten trägt der Käufer. Bei Änderungen dort auch hier anpassen.
+const shippingDetails = {
+  "@type": "OfferShippingDetails",
+  shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "EUR" },
+  shippingDestination: { "@type": "DefinedRegion", addressCountry: ["AT", "DE", "CH"] },
+};
+
+const returnPolicy = {
+  "@type": "MerchantReturnPolicy",
+  applicableCountry: ["AT", "DE", "CH"],
+  returnPolicyCountry: "AT",
+  returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+  merchantReturnDays: 14,
+  returnMethod: "https://schema.org/ReturnByMail",
+  returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
+  merchantReturnLink: "https://www.pultteiler.eu/versand",
+};
+
 const productJsonLd = {
   "@context": "https://schema.org",
   "@graph": SETS.map((s) => ({
     "@type": "Product",
     name: s.name,
     description: s.desc,
+    sku: s.id,
     image: `https://www.pultteiler.eu${s.img}`,
-    brand: { "@type": "Brand", name: "Pultteiler — Schulmittel Blaschegg" },
+    brand: { "@type": "Brand", name: "Pultteiler" },
     offers: {
       "@type": "Offer",
       price: s.priceAT.toFixed(2),
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
       url: "https://www.pultteiler.eu/produkte",
       seller: { "@type": "Organization", name: "Schulmittel Blaschegg" },
+      shippingDetails,
+      hasMerchantReturnPolicy: returnPolicy,
     },
   })),
 };
