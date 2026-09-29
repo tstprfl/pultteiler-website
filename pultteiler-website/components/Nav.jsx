@@ -20,11 +20,31 @@ export default function Nav() {
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 20); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   useEffect(() => { setOpen(false); setDdOpen(false); }, [pathname]);
 
+  // Sprachwechsel ohne Springen: Scrollposition merken und auf der Zielseite wiederherstellen.
+  // Die deutsche und die englische Seite sind gleich aufgebaut, daher passt die absolute Position.
+  const SCROLL_KEY = "pt-lang-scroll";
+  const rememberScroll = () => { try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch {} };
+  useEffect(() => {
+    try {
+      const y = sessionStorage.getItem(SCROLL_KEY);
+      if (y === null) return;
+      sessionStorage.removeItem(SCROLL_KEY);
+      const restore = () => window.scrollTo({ top: Math.min(Number(y), document.documentElement.scrollHeight - window.innerHeight), behavior: "instant" });
+      restore();
+      requestAnimationFrame(restore);
+      setTimeout(restore, 120);
+    } catch {}
+  }, [pathname]);
+
   // Englische Seiten: eigene Navigation ohne Warenkorb (Bestellung per Angebot)
   const en = isEnPath(pathname);
   const items = en ? NAV_EN : NAV;
   const quote = en ? { href: "/en/quote", short: "Quote →", long: "Request a quote →" } : { href: "/angebot", short: "Angebot →", long: "Angebot anfordern →" };
-  const langLink = en ? { label: "DE", title: "Deutsche Version" } : { label: "EN", title: "English version" };
+  // Fester DE|EN-Schalter: beide Sprachen immer sichtbar, gleiche Breite, kein Verschieben der Navigation
+  const langs = [
+    { code: "de", label: "DE", title: "Deutsch", active: !en, href: en ? switchTarget(pathname) : pathname },
+    { code: "en", label: "EN", title: "English", active: en, href: en ? pathname : switchTarget(pathname) },
+  ];
 
   const isActive = (href) => (href === "/" || href === "/en") ? pathname === href : pathname.startsWith(href);
   const groupActive = (n) => n.children?.some((c) => isActive(c.href));
@@ -59,7 +79,15 @@ export default function Nav() {
               ))}
               <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "10px 18px", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap", marginLeft: 8 }}>{quote.short}</Link>
             </div>
-            <Link href={switchTarget(pathname)} title={langLink.title} hrefLang={en ? "de" : "en"} style={{ ...linkStyle(false), padding: "8px 10px" }}>{langLink.label}</Link>
+            <div role="group" aria-label={en ? "Language" : "Sprache"} style={{ display: "flex", border: `1px solid ${C.border}`, marginLeft: 8, flexShrink: 0 }}>
+              {langs.map(l => (
+                <Link key={l.code} href={l.href} scroll={false} hrefLang={l.code} lang={l.code} title={l.title} aria-current={l.active ? "true" : undefined}
+                  onClick={l.active ? (e) => e.preventDefault() : rememberScroll}
+                  style={{ width: 38, textAlign: "center", padding: "7px 0", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", color: l.active ? C.white : C.textMuted, background: l.active ? C.dark : "transparent", textDecoration: "none", cursor: l.active ? "default" : "pointer", transition: "background 0.2s, color 0.2s" }}>
+                  {l.label}
+                </Link>
+              ))}
+            </div>
             {!en && <button onClick={() => setCartOpen(true)} aria-label="Warenkorb öffnen" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               {count > 0 && <span style={{ position: "absolute", top: 2, right: 4, background: C.accent, color: C.white, width: 18, height: 18, borderRadius: "50%", fontSize: 10, fontWeight: 700, fontFamily: "'Inter Tight', sans-serif", display: "flex", alignItems: "center", justifyContent: "center" }}>{count}</span>}
