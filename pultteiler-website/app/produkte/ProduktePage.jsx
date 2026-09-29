@@ -18,7 +18,7 @@ const KONDITIONEN = {
     { label: "Österreichische Bundesschulen", val: "E-Rechnung", sub: "mit Ihrer EKG-Nummer, Zahlung auf Rechnung" },
   ],
   CH: [
-    { label: "Preise", val: "Netto, steuerfrei", sub: "unverzollt, keine Einfuhrabgaben für Sie" },
+    { label: "Preise", val: "Netto, steuerfrei", sub: "unverzollt" },
     { label: "Versand Schweiz", val: `${eur(SHIPPING.CH)} je Bestellung`, sub: "für Koffer-Sets, Ersatzteile auf Anfrage" },
     { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
     { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
