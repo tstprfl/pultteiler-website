@@ -20,6 +20,8 @@ const nextConfig = {
       // Alte Produktseiten
       { source: '/products/:path*', destination: '/produkte', permanent: true },
       // Weitere alte Webnode-URLs (Stand Search-Console-Bericht 2026-09-29)
+      { source: '/home', destination: '/', permanent: true },
+      { source: '/home/', destination: '/', permanent: true },
       { source: '/uber-uns', destination: '/ueber-uns', permanent: true },
       { source: '/uber-uns/', destination: '/ueber-uns', permanent: true },
       { source: '/ersatzteile', destination: '/produkte', permanent: true },
