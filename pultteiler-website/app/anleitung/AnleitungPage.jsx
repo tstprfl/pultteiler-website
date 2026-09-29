@@ -13,7 +13,6 @@ const AufbauAnimation = dynamic(() => import("@/components/AufbauAnimation"), {
 const STEPS = [
   { nr: "Schritt 01", title: "Klammer aufstecken", text: "Die Klammer aus dauerelastischem Kunststoff seitlich auf die Tischkante schieben. Sie passt auf alle gängigen Schultische mit einer Plattenstärke bis 3 cm, auch auf Schrägtische." },
   { nr: "Schritt 02", title: "Teilerplatte einsetzen", text: "Die Platte von oben aufsetzen. Ihr Schlitz rastet in der Klammer ein, die Platte steht sofort stabil." },
-  { nr: "Schritt 03", title: "Fertig: konzentriert arbeiten", text: "Der Pultteiler schafft einen eigenen, abgeschirmten Arbeitsplatz. Nach der Prüfung ist er genauso schnell wieder abgenommen." },
 ];
 
 export default function AnleitungPage() {
@@ -21,7 +20,7 @@ export default function AnleitungPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <Heading as="h1" overline="Aufbauanleitung" title={"So funktioniert der Pultteiler\nAufbau in 3 Schritten"} sub="Teilerplatte und Pultklammer: in wenigen Handgriffen aufgestellt." align="center"/>
+          <Heading as="h1" overline="Aufbauanleitung" title={"So funktioniert der Pultteiler\nAufbau in 2 Schritten"} sub="Teilerplatte und Pultklammer: in wenigen Handgriffen aufgestellt." align="center"/>
           <Reveal>
             <AufbauAnimation steps={STEPS} label="Animation: Die Klammer wird seitlich auf die Tischkante geschoben, die Teilerplatte von oben eingesetzt."/>
           </Reveal>

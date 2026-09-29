@@ -13,7 +13,6 @@ const AufbauAnimation = dynamic(() => import("@/components/AufbauAnimation"), {
 const STEPS = [
   { nr: "Step 01", title: "Attach the clamp", text: "Push the clamp made of permanently elastic plastic sideways onto the edge of the desk. It fits all common school desks with a desktop up to 3 cm thick, including sloping desks." },
   { nr: "Step 02", title: "Insert the panel", text: "Place the panel from above. Its slot locks onto the clamp and the panel stands firmly straight away." },
-  { nr: "Step 03", title: "Done: time to concentrate", text: "The Pultteiler creates a separate, screened workplace. After the exam it comes off just as quickly." },
 ];
 
 export default function HowItWorksPage() {
@@ -21,7 +20,7 @@ export default function HowItWorksPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <Heading as="h1" overline="Set-up guide" title={"How the Pultteiler works\nSet up in 3 steps"} sub="Divider panel and desk clamp: set up in a few simple moves." align="center"/>
+          <Heading as="h1" overline="Set-up guide" title={"How the Pultteiler works\nSet up in 2 steps"} sub="Divider panel and desk clamp: set up in a few simple moves." align="center"/>
           <Reveal>
             <AufbauAnimation steps={STEPS} label="Animation: the clamp is pushed sideways onto the edge of the desk, the divider panel is inserted from above."/>
           </Reveal>
