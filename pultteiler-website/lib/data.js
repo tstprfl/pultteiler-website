@@ -13,14 +13,14 @@ export const PARTS = [
 ];
 
 export const GALLERY = [
-  { src: "/images/kurhaus-saal-totale.jpg", label: "KURHAUS BAD KROZINGEN — PRÜFUNGSSAAL", cat: "PRÜFUNGSZENTRUM" },
-  { src: "/images/kurhaus-tischreihe.jpg", label: "KURHAUS BAD KROZINGEN — TISCHREIHE", cat: "PRÜFUNGSZENTRUM" },
-  { src: "/images/kurhaus-klammer-detail.jpg", label: "KURHAUS BAD KROZINGEN — KLAMMER AN DER TISCHKANTE", cat: "DETAIL" },
-  { src: "/images/kurhaus-blick-buehne.jpg", label: "KURHAUS BAD KROZINGEN — BLICK ZUR BÜHNE", cat: "PRÜFUNGSZENTRUM" },
+  { src: "/images/kurhaus-saal-totale.jpg", label: "KURHAUS BAD KROZINGEN", alt: "Prüfungssaal im Kurhaus Bad Krozingen mit Pultteilern auf allen Tischen", cat: "PRÜFUNGSZENTRUM" },
+  { src: "/images/kurhaus-tischreihe.jpg", label: "KURHAUS BAD KROZINGEN", alt: "Tischreihe mit Pultteilern im Kurhaus Bad Krozingen", cat: "PRÜFUNGSZENTRUM" },
+  { src: "/images/kurhaus-klammer-detail.jpg", label: "KURHAUS BAD KROZINGEN", alt: "Pultteiler-Klammer an der Tischkante im Kurhaus Bad Krozingen", cat: "DETAIL" },
+  { src: "/images/kurhaus-blick-buehne.jpg", label: "KURHAUS BAD KROZINGEN", alt: "Blick zur Bühne über die Prüfungstische im Kurhaus Bad Krozingen", cat: "PRÜFUNGSZENTRUM" },
   { src: "/images/klassenzimmer.png", label: "KLASSENZIMMER IM EINSATZ", cat: "PRAXIS" },
-  { src: "/images/meduni-innsbruck_2.jpeg", label: "MEDUNI INNSBRUCK — LABOR", cat: "HOCHSCHULE" },
+  { src: "/images/meduni-innsbruck_2.jpeg", label: "MEDUNI INNSBRUCK", alt: "Pultteiler im Labor der MedUni Innsbruck", cat: "HOCHSCHULE" },
   { src: "/images/pultteiler-einsatz.jpg", label: "EDV-RAUM MIT PULTTEILER", cat: "PRAXIS" },
-  { src: "/images/meduni-innsbruck_1.jpeg", label: "MEDUNI INNSBRUCK — NAHAUFNAHME", cat: "HOCHSCHULE" },
+  { src: "/images/meduni-innsbruck_1.jpeg", label: "MEDUNI INNSBRUCK", alt: "Nahaufnahme der Pultteiler an der MedUni Innsbruck", cat: "HOCHSCHULE" },
   { src: "/images/pultteiler-uni.png", label: "UNIVERSITÄT HÖRSAAL", cat: "HOCHSCHULE" },
   { src: "/images/pultteiler-2.jpg", label: "PULTTEILER IM GROSSRAUM", cat: "REFERENZ" },
   { src: "/images/nahaufnahme.jpeg", label: "NAHAUFNAHME TRENNWÄNDE", cat: "DETAIL" },

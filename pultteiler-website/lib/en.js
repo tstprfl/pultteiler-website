@@ -76,14 +76,14 @@ export const OG_EN = {
 
 // Galerie (gleiche Bilder und Reihenfolge wie GALLERY in lib/data.js)
 export const GALLERY_EN = [
-  { src: "/images/kurhaus-saal-totale.jpg", label: "KURHAUS BAD KROZINGEN: EXAM HALL" },
-  { src: "/images/kurhaus-tischreihe.jpg", label: "KURHAUS BAD KROZINGEN: ROW OF DESKS" },
-  { src: "/images/kurhaus-klammer-detail.jpg", label: "KURHAUS BAD KROZINGEN: CLAMP ON THE DESK EDGE" },
-  { src: "/images/kurhaus-blick-buehne.jpg", label: "KURHAUS BAD KROZINGEN: VIEW TOWARDS THE STAGE" },
+  { src: "/images/kurhaus-saal-totale.jpg", label: "KURHAUS BAD KROZINGEN", alt: "Exam hall at Kurhaus Bad Krozingen with Pultteiler dividers on every desk" },
+  { src: "/images/kurhaus-tischreihe.jpg", label: "KURHAUS BAD KROZINGEN", alt: "Row of desks with Pultteiler dividers at Kurhaus Bad Krozingen" },
+  { src: "/images/kurhaus-klammer-detail.jpg", label: "KURHAUS BAD KROZINGEN", alt: "Pultteiler clamp on the desk edge at Kurhaus Bad Krozingen" },
+  { src: "/images/kurhaus-blick-buehne.jpg", label: "KURHAUS BAD KROZINGEN", alt: "View towards the stage across the exam desks at Kurhaus Bad Krozingen" },
   { src: "/images/klassenzimmer.png", label: "IN USE IN THE CLASSROOM" },
-  { src: "/images/meduni-innsbruck_2.jpeg", label: "MEDICAL UNIVERSITY OF INNSBRUCK: LABORATORY" },
+  { src: "/images/meduni-innsbruck_2.jpeg", label: "MEDICAL UNIVERSITY OF INNSBRUCK", alt: "Pultteiler dividers in a laboratory at the Medical University of Innsbruck" },
   { src: "/images/pultteiler-einsatz.jpg", label: "COMPUTER ROOM WITH PULTTEILER" },
-  { src: "/images/meduni-innsbruck_1.jpeg", label: "MEDICAL UNIVERSITY OF INNSBRUCK: CLOSE-UP" },
+  { src: "/images/meduni-innsbruck_1.jpeg", label: "MEDICAL UNIVERSITY OF INNSBRUCK", alt: "Close-up of Pultteiler dividers at the Medical University of Innsbruck" },
   { src: "/images/pultteiler-uni.png", label: "UNIVERSITY LECTURE HALL" },
   { src: "/images/pultteiler-2.jpg", label: "PULTTEILER IN A LARGE ROOM" },
   { src: "/images/nahaufnahme.jpeg", label: "CLOSE-UP OF THE DIVIDERS" },
