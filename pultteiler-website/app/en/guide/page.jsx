@@ -19,8 +19,8 @@ export default function Page() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: C.accent, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>PRACTICAL KNOWLEDGE</span>
-          <h1 style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, lineHeight: 1, margin: "20px 0 14px", letterSpacing: "0.02em" }}>GUIDE FOR SCHOOLS</h1>
+          <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accent, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>Practical knowledge</span>
+          <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, lineHeight: 1, margin: "20px 0 14px", letterSpacing: "0.02em" }}>Guide for schools</h1>
           <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.7, maxWidth: 620, margin: "0 0 48px" }}>
             Fair exams, focused work, low-distraction learning environments: practical knowledge from over {YEARS} years of working with schools in Austria, Germany and Switzerland.
           </p>
@@ -31,9 +31,9 @@ export default function Page() {
                   <Img sizes="(max-width: 768px) 100vw, 33vw" src={a.img} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                 </div>
                 <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
-                  <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.text, margin: "0 0 10px", lineHeight: 1.08, letterSpacing: "0.02em" }}>{a.title}</h2>
+                  <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", lineHeight: 1.08, letterSpacing: "0.02em" }}>{a.title}</h2>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accent }}>READ ARTICLE →</span>
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accent }}>Read article →</span>
                 </div>
               </Link>
             ))}

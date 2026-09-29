@@ -28,12 +28,12 @@ export default function Page() {
         A full classroom is a firework of stimuli: 25 children moving, voices, rustling exercise books, colourful walls, the window to the playground. Most children filter this out. Some cannot: children with <strong style={A.strong}>ADHD</strong>, on the <strong style={A.strong}>autism spectrum</strong> or simply highly distractible. For them, the learning environment decides whether their ability makes it onto the paper. A <strong style={A.strong}>low-distraction workspace at school</strong> is one of the most effective and at the same time cheapest forms of support.
       </p>
 
-      <h2 style={A.h2}>WHAT “LOW-DISTRACTION” MEANS IN PRACTICE</h2>
+      <h2 style={A.h2}>What “low-distraction” means in practice</h2>
       <p style={A.p}>
         Low-distraction does not mean stimulus-free. It is not about isolation but about <strong style={A.strong}>dosage</strong>: less visual movement in the field of view, fewer direct lines of sight to other children, a clearly defined area of one's own. The effect is well documented: fewer competing stimuli mean more working memory for the actual task. In special needs education, screening off stimuli has therefore long been part of the standard repertoire, from learning offices to study carrels.
       </p>
 
-      <h2 style={A.h2}>THE HURDLE IN EVERYDAY SCHOOL LIFE: STIGMA</h2>
+      <h2 style={A.h2}>The hurdle in everyday school life: stigma</h2>
       <p style={A.p}>
         The best measure fails if it puts the child on display. A special desk in the corner, a conspicuous booth, a “you go to the back now”: all of this singles a child out. Children sense it immediately, and many refuse support that visibly marks them as a special case.
       </p>
@@ -41,7 +41,7 @@ export default function Page() {
         The most practical way out is to use a screen <strong style={A.strong}>that all children already know</strong>. Where the privacy screen stands on every desk as a matter of course in every <Link href="/en/guide/privacy-screens-for-exams" style={A.a}>class test</Link>, it is not a stigma but a familiar tool. If a child also uses it during silent work, that is as unremarkable as headphones during independent work.
       </p>
 
-      <h2 style={A.h2}>HOW SCHOOLS SET UP LOW-DISTRACTION WORKSPACES WITHOUT RENOVATION</h2>
+      <h2 style={A.h2}>How schools set up low-distraction workspaces without renovation</h2>
       <h3 style={A.h3}>1. Work with the privacy screens you have</h3>
       <p style={A.p}>
         A <Link href="/en/guide/desk-dividers-for-exams" style={A.a}>divider with a clamp system</Link> turns any normal school desk into a low-distraction workspace in seconds, and back again. No new furniture, no fixed place, no building work. The child stays at their place, in their seating arrangement, next to their friends.
@@ -55,7 +55,7 @@ export default function Page() {
         The low-distraction workspace works best as <strong style={A.strong}>an offer for everyone</strong>: “Anyone who needs some quiet today can take a divider.” In many classes, children without a diagnosis then regularly use it too, and the offer becomes completely normal. Special needs teachers can also anchor the divider specifically in support plans.
       </p>
 
-      <h2 style={A.h2}>WHAT TO LOOK FOR IN THE EQUIPMENT</h2>
+      <h2 style={A.h2}>What to look for in the equipment</h2>
       <ul style={A.ul}>
         <li style={A.li}><strong style={A.strong}>Neutral look:</strong> calm, plain surfaces without patterns. The screen should absorb stimuli, not create them. Subtle colours such as grey blend in unobtrusively.</li>
         <li style={A.li}><strong style={A.strong}>Usable by the child alone:</strong> set-up without tools and without help. Independence is part of the support.</li>
@@ -63,12 +63,12 @@ export default function Page() {
         <li style={A.li}><strong style={A.strong}>Dual use:</strong> the same dividers secure class tests, so the purchase pays for itself through two uses.</li>
       </ul>
 
-      <h2 style={A.h2}>WHAT A LOW-DISTRACTION WORKSPACE IS NOT</h2>
+      <h2 style={A.h2}>What a low-distraction workspace is not</h2>
       <p style={A.p}>
         A privacy screen replaces neither diagnosis nor therapy or special needs support. It is an <strong style={A.strong}>adjustment of the environment</strong> that lowers barriers so that existing abilities become visible. That is exactly what makes it valuable for inclusion: it changes the environment, not the child.
       </p>
 
-      <h2 style={A.h2}>CONCLUSION</h2>
+      <h2 style={A.h2}>Conclusion</h2>
       <p style={{ ...A.p, marginBottom: 0 }}>
         A low-distraction workspace is one of the simplest effective measures in inclusive teaching: a privacy screen everyone knows, a well-chosen place, a ritual without stigma. Schools that buy dividers for exams anyway already have the equipment in house. We are happy to advise you on the right equipment: <Link href="/en/quote" style={A.a}>request a non-binding quote</Link>.
       </p>

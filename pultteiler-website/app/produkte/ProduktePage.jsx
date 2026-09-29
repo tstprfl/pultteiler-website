@@ -6,14 +6,22 @@ import { useCart } from "@/components/CartProvider";
 import { Reveal, Badge, AddToCartBtn } from "@/components/ui";
 import Img from "@/components/Img";
 
-const PLATES = {
+const eur = (n) => `€ ${n.toFixed(2).replace(".", ",")}`;
+
+// Preis- und Versandkonditionen je Lieferland, sichtbar über der Produktliste
+const KONDITIONEN = {
   AT: [
-    { text: "🇦🇹\nE-RECHNUNGEN\nFÜR BUNDES-\nSCHULEN\nMIT IHRER EKG", rot: -3, fs: 9.5 },
-    { text: "🇩🇪\nMIT DEUTSCHER\nUID-NUMMER\nSTEUERFREI\nDE-BANKKONTO\nVORHANDEN", rot: 2, fs: 8.5 },
+    { label: "Preise", val: "Netto zzgl. 20% USt", sub: "Die Umsatzsteuer wird im Warenkorb ausgewiesen." },
+    { label: "Versand Österreich & Deutschland", val: `${eur(SHIPPING.AT)} je Bestellung`, sub: "netto, für Koffer-Sets und Ersatzteile" },
+    { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
+    { label: "Deutschland mit UID-Nummer", val: "Steuerfrei", sub: "innergemeinschaftliche Lieferung, deutsches Bankkonto vorhanden" },
+    { label: "Österreichische Bundesschulen", val: "E-Rechnung", sub: "mit Ihrer EKG-Nummer, Zahlung auf Rechnung" },
   ],
   CH: [
-    { text: "🇨🇭\nSTEUERFREIE\nUNVERZOLLTE\nLIEFERUNG IN\nDIE SCHWEIZ", rot: -2, fs: 9 },
-    { text: "AB 3 KOFFER-\nSETS VERSAND-\nKOSTENFREI", rot: 2, fs: 10 },
+    { label: "Preise", val: "Netto, steuerfrei", sub: "unverzollt, keine Einfuhrabgaben für Sie" },
+    { label: "Versand Schweiz", val: `${eur(SHIPPING.CH)} je Bestellung`, sub: "für Koffer-Sets, Ersatzteile auf Anfrage" },
+    { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
+    { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
   ],
 };
 
@@ -37,8 +45,8 @@ export default function Produkte() {
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ marginBottom: 40 }}>
-            <div style={{ marginBottom: 16 }}><Badge>ONLINE-SHOP</Badge></div>
-            <h1 style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>PULTTEILER KAUFEN — SETS & PREISE</h1>
+            <div style={{ marginBottom: 16 }}><Badge>Online-Shop</Badge></div>
+            <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>Pultteiler kaufen — Sets & Preise</h1>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.6, maxWidth: 620, margin: 0 }}>
               Sichtschutz-Trennwände für Schultische direkt vom Hersteller. Jeder Holzkoffer enthält 12 komplette Systeme. Kauf auf Rechnung — keine Kreditkarte, keine Vorkasse.
             </p>
@@ -46,31 +54,34 @@ export default function Produkte() {
 
           {/* Region-Umschalter — Produkte bleiben immer sichtbar */}
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 32 }}>
-            <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>LIEFERLAND</span>
+            <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>Lieferland</span>
             <div style={{ display: "flex", gap: 2 }}>
-              {toggleBtn("AT", "ÖSTERREICH & DEUTSCHLAND")}
-              {toggleBtn("CH", "SCHWEIZ")}
+              {toggleBtn("AT", "Österreich & Deutschland")}
+              {toggleBtn("CH", "Schweiz")}
             </div>
             <Link href="/angebot" style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, textDecoration: "none" }}>Anderes Land? → Angebot anfordern</Link>
           </div>
 
-          <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, margin: "0 0 24px" }}>
-            {region === "CH"
-              ? `Alle Preise netto, steuerfrei und unverzollt. Versand in die Schweiz: € ${SHIPPING.CH.toFixed(2).replace(".", ",")} je Bestellung — ab ${FREE_SHIPPING_SETS} Koffer-Sets versandkostenfrei.`
-              : `Alle Preise netto zzgl. 20% USt. Versand nach Österreich und Deutschland: € ${SHIPPING.AT.toFixed(2).replace(".", ",")} je Bestellung netto — ab ${FREE_SHIPPING_SETS} Koffer-Sets versandkostenfrei. Mit deutscher UID-Nummer steuerfrei.`}
-          </p>
-
-          {/* Info-Plaketten je nach Region */}
-          <Reveal><div className="shop-plates" style={{ display: "flex", gap: 16, marginBottom: 40, flexWrap: "wrap" }}>
-            {PLATES[region].map((p, i) => (
-              <div key={i} style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 12, boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: `rotate(${p.rot}deg)`, border: "2px solid #D4AD2E" }}>
-                <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: p.fs, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em", whiteSpace: "pre-line" }}>{p.text}</span>
+          {/* Preise und Versand: Konditionen je Lieferland */}
+          <Reveal>
+            <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderLeft: `4px solid ${C.accent}`, padding: "24px 28px", marginBottom: 40 }}>
+              <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, marginBottom: 16 }}>
+                {region === "CH" ? "Preise und Versand für die Schweiz" : "Preise und Versand für Österreich und Deutschland"}
               </div>
-            ))}
-          </div></Reveal>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px 24px" }}>
+                {KONDITIONEN[region].map((k) => (
+                  <div key={k.label}>
+                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 600, color: C.textMuted, marginBottom: 4 }}>{k.label}</div>
+                    <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.accent, lineHeight: 1.1, marginBottom: 4 }}>{k.val}</div>
+                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>{k.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
 
           {/* Sets */}
-          <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 24px", letterSpacing: "0.03em" }}>KOFFER-SETS</h2>
+          <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 24px", letterSpacing: "0.03em" }}>Koffer-Sets</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 2, marginBottom: 56 }}>
             {SETS.map((p, i) => (
               <Reveal key={p.id} delay={i * 0.1}>
@@ -78,10 +89,10 @@ export default function Produkte() {
                   <div style={{ borderRight: `1px solid ${C.border}`, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, background: C.bgElevated }}><Img sizes="300px" src={p.img} alt={p.name} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 200, display: "block" }}/></div>
                   <div style={{ padding: "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     {p.tag && <Badge color={p.color === "#777" ? "#777" : C.accent}>{p.tag}</Badge>}
-                    <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{p.name}</h3>
+                    <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{p.name}</h3>
                     <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 20px" }}>{p.desc}</p>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-                      <div><span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 36, color: C.text }}>€ {getPrice(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{region === "CH" ? "NETTO, STEUERFREI" : "NETTO, ZZGL. 20% USt"}</span></div>
+                      <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 36, color: C.text }}>€ {getPrice(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{region === "CH" ? "netto, steuerfrei" : "netto, zzgl. 20% USt"}</span></div>
                       <AddToCartBtn product={p}/>
                     </div>
                   </div>
@@ -93,7 +104,7 @@ export default function Produkte() {
           {/* Ersatzteile (Nettopreise AT/DE) */}
           {region === "AT" && (
             <>
-              <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>ERSATZTEILE NACHBESTELLEN</h2>
+              <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>Ersatzteile nachbestellen</h2>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile netto zzgl. 20% USt für Österreich und Deutschland. Versand: € {SHIPPING.AT.toFixed(2).replace(".", ",")} je Bestellung netto.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {PARTS.map((p, i) => (
@@ -102,10 +113,10 @@ export default function Produkte() {
                       {p.img && <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, padding: 16, display: "flex", alignItems: "center", justifyContent: "center", height: 160, overflow: "hidden" }}><Img sizes="300px" src={p.img} alt={p.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/></div>}
                       <div style={{ padding: "20px 24px 28px" }}>
                         <Badge>{p.tag}</Badge>
-                        <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{p.name}</h3>
+                        <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{p.name}</h3>
                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{p.desc}</p>
                         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                          <div><span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text }}>€ {p.priceAT.toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>NETTO</span></div>
+                          <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>€ {p.priceAT.toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>netto</span></div>
                           <AddToCartBtn product={p}/>
                         </div>
                       </div>

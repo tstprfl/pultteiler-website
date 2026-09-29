@@ -40,13 +40,13 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ)) }} />
       <AudienceLayout
         ui={UI_EN}
-        overline="FOR SECONDARY SCHOOLS, GRAMMAR SCHOOLS AND VOCATIONAL SCHOOLS"
-        h1={<>DESK DIVIDERS FOR TESTS IN SECONDARY SCHOOL</>}
+        overline="For secondary schools, grammar schools and vocational schools"
+        h1={<>Desk dividers for tests in secondary school</>}
         intro="Class tests, exams, comparative assessments: in secondary school, students are tested often and under pressure for grades. The Pultteiler makes every exam fair. A desk divider that reliably prevents copying and is set up and removed in minutes."
         img="/images/pultteiler-einsatz.jpg"
         imgAlt="Privacy dividers on desks in the computer room of a secondary school"
         situation={{
-          title: "THE SITUATION IN SECONDARY SCHOOL",
+          title: "The situation in secondary school",
           paragraphs: [
             "The higher the pressure for grades, the greater the temptation: in secondary school, copying in tests is a real problem, and banning smartphones alone does not solve it as long as the view of the neighbour's paper is clear. The classic workarounds cost everyone time: splitting groups, writing two sets of questions, swapping rooms, rearranging seating plans.",
             "With the Pultteiler the whole class writes at the same time under identical conditions: one set of questions, one room, no split groups. The 50×40 cm divider reliably covers the neighbour's paper even for older students, even when someone leans forward.",
@@ -54,47 +54,47 @@ export default function Page() {
           ],
         }}
         benefits={{
-          title: "WHY SECONDARY SCHOOLS CHOOSE THE PULTTEILER",
+          title: "Why secondary schools choose the Pultteiler",
           items: [
-            { title: "TALLER PANEL (50×40 CM)", text: "Matched to the seating height from school year 6: reliably covers the neighbour's paper, even when leaning forward or to the side." },
-            { title: "ONE CLASS, ONE EXAM", text: "No split groups, no two sets of questions, no room swaps: everyone writes at the same time under identical, fair conditions." },
-            { title: "READY IN MINUTES", text: "Tool-free plug-in set-up: the class sets up the dividers itself at the start of the exam. Afterwards everything goes back into the case." },
-            { title: "FOR COMPUTER ROOMS TOO", text: "The clamp fits computer desks up to 3 cm thick, providing privacy for digital tests and online exams." },
-            { title: "TWO COLOURS", text: "Set B is available in yellow and subtle grey, to match your school's furnishings." },
-            { title: "INDIVIDUAL SPARE PARTS", text: "Panels, clamps and cases can be reordered individually, so your purchase stays fully usable for years." },
+            { title: "Taller panel (50×40 cm)", text: "Matched to the seating height from school year 6: reliably covers the neighbour's paper, even when leaning forward or to the side." },
+            { title: "One class, one exam", text: "No split groups, no two sets of questions, no room swaps: everyone writes at the same time under identical, fair conditions." },
+            { title: "Ready in minutes", text: "Tool-free plug-in set-up: the class sets up the dividers itself at the start of the exam. Afterwards everything goes back into the case." },
+            { title: "For computer rooms too", text: "The clamp fits computer desks up to 3 cm thick, providing privacy for digital tests and online exams." },
+            { title: "Two colours", text: "Set B is available in yellow and subtle grey, to match your school's furnishings." },
+            { title: "Individual spare parts", text: "Panels, clamps and cases can be reordered individually, so your purchase stays fully usable for years." },
           ],
         }}
         products={{
-          title: "OUR RECOMMENDATION FROM SCHOOL YEAR 6",
+          title: "Our recommendation from school year 6",
           sub: "Set B with the taller 50×40 cm panel, in yellow or grey. One case contains 12 complete systems.",
           items: [
             {
-              name: "SET B: YELLOW, FROM SCHOOL YEAR 6",
+              name: "Set B: yellow, from school year 6",
               desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps.",
               img: "/images/koffer-gelb.jpg",
               href: "/en/quote",
-              cta: "REQUEST A QUOTE →",
+              cta: "Request a quote →",
               primary: true,
             },
             {
-              name: "SET B: GREY, FROM SCHOOL YEAR 6",
+              name: "Set B: grey, from school year 6",
               desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps, in subtle grey.",
               img: "/images/koffer-grau.jpg",
               href: "/en/quote",
-              cta: "REQUEST A QUOTE →",
+              cta: "Request a quote →",
               primary: true,
             },
             {
-              name: "EQUIPPING SEVERAL CLASSES?",
+              name: "Equipping several classes?",
               desc: "For whole year groups or the entire school we are happy to prepare an individual quote, including cases with more than 12 dividers.",
               img: "/images/Koffer_1.png",
               href: "/en/quote",
-              cta: "REQUEST A QUOTE →",
+              cta: "Request a quote →",
             },
           ],
         }}
         faq={FAQ}
-        ctaTitle="FAIR TESTS, STARTING WITH THE NEXT EXAM"
+        ctaTitle="Fair tests, starting with the next exam"
         ctaSub="Request a non-binding quote for your school. We reply soon with price and delivery terms for your country."
       />
     </div>

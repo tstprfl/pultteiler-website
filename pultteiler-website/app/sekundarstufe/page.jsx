@@ -36,13 +36,13 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ)) }} />
       <AudienceLayout
-        overline="FÜR MITTELSCHULEN, GYMNASIEN & BERUFSSCHULEN"
-        h1={<>TRENNWÄNDE FÜR KLASSENARBEITEN IN DER SEKUNDARSTUFE</>}
+        overline="Für Mittelschulen, Gymnasien & Berufsschulen"
+        h1={<>Trennwände für Klassenarbeiten in der Sekundarstufe</>}
         intro="Schularbeiten, Klassenarbeiten, Tests, Vergleichsarbeiten: In der Sekundarstufe wird häufig und unter Notendruck geprüft. Der Pultteiler macht jede Prüfung fair — als Trennwand für den Schultisch, die das Abschreiben zuverlässig verhindert und in Minuten auf- und abgebaut ist."
         img="/images/pultteiler-einsatz.jpg"
         imgAlt="Sichtschutz-Trennwände auf Schultischen im EDV-Raum einer weiterführenden Schule"
         situation={{
-          title: "DIE SITUATION IN DER SEKUNDARSTUFE",
+          title: "Die Situation in der Sekundarstufe",
           paragraphs: [
             "Je höher der Notendruck, desto größer die Versuchung: In der Sekundarstufe ist Abschreiben bei Klassenarbeiten ein reales Problem — und mit Smartphone-Verboten allein nicht gelöst, solange der Blick aufs Nachbarblatt freie Bahn hat. Die klassischen Auswege kosten alle Beteiligten Zeit: Gruppen teilen, zwei Aufgabensätze erstellen, Räume tauschen, Sitzpläne umbauen.",
             "Mit dem Pultteiler schreibt die ganze Klasse gleichzeitig unter identischen Bedingungen — eine Aufgabenstellung, ein Raum, keine Gruppenteilung. Die 50×40 cm hohe Trennwand verdeckt das Nachbarblatt auch bei älteren Schülerinnen und Schülern zuverlässig, selbst wenn sich jemand vorbeugt.",
@@ -50,51 +50,51 @@ export default function Page() {
           ],
         }}
         benefits={{
-          title: "DARUM SETZEN WEITERFÜHRENDE SCHULEN AUF DEN PULTTEILER",
+          title: "Darum setzen weiterführende Schulen auf den Pultteiler",
           items: [
-            { title: "HÖHERE PLATTE (50×40 CM)", text: "Auf die Sitzhöhe ab dem 6. Schuljahr abgestimmt: verdeckt das Nachbarblatt zuverlässig — auch beim Vorbeugen oder Zur-Seite-Lehnen." },
-            { title: "EINE KLASSE, EINE PRÜFUNG", text: "Keine Gruppenteilung, keine zwei Aufgabensätze, kein Raumtausch: Alle schreiben gleichzeitig unter identischen, fairen Bedingungen." },
-            { title: "IN MINUTEN EINSATZBEREIT", text: "Werkzeugloser Aufbau per Stecksystem — die Klasse baut die Teiler zu Prüfungsbeginn selbst auf. Danach zurück in den Koffer." },
-            { title: "AUCH FÜR EDV-RÄUME", text: "Die Klammer passt auf Computertische bis 3 cm Plattenstärke — Sichtschutz auch bei digitalen Tests und Online-Prüfungen." },
-            { title: "ZWEI FARBEN ZUR WAHL", text: "Set B gibt es in Gelb und dezentem Grau — passend zur Einrichtung Ihrer Schule." },
-            { title: "ERSATZTEILE EINZELN", text: "Platten, Klammern und Koffer sind einzeln nachbestellbar — Ihre Anschaffung bleibt über Jahre vollständig nutzbar." },
+            { title: "Höhere Platte (50×40 cm)", text: "Auf die Sitzhöhe ab dem 6. Schuljahr abgestimmt: verdeckt das Nachbarblatt zuverlässig — auch beim Vorbeugen oder Zur-Seite-Lehnen." },
+            { title: "Eine Klasse, eine Prüfung", text: "Keine Gruppenteilung, keine zwei Aufgabensätze, kein Raumtausch: Alle schreiben gleichzeitig unter identischen, fairen Bedingungen." },
+            { title: "In Minuten einsatzbereit", text: "Werkzeugloser Aufbau per Stecksystem — die Klasse baut die Teiler zu Prüfungsbeginn selbst auf. Danach zurück in den Koffer." },
+            { title: "Auch für EDV-Räume", text: "Die Klammer passt auf Computertische bis 3 cm Plattenstärke — Sichtschutz auch bei digitalen Tests und Online-Prüfungen." },
+            { title: "Zwei Farben zur Wahl", text: "Set B gibt es in Gelb und dezentem Grau — passend zur Einrichtung Ihrer Schule." },
+            { title: "Ersatzteile einzeln", text: "Platten, Klammern und Koffer sind einzeln nachbestellbar — Ihre Anschaffung bleibt über Jahre vollständig nutzbar." },
           ],
         }}
         products={{
-          title: "UNSERE EMPFEHLUNG AB DEM 6. SCHULJAHR",
+          title: "Unsere Empfehlung ab dem 6. Schuljahr",
           sub: "Set B mit der höheren 50×40-cm-Platte — wahlweise in Gelb oder Grau. Ein Koffer enthält 12 komplette Systeme.",
           items: [
             {
-              name: "SET B — GELB — AB 6. SCHULJAHR",
+              name: "Set B — Gelb — ab 6. Schuljahr",
               desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern.",
               price: "€ 249,00",
               note: "netto zzgl. 20% USt (AT/DE) — Preis Schweiz: € 295,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-gelb.jpg",
               href: "/produkte",
-              cta: "IM SHOP BESTELLEN",
+              cta: "Im Shop bestellen",
               primary: true,
             },
             {
-              name: "SET B — GRAU — AB 6. SCHULJAHR",
+              name: "Set B — Grau — ab 6. Schuljahr",
               desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern — in dezentem Grau.",
               price: "€ 249,00",
               note: "netto zzgl. 20% USt (AT/DE) — Preis Schweiz: € 295,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-grau.jpg",
               href: "/produkte",
-              cta: "IM SHOP BESTELLEN",
+              cta: "Im Shop bestellen",
               primary: true,
             },
             {
-              name: "MEHRERE KLASSEN AUSSTATTEN?",
+              name: "Mehrere Klassen ausstatten?",
               desc: "Für Jahrgangsstufen oder die ganze Schule erstellen wir gerne ein individuelles Angebot — auch mit Koffern über 12 Teiler.",
               img: "/images/Koffer_1.png",
               href: "/angebot",
-              cta: "ANGEBOT ANFORDERN →",
+              cta: "Angebot anfordern →",
             },
           ],
         }}
         faq={FAQ}
-        ctaTitle="FAIRE KLASSENARBEITEN — AB DER NÄCHSTEN PRÜFUNG"
+        ctaTitle="Faire Klassenarbeiten — ab der nächsten Prüfung"
         ctaSub="Fordern Sie ein unverbindliches Angebot für Ihre Schule an — oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."
       />
     </>

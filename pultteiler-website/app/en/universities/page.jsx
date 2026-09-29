@@ -40,13 +40,13 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ)) }} />
       <AudienceLayout
         ui={UI_EN}
-        overline="FOR UNIVERSITIES, COLLEGES AND EXAM CENTRES"
-        h1={<>PRIVACY SCREENS FOR EXAMS IN LECTURE HALLS AND EXAM CENTRES</>}
+        overline="For universities, colleges and exam centres"
+        h1={<>Privacy screens for exams in lecture halls and exam centres</>}
         intro="When hundreds of students write at the same time, invigilators need equipment they can rely on. Our desk dividers secure written exams in lecture halls, seminar rooms and exam centres. In large quantities, direct from the manufacturer, in use at the Medical University of Innsbruck, among others."
         img="/images/kurhaus-saal-totale.jpg"
         imgAlt="Exam hall in the Kurhaus Bad Krozingen, every desk fitted with Pultteiler dividers"
         situation={{
-          title: "THE CHALLENGE OF LARGE EXAMS",
+          title: "The challenge of large exams",
           paragraphs: [
             "Entrance tests, module exams, state examinations: at universities, written exams decide on study places and degrees. The requirements for preventing cheating and for legal certainty are correspondingly high. At the same time, candidates sit closer together in lecture halls than in any classroom.",
             "Leaving every second seat empty halves the room capacity. Preparing several versions of an exam multiplies the marking effort and remains open to challenge. The more economical solution is a privacy screen right at the workplace. With the Pultteiler you use the full room capacity while every exam variant stays secure against cheating.",
@@ -54,39 +54,39 @@ export default function Page() {
           ],
         }}
         benefits={{
-          title: "WHY UNIVERSITIES CHOOSE THE PULTTEILER",
+          title: "Why universities choose the Pultteiler",
           items: [
-            { title: "LARGE QUANTITIES FROM THE FACTORY", text: "As the manufacturer we produce to demand, from a single exam room to fully equipped exam centres. Calculated per project." },
-            { title: "FULL ROOM CAPACITY", text: "No empty seats in between, no multiple exam versions: every workplace becomes exam-ready and the room stays fully usable." },
-            { title: "SET UP IN SECONDS", text: "Tool-free plug-in system: a few seconds per workplace. Even large lecture halls are equipped quickly by a small team, and cleared just as fast." },
-            { title: "SPACE-SAVING STORAGE", text: "12 systems per stackable wooden case, larger cases on request. Hundreds of dividers are stored compactly until the next exam date." },
-            { title: "REFERENCE: MEDICAL UNIVERSITY OF INNSBRUCK", text: "In exam use at the Medical University of Innsbruck, from the lecture hall to the laboratory. Further references are available on request." },
-            { title: "FITS YOUR PROCUREMENT", text: "Written quote for your purchasing department, clear delivery and invoicing terms for your country. Austria, Germany and Switzerland: purchase on invoice." },
+            { title: "Large quantities from the factory", text: "As the manufacturer we produce to demand, from a single exam room to fully equipped exam centres. Calculated per project." },
+            { title: "Full room capacity", text: "No empty seats in between, no multiple exam versions: every workplace becomes exam-ready and the room stays fully usable." },
+            { title: "Set up in seconds", text: "Tool-free plug-in system: a few seconds per workplace. Even large lecture halls are equipped quickly by a small team, and cleared just as fast." },
+            { title: "Space-saving storage", text: "12 systems per stackable wooden case, larger cases on request. Hundreds of dividers are stored compactly until the next exam date." },
+            { title: "Reference: Medical University of Innsbruck", text: "In exam use at the Medical University of Innsbruck, from the lecture hall to the laboratory. Further references are available on request." },
+            { title: "Fits your procurement", text: "Written quote for your purchasing department, clear delivery and invoicing terms for your country. Austria, Germany and Switzerland: purchase on invoice." },
           ],
         }}
         products={{
-          title: "HOW TO GET YOUR QUOTE",
+          title: "How to get your quote",
           sub: "For large orders we calculate individually, based on quantity, panel size and destination. We are happy to send a sample in advance.",
           items: [
             {
-              name: "INDIVIDUAL QUOTE",
+              name: "Individual quote",
               desc: "Tell us the quantity, location and preferred date. You will soon receive a written quote for your purchasing department.",
               img: "/images/meduni-innsbruck_1.jpeg",
               href: "/en/quote",
-              cta: "REQUEST A QUOTE →",
+              cta: "Request a quote →",
               primary: true,
             },
             {
-              name: "TEST FIRST: A SINGLE CASE",
+              name: "Test first: a single case",
               desc: "Would you like to try the dividers in one exam first? Order a single case with 12 systems. For other countries we quote price and delivery individually.",
               img: "/images/koffer-grau.jpg",
               href: "/en/products",
-              cta: "VIEW PRODUCTS",
+              cta: "View products",
             },
           ],
         }}
         faq={FAQ}
-        ctaTitle="PLAN YOUR NEXT LARGE EXAM WITH US"
+        ctaTitle="Plan your next large exam with us"
         ctaSub={`Send us the quantity and date and we will reply soon with an individual quote. You can also write to us directly at ${CONTACT.email}.`}
       />
     </div>

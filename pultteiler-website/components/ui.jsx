@@ -22,14 +22,14 @@ export function ScrollToTop() {
 }
 
 export function Badge({ children, color = C.accent }) {
-  return <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color, background: `${color}15`, padding: "5px 12px", display: "inline-block" }}>{children}</span>;
+  return <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color, background: `${color}15`, padding: "5px 12px", display: "inline-block" }}>{children}</span>;
 }
 
 export function Heading({ overline, title, sub, align = "left" }) {
   return (
     <div style={{ textAlign: align, marginBottom: 56 }}>
       {overline && <div style={{ marginBottom: 16 }}><Badge>{overline}</Badge></div>}
-      <h2 style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "clamp(32px, 5vw, 56px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1, whiteSpace: "pre-line" }}>{title}</h2>
+      <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(32px, 5vw, 56px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1, whiteSpace: "pre-line" }}>{title}</h2>
       {sub && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, maxWidth: align === "center" ? 560 : "none", margin: align === "center" ? "0 auto" : 0, lineHeight: 1.6 }}>{sub}</p>}
     </div>
   );
@@ -37,7 +37,7 @@ export function Heading({ overline, title, sub, align = "left" }) {
 
 export function Btn({ children, onClick, href, variant = "primary", full = false }) {
   const p = variant === "primary";
-  const style = { background: p ? C.dark : "transparent", color: p ? C.white : C.text, border: p ? "none" : `1.5px solid ${C.borderLight}`, padding: "14px 32px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", transition: "all 0.2s", width: full ? "100%" : "auto", textDecoration: "none", display: "inline-block", textAlign: "center" };
+  const style = { background: p ? C.dark : "transparent", color: p ? C.white : C.text, border: p ? "none" : `1.5px solid ${C.borderLight}`, padding: "14px 32px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.2s", width: full ? "100%" : "auto", textDecoration: "none", display: "inline-block", textAlign: "center" };
 
   const cls = p ? "btn-primary" : "btn-secondary";
   if (href) {
@@ -58,7 +58,7 @@ export function AddToCartBtn({ product }) {
         <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 28, textAlign: "center" }}>{qty}</span>
         <button onClick={() => setQty(q => q + 1)} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
       </div>
-      <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s", textTransform: "uppercase" }}>{added ? "✓ HINZUGEFÜGT" : "IN DEN WARENKORB"}</button>
+      <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s" }}>{added ? "✓ Hinzugefügt" : "In den Warenkorb"}</button>
     </div>
   );
 }

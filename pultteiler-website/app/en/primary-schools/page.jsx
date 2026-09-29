@@ -40,13 +40,13 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ)) }} />
       <AudienceLayout
         ui={UI_EN}
-        overline="FOR PRIMARY SCHOOLS"
-        h1={<>PRIVACY SCREENS FOR TESTS IN PRIMARY SCHOOL</>}
+        overline="For primary schools"
+        h1={<>Privacy screens for tests in primary school</>}
         intro="Even the first tests should be fair, and some children simply need a quiet, low-distraction place to work. The Pultteiler prevents copying in primary school without isolating the children: child-friendly height, effortless set-up, built to last in everyday school life."
         img="/images/klassenzimmer.png"
         imgAlt="Pultteiler privacy screens on desks in a primary school classroom"
         situation={{
-          title: "THE SITUATION IN PRIMARY SCHOOL",
+          title: "The situation in primary school",
           paragraphs: [
             "Primary school sets the course: children learn to work independently and honestly. In tests, however, they usually sit close together at double desks, and a glance at the neighbour's paper is less bad intent than almost unavoidable. Splitting classes or moving children around costs time and nerves.",
             "The Pultteiler solves this in two minutes: push the clamp onto the desktop, insert the panel, and every child has their own protected work area. After the test everything goes back into the compact wooden case in the storeroom.",
@@ -54,39 +54,39 @@ export default function Page() {
           ],
         }}
         benefits={{
-          title: "WHY THE PULTTEILER SUITS PRIMARY SCHOOLS",
+          title: "Why the Pultteiler suits primary schools",
           items: [
-            { title: "CHILD-FRIENDLY HEIGHT (50×30 CM)", text: "High enough to cover the neighbour's paper, low enough for the teacher to keep every child in view and for nobody to feel shut in." },
-            { title: "NO TOOLS NEEDED", text: "Plug-in system of clamp and panel: the privacy screens for the whole class are up in two minutes. The children can easily do it themselves." },
-            { title: "LOW-DISTRACTION WORKSPACE", text: "Individual dividers in permanent use create quiet work zones for children with concentration difficulties, proven in inclusive classes." },
-            { title: "ONE CASE PER CLASS", text: "12 complete systems in a stackable wooden case: fits in any storeroom and is ready in seconds." },
-            { title: "BUILT TO LAST", text: `Proven in tough everyday school use for over ${YEARS} years. If something does break, every single part can be reordered.` },
-            { title: "FITS EVERY SCHOOL DESK", text: "The permanently elastic clamp holds on all common school desks with desktops up to 3 cm thick, single or double desks." },
+            { title: "Child-friendly height (50×30 cm)", text: "High enough to cover the neighbour's paper, low enough for the teacher to keep every child in view and for nobody to feel shut in." },
+            { title: "No tools needed", text: "Plug-in system of clamp and panel: the privacy screens for the whole class are up in two minutes. The children can easily do it themselves." },
+            { title: "Low-distraction workspace", text: "Individual dividers in permanent use create quiet work zones for children with concentration difficulties, proven in inclusive classes." },
+            { title: "One case per class", text: "12 complete systems in a stackable wooden case: fits in any storeroom and is ready in seconds." },
+            { title: "Built to last", text: `Proven in tough everyday school use for over ${YEARS} years. If something does break, every single part can be reordered.` },
+            { title: "Fits every school desk", text: "The permanently elastic clamp holds on all common school desks with desktops up to 3 cm thick, single or double desks." },
           ],
         }}
         products={{
-          title: "OUR RECOMMENDATION FOR PRIMARY SCHOOLS",
+          title: "Our recommendation for primary schools",
           sub: "For school years 1 to 5 we recommend Set A with the lower panel, matched to the seating height of younger children.",
           items: [
             {
-              name: "SET A: YELLOW, UP TO SCHOOL YEAR 5",
+              name: "Set A: yellow, up to school year 5",
               desc: "1 wooden case with 12 divider panels (50×30 cm) and 12 clamps. The right height for primary school.",
               img: "/images/koffer-gelb.jpg",
               href: "/en/quote",
-              cta: "REQUEST A QUOTE →",
+              cta: "Request a quote →",
               primary: true,
             },
             {
-              name: "LARGER QUANTITIES?",
+              name: "Larger quantities?",
               desc: "Equipping several classes or the whole school? Request a non-binding quote. We also assemble cases with more than 12 dividers.",
               img: "/images/Koffer_1.png",
               href: "/en/quote",
-              cta: "REQUEST A QUOTE →",
+              cta: "Request a quote →",
             },
           ],
         }}
         faq={FAQ}
-        ctaTitle="READY FOR FAIR TESTS?"
+        ctaTitle="Ready for fair tests?"
         ctaSub="Request a non-binding quote for your primary school. We reply soon with price and delivery terms for your country."
       />
     </div>

@@ -11,9 +11,9 @@ const AufbauAnimation = dynamic(() => import("@/components/AufbauAnimation"), {
 });
 
 const STEPS = [
-  { nr: "SCHRITT 01", title: "KLAMMER AUFSTECKEN", text: "Die Klammer aus dauerelastischem Kunststoff seitlich auf die Tischkante schieben. Sie passt auf alle gängigen Schultische mit einer Plattenstärke bis 3 cm, auch auf Schrägtische." },
-  { nr: "SCHRITT 02", title: "TEILERPLATTE EINSETZEN", text: "Die Platte von oben aufsetzen. Ihr Schlitz rastet in der Klammer ein, die Platte steht sofort stabil." },
-  { nr: "SCHRITT 03", title: "FERTIG: KONZENTRIERT ARBEITEN", text: "Der Pultteiler schafft einen eigenen, abgeschirmten Arbeitsplatz. Nach der Prüfung ist er genauso schnell wieder abgenommen." },
+  { nr: "Schritt 01", title: "Klammer aufstecken", text: "Die Klammer aus dauerelastischem Kunststoff seitlich auf die Tischkante schieben. Sie passt auf alle gängigen Schultische mit einer Plattenstärke bis 3 cm, auch auf Schrägtische." },
+  { nr: "Schritt 02", title: "Teilerplatte einsetzen", text: "Die Platte von oben aufsetzen. Ihr Schlitz rastet in der Klammer ein, die Platte steht sofort stabil." },
+  { nr: "Schritt 03", title: "Fertig: konzentriert arbeiten", text: "Der Pultteiler schafft einen eigenen, abgeschirmten Arbeitsplatz. Nach der Prüfung ist er genauso schnell wieder abgenommen." },
 ];
 
 export default function AnleitungPage() {
@@ -21,7 +21,7 @@ export default function AnleitungPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <Heading overline="AUFBAUANLEITUNG" title={"SO FUNKTIONIERT DER PULTTEILER\nAUFBAU IN 3 SCHRITTEN"} sub="Teilerplatte und Pultklammer: in wenigen Handgriffen aufgestellt." align="center"/>
+          <Heading overline="Aufbauanleitung" title={"So funktioniert der Pultteiler\nAufbau in 3 Schritten"} sub="Teilerplatte und Pultklammer: in wenigen Handgriffen aufgestellt." align="center"/>
           <Reveal>
             <AufbauAnimation steps={STEPS} label="Animation: Die Klammer wird seitlich auf die Tischkante geschoben, die Teilerplatte von oben eingesetzt."/>
           </Reveal>
@@ -29,7 +29,7 @@ export default function AnleitungPage() {
             <Reveal delay={0.1}>
               <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, display: "grid", gridTemplateColumns: "1.2fr 1fr", overflow: "hidden", transition: "border-color 0.3s" }} className="prod-card" onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                 <div style={{ padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text, margin: "0 0 16px" }}>NACH DER PRÜFUNG</h2>
+                  <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 16px" }}>Nach der Prüfung</h2>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.7, margin: 0 }}>Einfach abnehmen und zurück in den mitgelieferten Holzkoffer. Platzsparend verstaut und sofort bereit für den nächsten Einsatz.</p>
                 </div>
                 <div style={{ background: C.bgElevated, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, minHeight: 240 }}>
@@ -53,7 +53,7 @@ export default function AnleitungPage() {
           <Reveal delay={0.2}>
             <div style={{ marginTop: 56, textAlign: "center" }}>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, marginBottom: 24 }}>Überzeugt? Bestellen Sie den Pultteiler direkt vom Hersteller.</p>
-              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/produkte">ZUM SHOP</Btn><Btn href="/kontakt" variant="secondary">KONTAKT AUFNEHMEN →</Btn></div>
+              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/produkte">Zum Shop</Btn><Btn href="/kontakt" variant="secondary">Kontakt aufnehmen →</Btn></div>
             </div>
           </Reveal>
         </div>

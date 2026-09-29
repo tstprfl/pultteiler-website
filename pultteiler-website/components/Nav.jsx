@@ -23,7 +23,7 @@ export default function Nav() {
   // Englische Seiten: eigene Navigation ohne Warenkorb (Bestellung per Angebot)
   const en = isEnPath(pathname);
   const items = en ? NAV_EN : NAV;
-  const quote = en ? { href: "/en/quote", short: "QUOTE →", long: "REQUEST A QUOTE →" } : { href: "/angebot", short: "ANGEBOT →", long: "ANGEBOT ANFORDERN →" };
+  const quote = en ? { href: "/en/quote", short: "Quote →", long: "Request a quote →" } : { href: "/angebot", short: "Angebot →", long: "Angebot anfordern →" };
   const langLink = en ? { label: "DE", title: "Deutsche Version" } : { label: "EN", title: "English version" };
 
   const isActive = (href) => (href === "/" || href === "/en") ? pathname === href : pathname.startsWith(href);
@@ -37,7 +37,7 @@ export default function Nav() {
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href={en ? EN_START : "/"} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
             <Img sizes="56px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
-            <span style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>PULTTEILER</span>
+            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
             <div className="desk-nav" style={{ display: "flex", gap: 2, alignItems: "center" }}>

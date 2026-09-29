@@ -84,11 +84,11 @@ export default function CartSidebar({ onClose }) {
       <div onClick={onClose} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.3)", zIndex: 200 }}/>
       <div style={{ position: "fixed", top: 0, right: 0, bottom: 0, width: "min(440px, 90vw)", background: C.bg, borderLeft: `1px solid ${C.border}`, zIndex: 201, display: "flex", flexDirection: "column", boxShadow: "-8px 0 32px rgba(0,0,0,0.08)" }}>
         <div style={{ padding: "24px 28px", borderBottom: `1px solid ${C.border}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text, margin: 0 }}>
-            {step === "cart" && <>WARENKORB <span style={{ color: C.textMuted, fontSize: 20 }}>({count})</span></>}
-            {step === "checkout" && "BESTELLUNG"}
-            {step === "kontrolle" && "KONTROLLE"}
-            {step === "confirmed" && "BESTÄTIGUNG"}
+          <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: 0 }}>
+            {step === "cart" && <>Warenkorb <span style={{ color: C.textMuted, fontSize: 20 }}>({count})</span></>}
+            {step === "checkout" && "Bestellung"}
+            {step === "kontrolle" && "Kontrolle"}
+            {step === "confirmed" && "Bestätigung"}
           </h3>
           <button onClick={onClose} style={{ background: "none", border: "none", cursor: "pointer", color: C.textMuted, fontSize: 24, padding: 4 }}>✕</button>
         </div>
@@ -112,10 +112,10 @@ export default function CartSidebar({ onClose }) {
                     <button onClick={() => updateQty(item.id, item.qty - 1)} style={{ width: 28, height: 28, background: C.bgCard, border: `1px solid ${C.border}`, color: C.text, cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
                     <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 20, textAlign: "center" }}>{item.qty}</span>
                     <button onClick={() => updateQty(item.id, item.qty + 1)} style={{ width: 28, height: 28, background: C.bgCard, border: `1px solid ${C.border}`, color: C.text, cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
-                    <button onClick={() => remove(item.id)} style={{ background: "none", border: "none", cursor: "pointer", color: C.red, fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", marginLeft: "auto" }}>ENTFERNEN</button>
+                    <button onClick={() => remove(item.id)} style={{ background: "none", border: "none", cursor: "pointer", color: C.red, fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", marginLeft: "auto" }}>Entfernen</button>
                   </div>
                 </div>
-                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.text, flexShrink: 0 }}>€ {(getPrice(item) * item.qty).toFixed(2)}</div>
+                <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, flexShrink: 0 }}>€ {(getPrice(item) * item.qty).toFixed(2)}</div>
               </div>
             ))}
           </div>
@@ -125,8 +125,8 @@ export default function CartSidebar({ onClose }) {
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Versand ({region === "CH" ? "CH" : "AT/DE"})</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
               {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>Ab {freeShippingSets} Koffer-Sets entfällt der Versand.</p>}
               {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
-              <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.text }}>GESAMT</span><span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.accent }}>{fmt(grandTotal)}</span></div>
-              <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>JETZT BESTELLEN →</button>
+              <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>Gesamt</span><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.accent }}>{fmt(grandTotal)}</span></div>
+              <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Jetzt bestellen →</button>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{region === "CH" ? "Nettopreise, steuerfrei und unverzollt. Zahlung per Rechnung." : "Nettopreise zzgl. 20% USt. Mit deutscher UID-Nummer steuerfrei. Zahlung per Rechnung."}</p>
             </div>
           )}
@@ -134,9 +134,9 @@ export default function CartSidebar({ onClose }) {
 
         {step === "checkout" && (
           <div style={{ flex: 1, overflow: "auto", padding: "24px 28px" }}>
-            <button onClick={() => setStep("cart")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← ZURÜCK ZUM WARENKORB</button>
+            <button onClick={() => setStep("cart")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← Zurück zum Warenkorb</button>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 24 }}>
-              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>IHRE BESTELLUNG</div>
+              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>Ihre Bestellung</div>
               {items.map(item => (
                 <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Inter Tight', sans-serif", fontSize: 13 }}>
                   <span style={{ color: C.text }}>{item.qty}x {item.short}</span>
@@ -152,11 +152,11 @@ export default function CartSidebar({ onClose }) {
                 <span style={{ color: C.textMuted }}>{fmt(vat)}</span>
               </div>}
               <div style={{ borderTop: `1px solid ${C.border}`, marginTop: 10, paddingTop: 10, display: "flex", justifyContent: "space-between" }}>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: C.text }}>GESAMT</span>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: C.accent }}>{fmt(grandTotal)}</span>
+                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.text }}>Gesamt</span>
+                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.accent }}>{fmt(grandTotal)}</span>
               </div>
             </div>
-            <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 12 }}>RECHNUNGSADRESSE</div>
+            <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 12 }}>Rechnungsadresse</div>
             <form onSubmit={goToKontrolle}>
               <input type="text" name="Name / Schule" placeholder="Name oder Schulname *" required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input type="text" name="Ansprechperson" placeholder="Ansprechperson" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
@@ -175,16 +175,16 @@ export default function CartSidebar({ onClose }) {
                 <input type="checkbox" name="Zahlung" value="Rechnung" required style={{ marginTop: 3, accentColor: C.accent, width: 16, height: 16, flexShrink: 0 }}/>
                 <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5 }}>Zahlung per Rechnung — Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.</span>
               </label>
-              <button type="submit" style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>WEITER ZUR KONTROLLE →</button>
+              <button type="submit" style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Weiter zur Kontrolle →</button>
             </form>
           </div>
         )}
 
         {step === "kontrolle" && (
           <div style={{ flex: 1, overflow: "auto", padding: "24px 28px" }}>
-            <button onClick={() => { setStep("checkout"); setError(""); }} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← ZURÜCK ZUR EINGABE</button>
+            <button onClick={() => { setStep("checkout"); setError(""); }} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← Zurück zur Eingabe</button>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 16 }}>
-              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>IHRE BESTELLUNG</div>
+              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>Ihre Bestellung</div>
               {items.map(item => (
                 <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Inter Tight', sans-serif", fontSize: 13 }}>
                   <span style={{ color: C.text }}>{item.qty}x {item.short}</span>
@@ -200,12 +200,12 @@ export default function CartSidebar({ onClose }) {
                 <span style={{ color: C.textMuted }}>{fmt(vat)}</span>
               </div>}
               <div style={{ borderTop: `1px solid ${C.border}`, marginTop: 10, paddingTop: 10, display: "flex", justifyContent: "space-between" }}>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: C.text }}>GESAMT</span>
-                <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 20, color: C.accent }}>{fmt(grandTotal)}</span>
+                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.text }}>Gesamt</span>
+                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.accent }}>{fmt(grandTotal)}</span>
               </div>
             </div>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 24 }}>
-              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>RECHNUNGSADRESSE</div>
+              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>Rechnungsadresse</div>
               {[
                 { label: "Name / Schule", key: "Name / Schule" },
                 { label: "Ansprechperson", key: "Ansprechperson" },
@@ -232,7 +232,7 @@ export default function CartSidebar({ onClose }) {
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, color: C.textMuted, lineHeight: 1.6, margin: 0 }}>Mit dem Absenden der Bestellung bestätigen Sie, die <a href="/agb" style={{ color: C.accent, textDecoration: "underline" }}>AGB</a> und <a href="/datenschutz" style={{ color: C.accent, textDecoration: "underline" }}>Datenschutzerklärung</a> gelesen zu haben. Als Verbraucher haben Sie ein 14-tägiges Widerrufsrecht gem. § 11 FAGG.</p>
             </div>
             <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
-              {sending ? "WIRD GESENDET..." : "BESTELLUNG ABSENDEN →"}
+              {sending ? "Wird gesendet ..." : "Bestellung absenden →"}
             </button>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>Zahlung per Rechnung. Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.</p>
             {error && (
@@ -247,11 +247,11 @@ export default function CartSidebar({ onClose }) {
         {step === "confirmed" && (
           <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 28px" }}>
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 64, color: C.green, marginBottom: 8 }}>✓</div>
-              <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text, margin: "0 0 12px" }}>BESTELLUNG EINGEGANGEN</h3>
-              {confirmedOrderNr && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", margin: "0 0 12px" }}>BESTELLNR. {confirmedOrderNr}</p>}
+              <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 64, color: C.green, marginBottom: 8 }}>✓</div>
+              <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 12px" }}>Bestellung eingegangen</h3>
+              {confirmedOrderNr && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", margin: "0 0 12px" }}>Bestellnr. {confirmedOrderNr}</p>}
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, maxWidth: 300, margin: "0 auto 24px" }}>Vielen Dank für Ihre Bestellung! Wir haben Ihre Anfrage erhalten und melden uns in Kürze mit einer Bestätigung per E-Mail.</p>
-              <button onClick={onClose} style={{ background: C.dark, color: C.white, border: "none", padding: "14px 32px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>WEITER EINKAUFEN</button>
+              <button onClick={onClose} style={{ background: C.dark, color: C.white, border: "none", padding: "14px 32px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Weiter einkaufen</button>
             </div>
           </div>
         )}

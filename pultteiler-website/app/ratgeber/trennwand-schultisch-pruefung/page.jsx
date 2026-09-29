@@ -25,7 +25,7 @@ export default function Page() {
         Wer für die eigene Schule eine <strong style={A.strong}>Trennwand für den Schultisch</strong> anschafft, trifft eine Entscheidung für viele Jahre: Ein guter Klassensatz übersteht hunderte Prüfungen. Umso wichtiger, vor dem Kauf die richtigen Fragen zu stellen. Diese Kaufberatung fasst zusammen, worauf es in der Praxis ankommt — von der Befestigung bis zur Ersatzteilfrage.
       </p>
 
-      <h2 style={A.h2}>BEFESTIGUNG: DER WICHTIGSTE UNTERSCHIED</h2>
+      <h2 style={A.h2}>Befestigung: der wichtigste Unterschied</h2>
       <p style={A.p}>
         Trennwände für Prüfungen gibt es in drei Bauarten — und die Befestigung entscheidet über den Alltagsnutzen:
       </p>
@@ -38,7 +38,7 @@ export default function Page() {
         Wichtig bei Klammersystemen: die <strong style={A.strong}>Tischplattenstärke</strong> prüfen. Gängige Klammern fassen Platten bis 3 cm — das deckt praktisch alle Schultische ab, auch Tische in EDV-Räumen und die meisten Hörsaal-Schreibflächen.
       </p>
 
-      <h2 style={A.h2}>GRÖSSE: AUF DIE ALTERSSTUFE ABSTIMMEN</h2>
+      <h2 style={A.h2}>Größe: auf die Altersstufe abstimmen</h2>
       <p style={A.p}>
         Die Trennwand muss die Sichtlinie zum Nachbarblatt unterbrechen — die hängt von der Sitzhöhe ab:
       </p>
@@ -50,7 +50,7 @@ export default function Page() {
         Für gemischte Einsätze (etwa Prüfungszentren mit Erwachsenen) ist die 40er-Höhe die richtige Wahl. Mehr dazu auf unseren Seiten für die <Link href="/volksschule" style={A.a}>Volksschule</Link>, die <Link href="/sekundarstufe" style={A.a}>Sekundarstufe</Link> und für <Link href="/hochschulen" style={A.a}>Hochschulen &amp; Prüfungszentren</Link>.
       </p>
 
-      <h2 style={A.h2}>MATERIAL & HALTBARKEIT</h2>
+      <h2 style={A.h2}>Material & Haltbarkeit</h2>
       <p style={A.p}>
         Schulmaterial lebt hart. Kartonwände sind nach einem Schuljahr durchgesessen, geknickt oder beschrieben. Bewährt haben sich <strong style={A.strong}>bruchfeste Kunststoffplatten</strong>: abwischbar, verwindungssteif, unempfindlich gegen Feuchtigkeit. Bei den Klammern zählt Dauerelastizität — sie müssen nach dem tausendsten Aufstecken noch genauso greifen wie am ersten Tag.
       </p>
@@ -58,12 +58,12 @@ export default function Page() {
         Ebenso wichtig: <strong style={A.strong}>Ersatzteile einzeln nachkaufen können.</strong> Geht eine Platte verloren oder eine Klammer kaputt, sollte nicht der ganze Satz unbrauchbar werden. Fragen Sie vor dem Kauf, ob Platten, Klammern und Aufbewahrung einzeln lieferbar sind — bei Herstellern mit eigener Fertigung ist das üblich, bei Handelsware oft nicht.
       </p>
 
-      <h2 style={A.h2}>LAGERUNG & LOGISTIK</h2>
+      <h2 style={A.h2}>Lagerung & Logistik</h2>
       <p style={A.p}>
         Ein unterschätzter Punkt: Wohin mit 25 Trennwänden zwischen den Prüfungen? Praktisch sind <strong style={A.strong}>stapelbare Koffer mit je 12 kompletten Systemen</strong> — sie passen in jeden Materialraum, sind von einer Person tragbar und machen den Klassensatz „ausleihbar": Der Koffer wandert dorthin, wo gerade geprüft wird.
       </p>
 
-      <h2 style={A.h2}>CHECKLISTE FÜR DIE BESCHAFFUNG</h2>
+      <h2 style={A.h2}>Checkliste für die Beschaffung</h2>
       <ul style={A.ul}>
         <li style={A.li}>Klammersystem statt loser Aufsteller — steht fest, ohne Montage</li>
         <li style={A.li}>Plattenhöhe passend zur Altersstufe (30 cm Primarstufe / 40 cm ab Sekundarstufe)</li>
@@ -74,7 +74,7 @@ export default function Page() {
         <li style={A.li}>Kauf auf Rechnung möglich (schulkonforme Beschaffung)</li>
       </ul>
 
-      <h2 style={A.h2}>FAZIT</h2>
+      <h2 style={A.h2}>Fazit</h2>
       <p style={{ ...A.p, marginBottom: 0 }}>
         Die beste Trennwand für den Schultisch ist die, die nach fünf Jahren Dauereinsatz noch selbstverständlich funktioniert: gesteckt statt gestellt, Kunststoff statt Karton, Ersatzteile statt Neukauf. Wie sich der Sichtschutz konkret auf die Prüfungssituation auswirkt, lesen Sie im Beitrag <Link href="/ratgeber/sichtschutz-klassenarbeit" style={A.a}>Sichtschutz für die Klassenarbeit</Link>.
       </p>

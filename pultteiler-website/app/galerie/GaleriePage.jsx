@@ -11,7 +11,7 @@ export default function GaleriePage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <Heading overline="REFERENZEN" title="DER PULTTEILER IM EINSATZ" sub="Von der Volksschule bis zur Universität — Eindrücke aus dem Schulalltag." align="center"/>
+          <Heading overline="Referenzen" title="Der Pultteiler im Einsatz" sub="Von der Volksschule bis zur Universität — Eindrücke aus dem Schulalltag." align="center"/>
           <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(320px, 100%), 1fr))", gap: 2 }}>
             {GALLERY.map((r, i) => (
               <Reveal key={i} delay={i * 0.05}>

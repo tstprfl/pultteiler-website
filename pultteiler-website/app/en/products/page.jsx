@@ -14,15 +14,15 @@ export const metadata = {
 };
 
 const t = {
-  h2: { fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 24px", letterSpacing: "0.03em" },
+  h2: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 24px", letterSpacing: "0.03em" },
   body: { fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.6, maxWidth: 640, margin: 0 },
   small: { fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 20px" },
 };
 
 const FEATURES = [
-  { title: "TOOL-FREE PLUG-IN SYSTEM", text: "Attach the clamp to the desk edge, insert the panel. Fits all common desks up to 3 cm thick." },
-  { title: "12 SYSTEMS PER CASE", text: "Each wooden case holds 12 complete dividers: stackable, easy to carry, compact in storage. Larger cases on request." },
-  { title: "DURABLE", text: "High-quality materials for years of daily use. Spare parts can be reordered individually." },
+  { title: "Tool-free plug-in system", text: "Attach the clamp to the desk edge, insert the panel. Fits all common desks up to 3 cm thick." },
+  { title: "12 systems per case", text: "Each wooden case holds 12 complete dividers: stackable, easy to carry, compact in storage. Larger cases on request." },
+  { title: "Durable", text: "High-quality materials for years of daily use. Spare parts can be reordered individually." },
 ];
 
 export default function Page() {
@@ -31,12 +31,12 @@ export default function Page() {
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ marginBottom: 40 }}>
-            <div style={{ marginBottom: 16 }}><Badge>PRODUCTS</Badge></div>
-            <h1 style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>PULTTEILER DESK DIVIDERS</h1>
+            <div style={{ marginBottom: 16 }}><Badge>Products</Badge></div>
+            <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>Pultteiler desk dividers</h1>
             <p style={t.body}>Privacy screens for school and exam desks, direct from the manufacturer in Austria. Every wooden case contains 12 complete systems. Prices and delivery are quoted individually for your country.</p>
           </div>
 
-          <h2 style={t.h2}>CASE SETS</h2>
+          <h2 style={t.h2}>Case sets</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 2, marginBottom: 56 }}>
             {SETS.map((p) => {
               const en = SETS_EN[p.id];
@@ -46,16 +46,16 @@ export default function Page() {
                     <Img sizes="300px" src={p.img} alt={en.name} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 200, display: "block" }}/>
                   </div>
                   <div style={{ padding: "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.text, margin: "0 0 8px" }}>{en.name}</h3>
+                    <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 8px" }}>{en.name}</h3>
                     <p style={t.small}>{en.desc}</p>
-                    <div><Btn href="/en/quote">REQUEST A QUOTE →</Btn></div>
+                    <div><Btn href="/en/quote">Request a quote →</Btn></div>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          <h2 style={t.h2}>WHAT MAKES THE PULTTEILER DIFFERENT</h2>
+          <h2 style={t.h2}>What makes the Pultteiler different</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 2, marginBottom: 56 }}>
             {FEATURES.map((f) => (
               <div key={f.title} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 26px" }}>
@@ -66,9 +66,9 @@ export default function Page() {
           </div>
 
           <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 32px" }}>
-            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em", color: C.text, margin: "0 0 10px" }}>ORDERING FROM AUSTRIA, GERMANY OR SWITZERLAND?</h3>
+            <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em", color: C.text, margin: "0 0 10px" }}>Ordering from Austria, Germany or Switzerland?</h3>
             <p style={t.small}>Prices, delivery terms and direct ordering on invoice are available in our online shop (in German).</p>
-            <Btn href="/produkte" variant="secondary">GO TO THE ONLINE SHOP</Btn>
+            <Btn href="/produkte" variant="secondary">Go to the online shop</Btn>
           </div>
         </div>
       </section>

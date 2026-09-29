@@ -7,9 +7,9 @@ import { Btn } from "@/components/ui";
 import Img from "@/components/Img";
 
 const f = {
-  overline: { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: C.accent, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" },
-  h1: { fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "clamp(40px, 6vw, 76px)", color: C.text, lineHeight: 0.98, margin: "24px 0 24px", letterSpacing: "0.02em" },
-  h2: { fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "clamp(30px, 4.5vw, 48px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 },
+  overline: { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accent, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" },
+  h1: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(40px, 6vw, 76px)", color: C.text, lineHeight: 0.98, margin: "24px 0 24px", letterSpacing: "0.02em" },
+  h2: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(30px, 4.5vw, 48px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 },
   h3: { fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em", color: C.text, margin: "0 0 10px" },
   body: { fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "0 0 18px" },
   small: { fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 },
@@ -18,16 +18,16 @@ const f = {
 // Beschriftungen und Links — Standard deutsch; die englische Seite übergibt eigene Werte über `ui`.
 const UI_DE = {
   quoteHref: "/angebot",
-  quoteCta: "ANGEBOT ANFORDERN →",
+  quoteCta: "Angebot anfordern →",
   shopHref: "/produkte",
-  shopCta: "ZUM SHOP",
+  shopCta: "Zum Shop",
   contactHref: "/kontakt",
-  contactCta: "KONTAKT",
+  contactCta: "Kontakt",
   trust: ["Kauf auf Rechnung", "Direkt vom Hersteller", SCHOOLS_TEXT_SHORT, `Seit über ${YEARS} Jahren`],
-  orderTitle: "SO EINFACH BESTELLEN SCHULEN BEI UNS",
+  orderTitle: "So einfach bestellen Schulen bei uns",
   orderSub: "Kein Kreditkarten-Checkout, keine Vorkasse: Sie bestellen per Anfrage oder direkt im Shop — und zahlen bequem auf Rechnung, wie es Schulen und Schulerhalter gewohnt sind.",
   countries: COUNTRY_INFO,
-  faqTitle: "HÄUFIGE FRAGEN",
+  faqTitle: "Häufige Fragen",
 };
 
 export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situation, benefits, products, faq, ctaTitle, ctaSub, ui: uiOverride }) {
@@ -92,9 +92,9 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
                   <Img sizes="300px" src={p.img} alt={p.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}/>
                 </div>
                 <div style={{ padding: "24px 26px 30px", display: "flex", flexDirection: "column", flex: 1 }}>
-                  <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 24, color: C.text, margin: "0 0 8px" }}>{p.name}</h3>
+                  <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 8px" }}>{p.name}</h3>
                   <p style={{ ...f.small, marginBottom: 16, flex: 1 }}>{p.desc}</p>
-                  {p.price && <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 30, color: C.text, marginBottom: 4 }}>{p.price}</div>}
+                  {p.price && <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 30, color: C.text, marginBottom: 4 }}>{p.price}</div>}
                   {p.note && <p style={{ ...f.small, fontSize: 12, marginBottom: 16 }}>{p.note}</p>}
                   <div><Btn href={p.href || ui.shopHref} variant={p.primary ? "primary" : "secondary"}>{p.cta || ui.shopCta}</Btn></div>
                 </div>

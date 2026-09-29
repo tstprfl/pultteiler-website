@@ -36,13 +36,13 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ)) }} />
       <AudienceLayout
-        overline="FÜR VOLKSSCHULEN, GRUNDSCHULEN & PRIMARSTUFE"
-        h1={<>SICHTSCHUTZ FÜR SCHULARBEITEN IN DER VOLKSSCHULE</>}
+        overline="Für Volksschulen, Grundschulen & Primarstufe"
+        h1={<>Sichtschutz für Schularbeiten in der Volksschule</>}
         intro="Schon die ersten Schularbeiten sollen fair ablaufen — und manche Kinder brauchen einfach einen ruhigen, reizarmen Platz zum Arbeiten. Der Pultteiler verhindert Abschreiben in der Volksschule und Grundschule, ohne die Kinder zu isolieren: kindgerechte Höhe, kinderleichter Aufbau, unverwüstlich im Schulalltag."
         img="/images/klassenzimmer.png"
         imgAlt="Pultteiler als Sichtschutz auf Schultischen in einem Volksschul-Klassenzimmer"
         situation={{
-          title: "DIE SITUATION IN DER PRIMARSTUFE",
+          title: "Die Situation in der Primarstufe",
           paragraphs: [
             "In der Volksschule werden die Weichen gestellt: Kinder lernen, selbstständig und ehrlich zu arbeiten. Bei Schularbeiten und Lernzielkontrollen sitzen sie aber meist dicht nebeneinander an Doppeltischen — der Blick aufs Nachbarblatt ist da keine böse Absicht, sondern fast unvermeidlich. Klassen zu teilen oder Kinder umzusetzen kostet Zeit und Nerven.",
             "Der Pultteiler löst das Problem in zwei Minuten: Klammer auf die Tischplatte stecken, Teilerplatte einschieben — jedes Kind hat seinen eigenen, geschützten Arbeitsbereich. Nach der Schularbeit wandert alles zurück in den kompakten Holzkoffer im Materialraum.",
@@ -50,41 +50,41 @@ export default function Page() {
           ],
         }}
         benefits={{
-          title: "DARUM PASST DER PULTTEILER IN DIE VOLKSSCHULE",
+          title: "Darum passt der Pultteiler in die Volksschule",
           items: [
-            { title: "KINDGERECHTE HÖHE (50×30 CM)", text: "Hoch genug, um das Nachbarblatt zu verdecken — niedrig genug, damit die Lehrkraft jedes Kind im Blick behält und sich niemand eingesperrt fühlt." },
-            { title: "AUFBAU OHNE WERKZEUG", text: "Stecksystem aus Klammer und Platte: In zwei Minuten steht der Sichtschutz für die ganze Klasse. Auch die Kinder selbst schaffen das problemlos." },
-            { title: "REIZARMER ARBEITSPLATZ", text: "Einzelne Teiler dauerhaft im Einsatz schaffen ruhige Arbeitszonen für Kinder mit Konzentrationsschwierigkeiten — bewährt in Inklusionsklassen." },
-            { title: "EIN KOFFER PRO KLASSE", text: "12 komplette Systeme im stapelbaren Holzkoffer — passt in jeden Materialraum und ist in Sekunden zur Hand." },
-            { title: "UNVERWÜSTLICH", text: "Seit über 40 Jahren im harten Schulalltag bewährt. Sollte doch einmal etwas kaputtgehen: Jedes Einzelteil ist nachbestellbar." },
-            { title: "PASST AUF JEDEN SCHULTISCH", text: "Die dauerelastische Klammer hält auf allen gängigen Schultischen mit Tischplatten bis 3 cm Stärke — egal ob Einzel- oder Doppeltisch." },
+            { title: "Kindgerechte Höhe (50×30 cm)", text: "Hoch genug, um das Nachbarblatt zu verdecken — niedrig genug, damit die Lehrkraft jedes Kind im Blick behält und sich niemand eingesperrt fühlt." },
+            { title: "Aufbau ohne Werkzeug", text: "Stecksystem aus Klammer und Platte: In zwei Minuten steht der Sichtschutz für die ganze Klasse. Auch die Kinder selbst schaffen das problemlos." },
+            { title: "Reizarmer Arbeitsplatz", text: "Einzelne Teiler dauerhaft im Einsatz schaffen ruhige Arbeitszonen für Kinder mit Konzentrationsschwierigkeiten — bewährt in Inklusionsklassen." },
+            { title: "Ein Koffer pro Klasse", text: "12 komplette Systeme im stapelbaren Holzkoffer — passt in jeden Materialraum und ist in Sekunden zur Hand." },
+            { title: "Unverwüstlich", text: "Seit über 40 Jahren im harten Schulalltag bewährt. Sollte doch einmal etwas kaputtgehen: Jedes Einzelteil ist nachbestellbar." },
+            { title: "Passt auf jeden Schultisch", text: "Die dauerelastische Klammer hält auf allen gängigen Schultischen mit Tischplatten bis 3 cm Stärke — egal ob Einzel- oder Doppeltisch." },
           ],
         }}
         products={{
-          title: "UNSERE EMPFEHLUNG FÜR DIE PRIMARSTUFE",
+          title: "Unsere Empfehlung für die Primarstufe",
           sub: "Für die 1. bis 5. Schulstufe empfehlen wir Set A mit der niedrigeren Platte — abgestimmt auf die Sitzhöhe jüngerer Kinder.",
           items: [
             {
-              name: "SET A — GELB — BIS 5. SCHULJAHR",
+              name: "Set A — Gelb — bis 5. Schuljahr",
               desc: "1 Holzkoffer mit 12 Teilerplatten (50×30 cm) und 12 Klammern. Die richtige Höhe für die Volksschule.",
               price: "€ 235,00",
               note: "netto zzgl. 20% USt (AT/DE) — Preis Schweiz: € 270,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-gelb.jpg",
               href: "/produkte",
-              cta: "IM SHOP BESTELLEN",
+              cta: "Im Shop bestellen",
               primary: true,
             },
             {
-              name: "GRÖSSERE MENGEN?",
+              name: "Größere Mengen?",
               desc: "Sie statten mehrere Klassen oder die ganze Schule aus? Fordern Sie ein unverbindliches Angebot an — wir stellen auch Koffer mit mehr als 12 Teilern zusammen.",
               img: "/images/Koffer_1.png",
               href: "/angebot",
-              cta: "ANGEBOT ANFORDERN →",
+              cta: "Angebot anfordern →",
             },
           ],
         }}
         faq={FAQ}
-        ctaTitle="BEREIT FÜR FAIRE SCHULARBEITEN?"
+        ctaTitle="Bereit für faire Schularbeiten?"
         ctaSub="Fordern Sie ein unverbindliches Angebot für Ihre Volksschule an — oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."
       />
     </>

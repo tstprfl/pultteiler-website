@@ -42,19 +42,19 @@ export function alternatesFor(path) {
 }
 
 export const NAV_EN = [
-  { id: "home", label: "HOME", href: "/en" },
+  { id: "home", label: "Home", href: "/en" },
   {
     id: "school",
-    label: "FOR YOUR SCHOOL",
+    label: "For your school",
     children: [
-      { id: "primary", label: "PRIMARY SCHOOLS", href: "/en/primary-schools" },
-      { id: "secondary", label: "SECONDARY SCHOOLS", href: "/en/secondary-schools" },
-      { id: "universities", label: "UNIVERSITIES & EXAM CENTRES", href: "/en/universities" },
+      { id: "primary", label: "Primary schools", href: "/en/primary-schools" },
+      { id: "secondary", label: "Secondary schools", href: "/en/secondary-schools" },
+      { id: "universities", label: "Universities & exam centres", href: "/en/universities" },
     ],
   },
-  { id: "products", label: "PRODUCTS", href: "/en/products" },
-  { id: "guide", label: "GUIDE", href: "/en/guide" },
-  { id: "how", label: "HOW IT WORKS", href: "/en/how-it-works" },
-  { id: "about", label: "ABOUT US", href: "/en/about" },
-  { id: "contact", label: "CONTACT", href: "/en/contact" },
+  { id: "products", label: "Products", href: "/en/products" },
+  { id: "guide", label: "Guide", href: "/en/guide" },
+  { id: "how", label: "How it works", href: "/en/how-it-works" },
+  { id: "about", label: "About us", href: "/en/about" },
+  { id: "contact", label: "Contact", href: "/en/contact" },
 ];

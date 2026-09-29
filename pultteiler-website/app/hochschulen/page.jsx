@@ -36,13 +36,13 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ)) }} />
       <AudienceLayout
-        overline="FÜR UNIVERSITÄTEN, FACHHOCHSCHULEN & PRÜFUNGSZENTREN"
-        h1={<>SICHTSCHUTZ FÜR PRÜFUNGEN IN HÖRSAAL & PRÜFUNGSZENTRUM</>}
+        overline="Für Universitäten, Fachhochschulen & Prüfungszentren"
+        h1={<>Sichtschutz für Prüfungen in Hörsaal & Prüfungszentrum</>}
         intro="Wenn hunderte Studierende gleichzeitig schreiben, muss die Prüfungsaufsicht sich auf die Ausstattung verlassen können. Unsere Trennwände sichern schriftliche Prüfungen in Hörsälen, Seminarräumen und Prüfungszentren — in hohen Stückzahlen, direkt vom Hersteller, im Einsatz u. a. an der MedUni Innsbruck."
         img="/images/kurhaus-saal-totale.jpg"
         imgAlt="Prüfungssaal im Kurhaus Bad Krozingen, alle Tische mit Pultteilern ausgestattet"
         situation={{
-          title: "DIE SITUATION BEI GROSSPRÜFUNGEN",
+          title: "Die Situation bei Großprüfungen",
           paragraphs: [
             "Aufnahmetests, Modulklausuren, Staatsprüfungen: An Hochschulen entscheiden schriftliche Prüfungen über Studienplätze und Abschlüsse — entsprechend hoch sind die Anforderungen an Täuschungssicherheit und Rechtssicherheit. Gleichzeitig sitzen die Teilnehmenden in Hörsälen dichter als in jedem Klassenzimmer.",
             "Jeden zweiten Platz freizulassen halbiert die Raumkapazität; mehrere Aufgabenversionen zu erstellen vervielfacht den Korrekturaufwand und bleibt angreifbar. Die wirtschaftlichere Lösung: Sichtschutz direkt am Arbeitsplatz. Mit dem Pultteiler nutzen Sie die volle Raumkapazität — bei voller Täuschungssicherheit für jede Prüfungsvariante.",
@@ -50,41 +50,41 @@ export default function Page() {
           ],
         }}
         benefits={{
-          title: "DARUM SETZEN HOCHSCHULEN AUF DEN PULTTEILER",
+          title: "Darum setzen Hochschulen auf den Pultteiler",
           items: [
-            { title: "HOHE STÜCKZAHLEN AB WERK", text: "Als Hersteller produzieren wir bedarfsgerecht — vom einzelnen Prüfungsraum bis zur Ausstattung ganzer Prüfungszentren. Projektbezogene Kalkulation." },
-            { title: "VOLLE RAUMKAPAZITÄT", text: "Kein Freilassen jedes zweiten Platzes, keine Mehrfach-Aufgabenversionen: Jeder Arbeitsplatz wird prüfungstauglich — der Raum bleibt voll nutzbar." },
-            { title: "SEKUNDENSCHNELLER AUFBAU", text: "Werkzeugloses Stecksystem: wenige Sekunden pro Arbeitsplatz. Auch große Hörsäle sind mit kleinem Team rasch gerüstet — und ebenso schnell wieder geräumt." },
-            { title: "PLATZSPARENDE LAGERUNG", text: "12 Systeme pro stapelbarem Holzkoffer — auf Anfrage auch größere Koffer. Hunderte Teiler lagern kompakt bis zum nächsten Prüfungstermin." },
-            { title: "REFERENZ MEDUNI INNSBRUCK", text: "Im Prüfungseinsatz an der Medizinischen Universität Innsbruck — vom Hörsaal bis ins Labor. Weitere Referenzen nennen wir auf Anfrage gerne." },
-            { title: "BESCHAFFUNGSKONFORM", text: "Schriftliches Angebot, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH) — passend zu Ihren Einkaufsprozessen." },
+            { title: "Hohe Stückzahlen ab Werk", text: "Als Hersteller produzieren wir bedarfsgerecht — vom einzelnen Prüfungsraum bis zur Ausstattung ganzer Prüfungszentren. Projektbezogene Kalkulation." },
+            { title: "Volle Raumkapazität", text: "Kein Freilassen jedes zweiten Platzes, keine Mehrfach-Aufgabenversionen: Jeder Arbeitsplatz wird prüfungstauglich — der Raum bleibt voll nutzbar." },
+            { title: "Sekundenschneller Aufbau", text: "Werkzeugloses Stecksystem: wenige Sekunden pro Arbeitsplatz. Auch große Hörsäle sind mit kleinem Team rasch gerüstet — und ebenso schnell wieder geräumt." },
+            { title: "Platzsparende Lagerung", text: "12 Systeme pro stapelbarem Holzkoffer — auf Anfrage auch größere Koffer. Hunderte Teiler lagern kompakt bis zum nächsten Prüfungstermin." },
+            { title: "Referenz MedUni Innsbruck", text: "Im Prüfungseinsatz an der Medizinischen Universität Innsbruck — vom Hörsaal bis ins Labor. Weitere Referenzen nennen wir auf Anfrage gerne." },
+            { title: "Beschaffungskonform", text: "Schriftliches Angebot, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH) — passend zu Ihren Einkaufsprozessen." },
           ],
         }}
         products={{
-          title: "IHR WEG ZUM ANGEBOT",
+          title: "Ihr Weg zum Angebot",
           sub: "Bei Großabnahmen kalkulieren wir individuell — nach Stückzahl, Plattengröße und Lieferziel. Gerne senden wir vorab ein Muster.",
           items: [
             {
-              name: "INDIVIDUELLES ANGEBOT",
+              name: "Individuelles Angebot",
               desc: "Nennen Sie uns Stückzahl, Einsatzort und Wunschtermin — Sie erhalten kurzfristig ein schriftliches Angebot für Ihre Beschaffungsstelle.",
               img: "/images/meduni-innsbruck_1.jpeg",
               href: "/angebot",
-              cta: "ANGEBOT ANFORDERN →",
+              cta: "Angebot anfordern →",
               primary: true,
             },
             {
-              name: "ERST TESTEN: EINZELNER KOFFER",
+              name: "Erst testen: einzelner Koffer",
               desc: "Sie möchten die Teiler zuerst in einer Prüfung erproben? Bestellen Sie einen Koffer mit 12 Systemen direkt im Shop — Kauf auf Rechnung.",
               price: "ab € 235,00",
               note: "netto zzgl. 20% USt (AT/DE) — Schweiz steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-grau.jpg",
               href: "/produkte",
-              cta: "ZUM SHOP",
+              cta: "Zum Shop",
             },
           ],
         }}
         faq={FAQ}
-        ctaTitle="PLANEN SIE IHRE NÄCHSTE GROSSPRÜFUNG MIT UNS"
+        ctaTitle="Planen Sie Ihre nächste Großprüfung mit uns"
         ctaSub="Schicken Sie uns Stückzahl und Termin — wir antworten kurzfristig mit einem individuellen Angebot inklusive aller Liefer- und Rechnungsdetails für AT, DE und CH."
       />
     </>

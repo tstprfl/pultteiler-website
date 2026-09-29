@@ -11,9 +11,9 @@ const AufbauAnimation = dynamic(() => import("@/components/AufbauAnimation"), {
 });
 
 const STEPS = [
-  { nr: "STEP 01", title: "ATTACH THE CLAMP", text: "Push the clamp made of permanently elastic plastic sideways onto the edge of the desk. It fits all common school desks with a desktop up to 3 cm thick, including sloping desks." },
-  { nr: "STEP 02", title: "INSERT THE PANEL", text: "Place the panel from above. Its slot locks onto the clamp and the panel stands firmly straight away." },
-  { nr: "STEP 03", title: "DONE: TIME TO CONCENTRATE", text: "The Pultteiler creates a separate, screened workplace. After the exam it comes off just as quickly." },
+  { nr: "Step 01", title: "Attach the clamp", text: "Push the clamp made of permanently elastic plastic sideways onto the edge of the desk. It fits all common school desks with a desktop up to 3 cm thick, including sloping desks." },
+  { nr: "Step 02", title: "Insert the panel", text: "Place the panel from above. Its slot locks onto the clamp and the panel stands firmly straight away." },
+  { nr: "Step 03", title: "Done: time to concentrate", text: "The Pultteiler creates a separate, screened workplace. After the exam it comes off just as quickly." },
 ];
 
 export default function HowItWorksPage() {
@@ -21,7 +21,7 @@ export default function HowItWorksPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <Heading overline="SET-UP GUIDE" title={"HOW THE PULTTEILER WORKS\nSET UP IN 3 STEPS"} sub="Divider panel and desk clamp: set up in a few simple moves." align="center"/>
+          <Heading overline="Set-up guide" title={"How the Pultteiler works\nSet up in 3 steps"} sub="Divider panel and desk clamp: set up in a few simple moves." align="center"/>
           <Reveal>
             <AufbauAnimation steps={STEPS} label="Animation: the clamp is pushed sideways onto the edge of the desk, the divider panel is inserted from above."/>
           </Reveal>
@@ -29,7 +29,7 @@ export default function HowItWorksPage() {
             <Reveal delay={0.1}>
               <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, display: "grid", gridTemplateColumns: "1.2fr 1fr", overflow: "hidden", transition: "border-color 0.3s" }} className="prod-card" onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                 <div style={{ padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text, margin: "0 0 16px" }}>AFTER THE EXAM</h2>
+                  <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 16px" }}>After the exam</h2>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.7, margin: 0 }}>Simply remove the dividers and put them back into the supplied wooden case: space-saving and ready for the next exam.</p>
                 </div>
                 <div style={{ background: C.bgElevated, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, minHeight: 240 }}>
@@ -53,7 +53,7 @@ export default function HowItWorksPage() {
           <Reveal delay={0.2}>
             <div style={{ marginTop: 56, textAlign: "center" }}>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, marginBottom: 24 }}>Convinced? Get the Pultteiler direct from the manufacturer.</p>
-              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/quote">REQUEST A QUOTE →</Btn><Btn href="/en/contact" variant="secondary">CONTACT US</Btn></div>
+              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/contact" variant="secondary">Contact us</Btn></div>
             </div>
           </Reveal>
         </div>

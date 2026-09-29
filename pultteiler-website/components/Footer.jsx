@@ -8,7 +8,7 @@ import { isEnPath } from "@/lib/i18n";
 
 const COLS = [
   {
-    title: "FÜR IHRE SCHULE",
+    title: "Für Ihre Schule",
     links: [
       { href: "/volksschule", label: "Volksschule & Primarstufe" },
       { href: "/sekundarstufe", label: "Sekundarstufe & Gymnasium" },
@@ -18,7 +18,7 @@ const COLS = [
     ],
   },
   {
-    title: "RATGEBER",
+    title: "Ratgeber",
     links: [
       { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für die Klassenarbeit" },
       { href: "/ratgeber/trennwand-schultisch-pruefung", label: "Trennwand für den Schultisch" },
@@ -28,7 +28,7 @@ const COLS = [
     ],
   },
   {
-    title: "SERVICE",
+    title: "Service",
     links: [
       { href: "/anleitung", label: "So funktioniert's" },
       { href: "/galerie", label: "Referenzen & Galerie" },
@@ -42,7 +42,7 @@ const COLS = [
 // Englische Seiten (/en): eigene Spalten; Impressum bleibt deutsch
 const COLS_EN = [
   {
-    title: "FOR YOUR SCHOOL",
+    title: "For your school",
     links: [
       { href: "/en/primary-schools", label: "Primary schools" },
       { href: "/en/secondary-schools", label: "Secondary schools" },
@@ -52,7 +52,7 @@ const COLS_EN = [
     ],
   },
   {
-    title: "GUIDE",
+    title: "Guide",
     links: [
       { href: "/en/guide/privacy-screens-for-exams", label: "Privacy screens for class tests" },
       { href: "/en/guide/desk-dividers-for-exams", label: "Desk dividers for exams" },
@@ -62,7 +62,7 @@ const COLS_EN = [
     ],
   },
   {
-    title: "SERVICE",
+    title: "Service",
     links: [
       { href: "/en/how-it-works", label: "How it works" },
       { href: "/en/gallery", label: "References & gallery" },
@@ -84,7 +84,7 @@ export default function Footer() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
             <Img sizes="44px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" loading="lazy" style={{ width: 44, height: 44, objectFit: "contain", borderRadius: 4 }}/>
-            <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.text, letterSpacing: "0.05em" }}>PULTTEILER</span>
+            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </div>
           {en ? (
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Proven privacy screens for school and exam desks, direct from the manufacturer for over {YEARS} years. Delivery to other countries on request.</p>
@@ -102,7 +102,7 @@ export default function Footer() {
           </div>
         ))}
         <div>
-          <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 20 }}>{en ? "CONTACT" : "KONTAKT"}</h4>
+          <h4 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 20 }}>{en ? "Contact" : "Kontakt"}</h4>
           <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 2 }}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster{en ? ", Austria" : ""}<br/><a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>+43 (0) 676 935 40 33<br/>+43 (0) 699 129 613 70</p>
         </div>
       </div>
