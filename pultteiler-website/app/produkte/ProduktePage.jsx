@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { C } from "@/lib/colors";
-import { SETS, PARTS } from "@/lib/data";
+import { SETS, PARTS, SHIPPING, FREE_SHIPPING_SETS } from "@/lib/data";
 import { useCart } from "@/components/CartProvider";
 import { Reveal, Badge, AddToCartBtn } from "@/components/ui";
 import Img from "@/components/Img";
@@ -13,7 +13,7 @@ const PLATES = {
   ],
   CH: [
     { text: "🇨🇭\nSTEUERFREIE\nUNVERZOLLTE\nLIEFERUNG IN\nDIE SCHWEIZ", rot: -2, fs: 9 },
-    { text: "LIEFERUNG\nINKLUSIVE", rot: 2, fs: 12 },
+    { text: "AB 3 KOFFER-\nSETS VERSAND-\nKOSTENFREI", rot: 2, fs: 10 },
   ],
 };
 
@@ -55,7 +55,9 @@ export default function Produkte() {
           </div>
 
           <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, margin: "0 0 24px" }}>
-            {region === "CH" ? "Alle Preise steuerfrei, unverzollt und inkl. Lieferung in die Schweiz." : "Alle Preise inkl. MwSt und Lieferung für Österreich und Deutschland."}
+            {region === "CH"
+              ? `Alle Preise netto, steuerfrei und unverzollt. Versand in die Schweiz: € ${SHIPPING.CH.toFixed(2).replace(".", ",")} je Bestellung — ab ${FREE_SHIPPING_SETS} Koffer-Sets versandkostenfrei.`
+              : `Alle Preise netto zzgl. 20% USt. Versand nach Österreich und Deutschland: € ${SHIPPING.AT.toFixed(2).replace(".", ",")} je Bestellung netto — ab ${FREE_SHIPPING_SETS} Koffer-Sets versandkostenfrei. Mit deutscher UID-Nummer steuerfrei.`}
           </p>
 
           {/* Info-Plaketten je nach Region */}
@@ -79,7 +81,7 @@ export default function Produkte() {
                     <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{p.name}</h3>
                     <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 20px" }}>{p.desc}</p>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-                      <div><span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 36, color: C.text }}>€ {getPrice(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{region === "CH" ? "STEUERFREI, INKL. LIEFERUNG" : "INKL. MWST & LIEFERUNG"}</span></div>
+                      <div><span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 36, color: C.text }}>€ {getPrice(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{region === "CH" ? "NETTO, STEUERFREI" : "NETTO, ZZGL. 20% USt"}</span></div>
                       <AddToCartBtn product={p}/>
                     </div>
                   </div>
@@ -88,11 +90,11 @@ export default function Produkte() {
             ))}
           </div>
 
-          {/* Ersatzteile (Preise inkl. MwSt AT/DE) */}
+          {/* Ersatzteile (Nettopreise AT/DE) */}
           {region === "AT" && (
             <>
               <h2 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>ERSATZTEILE NACHBESTELLEN</h2>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile inkl. MwSt für Österreich und Deutschland. Versandkosten: € 8,70.</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile netto zzgl. 20% USt für Österreich und Deutschland. Versand: € {SHIPPING.AT.toFixed(2).replace(".", ",")} je Bestellung netto.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {PARTS.map((p, i) => (
                   <Reveal key={p.id} delay={i * 0.08}>
@@ -103,7 +105,7 @@ export default function Produkte() {
                         <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{p.name}</h3>
                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{p.desc}</p>
                         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                          <span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text }}>€ {p.priceAT.toFixed(2)}</span>
+                          <div><span style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 28, color: C.text }}>€ {p.priceAT.toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>NETTO</span></div>
                           <AddToCartBtn product={p}/>
                         </div>
                       </div>

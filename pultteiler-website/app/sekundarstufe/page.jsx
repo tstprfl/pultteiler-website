@@ -67,8 +67,8 @@ export default function Page() {
             {
               name: "SET B — GELB — AB 6. SCHULJAHR",
               desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern.",
-              price: "€ 255,00",
-              note: "inkl. MwSt & Lieferung (AT/DE) — Preis Schweiz: € 252,00 steuerfrei inkl. Lieferung",
+              price: "€ 249,00",
+              note: "netto zzgl. 20% USt (AT/DE) — Preis Schweiz: € 295,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-gelb.jpg",
               href: "/produkte",
               cta: "IM SHOP BESTELLEN",
@@ -77,8 +77,8 @@ export default function Page() {
             {
               name: "SET B — GRAU — AB 6. SCHULJAHR",
               desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern — in dezentem Grau.",
-              price: "€ 255,00",
-              note: "inkl. MwSt & Lieferung (AT/DE) — Preis Schweiz: € 252,00 steuerfrei inkl. Lieferung",
+              price: "€ 249,00",
+              note: "netto zzgl. 20% USt (AT/DE) — Preis Schweiz: € 295,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-grau.jpg",
               href: "/produkte",
               cta: "IM SHOP BESTELLEN",

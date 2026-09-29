@@ -18,9 +18,9 @@ export default function ShippingPage() {
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
-                { icon: "🇦🇹", label: "AUSTRIA", val: "Case set: free", sub: "Spare parts: € 8.70 shipping" },
-                { icon: "🇩🇪", label: "GERMANY", val: "Case set: free", sub: "Spare parts: € 8.70 shipping" },
-                { icon: "🇨🇭", label: "SWITZERLAND", val: "Always free", sub: "Tax-free and duty-free" },
+                { icon: "🇦🇹", label: "AUSTRIA", val: "€ 12.00 per order", sub: "net — free from 3 case sets" },
+                { icon: "🇩🇪", label: "GERMANY", val: "€ 12.00 per order", sub: "net — free from 3 case sets" },
+                { icon: "🇨🇭", label: "SWITZERLAND", val: "€ 25.00 per order", sub: "tax-free and duty-free — free from 3 case sets" },
                 { icon: "🌍", label: "OTHER COUNTRIES", val: "On request", sub: "Please contact us" },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
@@ -38,12 +38,13 @@ export default function ShippingPage() {
             <h2 style={h}>2. DELIVERY TIMES</h2>
             <p style={s}>Delivery usually takes <strong>5 to 10 working days</strong> from order confirmation. Deliveries to Switzerland may take slightly longer. If there is a delay, we will inform you immediately.</p>
             <h2 style={h}>3. SHIPPING COSTS IN DETAIL</h2>
-            {bullet("Austria and Germany, case set (Set A or Set B): free shipping")}
-            {bullet("Austria and Germany, spare parts only (clamps, panels, empty case): € 8.70 flat shipping rate")}
-            {bullet("Switzerland, all products: delivery always included, tax-free and duty-free")}
+            {bullet("Austria and Germany: € 12.00 flat shipping rate per order (net, plus 20% VAT), for case sets and spare parts")}
+            {bullet("Switzerland: € 25.00 flat shipping rate per order, tax-free and duty-free")}
+            {bullet("Orders of 3 or more case sets: free shipping to all three countries")}
             {bullet("Other countries: shipping costs on request, please contact us")}
+            <p style={s}>All shop prices are net prices. For Austria and Germany, statutory VAT of 20% is added and shown in the cart.</p>
             <h2 style={h}>4. DELIVERY TO SWITZERLAND</h2>
-            <p style={s}>Deliveries to Switzerland are <strong>tax-free and duty-free</strong>. The price shown in the shop is the final price: no additional customs duties or import taxes are charged to you.</p>
+            <p style={s}>Deliveries to Switzerland are <strong>tax-free and duty-free</strong>. The price shown in the shop plus the flat shipping rate is your final price: no additional customs duties or import taxes are charged to you.</p>
             <h2 style={h}>5. TAX-FREE DELIVERY TO GERMANY</h2>
             <p style={s}>Companies and institutions in Germany can receive a tax-free intra-community delivery by providing a valid German VAT ID. A German bank account is available for payment.</p>
             <h2 style={h}>6. E-INVOICES FOR AUSTRIAN FEDERAL SCHOOLS</h2>

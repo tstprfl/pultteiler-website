@@ -1,6 +1,6 @@
 "use client";
 import { useState, createContext, useContext } from "react";
-import { SETS } from "@/lib/data";
+import { SETS, SHIPPING, FREE_SHIPPING_SETS, VAT_RATE } from "@/lib/data";
 
 const CartCtx = createContext();
 
@@ -21,9 +21,14 @@ export function CartProvider({ children }) {
   const total = items.reduce((s, i) => s + getPrice(i) * i.qty, 0);
   const count = items.reduce((s, i) => s + i.qty, 0);
   const setIds = SETS.map(s => s.id);
-  const hasSet = items.some(i => setIds.includes(i.id));
-  const shipping = region === "CH" ? 0 : (hasSet ? 0 : 8.70);
-  return <CartCtx.Provider value={{ items, add, remove, updateQty, clear, total, count, region, setRegion, getPrice, shipping }}>{children}</CartCtx.Provider>;
+  const setCount = items.filter(i => setIds.includes(i.id)).reduce((s, i) => s + i.qty, 0);
+  // Versandpauschale je Bestellung (netto), ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei
+  const shipping = items.length === 0 ? 0 : (setCount >= FREE_SHIPPING_SETS ? 0 : SHIPPING[region]);
+  // Alle Preise netto; AT/DE zzgl. 20% USt, Schweiz steuerfrei
+  const vatRate = region === "CH" ? 0 : VAT_RATE;
+  const vat = (total + shipping) * vatRate;
+  const grandTotal = total + shipping + vat;
+  return <CartCtx.Provider value={{ items, add, remove, updateQty, clear, total, count, region, setRegion, getPrice, shipping, setCount, freeShippingSets: FREE_SHIPPING_SETS, vatRate, vat, grandTotal }}>{children}</CartCtx.Provider>;
 }
 
 export function useCart() { return useContext(CartCtx); }

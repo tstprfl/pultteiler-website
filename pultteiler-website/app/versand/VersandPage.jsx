@@ -15,9 +15,9 @@ export default function VersandPage() {
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
-                { icon: "🇦🇹", label: "ÖSTERREICH", val: "Koffer-Set: kostenlos", sub: "Ersatzteile: € 8,70 Versandkosten" },
-                { icon: "🇩🇪", label: "DEUTSCHLAND", val: "Koffer-Set: kostenlos", sub: "Ersatzteile: € 8,70 Versandkosten" },
-                { icon: "🇨🇭", label: "SCHWEIZ", val: "Immer kostenlos", sub: "Steuerfrei & unverzollt" },
+                { icon: "🇦🇹", label: "ÖSTERREICH", val: "€ 12,00 je Bestellung", sub: "netto — ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇩🇪", label: "DEUTSCHLAND", val: "€ 12,00 je Bestellung", sub: "netto — ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇨🇭", label: "SCHWEIZ", val: "€ 25,00 je Bestellung", sub: "steuerfrei & unverzollt — ab 3 Koffer-Sets kostenlos" },
                 { icon: "🌍", label: "ANDERE LÄNDER", val: "Auf Anfrage", sub: "Bitte kontaktieren Sie uns" },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
@@ -35,12 +35,13 @@ export default function VersandPage() {
             <h2 style={h}>2. LIEFERZEITEN</h2>
             <p style={s}>Die Lieferzeit beträgt in der Regel <strong>5–10 Werktage</strong> ab Auftragsbestätigung. Für Lieferungen in die Schweiz kann die Lieferzeit geringfügig länger ausfallen. Bei Lieferverzögerungen werden Sie von uns unverzüglich informiert.</p>
             <h2 style={h}>3. VERSANDKOSTEN IM DETAIL</h2>
-            {bullet("Österreich & Deutschland — Koffer-Set (Set A oder Set B): Versand kostenlos")}
-            {bullet("Österreich & Deutschland — Nur Ersatzteile (Klammern, Platten, Leerkoffer): € 8,70 Versandpauschale")}
-            {bullet("Schweiz — alle Produkte: Lieferung stets inklusive, steuerfrei und unverzollt")}
+            {bullet("Österreich & Deutschland: € 12,00 Versandpauschale je Bestellung (netto, zzgl. 20% USt) — für Koffer-Sets und Ersatzteile")}
+            {bullet("Schweiz: € 25,00 Versandpauschale je Bestellung, steuerfrei und unverzollt")}
+            {bullet("Ab 3 Koffer-Sets in einer Bestellung: versandkostenfrei in alle drei Länder")}
             {bullet("Andere Länder: Versandkosten auf Anfrage — bitte kontaktieren Sie uns")}
+            <p style={s}>Alle Preise im Shop sind Nettopreise. Für Österreich und Deutschland kommt die gesetzliche Umsatzsteuer von 20% hinzu, sie wird im Warenkorb ausgewiesen.</p>
             <h2 style={h}>4. LIEFERUNG IN DIE SCHWEIZ</h2>
-            <p style={s}>Lieferungen in die Schweiz erfolgen <strong>steuerfrei und unverzollt</strong>. Der im Shop ausgewiesene Preis ist der Endpreis — es fallen für Sie keine zusätzlichen Zollgebühren oder Einfuhrsteuern an.</p>
+            <p style={s}>Lieferungen in die Schweiz erfolgen <strong>steuerfrei und unverzollt</strong>. Der im Shop ausgewiesene Preis zuzüglich der Versandpauschale ist Ihr Endpreis — es fallen für Sie keine zusätzlichen Zollgebühren oder Einfuhrsteuern an.</p>
             <h2 style={h}>5. STEUERFREIE LIEFERUNG NACH DEUTSCHLAND</h2>
             <p style={s}>Unternehmen und Institutionen in Deutschland können bei Angabe einer gültigen deutschen UID-Nummer eine steuerfreie innergemeinschaftliche Lieferung in Anspruch nehmen. Ein deutsches Bankkonto für die Zahlung ist vorhanden.</p>
             <h2 style={h}>6. E-RECHNUNG FÜR ÖSTERREICHISCHE BUNDESSCHULEN</h2>
