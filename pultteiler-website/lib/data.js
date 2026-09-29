@@ -11,7 +11,7 @@ export const SETS = [
 ];
 
 export const PARTS = [
-  { id: "klammer-2", name: "Klammer (2 Stück)", short: "2x Klammer", desc: "Hochwertige, dauerelastische Klammer im Doppelpack.", priceAT: 21.00, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Klammer_1.png" },
+  { id: "klammer-2", name: "Klammer (2 Stück)", short: "2x Klammer", desc: "Hochwertige, dauerelastische Klammer im Doppelpack.", priceAT: 19.00, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Klammer_1.png" },
   { id: "platte-a", name: "Teilerplatte A Gelb — 50×30 cm", short: "Platte A gelb klein", desc: "Einzelne Ersatzplatte, bis 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 9.50, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
   { id: "platte-b-gelb", name: "Teilerplatte B Gelb — 50×40 cm", short: "Platte B gelb groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.00, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
   { id: "platte-b-grau", name: "Teilerplatte B Grau — 50×40 cm", short: "Platte B grau groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.00, tag: "Ersatzteil", color: "#777", img: "/images/pultteiler_grau.png" },
