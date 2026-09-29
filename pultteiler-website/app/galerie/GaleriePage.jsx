@@ -11,14 +11,14 @@ export default function GaleriePage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <Heading overline="Referenzen" title="Der Pultteiler im Einsatz" sub="Von der Volksschule bis zur Universität — Eindrücke aus dem Schulalltag." align="center"/>
+          <Heading as="h1" overline="Referenzen" title="Der Pultteiler im Einsatz" sub="Von der Volksschule bis zur Universität — Eindrücke aus dem Schulalltag." align="center"/>
           <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(320px, 100%), 1fr))", gap: 2 }}>
             {GALLERY.map((r, i) => (
               <Reveal key={i} delay={i * 0.05}>
                 <div onClick={() => setLightbox(r)} style={{ background: C.bgCard, border: `1px solid ${C.border}`, aspectRatio: "16/10", position: "relative", overflow: "hidden", cursor: "pointer", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <Img sizes="(max-width: 768px) 100vw, 33vw" src={r.src} alt={r.alt || r.label} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                   <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "12px 20px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
-                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.accent, letterSpacing: "0.04em" }}>{r.label}</div>
+                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.accentText, letterSpacing: "0.04em" }}>{r.label}</div>
                   </div>
                 </div>
               </Reveal>

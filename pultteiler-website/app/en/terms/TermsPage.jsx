@@ -10,9 +10,9 @@ export default function TermsPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Legal" title="General terms and conditions"/>
+          <Heading as="h1" overline="Legal" title="General terms and conditions"/>
           <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "14px 20px", marginBottom: 2 }}>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/agb" style={{ color: C.accent }}>German version</a> of these terms and conditions is legally binding.</p>
+            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/agb" style={{ color: C.accentText }}>German version</a> of these terms and conditions is legally binding.</p>
           </div>
           <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>§ 1 Scope</h2>
@@ -27,7 +27,7 @@ export default function TermsPage() {
             <p style={s}>Delivery usually takes 5 to 10 working days. Different delivery times are communicated in individual cases.</p>
             <h2 style={h}>§ 5 Right of withdrawal for consumers</h2>
             <p style={s}>Consumers within the meaning of the Austrian Consumer Protection Act (KSchG) have the right to withdraw from the contract within 14 days without giving reasons (§ 11 FAGG). The withdrawal period begins on the day on which the buyer or a third party named by the buyer took possession of the goods.</p>
-            <p style={s}>To exercise the right of withdrawal, the Seller must be informed of the decision to withdraw by means of a clear statement (e.g. by email to <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a>).</p>
+            <p style={s}>To exercise the right of withdrawal, the Seller must be informed of the decision to withdraw by means of a clear statement (e.g. by email to <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a>).</p>
             <p style={s}>In the event of a valid withdrawal, the performances received by both parties must be returned. The goods must be sent back without delay and at the latest within 14 days. The buyer bears the direct costs of the return. The Seller refunds the purchase price without delay, at the latest within 14 days of receiving the notice of withdrawal.</p>
             <h2 style={h}>§ 6 Retention of title</h2>
             <p style={s}>The goods delivered remain the property of the Seller until the purchase price has been paid in full.</p>

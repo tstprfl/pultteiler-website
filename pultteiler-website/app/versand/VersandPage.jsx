@@ -11,7 +11,7 @@ export default function VersandPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Lieferung & Rückgabe" title="Versand & Rückgabe"/>
+          <Heading as="h1" overline="Lieferung & Rückgabe" title="Versand & Rückgabe"/>
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
@@ -23,7 +23,7 @@ export default function VersandPage() {
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <div style={{ fontSize: 32, marginBottom: 8 }}>{m.icon}</div>
                   <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 8 }}>{m.label}</div>
-                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 18, color: C.accent, marginBottom: 4 }}>{m.val}</div>
+                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 18, color: C.accentText, marginBottom: 4 }}>{m.val}</div>
                   <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted }}>{m.sub}</div>
                 </div>
               ))}
@@ -48,7 +48,7 @@ export default function VersandPage() {
             <p style={s}>Für Schulen des Bundes in Österreich stellen wir E-Rechnungen aus. Bitte geben Sie Ihre EKG-Nummer im Bestellformular an.</p>
             <h2 style={h}>7. Widerrufsrecht & Rückgabe</h2>
             <p style={s}>Verbraucher im Sinne des Konsumentenschutzgesetzes haben das Recht, den Vertrag innerhalb von <strong>14 Tagen ohne Angabe von Gründen zu widerrufen</strong> (§ 11 FAGG). Die Frist beginnt mit dem Tag, an dem Sie oder ein von Ihnen benannter Dritter die Ware in Empfang genommen hat.</p>
-            <p style={s}>Um Ihr Widerrufsrecht auszuüben, informieren Sie uns bitte per E-Mail an <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a> oder per Post an: Schulmittel Blaschegg, Stücklbachstraße 13, 4813 Altmünster, Österreich.</p>
+            <p style={s}>Um Ihr Widerrufsrecht auszuüben, informieren Sie uns bitte per E-Mail an <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a> oder per Post an: Schulmittel Blaschegg, Stücklbachstraße 13, 4813 Altmünster, Österreich.</p>
             <h2 style={h}>8. Rücksendung</h2>
             <p style={s}>Nach Ausübung des Widerrufsrechts senden Sie die Ware bitte unverzüglich und spätestens innerhalb von <strong>14 Tagen</strong> an unsere Adresse zurück.</p>
             <div style={{ background: C.bgElevated, border: `1px solid ${C.border}`, padding: "20px 24px", marginBottom: 20 }}>
@@ -60,7 +60,7 @@ export default function VersandPage() {
             <h2 style={h}>10. Zustand der rückgesendeten Ware</h2>
             <p style={s}>Sie sind nur für einen etwaigen Wertverlust der Ware verantwortlich, der auf einen zur Prüfung der Beschaffenheit nicht notwendigen Umgang zurückzuführen ist.</p>
             <h2 style={h}>11. Ausnahmen vom Widerrufsrecht</h2>
-            <p style={{ ...s, marginBottom: 0 }}>Das Widerrufsrecht gilt nicht für Waren, die nach Kundenspezifikation individuell angefertigt wurden. Für Fragen stehen wir unter <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a> zur Verfügung.</p>
+            <p style={{ ...s, marginBottom: 0 }}>Das Widerrufsrecht gilt nicht für Waren, die nach Kundenspezifikation individuell angefertigt wurden. Für Fragen stehen wir unter <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a> zur Verfügung.</p>
           </div>
           <Reveal delay={0.2}><div style={{ marginTop: 32, display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/produkte">Zum Shop</Btn><Btn href="/kontakt" variant="secondary">Fragen? Kontakt →</Btn></div></Reveal>
         </div>

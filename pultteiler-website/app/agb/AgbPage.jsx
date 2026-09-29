@@ -10,7 +10,7 @@ export default function AgbPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Rechtliches" title="Allgemeine Geschäftsbedingungen"/>
+          <Heading as="h1" overline="Rechtliches" title="Allgemeine Geschäftsbedingungen"/>
           <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>§ 1 Geltungsbereich</h2>
             <p style={s}>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen, die über den Online-Shop auf pultteiler.eu an Schulmittel Blaschegg, Michael Blaschegg, Stücklbachstraße 13, 4813 Altmünster, Österreich (im Folgenden „Verkäufer") gerichtet werden. Abweichende Bedingungen des Käufers werden nicht anerkannt, es sei denn, der Verkäufer stimmt ihrer Geltung ausdrücklich schriftlich zu.</p>
@@ -24,7 +24,7 @@ export default function AgbPage() {
             <p style={s}>Die Lieferzeit beträgt in der Regel 5–10 Werktage. Abweichende Lieferzeiten werden im Einzelfall kommuniziert.</p>
             <h2 style={h}>§ 5 Widerrufsrecht für Verbraucher</h2>
             <p style={s}>Verbraucher im Sinne des Konsumentenschutzgesetzes (KSchG) haben das Recht, den Vertrag innerhalb von 14 Tagen ohne Angabe von Gründen zu widerrufen (§ 11 FAGG). Die Widerrufsfrist beginnt ab dem Tag, an dem der Käufer oder ein von ihm benannter Dritter die Ware in Besitz genommen hat.</p>
-            <p style={s}>Um das Widerrufsrecht auszuüben, ist der Verkäufer mittels einer eindeutigen Erklärung (z.B. per E-Mail an <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a>) über den Entschluss zum Widerruf zu informieren.</p>
+            <p style={s}>Um das Widerrufsrecht auszuüben, ist der Verkäufer mittels einer eindeutigen Erklärung (z.B. per E-Mail an <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a>) über den Entschluss zum Widerruf zu informieren.</p>
             <p style={s}>Im Falle eines wirksamen Widerrufs sind die beiderseits empfangenen Leistungen zurückzugewähren. Die Ware ist unverzüglich und spätestens binnen 14 Tagen zurückzusenden. Die unmittelbaren Kosten der Rücksendung trägt der Käufer. Der Verkäufer erstattet den Kaufpreis unverzüglich, spätestens binnen 14 Tagen ab Erhalt der Widerrufserklärung.</p>
             <h2 style={h}>§ 6 Eigentumsvorbehalt</h2>
             <p style={s}>Die gelieferte Ware bleibt bis zur vollständigen Bezahlung des Kaufpreises Eigentum des Verkäufers.</p>

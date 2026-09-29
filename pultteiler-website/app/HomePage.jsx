@@ -15,7 +15,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "center" }} className="hero-g">
             <div>
               <Reveal><Badge>Direkt vom Hersteller — seit über {YEARS} Jahren</Badge></Reveal>
-              <Reveal delay={0.1}><h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>für <span style={{ color: "#F0C645" }}>Schultische.</span><br/><span style={{ color: C.textMuted, fontSize: "0.6em" }}>Der Sichtschutz für faire Prüfungen.</span></h1></Reveal>
+              <Reveal delay={0.1}><h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>für <span style={{ color: "#F0C645" }}>Schultische.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>Der Sichtschutz für faire Prüfungen.</span></h1></Reveal>
               <Reveal delay={0.2}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>Die bewährte Trennwand für Schultische bei Schularbeiten, Klassenarbeiten und Prüfungen: verhindert Abschreiben, schafft einen reizarmen Arbeitsplatz — und steht dank Stecksystem in zwei Minuten. {SCHOOLS_TEXT} vertrauen darauf. Passend für alle gängigen Schultische bis 3 cm Plattenstärke.</p></Reveal>
               <Reveal delay={0.3}><div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/angebot">Angebot anfordern →</Btn><Btn href="/produkte" variant="secondary">Zum Shop</Btn></div></Reveal>
               <Reveal delay={0.35}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginTop: 24 }}>✓ Kauf auf Rechnung — keine Kreditkarte, keine Vorkasse</p></Reveal>
@@ -71,7 +71,7 @@ export default function Home() {
                   <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
                     <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", letterSpacing: "0.02em", lineHeight: 1.05 }}>{a.title.toUpperCase()}</h3>
                     <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
-                    <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accent }}>Mehr erfahren →</span>
+                    <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Mehr erfahren →</span>
                   </div>
                 </Link>
               </Reveal>
@@ -143,7 +143,7 @@ export default function Home() {
               {TESTIMONIALS.map((t, i) => (
                 <Reveal key={i} delay={i * 0.07}>
                   <figure style={{ background: C.bg, border: `1px solid ${C.border}`, padding: "32px 30px", margin: 0, height: "100%", display: "flex", flexDirection: "column" }}>
-                    <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 44, color: C.accent, lineHeight: 0.6, marginBottom: 16 }}>„</div>
+                    <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 44, color: C.accentText, lineHeight: 0.6, marginBottom: 16 }}>„</div>
                     <blockquote style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, lineHeight: 1.7, margin: "0 0 20px", flex: 1 }}>{t.quote}</blockquote>
                     <figcaption>
                       {t.name && <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, color: C.text }}>{t.name}</div>}
@@ -188,7 +188,7 @@ export default function Home() {
                 <Link href={`/ratgeber/${a.slug}`} className="hover-lift" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 28px 30px", textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, color: C.text, lineHeight: 1.45, margin: "0 0 12px" }}>{a.title}</h3>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: "0 0 16px", flex: 1 }}>{a.teaser}</p>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accent }}>Lesen →</span>
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Lesen →</span>
                 </Link>
               </Reveal>
             ))}

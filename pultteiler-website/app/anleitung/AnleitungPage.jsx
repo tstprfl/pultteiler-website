@@ -21,7 +21,7 @@ export default function AnleitungPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <Heading overline="Aufbauanleitung" title={"So funktioniert der Pultteiler\nAufbau in 3 Schritten"} sub="Teilerplatte und Pultklammer: in wenigen Handgriffen aufgestellt." align="center"/>
+          <Heading as="h1" overline="Aufbauanleitung" title={"So funktioniert der Pultteiler\nAufbau in 3 Schritten"} sub="Teilerplatte und Pultklammer: in wenigen Handgriffen aufgestellt." align="center"/>
           <Reveal>
             <AufbauAnimation steps={STEPS} label="Animation: Die Klammer wird seitlich auf die Tischkante geschoben, die Teilerplatte von oben eingesetzt."/>
           </Reveal>

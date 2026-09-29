@@ -16,7 +16,7 @@ export default function HomeEn() {
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "center" }} className="hero-g">
             <div>
               <Reveal><Badge>Direct from the manufacturer for over {YEARS} years</Badge></Reveal>
-              <Reveal delay={0.1}><h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>for <span style={{ color: "#F0C645" }}>School desks.</span><br/><span style={{ color: C.textMuted, fontSize: "0.6em" }}>The privacy screen for fair exams.</span></h1></Reveal>
+              <Reveal delay={0.1}><h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>for <span style={{ color: "#F0C645" }}>School desks.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>The privacy screen for fair exams.</span></h1></Reveal>
               <Reveal delay={0.2}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>The proven desk divider for class tests and exams: it prevents copying, creates a low-distraction workspace and is set up in two minutes thanks to its plug-in system. Several hundred schools in Austria, Germany and Switzerland rely on it. Fits all common school desks up to 3 cm thick.</p></Reveal>
               <Reveal delay={0.3}><div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/products" variant="secondary">View products</Btn></div></Reveal>
               <Reveal delay={0.35}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginTop: 24 }}>✓ Delivery to other countries on request</p></Reveal>
@@ -72,7 +72,7 @@ export default function HomeEn() {
                   <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
                     <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", letterSpacing: "0.02em", lineHeight: 1.05 }}>{a.title.toUpperCase()}</h3>
                     <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
-                    <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accent }}>Learn more →</span>
+                    <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Learn more →</span>
                   </div>
                 </Link>
               </Reveal>
@@ -165,7 +165,7 @@ export default function HomeEn() {
                 <Link href={`/en/guide/${a.slug}`} className="hover-lift" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 28px 30px", textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, color: C.text, lineHeight: 1.45, margin: "0 0 12px" }}>{a.title}</h3>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: "0 0 16px", flex: 1 }}>{a.teaser}</p>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accent }}>Read →</span>
+                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Read →</span>
                 </Link>
               </Reveal>
             ))}

@@ -11,9 +11,9 @@ export default function ShippingPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Delivery and returns" title="Shipping and returns"/>
+          <Heading as="h1" overline="Delivery and returns" title="Shipping and returns"/>
           <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "14px 20px", marginBottom: 2 }}>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/versand" style={{ color: C.accent }}>German version</a> of the shipping and withdrawal terms is legally binding.</p>
+            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/versand" style={{ color: C.accentText }}>German version</a> of the shipping and withdrawal terms is legally binding.</p>
           </div>
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
@@ -26,7 +26,7 @@ export default function ShippingPage() {
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <div style={{ fontSize: 32, marginBottom: 8 }}>{m.icon}</div>
                   <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 8 }}>{m.label}</div>
-                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 18, color: C.accent, marginBottom: 4 }}>{m.val}</div>
+                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 18, color: C.accentText, marginBottom: 4 }}>{m.val}</div>
                   <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted }}>{m.sub}</div>
                 </div>
               ))}
@@ -51,7 +51,7 @@ export default function ShippingPage() {
             <p style={s}>We issue e-invoices for federal schools in Austria. Please enter your EKG number in the order form.</p>
             <h2 style={h}>7. Right of withdrawal and returns</h2>
             <p style={s}>Consumers within the meaning of the Austrian Consumer Protection Act (KSchG) have the right to <strong>withdraw from the contract within 14 days without giving reasons</strong> (§ 11 FAGG). The period begins on the day on which you or a third party named by you took possession of the goods.</p>
-            <p style={s}>To exercise your right of withdrawal, please inform us by email at <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a> or by post to: Schulmittel Blaschegg, Stücklbachstraße 13, 4813 Altmünster, Austria.</p>
+            <p style={s}>To exercise your right of withdrawal, please inform us by email at <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a> or by post to: Schulmittel Blaschegg, Stücklbachstraße 13, 4813 Altmünster, Austria.</p>
             <h2 style={h}>8. Return shipment</h2>
             <p style={s}>After exercising your right of withdrawal, please send the goods back to our address without delay and at the latest within <strong>14 days</strong>.</p>
             <div style={{ background: C.bgElevated, border: `1px solid ${C.border}`, padding: "20px 24px", marginBottom: 20 }}>
@@ -63,7 +63,7 @@ export default function ShippingPage() {
             <h2 style={h}>10. Condition of returned goods</h2>
             <p style={s}>You are only liable for any loss in value of the goods resulting from handling that was not necessary to examine their nature.</p>
             <h2 style={h}>11. Exceptions to the right of withdrawal</h2>
-            <p style={{ ...s, marginBottom: 0 }}>The right of withdrawal does not apply to goods made individually to customer specifications. For questions, please contact us at <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a>.</p>
+            <p style={{ ...s, marginBottom: 0 }}>The right of withdrawal does not apply to goods made individually to customer specifications. For questions, please contact us at <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a>.</p>
           </div>
           <Reveal delay={0.2}><div style={{ marginTop: 32, display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/contact" variant="secondary">Questions? Contact us</Btn></div></Reveal>
         </div>

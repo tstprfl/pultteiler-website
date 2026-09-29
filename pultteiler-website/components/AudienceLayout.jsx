@@ -7,7 +7,7 @@ import { Btn } from "@/components/ui";
 import Img from "@/components/Img";
 
 const f = {
-  overline: { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accent, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" },
+  overline: { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" },
   h1: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(40px, 6vw, 76px)", color: C.text, lineHeight: 0.98, margin: "24px 0 24px", letterSpacing: "0.02em" },
   h2: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(30px, 4.5vw, 48px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 },
   h3: { fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em", color: C.text, margin: "0 0 10px" },

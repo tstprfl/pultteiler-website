@@ -8,7 +8,7 @@ export default function UeberUnsPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Über uns" title={"Schulmittel Blaschegg\naus Altmünster am Traunsee"} sub="Direkt vom Hersteller — seit über 40 Jahren für Schulen — europaweit."/>
+          <Heading as="h1" overline="Über uns" title={"Schulmittel Blaschegg\naus Altmünster am Traunsee"} sub="Direkt vom Hersteller — seit über 40 Jahren für Schulen — europaweit."/>
           <Reveal><div style={{ border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 2, background: C.bgCard }}><Img sizes="(max-width: 900px) 100vw, 900px" src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler im Einsatz" style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}/></div></Reveal>
           {[
             { title: "Die Idee hinter dem Pultteiler", texts: ["Michael Blaschegg war selbst Lehrer — und kennt die Herausforderungen im Schulalltag aus erster Hand. Tag für Tag werden an unseren Schulen Schularbeiten, informelle Tests, Kontrollarbeiten und Diktate abgehalten. Bei diesen Arbeiten wollen unsere Schüler konzentriert, ungestört und ruhig ihre Leistung zeigen.", "Aus dieser Erfahrung heraus entstand der Pultteiler — eine stabile Trennwand für Schultische, die sowohl Arbeitserleichterung für den Lehrer als auch Unterstützung für die Schüler ist."] },

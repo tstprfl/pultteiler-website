@@ -46,7 +46,7 @@ function createScene(container) {
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
-  renderer.domElement.style.cssText = "display:block;width:100%;height:100%;";
+  renderer.domElement.style.cssText = "display:block;position:absolute;inset:0;width:100%;height:100%;";
   container.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene(); scene.background = new THREE.Color(COL.bg);
@@ -235,7 +235,7 @@ function createScene(container) {
   }
 
   function resize() {
-    const r = container.getBoundingClientRect();
+    const r = { width: container.clientWidth, height: container.clientHeight };   // Layoutgroesse, unabhaengig von CSS-Transforms
     if (r.width < 2 || r.height < 2) return;
     renderer.setSize(r.width, r.height, false); camera.aspect = r.width / r.height; camera.updateProjectionMatrix();
   }
@@ -308,7 +308,7 @@ export default function AufbauAnimation({ steps, label }) {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginTop: 2 }}>
         {steps.map((s, i) => (
           <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 28px 30px", opacity: on[i] ? 1 : 0.35, transition: "opacity 0.4s" }}>
-            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 36, color: C.accent, lineHeight: 1 }}>{s.nr}</span>
+            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 36, color: C.accentText, lineHeight: 1 }}>{s.nr}</span>
             <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "10px 0 12px", letterSpacing: "0.02em", lineHeight: 1.05 }}>{s.title}</h2>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 }}>{s.text}</p>
           </div>

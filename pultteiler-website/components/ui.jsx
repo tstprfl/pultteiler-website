@@ -11,7 +11,7 @@ export function Reveal({ children, delay = 0 }) {
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, []);
-  return <div ref={ref} style={{ opacity: v ? 1 : 0, transform: v ? "translateY(0)" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}s, transform 0.5s ease ${delay}s` }}>{children}</div>;
+  return <div ref={ref} style={{ opacity: v ? 1 : 0, transform: v ? "none" : "translateY(20px)", transition: `opacity 0.5s ease ${delay}s, transform 0.5s ease ${delay}s` }}>{children}</div>;
 }
 
 export function ScrollToTop() {
@@ -21,15 +21,15 @@ export function ScrollToTop() {
   return <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} style={{ position: "fixed", bottom: 24, right: 24, zIndex: 90, width: 44, height: 44, background: C.dark, color: C.white, border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 12px rgba(0,0,0,0.15)", transition: "opacity 0.3s" }} aria-label="Nach oben"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>;
 }
 
-export function Badge({ children, color = C.accent }) {
+export function Badge({ children, color = C.accentText }) {
   return <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color, background: `${color}15`, padding: "5px 12px", display: "inline-block" }}>{children}</span>;
 }
 
-export function Heading({ overline, title, sub, align = "left" }) {
+export function Heading({ overline, title, sub, align = "left", as: Tag = "h2" }) {
   return (
     <div style={{ textAlign: align, marginBottom: 56 }}>
       {overline && <div style={{ marginBottom: 16 }}><Badge>{overline}</Badge></div>}
-      <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(32px, 5vw, 56px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1, whiteSpace: "pre-line" }}>{title}</h2>
+      <Tag style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(32px, 5vw, 56px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1, whiteSpace: "pre-line" }}>{title}</Tag>
       {sub && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, maxWidth: align === "center" ? 560 : "none", margin: align === "center" ? "0 auto" : 0, lineHeight: 1.6 }}>{sub}</p>}
     </div>
   );

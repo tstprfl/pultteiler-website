@@ -8,7 +8,7 @@ export default function AboutPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="About us" title={"Schulmittel Blaschegg\nfrom Altmünster on Lake Traunsee"} sub="Direct from the manufacturer, supplying schools across Europe for over 40 years."/>
+          <Heading as="h1" overline="About us" title={"Schulmittel Blaschegg\nfrom Altmünster on Lake Traunsee"} sub="Direct from the manufacturer, supplying schools across Europe for over 40 years."/>
           <Reveal><div style={{ border: `1px solid ${C.border}`, overflow: "hidden", marginBottom: 2, background: C.bgCard }}><Img sizes="(max-width: 900px) 100vw, 900px" src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler in use" style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}/></div></Reveal>
           {[
             { title: "The idea behind the Pultteiler", texts: ["Michael Blaschegg was a teacher himself and knows the challenges of everyday school life first-hand. Day after day, schools hold class tests, informal tests, assessments and dictations. In these tests, students want to show what they can do with concentration, calmly and without disturbance.", "This experience gave rise to the Pultteiler: a sturdy divider for school desks that makes the teacher's work easier and supports the students."] },

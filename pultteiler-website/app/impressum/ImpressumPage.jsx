@@ -10,14 +10,14 @@ export default function ImpressumPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Rechtliches" title="Impressum"/>
+          <Heading as="h1" overline="Rechtliches" title="Impressum"/>
           <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>Angaben gem. § 5 ECG</h2>
             <p style={s}><strong>Schulmittel Blaschegg</strong><br/>Michael Blaschegg<br/>Herstellung von sonstigen Kunststoffwaren a.n.g.</p>
             <h2 style={h}>Firmensitz</h2>
             <p style={s}>Stücklbachstraße 13<br/>4813 Altmünster<br/>Österreich</p>
             <h2 style={h}>Kontaktdaten</h2>
-            <p style={s}>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon:<br/>+43 (0) 676 935 40 33<br/>+43 (0) 699 129 613 70</p>
+            <p style={s}>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon:<br/>+43 (0) 676 935 40 33<br/>+43 (0) 699 129 613 70</p>
             <h2 style={h}>Unternehmensdaten</h2>
             <p style={s}>Umsatzsteueridentifikationsnummer: ATU37758404<br/>Unternehmensregister: R013F6512<br/>Gewerbebehörde: BH Gmunden<br/>Mitglied der Wirtschaftskammer Österreich</p>
             <h2 style={h}>Bankverbindungen</h2>

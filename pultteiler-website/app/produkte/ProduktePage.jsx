@@ -33,8 +33,8 @@ export default function Produkte() {
     const active = region === r;
     return (
       <button key={r} onClick={() => switchRegion(r)} aria-pressed={active} style={{
-        padding: "12px 24px", background: active ? C.accent : C.bgCard, color: active ? C.white : C.textMuted,
-        border: `1px solid ${active ? C.accent : C.border}`, cursor: "pointer", transition: "all 0.2s",
+        padding: "12px 24px", background: active ? C.accentText : C.bgCard, color: active ? C.white : C.textMuted,
+        border: `1px solid ${active ? C.accentText : C.border}`, cursor: "pointer", transition: "all 0.2s",
         fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em",
       }}>{label}</button>
     );
@@ -59,7 +59,7 @@ export default function Produkte() {
               {toggleBtn("AT", "Österreich & Deutschland")}
               {toggleBtn("CH", "Schweiz")}
             </div>
-            <Link href="/angebot" style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, textDecoration: "none" }}>Anderes Land? → Angebot anfordern</Link>
+            <Link href="/angebot" style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, textDecoration: "none" }}>Anderes Land? → Angebot anfordern</Link>
           </div>
 
           {/* Preise und Versand: Konditionen je Lieferland */}
@@ -72,7 +72,7 @@ export default function Produkte() {
                 {KONDITIONEN[region].map((k) => (
                   <div key={k.label}>
                     <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 600, color: C.textMuted, marginBottom: 4 }}>{k.label}</div>
-                    <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.accent, lineHeight: 1.1, marginBottom: 4 }}>{k.val}</div>
+                    <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.accentText, lineHeight: 1.1, marginBottom: 4 }}>{k.val}</div>
                     <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>{k.sub}</div>
                   </div>
                 ))}
@@ -125,7 +125,7 @@ export default function Produkte() {
                 ))}
               </div>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, margin: "24px 0 0" }}>
-                Ersatzteile für die Schweiz? <Link href="/angebot" style={{ color: C.accent, textDecoration: "none" }}>Gerne per Angebot →</Link>
+                Ersatzteile für die Schweiz? <Link href="/angebot" style={{ color: C.accentText, textDecoration: "none" }}>Gerne per Angebot →</Link>
               </p>
             </>
           )}

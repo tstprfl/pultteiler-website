@@ -125,7 +125,7 @@ export default function CartSidebar({ onClose }) {
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Versand ({region === "CH" ? "CH" : "AT/DE"})</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
               {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>Ab {freeShippingSets} Koffer-Sets entfällt der Versand.</p>}
               {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
-              <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>Gesamt</span><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.accent }}>{fmt(grandTotal)}</span></div>
+              <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>Gesamt</span><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.accentText }}>{fmt(grandTotal)}</span></div>
               <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Jetzt bestellen →</button>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{region === "CH" ? "Nettopreise, steuerfrei und unverzollt. Zahlung per Rechnung." : "Nettopreise zzgl. 20% USt. Mit deutscher UID-Nummer steuerfrei. Zahlung per Rechnung."}</p>
             </div>
@@ -134,7 +134,7 @@ export default function CartSidebar({ onClose }) {
 
         {step === "checkout" && (
           <div style={{ flex: 1, overflow: "auto", padding: "24px 28px" }}>
-            <button onClick={() => setStep("cart")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← Zurück zum Warenkorb</button>
+            <button onClick={() => setStep("cart")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← Zurück zum Warenkorb</button>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 24 }}>
               <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>Ihre Bestellung</div>
               {items.map(item => (
@@ -153,7 +153,7 @@ export default function CartSidebar({ onClose }) {
               </div>}
               <div style={{ borderTop: `1px solid ${C.border}`, marginTop: 10, paddingTop: 10, display: "flex", justifyContent: "space-between" }}>
                 <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.text }}>Gesamt</span>
-                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.accent }}>{fmt(grandTotal)}</span>
+                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.accentText }}>{fmt(grandTotal)}</span>
               </div>
             </div>
             <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 12 }}>Rechnungsadresse</div>
@@ -182,7 +182,7 @@ export default function CartSidebar({ onClose }) {
 
         {step === "kontrolle" && (
           <div style={{ flex: 1, overflow: "auto", padding: "24px 28px" }}>
-            <button onClick={() => { setStep("checkout"); setError(""); }} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← Zurück zur Eingabe</button>
+            <button onClick={() => { setStep("checkout"); setError(""); }} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>← Zurück zur Eingabe</button>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 16 }}>
               <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>Ihre Bestellung</div>
               {items.map(item => (
@@ -201,7 +201,7 @@ export default function CartSidebar({ onClose }) {
               </div>}
               <div style={{ borderTop: `1px solid ${C.border}`, marginTop: 10, paddingTop: 10, display: "flex", justifyContent: "space-between" }}>
                 <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.text }}>Gesamt</span>
-                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.accent }}>{fmt(grandTotal)}</span>
+                <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 20, color: C.accentText }}>{fmt(grandTotal)}</span>
               </div>
             </div>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 24 }}>
@@ -229,7 +229,7 @@ export default function CartSidebar({ onClose }) {
               })}
             </div>
             <div style={{ background: `${C.accent}08`, border: `1px solid ${C.accent}25`, padding: "12px 16px", marginBottom: 16 }}>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, color: C.textMuted, lineHeight: 1.6, margin: 0 }}>Mit dem Absenden der Bestellung bestätigen Sie, die <a href="/agb" style={{ color: C.accent, textDecoration: "underline" }}>AGB</a> und <a href="/datenschutz" style={{ color: C.accent, textDecoration: "underline" }}>Datenschutzerklärung</a> gelesen zu haben. Als Verbraucher haben Sie ein 14-tägiges Widerrufsrecht gem. § 11 FAGG.</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, color: C.textMuted, lineHeight: 1.6, margin: 0 }}>Mit dem Absenden der Bestellung bestätigen Sie, die <a href="/agb" style={{ color: C.accentText, textDecoration: "underline" }}>AGB</a> und <a href="/datenschutz" style={{ color: C.accentText, textDecoration: "underline" }}>Datenschutzerklärung</a> gelesen zu haben. Als Verbraucher haben Sie ein 14-tägiges Widerrufsrecht gem. § 11 FAGG.</p>
             </div>
             <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
               {sending ? "Wird gesendet ..." : "Bestellung absenden →"}
@@ -249,7 +249,7 @@ export default function CartSidebar({ onClose }) {
             <div style={{ textAlign: "center" }}>
               <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 64, color: C.green, marginBottom: 8 }}>✓</div>
               <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 12px" }}>Bestellung eingegangen</h3>
-              {confirmedOrderNr && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: "0.08em", margin: "0 0 12px" }}>Bestellnr. {confirmedOrderNr}</p>}
+              {confirmedOrderNr && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", margin: "0 0 12px" }}>Bestellnr. {confirmedOrderNr}</p>}
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, maxWidth: 300, margin: "0 auto 24px" }}>Vielen Dank für Ihre Bestellung! Wir haben Ihre Anfrage erhalten und melden uns in Kürze mit einer Bestätigung per E-Mail.</p>
               <button onClick={onClose} style={{ background: C.dark, color: C.white, border: "none", padding: "14px 32px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Weiter einkaufen</button>
             </div>

@@ -66,7 +66,7 @@ export default function QuotePage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <Heading
+          <Heading as="h1"
             overline="Request a quote"
             title="Your non-binding quote"
             align="center"
@@ -147,7 +147,7 @@ export default function QuotePage() {
                   </div>
                   <Btn onClick={() => {}} full>{sending ? "Sending ..." : "Request a quote →"}</Btn>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
-                    Non-binding and free of charge. We use your data only to prepare your quote, see our <a href="/en/privacy" style={{ color: C.accent }}>privacy policy</a>.
+                    Non-binding and free of charge. We use your data only to prepare your quote, see our <a href="/en/privacy" style={{ color: C.accentText }}>privacy policy</a>.
                   </p>
                   {error && (
                     <div style={{ background: "#FEF2F2", border: `1px solid ${C.red}`, padding: "12px 16px", marginTop: 12 }}>
@@ -162,7 +162,7 @@ export default function QuotePage() {
           <Reveal delay={0.1}>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 36px", marginTop: 2 }}>
               <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 4 }}>Prefer to write directly?</div>
-              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person}: <a href={`mailto:${CONTACT.email}`} style={{ color: C.accent, textDecoration: "none" }}>{CONTACT.email}</a></div>
+              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person}: <a href={`mailto:${CONTACT.email}`} style={{ color: C.accentText, textDecoration: "none" }}>{CONTACT.email}</a></div>
             </div>
           </Reveal>
         </div>

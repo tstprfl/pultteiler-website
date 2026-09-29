@@ -10,13 +10,13 @@ export default function PrivacyPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Legal" title="Privacy policy"/>
+          <Heading as="h1" overline="Legal" title="Privacy policy"/>
           <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "14px 20px", marginBottom: 2 }}>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/datenschutz" style={{ color: C.accent }}>German version</a> of this privacy policy is legally binding.</p>
+            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/datenschutz" style={{ color: C.accentText }}>German version</a> of this privacy policy is legally binding.</p>
           </div>
           <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>1. Controller</h2>
-            <p style={s}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster, Austria<br/>Email: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Phone: +43 (0) 676 935 40 33</p>
+            <p style={s}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster, Austria<br/>Email: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Phone: +43 (0) 676 935 40 33</p>
 
             <h2 style={h}>2. Collection and processing of personal data</h2>
             <p style={s}>We collect and process personal data only within the framework of the applicable data protection laws, in particular the EU General Data Protection Regulation (GDPR) and the Austrian Data Protection Act (DSG). Personal data is only collected if you provide it to us voluntarily, e.g. when placing an order, making a contact request or registering.</p>
@@ -46,11 +46,11 @@ export default function PrivacyPage() {
             <h2 style={h}>10. Your rights</h2>
             <p style={s}>Under the GDPR you have the following rights:</p>
             <p style={{ ...s, paddingLeft: 16 }}>— Right of access (Art. 15 GDPR)<br/>— Right to rectification (Art. 16 GDPR)<br/>— Right to erasure (Art. 17 GDPR)<br/>— Right to restriction of processing (Art. 18 GDPR)<br/>— Right to data portability (Art. 20 GDPR)<br/>— Right to object (Art. 21 GDPR)</p>
-            <p style={s}>To exercise your rights, please contact: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a></p>
+            <p style={s}>To exercise your rights, please contact: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a></p>
 
             <h2 style={h}>11. Right to lodge a complaint</h2>
             <p style={s}>You have the right to lodge a complaint with the competent data protection authority:</p>
-            <p style={s}>Austrian Data Protection Authority (Österreichische Datenschutzbehörde)<br/>Barichgasse 40–42, 1030 Vienna, Austria<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "none" }}>www.dsb.gv.at</a></p>
+            <p style={s}>Austrian Data Protection Authority (Österreichische Datenschutzbehörde)<br/>Barichgasse 40–42, 1030 Vienna, Austria<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>www.dsb.gv.at</a></p>
 
             <h2 style={h}>12. Changes</h2>
             <p style={{ ...s, marginBottom: 0 }}>We reserve the right to amend this privacy policy as necessary to comply with current legal requirements. Version: April 2026.</p>

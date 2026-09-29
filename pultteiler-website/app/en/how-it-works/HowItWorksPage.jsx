@@ -21,7 +21,7 @@ export default function HowItWorksPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <Heading overline="Set-up guide" title={"How the Pultteiler works\nSet up in 3 steps"} sub="Divider panel and desk clamp: set up in a few simple moves." align="center"/>
+          <Heading as="h1" overline="Set-up guide" title={"How the Pultteiler works\nSet up in 3 steps"} sub="Divider panel and desk clamp: set up in a few simple moves." align="center"/>
           <Reveal>
             <AufbauAnimation steps={STEPS} label="Animation: the clamp is pushed sideways onto the edge of the desk, the divider panel is inserted from above."/>
           </Reveal>

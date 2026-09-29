@@ -10,10 +10,10 @@ export default function DatenschutzPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <Heading overline="Rechtliches" title="Datenschutzerklärung"/>
+          <Heading as="h1" overline="Rechtliches" title="Datenschutzerklärung"/>
           <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>1. Verantwortlicher</h2>
-            <p style={s}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster, Österreich<br/>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon: +43 (0) 676 935 40 33</p>
+            <p style={s}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster, Österreich<br/>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon: +43 (0) 676 935 40 33</p>
 
             <h2 style={h}>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
             <p style={s}>Wir erheben und verarbeiten personenbezogene Daten nur im Rahmen der geltenden Datenschutzgesetze, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO) und des österreichischen Datenschutzgesetzes (DSG). Personenbezogene Daten werden nur erhoben, wenn Sie uns diese freiwillig mitteilen, z.B. bei einer Bestellung, Kontaktanfrage oder Registrierung.</p>
@@ -43,11 +43,11 @@ export default function DatenschutzPage() {
             <h2 style={h}>10. Ihre Rechte</h2>
             <p style={s}>Sie haben gemäß DSGVO folgende Rechte:</p>
             <p style={{ ...s, paddingLeft: 16 }}>— Recht auf Auskunft (Art. 15 DSGVO)<br/>— Recht auf Berichtigung (Art. 16 DSGVO)<br/>— Recht auf Löschung (Art. 17 DSGVO)<br/>— Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)<br/>— Recht auf Datenübertragbarkeit (Art. 20 DSGVO)<br/>— Widerspruchsrecht (Art. 21 DSGVO)</p>
-            <p style={s}>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accent, textDecoration: "none" }}>blaschegg@traunseenet.at</a></p>
+            <p style={s}>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a></p>
 
             <h2 style={h}>11. Beschwerderecht</h2>
             <p style={s}>Sie haben das Recht, eine Beschwerde bei der zuständigen Datenschutzbehörde einzureichen:</p>
-            <p style={s}>Österreichische Datenschutzbehörde<br/>Barichgasse 40–42, 1030 Wien<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "none" }}>www.dsb.gv.at</a></p>
+            <p style={s}>Österreichische Datenschutzbehörde<br/>Barichgasse 40–42, 1030 Wien<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>www.dsb.gv.at</a></p>
 
             <h2 style={h}>12. Änderungen</h2>
             <p style={{ ...s, marginBottom: 0 }}>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um den aktuellen rechtlichen Anforderungen zu entsprechen. Stand: April 2026.</p>
