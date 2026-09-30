@@ -9,7 +9,8 @@ export const PRESSE = [
     name: "ORF",
     logo: null,
     articles: [
-      { date: "2026-05-05", title: "Auftakt zur Zentralmatura mit Deutsch", url: "https://oesterreich.orf.at/stories/3352760/" },
+      { date: "2026-05-05", label: { de: "Österreich", en: "Austria" }, title: "Auftakt zur Zentralmatura mit Deutsch", url: "https://oesterreich.orf.at/stories/3352760/" },
+      { date: "2026-05-05", label: { de: "Tirol", en: "Tyrol" }, title: "Zentralmatura startet mit Deutsch", url: "https://tirol.orf.at/stories/3352847/" },
     ],
   },
   {
