@@ -5,6 +5,7 @@ import { SCHOOLS_TEXT, YEARS, TESTIMONIALS, COUNTRY_INFO, AUDIENCES } from "@/li
 import { ARTICLES } from "@/lib/articles";
 import { Reveal, Badge, Heading, Btn } from "@/components/ui";
 import Img from "@/components/Img";
+import PressStrip from "@/components/PressStrip";
 
 export default function Home() {
   return (
@@ -56,6 +57,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ═══ ZU SEHEN BEI (Medienberichte mit Pultteilern im Foto, Daten in lib/presse.js) ═══ */}
+      <PressStrip lang="de"/>
 
       {/* ═══ ZIELGRUPPEN ═══ */}
       <section style={{ padding: "96px 32px", background: C.bg }}>

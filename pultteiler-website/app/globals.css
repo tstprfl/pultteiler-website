@@ -20,6 +20,7 @@ body { margin: 0; background: #E4F0F0; }
 
 @media (max-width: 768px) {
   .hero-g, .prod-card, .contact-g { grid-template-columns: 1fr !important; }
+  .press-g { grid-template-columns: 1fr !important; }
   .hero-circle { display: none !important; }
   .hero-plates { flex-wrap: wrap !important; justify-content: center !important; }
   .hero-plates > div { width: 130px !important; height: 85px !important; }

@@ -6,6 +6,7 @@ import { COUNTRIES_EN as COUNTRY_INFO, AUDIENCES_EN as AUDIENCES } from "@/lib/e
 import { ARTICLES_EN as ARTICLES } from "@/lib/articles-en";
 import { Reveal, Badge, Heading, Btn } from "@/components/ui";
 import Img from "@/components/Img";
+import PressStrip from "@/components/PressStrip";
 
 export default function HomeEn() {
   return (
@@ -57,6 +58,9 @@ export default function HomeEn() {
           ))}
         </div>
       </section>
+
+      {/* ═══ ZU SEHEN BEI (Medienberichte mit Pultteilern im Foto, Daten in lib/presse.js) ═══ */}
+      <PressStrip lang="en"/>
 
       {/* ═══ ZIELGRUPPEN ═══ */}
       <section style={{ padding: "96px 32px", background: C.bg }}>

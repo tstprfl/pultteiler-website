@@ -1,0 +1,59 @@
+// Medienberichte, in deren Fotos Pultteiler bei der Zentralmatura zu sehen sind.
+// Genutzt vom Startseiten-Abschnitt „Zu sehen bei“ (components/PressStrip.jsx), DE und EN.
+// Wichtig: In keinem dieser Berichte wird Pultteiler genannt, das Produkt ist nur im Foto zu sehen.
+// Deshalb keine Formulierung wie „bekannt aus“ und keine Medienlogos ohne schriftliche Freigabe.
+// Liegt eine Freigabe vor: Logo nach public/images legen und hier im Feld `logo` eintragen.
+export const PRESSE = [
+  {
+    id: "orf",
+    name: "ORF",
+    logo: null,
+    articles: [
+      { date: "2026-05-05", title: "Auftakt zur Zentralmatura mit Deutsch", url: "https://oesterreich.orf.at/stories/3352760/" },
+    ],
+  },
+  {
+    id: "ooen",
+    name: "OÖNachrichten",
+    logo: null,
+    articles: [
+      { date: "2017-05-06", title: "Lernen in letzter Sekunde für Matura: „Gehirn überlisten“", url: "https://www.nachrichten.at/oberoesterreich/lernen-in-letzter-sekunde-fuer-matura-gehirn-ueberlisten;art4,2559274" },
+      { date: "2017-05-30", title: "Zentralmatura: Weniger Fünfer in den Berufsbildenden Schulen", url: "https://www.nachrichten.at/oberoesterreich/zentralmatura-weniger-fuenfer-in-den-berufsbildenden-schulen;art4,2580368" },
+      { date: "2018-05-29", title: "Ist die Mathematik-Zentralmatura zu schwierig?", url: "https://www.nachrichten.at/oberoesterreich/ist-die-mathematik-zentralmatura-zu-schwierig;art4,2908466" },
+    ],
+  },
+  {
+    id: "noen",
+    name: "NÖN",
+    logo: null,
+    articles: [
+      { date: "2026-05-04", title: "Für 7.600 NÖ-Jugendliche startet morgen die Zentralmatura", url: "https://www.noen.at/niederoesterreich/politik/reife-und-diplompruefung-fuer-7-600-noe-jugendliche-startet-morgen-die-zentralmatura-521292932" },
+    ],
+  },
+];
+
+export const PRESSE_T = {
+  de: {
+    title: "Zu sehen bei",
+    sub: "Pultteiler in Berichten über die Zentralmatura, 2017 bis 2026",
+    note: "Auf den Fotos dieser Berichte stehen Pultteiler auf den Prüfungstischen. Die Links führen zu den jeweiligen Medien.",
+    open: "Bericht öffnen",
+  },
+  en: {
+    title: "As seen in",
+    sub: "Pultteiler dividers in reports on Austria's Matura exams, 2017 to 2026",
+    note: "The photos in these reports show Pultteiler dividers on the exam desks. The links open the respective media sites.",
+    open: "Open report",
+  },
+};
+
+const MONTHS = {
+  de: ["Jänner", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+};
+
+// Deterministische Datumsausgabe (gleich auf Server und Client), z. B. „6. Mai 2017“ / „6 May 2017“
+export function formatDate(iso, lang = "de") {
+  const [y, m, d] = iso.split("-").map(Number);
+  return lang === "en" ? `${d} ${MONTHS.en[m - 1]} ${y}` : `${d}. ${MONTHS.de[m - 1]} ${y}`;
+}
