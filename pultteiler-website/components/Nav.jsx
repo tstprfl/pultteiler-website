@@ -6,7 +6,7 @@ import { C } from "@/lib/colors";
 import { NAV } from "@/lib/data";
 import { useCart } from "@/components/CartProvider";
 import CartSidebar from "@/components/CartSidebar";
-import Wortmarke from "@/components/Wortmarke";
+import Img from "@/components/Img";
 import { NAV_EN, EN_START, isEnPath, switchTarget } from "@/lib/i18n";
 
 export default function Nav() {
@@ -56,7 +56,8 @@ export default function Nav() {
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : "transparent", borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href={en ? EN_START : "/"} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-            <Wortmarke size={28}/>
+            <Img sizes="56px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
+            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </Link>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
             <div className="desk-nav" style={{ display: "flex", gap: 2, alignItems: "center" }}>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { C } from "@/lib/colors";
 import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
 import { usePathname } from "next/navigation";
-import Wortmarke from "@/components/Wortmarke";
+import Img from "@/components/Img";
 import { isEnPath } from "@/lib/i18n";
 
 const COLS = [
@@ -83,7 +83,8 @@ export default function Footer() {
       <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 48 }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-            <Wortmarke size={24}/>
+            <Img sizes="44px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" loading="lazy" style={{ width: 44, height: 44, objectFit: "contain", borderRadius: 4 }}/>
+            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </div>
           {en ? (
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Proven privacy screens for school and exam desks, direct from the manufacturer for over {YEARS} years. Delivery to other countries on request.</p>
