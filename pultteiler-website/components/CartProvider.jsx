@@ -22,9 +22,9 @@ export function CartProvider({ children }) {
   const count = items.reduce((s, i) => s + i.qty, 0);
   const setIds = SETS.map(s => s.id);
   const setCount = items.filter(i => setIds.includes(i.id)).reduce((s, i) => s + i.qty, 0);
-  // Versandpauschale je Bestellung (brutto), ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei
+  // Versandpauschale je Bestellung und Lieferland (brutto), ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei
   const shipping = items.length === 0 ? 0 : (setCount >= FREE_SHIPPING_SETS ? 0 : SHIPPING[region]);
-  // AT/DE: Preise inkl. 20% USt, die enthaltene USt wird ausgewiesen; Schweiz steuerfrei
+  // AT und DE: Preise inkl. 20% USt, die enthaltene USt wird ausgewiesen; Schweiz steuerfrei
   const vatRate = region === "CH" ? 0 : VAT_RATE;
   const grandTotal = total + shipping;
   const vat = grandTotal - grandTotal / (1 + vatRate);

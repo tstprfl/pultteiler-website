@@ -1,7 +1,7 @@
 // Preise AT/DE BRUTTO inkl. 20% USt (priceAT), Schweiz steuerfrei (priceCH). Mit deutscher UID-Nummer gilt der Nettopreis (brutto / 1,2).
-// Preisliste Stand Oktober 2026. Versand je Bestellung (brutto) siehe SHIPPING, ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
+// Preisliste Stand Oktober 2026. Versand je Bestellung und Lieferland (brutto) siehe SHIPPING, ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
 export const VAT_RATE = 0.20;
-export const SHIPPING = { AT: 10.00, CH: 25.00 };
+export const SHIPPING = { AT: 10.00, DE: 12.00, CH: 25.00 };
 export const FREE_SHIPPING_SETS = 3;
 
 export const SETS = [
@@ -12,10 +12,10 @@ export const SETS = [
 
 export const PARTS = [
   { id: "klammer-2", name: "Klammer (2 Stück)", short: "2x Klammer", desc: "Hochwertige, dauerelastische Klammer im Doppelpack.", priceAT: 19.40, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Klammer_1.png" },
-  { id: "platte-a", name: "Teilerplatte A Gelb — 50×30 cm", short: "Platte A gelb klein", desc: "Einzelne Ersatzplatte, bis 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 8.90, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
-  { id: "platte-b-gelb", name: "Teilerplatte B Gelb — 50×40 cm", short: "Platte B gelb groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 9.90, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
-  { id: "platte-b-grau", name: "Teilerplatte B Grau — 50×40 cm", short: "Platte B grau groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 9.90, tag: "Ersatzteil", color: "#777", img: "/images/pultteiler_grau.png" },
-  { id: "koffer-leer", name: "Koffer ohne Inhalt", short: "Holzkoffer leer", desc: "Leerer Holzkoffer als Ersatz. Material: Holz.", priceAT: 43.20, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Koffer_1.png" },
+  { id: "platte-a", name: "Teilerplatte A Gelb — 50×30 cm", short: "Platte A gelb klein", desc: "Einzelne Ersatzplatte, bis 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 9.30, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
+  { id: "platte-b-gelb", name: "Teilerplatte B Gelb — 50×40 cm", short: "Platte B gelb groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.30, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
+  { id: "platte-b-grau", name: "Teilerplatte B Grau — 50×40 cm", short: "Platte B grau groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.30, tag: "Ersatzteil", color: "#777", img: "/images/pultteiler_grau.png" },
+  { id: "koffer-leer", name: "Koffer ohne Inhalt", short: "Holzkoffer leer", desc: "Leerer Holzkoffer als Ersatz. Material: Holz.", priceAT: 45.20, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Koffer_1.png" },
 ];
 
 export const GALLERY = [

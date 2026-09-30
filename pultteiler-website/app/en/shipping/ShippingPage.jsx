@@ -19,7 +19,7 @@ export default function ShippingPage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
                 { icon: "🇦🇹", label: "Austria", val: "€ 10.00 per order", sub: "incl. VAT — free from 3 case sets" },
-                { icon: "🇩🇪", label: "Germany", val: "€ 10.00 per order", sub: "incl. VAT — free from 3 case sets" },
+                { icon: "🇩🇪", label: "Germany", val: "€ 12.00 per order", sub: "incl. VAT — free from 3 case sets" },
                 { icon: "🇨🇭", label: "Switzerland", val: "€ 25.00 per order", sub: "tax-free and duty-free — free from 3 case sets" },
                 { icon: "🌍", label: "Other countries", val: "On request", sub: "Please contact us" },
               ].map((m, i) => (
@@ -38,7 +38,8 @@ export default function ShippingPage() {
             <h2 style={h}>2. Delivery times</h2>
             <p style={s}>Delivery usually takes <strong>5 to 10 working days</strong> from order confirmation. Deliveries to Switzerland may take slightly longer. If there is a delay, we will inform you immediately.</p>
             <h2 style={h}>3. Shipping costs in detail</h2>
-            {bullet("Austria and Germany: € 10.00 flat shipping rate per order (incl. 20% VAT), for case sets and spare parts")}
+            {bullet("Austria: € 10.00 flat shipping rate per order (incl. 20% VAT), for case sets and spare parts")}
+            {bullet("Germany: € 12.00 flat shipping rate per order (incl. 20% VAT), for case sets and spare parts")}
             {bullet("Switzerland: € 25.00 flat shipping rate per order, tax-free and duty-free")}
             {bullet("Orders of 3 or more case sets: free shipping to all three countries")}
             {bullet("Other countries: shipping costs on request, please contact us")}

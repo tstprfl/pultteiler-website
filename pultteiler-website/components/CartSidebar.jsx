@@ -16,7 +16,7 @@ export default function CartSidebar({ onClose }) {
   const [formValues, setFormValues] = useState({});
   const [confirmedOrderNr, setConfirmedOrderNr] = useState("");
   const inp = { width: "100%", padding: "12px 14px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s", marginBottom: 12 };
-  const regionLabel = region === "CH" ? "Schweiz (steuerfrei und unverzollt)" : "Österreich/Deutschland (Preise inkl. 20% USt)";
+  const regionLabel = region === "CH" ? "Schweiz (steuerfrei und unverzollt)" : region === "DE" ? "Deutschland (Preise inkl. 20% USt)" : "Österreich (Preise inkl. 20% USt)";
 
   const generateOrderNr = () => {
     const now = new Date();
@@ -55,7 +55,7 @@ export default function CartSidebar({ onClose }) {
     const templateParams = {
       kunde_email: formValues["email"] || "",
       order_nr: orderNr,
-      region: region === "CH" ? "Schweiz" : "Österreich / Deutschland",
+      region: region === "CH" ? "Schweiz" : region === "DE" ? "Deutschland" : "Österreich",
       bestellung: bestellungText,
       versand: shippingText,
       gesamt: fmt(grandTotal),
@@ -122,12 +122,12 @@ export default function CartSidebar({ onClose }) {
           {items.length > 0 && (
             <div style={{ borderTop: `1px solid ${C.border}`, padding: "24px 28px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Zwischensumme</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(total)}</span></div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Versand ({region === "CH" ? "CH" : "AT/DE"})</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Versand ({region})</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
               {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>Ab {freeShippingSets} Koffer-Sets entfällt der Versand.</p>}
               {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
               <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>Gesamt</span><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.accentText }}>{fmt(grandTotal)}</span></div>
               <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Jetzt bestellen →</button>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{region === "CH" ? "Steuerfrei und unverzollt. Zahlung per Rechnung." : "Preise inkl. 20% USt. Mit deutscher UID-Nummer steuerfrei zum Nettopreis. Zahlung per Rechnung."}</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{region === "CH" ? "Steuerfrei und unverzollt. Zahlung per Rechnung." : region === "DE" ? region === "DE" ? "Preise inkl. 20% USt. Mit deutscher UID-Nummer steuerfrei zum Nettopreis. Zahlung per Rechnung." : "Preise inkl. 20% USt. Zahlung per Rechnung." : "Preise inkl. 20% USt. Zahlung per Rechnung."}</p>
             </div>
           )}
         </>)}
@@ -165,10 +165,10 @@ export default function CartSidebar({ onClose }) {
                 <input type="text" name="PLZ" placeholder="PLZ *" required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
                 <input type="text" name="Ort" placeholder="Ort *" required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               </div>
-              <input type="text" name="Land" placeholder="Land *" required defaultValue={region === "CH" ? "Schweiz" : "Österreich"} style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
+              <input type="text" name="Land" placeholder="Land *" required defaultValue={region === "CH" ? "Schweiz" : region === "DE" ? "Deutschland" : "Österreich"} style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input type="email" name="email" placeholder="E-Mail Adresse *" required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input type="tel" name="Telefon" placeholder="Telefonnummer (optional)" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
-              {region === "AT" && <input type="text" name="UID-Nummer" placeholder="UID-Nummer (optional, für steuerfreie Lieferung nach DE)" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>}
+              {region === "DE" && <input type="text" name="UID-Nummer" placeholder="UID-Nummer (optional, für steuerfreie Lieferung zum Nettopreis)" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>}
               <input type="text" name="Einkäufergruppe" placeholder="Einkäufergruppe (optional, für österr. Bundesschulen)" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <textarea name="Anmerkungen" placeholder="Anmerkungen zur Bestellung (optional)" rows={3} style={{ ...inp, resize: "vertical" }} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <label style={{ display: "flex", alignItems: "flex-start", gap: 10, marginTop: 8, marginBottom: 16, cursor: "pointer" }}>

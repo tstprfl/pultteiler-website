@@ -12,10 +12,17 @@ const eur = (n) => `€ ${n.toFixed(2).replace(".", ",")}`;
 const KONDITIONEN = {
   AT: [
     { label: "Preise", val: "Inkl. 20% USt", sub: "Die enthaltene Umsatzsteuer wird im Warenkorb ausgewiesen." },
-    { label: "Versand Österreich & Deutschland", val: `${eur(SHIPPING.AT)} je Bestellung`, sub: "inkl. USt, für Koffer-Sets und Ersatzteile" },
+    { label: "Versand Österreich", val: `${eur(SHIPPING.AT)} je Bestellung`, sub: "inkl. USt, für Koffer-Sets und Ersatzteile" },
     { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
-    { label: "Deutschland mit UID-Nummer", val: "Steuerfrei", sub: "Nettopreis, innergemeinschaftliche Lieferung, deutsches Bankkonto vorhanden" },
     { label: "Österreichische Bundesschulen", val: "E-Rechnung", sub: "mit Ihrer EKG-Nummer, Zahlung auf Rechnung" },
+    { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
+  ],
+  DE: [
+    { label: "Preise", val: "Inkl. 20% USt", sub: "Die enthaltene Umsatzsteuer wird im Warenkorb ausgewiesen." },
+    { label: "Versand Deutschland", val: `${eur(SHIPPING.DE)} je Bestellung`, sub: "inkl. USt, für Koffer-Sets und Ersatzteile" },
+    { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
+    { label: "Mit UID-Nummer", val: "Steuerfrei", sub: "Nettopreis, innergemeinschaftliche Lieferung, deutsches Bankkonto vorhanden" },
+    { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
   ],
   CH: [
     { label: "Preise", val: "Steuerfrei", sub: "unverzollt" },
@@ -56,7 +63,8 @@ export default function Produkte() {
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 32 }}>
             <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>Lieferland</span>
             <div style={{ display: "flex", gap: 2 }}>
-              {toggleBtn("AT", "Österreich & Deutschland")}
+              {toggleBtn("AT", "Österreich")}
+              {toggleBtn("DE", "Deutschland")}
               {toggleBtn("CH", "Schweiz")}
             </div>
             <Link href="/angebot" style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, textDecoration: "none" }}>Anderes Land? → Angebot anfordern</Link>
@@ -66,7 +74,7 @@ export default function Produkte() {
           <Reveal>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderLeft: `4px solid ${C.accent}`, padding: "24px 28px", marginBottom: 40 }}>
               <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, marginBottom: 16 }}>
-                {region === "CH" ? "Preise und Versand für die Schweiz" : "Preise und Versand für Österreich und Deutschland"}
+                {region === "CH" ? "Preise und Versand für die Schweiz" : region === "DE" ? "Preise und Versand für Deutschland" : "Preise und Versand für Österreich"}
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px 24px" }}>
                 {KONDITIONEN[region].map((k) => (
@@ -101,11 +109,11 @@ export default function Produkte() {
             ))}
           </div>
 
-          {/* Ersatzteile (Bruttopreise AT/DE) */}
-          {region === "AT" && (
+          {/* Ersatzteile (Bruttopreise AT und DE) */}
+          {region !== "CH" && (
             <>
               <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>Ersatzteile nachbestellen</h2>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile inkl. 20% USt für Österreich und Deutschland. Versand: € {SHIPPING.AT.toFixed(2).replace(".", ",")} je Bestellung.</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile inkl. 20% USt. Versand: {eur(SHIPPING[region])} je Bestellung.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {PARTS.map((p, i) => (
                   <Reveal key={p.id} delay={i * 0.08}>

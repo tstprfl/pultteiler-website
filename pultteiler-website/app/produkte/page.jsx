@@ -9,14 +9,14 @@ export const metadata = {
   alternates: alternatesFor("/produkte"),
 };
 
-// Versand und Rückgabe gemäß /versand und AGB: Versandpauschale je Bestellung (AT/DE inkl. USt, CH steuerfrei),
+// Versand und Rückgabe gemäß /versand und AGB: Versandpauschale je Bestellung und Lieferland (AT/DE inkl. USt, CH steuerfrei),
 // ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei, 14 Tage Widerruf, Rücksendekosten trägt der Käufer.
 // Bei Änderungen dort auch hier anpassen.
-const shippingDetails = {
+const shippingDetails = ["AT", "DE", "CH"].map((country) => ({
   "@type": "OfferShippingDetails",
-  shippingRate: { "@type": "MonetaryAmount", value: SHIPPING.AT.toFixed(2), currency: "EUR" },
-  shippingDestination: { "@type": "DefinedRegion", addressCountry: ["AT", "DE", "CH"] },
-};
+  shippingRate: { "@type": "MonetaryAmount", value: SHIPPING[country].toFixed(2), currency: "EUR" },
+  shippingDestination: { "@type": "DefinedRegion", addressCountry: country },
+}));
 
 const returnPolicy = {
   "@type": "MerchantReturnPolicy",
