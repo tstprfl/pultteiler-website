@@ -46,7 +46,6 @@ export const PRESSE = [
     logo: null,
     articles: [
       { date: "2025-02-19", title: "Start der Zentralmatura 2026 und 2027 jeweils am 5. Mai", url: "https://www.vienna.at/start-of-the-central-matura-2026-and-2027-on-may/9225808" },
-      { date: "2025-05-07", title: "Start für heiße Phase der Zentralmatura", url: "https://www.vienna.at/start-fuer-heisse-phase-der-zentralmatura/9385352" },
     ],
   },
 ];
