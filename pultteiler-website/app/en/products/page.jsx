@@ -46,7 +46,8 @@ export default function Page() {
                     <Img sizes="300px" src={p.img} alt={en.name} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 200, display: "block" }}/>
                   </div>
                   <div style={{ padding: "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 8px" }}>{en.name}</h3>
+                    <div><Badge>The original</Badge></div>
+                    <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{en.name}</h3>
                     <p style={t.small}>{en.desc}</p>
                     <div><Btn href="/en/quote">Request a quote →</Btn></div>
                   </div>

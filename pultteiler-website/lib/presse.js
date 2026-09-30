@@ -51,18 +51,28 @@ export const PRESSE = [
   },
 ];
 
+// Medien als Aufzählung, z. B. „ORF, OÖNachrichten, NÖN, Salzburg24 und VIENNA.AT“ (für die Hero-Zeile)
+export function presseNamen(lang = "de") {
+  const n = PRESSE.map((m) => m.name);
+  return `${n.slice(0, -1).join(", ")} ${lang === "en" ? "and" : "und"} ${n[n.length - 1]}`;
+}
+
 export const PRESSE_T = {
   de: {
-    title: "Zu sehen bei",
-    sub: "Pultteiler in Berichten über die Zentralmatura, 2017 bis 2026",
-    note: "Auf den Fotos dieser Berichte stehen Pultteiler auf den Prüfungstischen. Die Links führen zu den jeweiligen Medien.",
+    overline: "Zu sehen bei",
+    title: "Pultteiler in Berichten zur Zentralmatura",
+    sub: "Auf den Fotos dieser Berichte stehen Pultteiler auf den Prüfungstischen, 2017 bis 2026.",
+    note: "Die Links führen zu den jeweiligen Medien.",
     open: "Bericht öffnen",
+    hero: `Bei der Zentralmatura im Einsatz: zu sehen bei ${presseNamen("de")}`,
   },
   en: {
-    title: "As seen in",
-    sub: "Pultteiler dividers in reports on Austria's Matura exams, 2017 to 2026",
-    note: "The photos in these reports show Pultteiler dividers on the exam desks. The links open the respective media sites.",
+    overline: "As seen in",
+    title: "Pultteiler in reports on the Matura exams",
+    sub: "The photos in these reports show Pultteiler dividers on the exam desks, 2017 to 2026.",
+    note: "The links open the respective media sites.",
     open: "Open report",
+    hero: `In use at Austria's Matura exams: as seen in ${presseNamen("en")}`,
   },
 };
 

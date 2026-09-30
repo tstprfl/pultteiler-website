@@ -2,20 +2,18 @@
 // Bewusst als Textwortmarken statt Logos (Markenrecht) und mit ehrlicher Fußnote (keine Berichterstattung über das Produkt).
 // Daten und Texte in lib/presse.js.
 import { C } from "@/lib/colors";
-import { Reveal } from "@/components/ui";
+import { Reveal, Heading } from "@/components/ui";
 import { PRESSE, PRESSE_T, formatDate } from "@/lib/presse";
 
 const font = "'Inter Tight', sans-serif";
 
+// id="medien": Sprungziel der Hero-Zeile (#medien); scrollMarginTop hält Abstand zur fixen Navigation
 export default function PressStrip({ lang = "de" }) {
   const t = PRESSE_T[lang] || PRESSE_T.de;
   return (
-    <section aria-labelledby="press-title" style={{ padding: "64px 32px", background: C.bgCard, borderBottom: `1px solid ${C.border}` }}>
+    <section id="medien" style={{ padding: "80px 32px 72px", background: C.bgCard, borderBottom: `1px solid ${C.border}`, scrollMarginTop: 80 }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 28 }}>
-          <h2 id="press-title" style={{ fontFamily: font, fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: C.textMuted, margin: "0 0 10px" }}>{t.title}</h2>
-          <p style={{ fontFamily: font, fontSize: 15, color: C.textMuted, margin: 0 }}>{t.sub}</p>
-        </div>
+        <Heading overline={t.overline} title={t.title} sub={t.sub} align="center"/>
         <Reveal>
           {/* Drei Kacheln je Zeile, eine unvollständige letzte Zeile wird zentriert; am Handy eine Kachel je Zeile (globals.css) */}
           <div className="press-g" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 2 }}>
