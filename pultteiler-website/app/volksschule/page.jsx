@@ -67,8 +67,8 @@ export default function Page() {
             {
               name: "Set A — Gelb — bis 5. Schuljahr",
               desc: "1 Holzkoffer mit 12 Teilerplatten (50×30 cm) und 12 Klammern. Die richtige Höhe für die Volksschule.",
-              price: "€ 235,00",
-              note: "netto zzgl. 20% USt (AT/DE) — Preis Schweiz: € 270,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
+              price: "€ 261,00",
+              note: "inkl. 20% USt (AT/DE) — Preis Schweiz: € 251,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-gelb.jpg",
               href: "/produkte",
               cta: "Im Shop bestellen",

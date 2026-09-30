@@ -8,7 +8,7 @@ import Img from "@/components/Img";
 export default function CartSidebar({ onClose }) {
   const { items, updateQty, remove, total, count, region, getPrice, shipping, clear, vatRate, vat, grandTotal, setCount, freeShippingSets } = useCart();
   const fmt = (n) => `€ ${n.toFixed(2)}`;
-  const vatLabel = `USt ${Math.round(vatRate * 100)}%`;
+  const vatLabel = `enthaltene USt ${Math.round(vatRate * 100)}%`;
   const shippingLabel = shipping === 0 ? (items.length > 0 && setCount >= freeShippingSets ? `Kostenlos (ab ${freeShippingSets} Koffer-Sets)` : "Kostenlos") : fmt(shipping);
   const [step, setStep] = useState("cart");
   const [sending, setSending] = useState(false);
@@ -16,7 +16,7 @@ export default function CartSidebar({ onClose }) {
   const [formValues, setFormValues] = useState({});
   const [confirmedOrderNr, setConfirmedOrderNr] = useState("");
   const inp = { width: "100%", padding: "12px 14px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s", marginBottom: 12 };
-  const regionLabel = region === "CH" ? "Schweiz (Nettopreise, steuerfrei und unverzollt)" : "Österreich/Deutschland (Nettopreise zzgl. 20% USt)";
+  const regionLabel = region === "CH" ? "Schweiz (steuerfrei und unverzollt)" : "Österreich/Deutschland (Preise inkl. 20% USt)";
 
   const generateOrderNr = () => {
     const now = new Date();
@@ -28,10 +28,10 @@ export default function CartSidebar({ onClose }) {
   };
 
   const orderSummaryForMailto = () => {
-    const lines = items.map(i => `${i.qty}x ${i.name} — ${fmt(getPrice(i) * i.qty)} netto`).join("\n");
+    const lines = items.map(i => `${i.qty}x ${i.name} — ${fmt(getPrice(i) * i.qty)}`).join("\n");
     const plzOrt = `${formValues["PLZ"] || ""} ${formValues["Ort"] || ""}`.trim();
     const vatLine = vatRate > 0 ? `\n${vatLabel}: ${fmt(vat)}` : "";
-    return `Region: ${regionLabel}\n\n${lines}\n\nZwischensumme netto: ${fmt(total)}\nVersand: ${shippingLabel}${vatLine}\nGesamtbetrag: ${fmt(grandTotal)}\n\nRechnungsadresse:\n${formValues["Name / Schule"] || ""}\n${formValues["Ansprechperson"] || ""}\n${formValues["Adresse"] || ""}\n${plzOrt}\n${formValues["Land"] || ""}\nE-Mail: ${formValues["email"] || ""}\nTelefon: ${formValues["Telefon"] || "–"}`;
+    return `Region: ${regionLabel}\n\n${lines}\n\nZwischensumme: ${fmt(total)}\nVersand: ${shippingLabel}\nGesamtbetrag: ${fmt(grandTotal)}${vatLine}\n\nRechnungsadresse:\n${formValues["Name / Schule"] || ""}\n${formValues["Ansprechperson"] || ""}\n${formValues["Adresse"] || ""}\n${plzOrt}\n${formValues["Land"] || ""}\nE-Mail: ${formValues["email"] || ""}\nTelefon: ${formValues["Telefon"] || "–"}`;
   };
 
   const goToKontrolle = (e) => {
@@ -48,8 +48,8 @@ export default function CartSidebar({ onClose }) {
     setError("");
     const orderNr = generateOrderNr();
     const shippingText = shippingLabel;
-    const bestellungText = items.map(i => `${i.qty}x ${i.name} — ${fmt(getPrice(i) * i.qty)} netto`).join("\n")
-      + `\n\nZwischensumme netto: ${fmt(total)}\nVersand: ${shippingLabel}` + (vatRate > 0 ? `\n${vatLabel}: ${fmt(vat)}` : "\nSteuerfrei (Schweiz)");
+    const bestellungText = items.map(i => `${i.qty}x ${i.name} — ${fmt(getPrice(i) * i.qty)}`).join("\n")
+      + `\n\nZwischensumme: ${fmt(total)}\nVersand: ${shippingLabel}` + (vatRate > 0 ? `\nGesamt inkl. USt: ${fmt(grandTotal)} (${vatLabel}: ${fmt(vat)})` : "\nSteuerfrei (Schweiz)");
     const plzOrt = `${formValues["PLZ"] || ""} ${formValues["Ort"] || ""}`.trim();
     const adresseText = [formValues["Name / Schule"], formValues["Ansprechperson"], formValues["Adresse"], plzOrt, formValues["Land"]].filter(Boolean).join("\n");
     const templateParams = {
@@ -107,7 +107,7 @@ export default function CartSidebar({ onClose }) {
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginBottom: 4 }}>{item.short}</div>
-                  <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>€ {getPrice(item).toFixed(2)} / Stk. netto</div>
+                  <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>€ {getPrice(item).toFixed(2)} / Stk.</div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 10 }}>
                     <button onClick={() => updateQty(item.id, item.qty - 1)} style={{ width: 28, height: 28, background: C.bgCard, border: `1px solid ${C.border}`, color: C.text, cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
                     <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 20, textAlign: "center" }}>{item.qty}</span>
@@ -121,13 +121,13 @@ export default function CartSidebar({ onClose }) {
           </div>
           {items.length > 0 && (
             <div style={{ borderTop: `1px solid ${C.border}`, padding: "24px 28px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Zwischensumme netto</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(total)}</span></div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Zwischensumme</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(total)}</span></div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Versand ({region === "CH" ? "CH" : "AT/DE"})</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
               {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>Ab {freeShippingSets} Koffer-Sets entfällt der Versand.</p>}
               {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
               <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>Gesamt</span><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.accentText }}>{fmt(grandTotal)}</span></div>
               <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Jetzt bestellen →</button>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{region === "CH" ? "Nettopreise, steuerfrei und unverzollt. Zahlung per Rechnung." : "Nettopreise zzgl. 20% USt. Mit deutscher UID-Nummer steuerfrei. Zahlung per Rechnung."}</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{region === "CH" ? "Steuerfrei und unverzollt. Zahlung per Rechnung." : "Preise inkl. 20% USt. Mit deutscher UID-Nummer steuerfrei zum Nettopreis. Zahlung per Rechnung."}</p>
             </div>
           )}
         </>)}
@@ -140,7 +140,7 @@ export default function CartSidebar({ onClose }) {
               {items.map(item => (
                 <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Inter Tight', sans-serif", fontSize: 13 }}>
                   <span style={{ color: C.text }}>{item.qty}x {item.short}</span>
-                  <span style={{ color: C.textMuted }}>{fmt(getPrice(item) * item.qty)} netto</span>
+                  <span style={{ color: C.textMuted }}>{fmt(getPrice(item) * item.qty)}</span>
                 </div>
               ))}
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Inter Tight', sans-serif", fontSize: 13 }}>
@@ -188,7 +188,7 @@ export default function CartSidebar({ onClose }) {
               {items.map(item => (
                 <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Inter Tight', sans-serif", fontSize: 13 }}>
                   <span style={{ color: C.text }}>{item.qty}x {item.short}</span>
-                  <span style={{ color: C.textMuted }}>{fmt(getPrice(item) * item.qty)} netto</span>
+                  <span style={{ color: C.textMuted }}>{fmt(getPrice(item) * item.qty)}</span>
                 </div>
               ))}
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Inter Tight', sans-serif", fontSize: 13 }}>

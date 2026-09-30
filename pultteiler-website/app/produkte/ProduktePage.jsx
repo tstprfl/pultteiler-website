@@ -11,14 +11,14 @@ const eur = (n) => `€ ${n.toFixed(2).replace(".", ",")}`;
 // Preis- und Versandkonditionen je Lieferland, sichtbar über der Produktliste
 const KONDITIONEN = {
   AT: [
-    { label: "Preise", val: "Netto zzgl. 20% USt", sub: "Die Umsatzsteuer wird im Warenkorb ausgewiesen." },
-    { label: "Versand Österreich & Deutschland", val: `${eur(SHIPPING.AT)} je Bestellung`, sub: "netto, für Koffer-Sets und Ersatzteile" },
+    { label: "Preise", val: "Inkl. 20% USt", sub: "Die enthaltene Umsatzsteuer wird im Warenkorb ausgewiesen." },
+    { label: "Versand Österreich & Deutschland", val: `${eur(SHIPPING.AT)} je Bestellung`, sub: "inkl. USt, für Koffer-Sets und Ersatzteile" },
     { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
-    { label: "Deutschland mit UID-Nummer", val: "Steuerfrei", sub: "innergemeinschaftliche Lieferung, deutsches Bankkonto vorhanden" },
+    { label: "Deutschland mit UID-Nummer", val: "Steuerfrei", sub: "Nettopreis, innergemeinschaftliche Lieferung, deutsches Bankkonto vorhanden" },
     { label: "Österreichische Bundesschulen", val: "E-Rechnung", sub: "mit Ihrer EKG-Nummer, Zahlung auf Rechnung" },
   ],
   CH: [
-    { label: "Preise", val: "Netto, steuerfrei", sub: "unverzollt" },
+    { label: "Preise", val: "Steuerfrei", sub: "unverzollt" },
     { label: "Versand Schweiz", val: `${eur(SHIPPING.CH)} je Bestellung`, sub: "für Koffer-Sets, Ersatzteile auf Anfrage" },
     { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
     { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
@@ -92,7 +92,7 @@ export default function Produkte() {
                     <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{p.name}</h3>
                     <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 20px" }}>{p.desc}</p>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-                      <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 36, color: C.text }}>€ {getPrice(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{region === "CH" ? "netto, steuerfrei" : "netto, zzgl. 20% USt"}</span></div>
+                      <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 36, color: C.text }}>€ {getPrice(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{region === "CH" ? "steuerfrei" : "inkl. 20% USt"}</span></div>
                       <AddToCartBtn product={p}/>
                     </div>
                   </div>
@@ -101,11 +101,11 @@ export default function Produkte() {
             ))}
           </div>
 
-          {/* Ersatzteile (Nettopreise AT/DE) */}
+          {/* Ersatzteile (Bruttopreise AT/DE) */}
           {region === "AT" && (
             <>
               <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>Ersatzteile nachbestellen</h2>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile netto zzgl. 20% USt für Österreich und Deutschland. Versand: € {SHIPPING.AT.toFixed(2).replace(".", ",")} je Bestellung netto.</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile inkl. 20% USt für Österreich und Deutschland. Versand: € {SHIPPING.AT.toFixed(2).replace(".", ",")} je Bestellung.</p>
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {PARTS.map((p, i) => (
                   <Reveal key={p.id} delay={i * 0.08}>
@@ -116,7 +116,7 @@ export default function Produkte() {
                         <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{p.name}</h3>
                         <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{p.desc}</p>
                         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                          <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>€ {p.priceAT.toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>netto</span></div>
+                          <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>€ {p.priceAT.toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>inkl. USt</span></div>
                           <AddToCartBtn product={p}/>
                         </div>
                       </div>

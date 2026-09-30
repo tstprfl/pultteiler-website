@@ -75,8 +75,8 @@ export default function Page() {
             {
               name: "Erst testen: einzelner Koffer",
               desc: "Sie möchten die Teiler zuerst in einer Prüfung erproben? Bestellen Sie einen Koffer mit 12 Systemen direkt im Shop — Kauf auf Rechnung.",
-              price: "ab € 235,00",
-              note: "netto zzgl. 20% USt (AT/DE) — Schweiz steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
+              price: "ab € 261,00",
+              note: "inkl. 20% USt (AT/DE) — Schweiz steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
               img: "/images/koffer-grau.jpg",
               href: "/produkte",
               cta: "Zum Shop",

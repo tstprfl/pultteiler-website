@@ -9,7 +9,7 @@ export const metadata = {
   alternates: alternatesFor("/produkte"),
 };
 
-// Versand und Rückgabe gemäß /versand und AGB: Versandpauschale je Bestellung (AT/DE netto, CH steuerfrei),
+// Versand und Rückgabe gemäß /versand und AGB: Versandpauschale je Bestellung (AT/DE inkl. USt, CH steuerfrei),
 // ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei, 14 Tage Widerruf, Rücksendekosten trägt der Käufer.
 // Bei Änderungen dort auch hier anpassen.
 const shippingDetails = {
@@ -42,7 +42,7 @@ const productJsonLd = {
       "@type": "Offer",
       price: s.priceAT.toFixed(2),
       priceCurrency: "EUR",
-      priceSpecification: { "@type": "UnitPriceSpecification", price: s.priceAT.toFixed(2), priceCurrency: "EUR", valueAddedTaxIncluded: false },
+      priceSpecification: { "@type": "UnitPriceSpecification", price: s.priceAT.toFixed(2), priceCurrency: "EUR", valueAddedTaxIncluded: true },
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       url: "https://www.pultteiler.eu/produkte",

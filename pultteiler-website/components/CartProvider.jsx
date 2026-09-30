@@ -22,12 +22,12 @@ export function CartProvider({ children }) {
   const count = items.reduce((s, i) => s + i.qty, 0);
   const setIds = SETS.map(s => s.id);
   const setCount = items.filter(i => setIds.includes(i.id)).reduce((s, i) => s + i.qty, 0);
-  // Versandpauschale je Bestellung (netto), ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei
+  // Versandpauschale je Bestellung (brutto), ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei
   const shipping = items.length === 0 ? 0 : (setCount >= FREE_SHIPPING_SETS ? 0 : SHIPPING[region]);
-  // Alle Preise netto; AT/DE zzgl. 20% USt, Schweiz steuerfrei
+  // AT/DE: Preise inkl. 20% USt, die enthaltene USt wird ausgewiesen; Schweiz steuerfrei
   const vatRate = region === "CH" ? 0 : VAT_RATE;
-  const vat = (total + shipping) * vatRate;
-  const grandTotal = total + shipping + vat;
+  const grandTotal = total + shipping;
+  const vat = grandTotal - grandTotal / (1 + vatRate);
   return <CartCtx.Provider value={{ items, add, remove, updateQty, clear, total, count, region, setRegion, getPrice, shipping, setCount, freeShippingSets: FREE_SHIPPING_SETS, vatRate, vat, grandTotal }}>{children}</CartCtx.Provider>;
 }
 
