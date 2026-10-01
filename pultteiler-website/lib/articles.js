@@ -1,6 +1,6 @@
 // Registry aller Ratgeber-Artikel — genutzt von /ratgeber (Index), Sitemap und Startseite.
 // seoTitle = <title> für Google (max. rd. 47 Zeichen, " | Pultteiler" kommt dazu), title = Überschrift.
-// Neue Artikel hier eintragen UND als Ordner unter app/ratgeber/<slug>/page.jsx anlegen.
+// Neue Artikel hier eintragen UND als Ordner unter app/ratgeber/<slug>/page.jsx anlegen. Änderungsdatum in app/sitemap.js (LASTMOD) eintragen.
 export const ARTICLES = [
   {
     slug: "sichtschutz-klassenarbeit",

@@ -1,6 +1,6 @@
 // Englische Version (International). AGB und Datenschutz als unverbindliche Übersetzung, Impressum nur deutsch.
 // Paare deutsch ↔ englisch — genutzt von Sprachumschalter, hreflang-Angaben und Sitemap.
-// Neue englische Seite? Hier eintragen UND unter app/en/<pfad>/page.jsx anlegen.
+// Neue englische Seite? Hier eintragen UND unter app/en/<pfad>/page.jsx anlegen. Änderungsdatum in app/sitemap.js (LASTMOD) eintragen.
 export const PAGE_PAIRS = [
   { de: "/", en: "/en" },
   { de: "/volksschule", en: "/en/primary-schools" },
