@@ -20,7 +20,7 @@ const COLS = [
   {
     title: "Ratgeber",
     links: [
-      { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für die Klassenarbeit" },
+      { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für Klassenarbeiten" },
       { href: "/ratgeber/trennwand-schultisch-pruefung", label: "Trennwand für den Schultisch" },
       { href: "/ratgeber/abschreiben-verhindern-schularbeit", label: "Abschreiben verhindern" },
       { href: "/ratgeber/reizarmer-arbeitsplatz-schule", label: "Reizarmer Arbeitsplatz" },

@@ -16,9 +16,10 @@ export default function Page() {
     <ArticleLayout
       meta={meta}
       related={[
-        { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für die Klassenarbeit: faire Prüfungsbedingungen schaffen" },
+        { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für Klassenarbeiten: faire Prüfungsbedingungen schaffen" },
         { href: "/ratgeber/trennwand-schultisch-pruefung", label: "Trennwand für den Schultisch: Worauf es bei Prüfungen ankommt" },
-        { href: "/volksschule", label: "Pultteiler für die Volksschule" },
+        { href: "/volksschule", label: "Sichtschutz für die Volksschule" },
+        { href: "/", label: "Pultteiler: Trennwände und Sichtschutz für die Schule" },
       ]}
     >
       <p style={A.p}>

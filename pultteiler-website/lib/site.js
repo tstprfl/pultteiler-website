@@ -86,7 +86,7 @@ export const AUDIENCES = [
     href: "/hochschulen",
     navLabel: "Hochschulen & Prüfungszentren",
     title: "Hochschulen & Prüfungszentren",
-    teaser: "Große Stückzahlen für Hörsäle und Prüfungszentren — individuelle Angebote, Referenz MedUni Innsbruck, Lieferung europaweit.",
+    teaser: "Sichtschutz für Klausuren in Hörsälen und Prüfungszentren — große Stückzahlen, individuelle Angebote, Referenz MedUni Innsbruck, Lieferung europaweit.",
     heading: "Pultteiler für Hochschulen & Prüfungszentren",
     img: "/images/kurhaus-saal-totale.jpg",
     imgAlt: "Prüfungssaal im Kurhaus Bad Krozingen, alle Tische mit Pultteilern ausgestattet",

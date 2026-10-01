@@ -16,9 +16,10 @@ export default function Page() {
     <ArticleLayout
       meta={meta}
       related={[
-        { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für die Klassenarbeit: faire Prüfungsbedingungen schaffen" },
-        { href: "/hochschulen", label: "Trennwände für Hochschulen & Prüfungszentren" },
+        { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für Klassenarbeiten: faire Prüfungsbedingungen schaffen" },
+        { href: "/hochschulen", label: "Sichtschutz für Klausuren und Prüfungen an Hochschulen" },
         { href: "/anleitung", label: "So funktioniert das Stecksystem" },
+        { href: "/", label: "Pultteiler: Trennwände und Sichtschutz für die Schule" },
       ]}
     >
       <p style={A.p}>
@@ -47,7 +48,7 @@ export default function Page() {
         <li style={A.li}><strong style={A.strong}>Ab dem 6. Schuljahr: 50×40 cm.</strong> Jugendliche sitzen höher und beugen sich weiter — die höhere Platte verdeckt das Blatt auch dann zuverlässig.</li>
       </ul>
       <p style={A.p}>
-        Für gemischte Einsätze (etwa Prüfungszentren mit Erwachsenen) ist die 40er-Höhe die richtige Wahl. Mehr dazu auf unseren Seiten für die <Link href="/volksschule" style={A.a}>Volksschule</Link>, die <Link href="/sekundarstufe" style={A.a}>Sekundarstufe</Link> und für <Link href="/hochschulen" style={A.a}>Hochschulen &amp; Prüfungszentren</Link>.
+        Für gemischte Einsätze (etwa Prüfungszentren mit Erwachsenen) ist die 40er-Höhe die richtige Wahl. Mehr dazu auf unseren Seiten zum <Link href="/volksschule" style={A.a}>Sichtschutz für die Volksschule</Link>, zu <Link href="/sekundarstufe" style={A.a}>Trennwänden für Klassenarbeiten</Link> in der Sekundarstufe und zum <Link href="/hochschulen" style={A.a}>Sichtschutz für Klausuren</Link> an Hochschulen.
       </p>
 
       <h2 style={A.h2}>Material & Haltbarkeit</h2>
@@ -76,7 +77,7 @@ export default function Page() {
 
       <h2 style={A.h2}>Fazit</h2>
       <p style={{ ...A.p, marginBottom: 0 }}>
-        Die beste Trennwand für den Schultisch ist die, die nach fünf Jahren Dauereinsatz noch selbstverständlich funktioniert: gesteckt statt gestellt, Kunststoff statt Karton, Ersatzteile statt Neukauf. Wie sich der Sichtschutz konkret auf die Prüfungssituation auswirkt, lesen Sie im Beitrag <Link href="/ratgeber/sichtschutz-klassenarbeit" style={A.a}>Sichtschutz für die Klassenarbeit</Link>.
+        Die beste Trennwand für den Schultisch ist die, die nach fünf Jahren Dauereinsatz noch selbstverständlich funktioniert: gesteckt statt gestellt, Kunststoff statt Karton, Ersatzteile statt Neukauf. Wie sich der Sichtschutz konkret auf die Prüfungssituation auswirkt, lesen Sie im Beitrag <Link href="/ratgeber/sichtschutz-klassenarbeit" style={A.a}>Sichtschutz für Klassenarbeiten</Link>.
       </p>
     </ArticleLayout>
   );

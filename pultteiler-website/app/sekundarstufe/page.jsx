@@ -2,9 +2,9 @@ import AudienceLayout, { faqJsonLd } from "@/components/AudienceLayout";
 import { alternatesFor } from "@/lib/i18n";
 
 export const metadata = {
-  title: "Trennwand für Schultische bei Klassenarbeiten",
+  title: { absolute: "Trennwände für Klassenarbeiten: Sichtschutz für Schultische" },
   description:
-    "Trennwände für Schultische ab dem 6. Schuljahr: kein Abschreiben bei Klassenarbeiten und Tests. 50×40 cm, Aufbau ohne Werkzeug, Kauf auf Rechnung.",
+    "Trennwände für Klassenarbeiten und Tests ab dem 6. Schuljahr: kein Abschreiben, 50×40 cm, Aufbau ohne Werkzeug. Direkt vom Hersteller, Kauf auf Rechnung.",
   alternates: alternatesFor("/sekundarstufe"),
 };
 
@@ -22,8 +22,16 @@ const FAQ = [
     a: "Die dauerelastische Klammer passt auf alle gängigen Schultische mit einer Tischplattenstärke bis 3 cm — Einzeltische, Doppeltische und auch Tische in EDV-Räumen. Bei Sonderfällen beraten wir Sie gerne vorab.",
   },
   {
+    q: "Warum eine Klammer statt einer freistehenden Stellwand?",
+    a: "Freistehende Stellwände stehen lose auf dem Tisch und kippen leicht um, etwa bei einem Stoß mit dem Ellbogen. Der Pultteiler wird mit einer Klammer an der Tischplatte befestigt: Er steht fest wie montiert und ist trotzdem ohne Werkzeug in Sekunden auf- und abgebaut.",
+  },
+  {
     q: "Was hält der Pultteiler im Schulalltag aus?",
     a: "Die Teiler sind seit über 40 Jahren im Dauereinsatz an weiterführenden Schulen — die Platten aus hochwertigem Kunststoff und die elastischen Klammern überstehen auch häufiges Auf- und Abbauen durch Jugendliche. Jedes Einzelteil (Platte, Klammer, Koffer) ist einzeln nachbestellbar.",
+  },
+  {
+    q: "Sind die Trennwände aus Plastik oder aus Karton?",
+    a: "Die Teilerplatten bestehen aus hochwertigem, bruchfestem Kunststoff, nicht aus Karton. Gehalten werden sie von dauerelastischen Klammern, die auch häufiges Auf- und Abbauen überstehen. Geht doch einmal eine Platte verloren, ist sie einzeln nachbestellbar.",
   },
   {
     q: "Wie läuft die Bestellung für unsere Schule ab?",

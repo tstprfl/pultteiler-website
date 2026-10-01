@@ -3,7 +3,7 @@ import ArticleLayout, { A } from "@/components/ArticleLayout";
 import { ARTICLES } from "@/lib/articles";
 import { alternatesFor } from "@/lib/i18n";
 
-const meta = { ...ARTICLES.find((a) => a.slug === "sichtschutz-klassenarbeit"), short: "Sichtschutz für die Klassenarbeit", imgAlt: "Sichtschutz auf Schultischen während einer Klassenarbeit" };
+const meta = { ...ARTICLES.find((a) => a.slug === "sichtschutz-klassenarbeit"), short: "Sichtschutz für Klassenarbeiten", imgAlt: "Sichtschutz auf Schultischen während einer Klassenarbeit" };
 
 export const metadata = {
   title: meta.seoTitle || meta.title,
@@ -18,11 +18,12 @@ export default function Page() {
       related={[
         { href: "/ratgeber/abschreiben-verhindern-schularbeit", label: "Abschreiben bei der Schularbeit verhindern: 7 Methoden im Vergleich" },
         { href: "/ratgeber/trennwand-schultisch-pruefung", label: "Trennwand für den Schultisch: Worauf es bei Prüfungen ankommt" },
-        { href: "/sekundarstufe", label: "Pultteiler für die Sekundarstufe" },
+        { href: "/sekundarstufe", label: "Trennwände für Klassenarbeiten in der Sekundarstufe" },
+        { href: "/", label: "Pultteiler: Trennwände und Sichtschutz für die Schule" },
       ]}
     >
       <p style={A.p}>
-        Klassenarbeiten sollen zeigen, was jede Schülerin und jeder Schüler wirklich kann. In der Praxis sitzen dabei aber 20 bis 30 junge Menschen dicht nebeneinander — oft an Doppeltischen, mit freiem Blick auf das Nachbarblatt. Ein <strong style={A.strong}>Sichtschutz für die Klassenarbeit</strong> löst dieses Grundproblem direkt am Entstehungsort: am Schultisch.
+        Klassenarbeiten sollen zeigen, was jede Schülerin und jeder Schüler wirklich kann. In der Praxis sitzen dabei aber 20 bis 30 junge Menschen dicht nebeneinander — oft an Doppeltischen, mit freiem Blick auf das Nachbarblatt. Ein <strong style={A.strong}>Sichtschutz für Klassenarbeiten</strong> löst dieses Grundproblem direkt am Entstehungsort: am Schultisch.
       </p>
 
       <h2 style={A.h2}>Warum ein Sichtschutz bei Klassenarbeiten sinnvoll ist</h2>

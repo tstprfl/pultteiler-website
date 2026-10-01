@@ -3,8 +3,8 @@ import { YEARS } from "@/lib/site";
 import { alternatesFor } from "@/lib/i18n";
 
 export const metadata = {
-  title: { absolute: "Pultteiler — Sichtschutz für Schultische bei Klassenarbeiten & Prüfungen" },
-  description: `Sichtschutz für Schultische: verhindert Abschreiben bei Schularbeiten und Prüfungen. Direkt vom Hersteller, seit über ${YEARS} Jahren. Kauf auf Rechnung.`,
+  title: { absolute: "Pultteiler: Trennwände und Sichtschutz für die Schule" },
+  description: `Trennwände und Sichtschutz für Schultische gegen Abschreiben bei Klassenarbeiten und Prüfungen. Seit über ${YEARS} Jahren vom Hersteller, Kauf auf Rechnung.`,
   alternates: alternatesFor("/"),
 };
 

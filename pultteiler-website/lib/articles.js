@@ -4,8 +4,8 @@
 export const ARTICLES = [
   {
     slug: "sichtschutz-klassenarbeit",
-    seoTitle: "Sichtschutz für die Klassenarbeit",
-    title: "Sichtschutz für die Klassenarbeit: So schaffen Sie faire Prüfungsbedingungen",
+    seoTitle: "Sichtschutz für Klassenarbeiten in der Schule",
+    title: "Sichtschutz für Klassenarbeiten: So schaffen Sie faire Prüfungsbedingungen",
     description: "Warum ein Sichtschutz bei Klassenarbeiten sinnvoll ist, welche Anforderungen er erfüllen muss und wie der Einsatz im Schulalltag gelingt.",
     teaser: "Warum ein Sichtschutz bei Klassenarbeiten sinnvoll ist, welche Anforderungen er erfüllen muss — und wie der Einsatz in der Praxis gelingt.",
     date: "2026-07-23",

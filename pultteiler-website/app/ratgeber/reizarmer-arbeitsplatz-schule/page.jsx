@@ -17,7 +17,7 @@ export default function Page() {
       meta={meta}
       related={[
         { href: "/volksschule", label: "Pultteiler für die Volksschule & Primarstufe" },
-        { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für die Klassenarbeit: faire Prüfungsbedingungen schaffen" },
+        { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für Klassenarbeiten: faire Prüfungsbedingungen schaffen" },
         { href: "/angebot", label: "Unverbindliches Angebot für Ihre Schule anfordern" },
       ]}
     >
