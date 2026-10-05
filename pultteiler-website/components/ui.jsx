@@ -54,11 +54,41 @@ export function AddToCartBtn({ product }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
       <div style={{ display: "flex", alignItems: "center", border: `1px solid ${C.border}`, background: C.bgCard }}>
-        <button onClick={() => setQty(q => Math.max(1, q - 1))} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
-        <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 28, textAlign: "center" }}>{qty}</span>
-        <button onClick={() => setQty(q => q + 1)} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
+        <button onClick={() => setQty(q => Math.max(1, q - 1))} aria-label={`${product.short || product.name}: Menge verringern`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
+        <span aria-live="polite" style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 28, textAlign: "center" }}>{qty}</span>
+        <button onClick={() => setQty(q => q + 1)} aria-label={`${product.short || product.name}: Menge erhöhen`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
       </div>
       <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s" }}>{added ? "✓ Hinzugefügt" : "In den Warenkorb"}</button>
     </div>
   );
+}
+
+// Dialog-Verhalten für Warenkorb und Bild-Lightbox: Fokus wandert hinein, Tab bleibt
+// im Dialog, Esc schließt, danach springt der Fokus auf das auslösende Element zurück.
+const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+export function useDialog(ref, onClose) {
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
+  useEffect(() => {
+    const box = ref.current;
+    if (!box) return;
+    const prev = document.activeElement;
+    const focusables = () => [...box.querySelectorAll(FOCUSABLE)].filter(el => el.offsetParent !== null);
+    (focusables()[0] || box).focus();
+    const onKey = (e) => {
+      if (e.key === "Escape") { e.preventDefault(); closeRef.current(); return; }
+      if (e.key !== "Tab") return;
+      const f = focusables();
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (!box.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      if (prev && document.contains(prev)) prev.focus();
+    };
+  }, [ref]);
 }

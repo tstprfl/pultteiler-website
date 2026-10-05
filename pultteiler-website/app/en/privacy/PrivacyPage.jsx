@@ -34,8 +34,8 @@ export default function PrivacyPage() {
             <h2 style={h}>6. Hosting: Vercel</h2>
             <p style={s}>This website is hosted by Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA). When you visit the website, technical data (IP address, browser type, time of access) is automatically recorded in server log files. The legal basis is Art. 6(1)(f) GDPR (legitimate interest in the secure provision of the website). Vercel is certified under the EU-US Data Privacy Framework.</p>
 
-            <h2 style={h}>7. Google Fonts</h2>
-            <p style={s}>This website uses Google Fonts to display fonts consistently. The fonts are loaded directly from Google servers, which transmits your IP address to Google. The legal basis is Art. 6(1)(f) GDPR. Further information can be found in Google's privacy policy.</p>
+            <h2 style={h}>7. Fonts</h2>
+            <p style={s}>The fonts used on this website (Barlow Condensed, Inter Tight) are embedded locally and delivered together with the website by our hosting provider. No connection is made to servers of Google or any other font provider.</p>
 
             <h2 style={h}>8. Cookies</h2>
             <p style={s}>This website does not use tracking cookies or web analytics tools. No data is collected for advertising purposes. Technically necessary cookies may be used for the functionality of the website.</p>

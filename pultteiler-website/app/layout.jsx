@@ -1,3 +1,12 @@
+// Schriften selbst gehostet (Fontsource), damit keine Verbindung zu Google-Servern entsteht
+import "@fontsource/barlow-condensed/500.css";
+import "@fontsource/barlow-condensed/600.css";
+import "@fontsource/barlow-condensed/700.css";
+import "@fontsource/inter-tight/300.css";
+import "@fontsource/inter-tight/400.css";
+import "@fontsource/inter-tight/500.css";
+import "@fontsource/inter-tight/600.css";
+import "@fontsource/inter-tight/700.css";
 import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import Nav from "@/components/Nav";
@@ -51,9 +60,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="de">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}/>
       </head>
       <body>

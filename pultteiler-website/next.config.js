@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Nur die Standardqualität zulassen; sonst kann jeder q=1..100 anfordern und
+  // damit das Kontingent an Bild-Transformationen bei Vercel aufbrauchen
+  images: { qualities: [75] },
   async redirects() {
     return [
       // Alte Webnode-URLs auf neue Seiten umleiten

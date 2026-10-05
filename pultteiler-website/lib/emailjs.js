@@ -22,15 +22,13 @@ export const CONFIRM_PUBLIC_KEY = "4ArIDu6wgLlsklooH";
 export const CONFIRM_SERVICE = "service_b7kmnmd";
 export const CONFIRM_TEMPLATE = "template_8cnl2hb";
 
-// Lädt das EmailJS-SDK und initialisiert es mit dem ALTEN Account.
+// Lädt das EmailJS-SDK aus dem eigenen Bundle (npm-Paket, kein externes CDN)
+// und initialisiert es mit dem ALTEN Account.
 // (Für die Bestätigung wird der neue Public Key pro Versand separat mitgegeben.)
-export const loadEmailJS = () => {
-  if (typeof window === "undefined") return Promise.resolve();
-  if (window.emailjs) return Promise.resolve();
-  return new Promise((resolve) => {
-    const s = document.createElement("script");
-    s.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
-    s.onload = () => { window.emailjs.init(EMAILJS_PUBLIC_KEY); resolve(); };
-    document.head.appendChild(s);
-  });
+export const loadEmailJS = async () => {
+  if (typeof window === "undefined") return;
+  if (window.emailjs) return;
+  const { default: emailjs } = await import("@emailjs/browser");
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+  window.emailjs = emailjs;
 };

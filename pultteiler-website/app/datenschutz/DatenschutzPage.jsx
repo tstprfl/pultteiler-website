@@ -31,8 +31,8 @@ export default function DatenschutzPage() {
             <h2 style={h}>6. Hosting — Vercel</h2>
             <p style={s}>Diese Website wird bei Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Beim Besuch der Website werden automatisch technische Daten (IP-Adresse, Browsertyp, Zugriffszeit) in Server-Logfiles erfasst. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website). Vercel ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
 
-            <h2 style={h}>7. Google Fonts</h2>
-            <p style={s}>Diese Website verwendet Google Fonts zur einheitlichen Darstellung von Schriftarten. Die Schriftarten werden direkt von Google-Servern geladen. Dabei wird Ihre IP-Adresse an Google übermittelt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen finden Sie in der Datenschutzerklärung von Google.</p>
+            <h2 style={h}>7. Schriftarten</h2>
+            <p style={s}>Die auf dieser Website verwendeten Schriftarten (Barlow Condensed, Inter Tight) sind lokal eingebunden und werden zusammen mit der Website von unserem Hosting-Anbieter ausgeliefert. Es wird keine Verbindung zu Servern von Google oder anderen Schriftarten-Anbietern hergestellt.</p>
 
             <h2 style={h}>8. Cookies</h2>
             <p style={s}>Diese Website verwendet keine Tracking-Cookies und kein Webanalyse-Tool. Es werden keine Daten zu Werbezwecken erhoben. Technisch notwendige Cookies können für die Funktionalität der Website eingesetzt werden.</p>
@@ -50,7 +50,7 @@ export default function DatenschutzPage() {
             <p style={s}>Österreichische Datenschutzbehörde<br/>Barichgasse 40–42, 1030 Wien<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>www.dsb.gv.at</a></p>
 
             <h2 style={h}>12. Änderungen</h2>
-            <p style={{ ...s, marginBottom: 0 }}>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um den aktuellen rechtlichen Anforderungen zu entsprechen. Stand: April 2026.</p>
+            <p style={{ ...s, marginBottom: 0 }}>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um den aktuellen rechtlichen Anforderungen zu entsprechen. Stand: Oktober 2026.</p>
           </div>
         </div>
       </section>
