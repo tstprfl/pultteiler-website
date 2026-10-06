@@ -60,29 +60,6 @@ export default function Page() {
             { title: "Passt auf jeden Schultisch", text: "Die dauerelastische Klammer hält auf allen gängigen Schultischen mit Tischplatten bis 3 cm Stärke — egal ob Einzel- oder Doppeltisch." },
           ],
         }}
-        products={{
-          title: "Unsere Empfehlung für die Primarstufe",
-          sub: "Für die 1. bis 5. Schulstufe empfehlen wir Set A mit der niedrigeren Platte — abgestimmt auf die Sitzhöhe jüngerer Kinder.",
-          items: [
-            {
-              name: "Set A — Gelb — bis 5. Schuljahr",
-              desc: "1 Holzkoffer mit 12 Teilerplatten (50×30 cm) und 12 Klammern. Die richtige Höhe für die Volksschule.",
-              price: "€ 261,00",
-              note: "inkl. 20% USt (AT/DE) — Preis Schweiz: € 237,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
-              img: "/images/koffer-gelb.jpg",
-              href: "/produkte",
-              cta: "Im Shop bestellen",
-              primary: true,
-            },
-            {
-              name: "Größere Mengen?",
-              desc: "Sie statten mehrere Klassen oder die ganze Schule aus? Fordern Sie ein unverbindliches Angebot an — wir stellen auch Koffer mit mehr als 12 Teilern zusammen.",
-              img: "/images/Koffer_1.png",
-              href: "/angebot",
-              cta: "Angebot anfordern →",
-            },
-          ],
-        }}
         faq={FAQ}
         ctaTitle="Bereit für faire Schularbeiten?"
         ctaSub="Fordern Sie ein unverbindliches Angebot für Ihre Volksschule an — oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."

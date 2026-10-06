@@ -60,29 +60,6 @@ export default function Page() {
             { title: "Beschaffungskonform", text: "Schriftliches Angebot, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH) — passend zu Ihren Einkaufsprozessen." },
           ],
         }}
-        products={{
-          title: "Ihr Weg zum Angebot",
-          sub: "Bei Großabnahmen kalkulieren wir individuell — nach Stückzahl, Plattengröße und Lieferziel. Gerne senden wir vorab ein Muster.",
-          items: [
-            {
-              name: "Individuelles Angebot",
-              desc: "Nennen Sie uns Stückzahl, Einsatzort und Wunschtermin — Sie erhalten kurzfristig ein schriftliches Angebot für Ihre Beschaffungsstelle.",
-              img: "/images/meduni-innsbruck_1.jpeg",
-              href: "/angebot",
-              cta: "Angebot anfordern →",
-              primary: true,
-            },
-            {
-              name: "Erst testen: einzelner Koffer",
-              desc: "Sie möchten die Teiler zuerst in einer Prüfung erproben? Bestellen Sie einen Koffer mit 12 Systemen direkt im Shop — Kauf auf Rechnung.",
-              price: "ab € 261,00",
-              note: "inkl. 20% USt (AT/DE) — Schweiz steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
-              img: "/images/koffer-grau.jpg",
-              href: "/produkte",
-              cta: "Zum Shop",
-            },
-          ],
-        }}
         faq={FAQ}
         ctaTitle="Planen Sie Ihre nächste Großprüfung mit uns"
         ctaSub="Schicken Sie uns Stückzahl und Termin — wir antworten kurzfristig mit einem individuellen Angebot inklusive aller Liefer- und Rechnungsdetails für AT, DE und CH."

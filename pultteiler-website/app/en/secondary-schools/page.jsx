@@ -64,35 +64,6 @@ export default function Page() {
             { title: "Individual spare parts", text: "Panels, clamps and cases can be reordered individually, so your purchase stays fully usable for years." },
           ],
         }}
-        products={{
-          title: "Our recommendation from school year 6",
-          sub: "Set B with the taller 50×40 cm panel, in yellow or grey. One case contains 12 complete systems.",
-          items: [
-            {
-              name: "Set B: yellow, from school year 6",
-              desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps.",
-              img: "/images/koffer-gelb.jpg",
-              href: "/en/quote",
-              cta: "Request a quote →",
-              primary: true,
-            },
-            {
-              name: "Set B: grey, from school year 6",
-              desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps, in subtle grey.",
-              img: "/images/koffer-grau.jpg",
-              href: "/en/quote",
-              cta: "Request a quote →",
-              primary: true,
-            },
-            {
-              name: "Equipping several classes?",
-              desc: "For whole year groups or the entire school we are happy to prepare an individual quote, including cases with more than 12 dividers.",
-              img: "/images/Koffer_1.png",
-              href: "/en/quote",
-              cta: "Request a quote →",
-            },
-          ],
-        }}
         faq={FAQ}
         ctaTitle="Fair tests, starting with the next exam"
         ctaSub="Request a non-binding quote for your school. We reply soon with price and delivery terms for your country."

@@ -68,39 +68,6 @@ export default function Page() {
             { title: "Ersatzteile einzeln", text: "Platten, Klammern und Koffer sind einzeln nachbestellbar — Ihre Anschaffung bleibt über Jahre vollständig nutzbar." },
           ],
         }}
-        products={{
-          title: "Unsere Empfehlung ab dem 6. Schuljahr",
-          sub: "Set B mit der höheren 50×40-cm-Platte — wahlweise in Gelb oder Grau. Ein Koffer enthält 12 komplette Systeme.",
-          items: [
-            {
-              name: "Set B — Gelb — ab 6. Schuljahr",
-              desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern.",
-              price: "€ 275,00",
-              note: "inkl. 20% USt (AT/DE) — Preis Schweiz: € 249,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
-              img: "/images/koffer-gelb.jpg",
-              href: "/produkte",
-              cta: "Im Shop bestellen",
-              primary: true,
-            },
-            {
-              name: "Set B — Grau — ab 6. Schuljahr",
-              desc: "1 Holzkoffer mit 12 Teilerplatten (50×40 cm) und 12 Klammern — in dezentem Grau.",
-              price: "€ 275,00",
-              note: "inkl. 20% USt (AT/DE) — Preis Schweiz: € 249,00 steuerfrei. Ab 3 Koffer-Sets versandkostenfrei.",
-              img: "/images/koffer-grau.jpg",
-              href: "/produkte",
-              cta: "Im Shop bestellen",
-              primary: true,
-            },
-            {
-              name: "Mehrere Klassen ausstatten?",
-              desc: "Für Jahrgangsstufen oder die ganze Schule erstellen wir gerne ein individuelles Angebot — auch mit Koffern über 12 Teiler.",
-              img: "/images/Koffer_1.png",
-              href: "/angebot",
-              cta: "Angebot anfordern →",
-            },
-          ],
-        }}
         faq={FAQ}
         ctaTitle="Faire Klassenarbeiten — ab der nächsten Prüfung"
         ctaSub="Fordern Sie ein unverbindliches Angebot für Ihre Schule an — oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."

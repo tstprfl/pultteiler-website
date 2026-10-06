@@ -64,27 +64,6 @@ export default function Page() {
             { title: "Fits every school desk", text: "The permanently elastic clamp holds on all common school desks with desktops up to 3 cm thick, single or double desks." },
           ],
         }}
-        products={{
-          title: "Our recommendation for primary schools",
-          sub: "For school years 1 to 5 we recommend Set A with the lower panel, matched to the seating height of younger children.",
-          items: [
-            {
-              name: "Set A: yellow, up to school year 5",
-              desc: "1 wooden case with 12 divider panels (50×30 cm) and 12 clamps. The right height for primary school.",
-              img: "/images/koffer-gelb.jpg",
-              href: "/en/quote",
-              cta: "Request a quote →",
-              primary: true,
-            },
-            {
-              name: "Larger quantities?",
-              desc: "Equipping several classes or the whole school? Request a non-binding quote. We also assemble cases with more than 12 dividers.",
-              img: "/images/Koffer_1.png",
-              href: "/en/quote",
-              cta: "Request a quote →",
-            },
-          ],
-        }}
         faq={FAQ}
         ctaTitle="Ready for fair tests?"
         ctaSub="Request a non-binding quote for your primary school. We reply soon with price and delivery terms for your country."

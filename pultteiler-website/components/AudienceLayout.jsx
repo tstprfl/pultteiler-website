@@ -30,7 +30,7 @@ const UI_DE = {
   faqTitle: "Häufige Fragen",
 };
 
-export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situation, benefits, products, faq, ctaTitle, ctaSub, ui: uiOverride }) {
+export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situation, benefits, faq, ctaTitle, ctaSub, ui: uiOverride }) {
   const ui = { ...UI_DE, ...uiOverride };
   return (
     <div style={{ paddingTop: 72 }}>
@@ -80,38 +80,14 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
         </div>
       </section>
 
-      {/* Produktempfehlung */}
-      <section style={{ padding: "80px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto" }}>
-          <h2 style={{ ...f.h2, marginBottom: 8 }}>{products.title}</h2>
-          <p style={{ ...f.body, maxWidth: 640 }}>{products.sub}</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))", gap: 2, marginTop: 32 }}>
-            {products.items.map((p, i) => (
-              <div key={i} style={{ background: C.bg, border: `1px solid ${C.border}`, display: "flex", flexDirection: "column" }}>
-                <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, height: 200, display: "flex", alignItems: "center", justifyContent: "center", padding: 16 }}>
-                  <Img sizes="300px" src={p.img} alt={p.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}/>
-                </div>
-                <div style={{ padding: "24px 26px 30px", display: "flex", flexDirection: "column", flex: 1 }}>
-                  <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 8px" }}>{p.name}</h3>
-                  <p style={{ ...f.small, marginBottom: 16, flex: 1 }}>{p.desc}</p>
-                  {p.price && <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 30, color: C.text, marginBottom: 4 }}>{p.price}</div>}
-                  {p.note && <p style={{ ...f.small, fontSize: 12, marginBottom: 16 }}>{p.note}</p>}
-                  <div><Btn href={p.href || ui.shopHref} variant={p.primary ? "primary" : "secondary"}>{p.cta || ui.shopCta}</Btn></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Bestellung & Länderhinweise */}
-      <section style={{ padding: "80px 32px", background: C.bg, borderTop: `1px solid ${C.border}` }}>
+      <section style={{ padding: "80px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 1160, margin: "0 auto" }}>
           <h2 style={{ ...f.h2, marginBottom: 8 }}>{ui.orderTitle}</h2>
           <p style={{ ...f.body, maxWidth: 640 }}>{ui.orderSub}</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 2, marginTop: 32 }}>
             {ui.countries.map((c) => (
-              <div key={c.code} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 26px" }}>
+              <div key={c.code} style={{ background: C.bg, border: `1px solid ${C.border}`, padding: "28px 26px" }}>
                 <div style={{ fontSize: 28, marginBottom: 8 }}>{c.flag}</div>
                 <h3 style={f.h3}>{c.name.toUpperCase()}</h3>
                 <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
@@ -124,11 +100,11 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
       </section>
 
       {/* FAQ */}
-      <section style={{ padding: "80px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
+      <section style={{ padding: "80px 32px", background: C.bg, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <h2 style={{ ...f.h2, marginBottom: 32 }}>{ui.faqTitle}</h2>
           {faq.map((item, i) => (
-            <details key={i} style={{ background: C.bg, border: `1px solid ${C.border}`, marginBottom: 2, padding: "0 26px" }}>
+            <details key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, marginBottom: 2, padding: "0 26px" }}>
               <summary style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, padding: "20px 0", cursor: "pointer", listStylePosition: "inside" }}>{item.q}</summary>
               <p style={{ ...f.body, fontSize: 15, paddingBottom: 20 }}>{item.a}</p>
             </details>
@@ -137,7 +113,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "88px 32px", background: C.bg, borderTop: `1px solid ${C.border}` }}>
+      <section style={{ padding: "88px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <h2 style={f.h2}>{ctaTitle}</h2>
           <p style={{ ...f.body, maxWidth: 560, margin: "0 auto 32px" }}>{ctaSub}</p>

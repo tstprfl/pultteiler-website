@@ -64,27 +64,6 @@ export default function Page() {
             { title: "Fits your procurement", text: "Written quote for your purchasing department, clear delivery and invoicing terms for your country. Austria, Germany and Switzerland: purchase on invoice." },
           ],
         }}
-        products={{
-          title: "How to get your quote",
-          sub: "For large orders we calculate individually, based on quantity, panel size and destination. We are happy to send a sample in advance.",
-          items: [
-            {
-              name: "Individual quote",
-              desc: "Tell us the quantity, location and preferred date. You will soon receive a written quote for your purchasing department.",
-              img: "/images/meduni-innsbruck_1.jpeg",
-              href: "/en/quote",
-              cta: "Request a quote →",
-              primary: true,
-            },
-            {
-              name: "Test first: a single case",
-              desc: "Would you like to try the dividers in one exam first? Order a single case with 12 systems. For other countries we quote price and delivery individually.",
-              img: "/images/koffer-grau.jpg",
-              href: "/en/products",
-              cta: "View products",
-            },
-          ],
-        }}
         faq={FAQ}
         ctaTitle="Plan your next large exam with us"
         ctaSub={`Send us the quantity and date and we will reply soon with an individual quote. You can also write to us directly at ${CONTACT.email}.`}
