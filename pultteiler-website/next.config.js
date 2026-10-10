@@ -1,14 +1,16 @@
 // Content Security Policy: Skripte, Schriften, Bilder nur von der eigenen Domain,
-// Verbindungen nach außen nur zu EmailJS (Formulare). 'unsafe-inline' braucht
+// Verbindungen nach außen nur zu EmailJS (Formulare) und Google reCAPTCHA
+// (Werte laut developers.google.com/recaptcha/docs/faq). 'unsafe-inline' braucht
 // Next.js für seine Inline-Skripte bei statischen Seiten, 'unsafe-eval' nur im Dev-Modus.
 const isDev = process.env.NODE_ENV !== "production";
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
-  "connect-src 'self' https://api.emailjs.com",
+  "connect-src 'self' https://api.emailjs.com https://www.google.com/recaptcha/",
+  "frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

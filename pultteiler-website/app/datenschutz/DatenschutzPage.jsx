@@ -28,28 +28,31 @@ export default function DatenschutzPage() {
             <h2 style={h}>5. EmailJS (E-Mail-Versand)</h2>
             <p style={s}>Für den Versand von Bestell- und Kontaktbestätigungen nutzen wir den Dienst EmailJS (emailjs.com). Dabei werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Bestelldaten) über die Server von EmailJS verarbeitet, um E-Mails zuzustellen. EmailJS verarbeitet Daten gemäß seiner eigenen Datenschutzrichtlinie. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
 
-            <h2 style={h}>6. Hosting (Vercel)</h2>
+            <h2 style={h}>6. Google reCAPTCHA (Spam-Schutz)</h2>
+            <p style={s}>Im Angebotsformular und beim Absenden einer Bestellung im Warenkorb nutzen wir Google reCAPTCHA, um Missbrauch durch automatisierte Programme (Bots) zu verhindern. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. reCAPTCHA wird erst geladen, wenn Sie das Angebotsformular ausfüllen oder im Warenkorb die Bestellkontrolle erreichen. Dabei werden insbesondere Ihre IP-Adresse, Angaben zu Browser und Gerät sowie Ihre Interaktion mit dem Kontrollkästchen an Google übermittelt und ausgewertet. Google kann dafür Cookies oder vergleichbare Technologien einsetzen. Eine Übermittlung an Google LLC in den USA ist möglich. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im Schutz unserer Formulare und unseres E-Mail-Versands vor Missbrauch. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>Datenschutzerklärung</a> und den <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>Nutzungsbedingungen</a> von Google.</p>
+
+            <h2 style={h}>7. Hosting (Vercel)</h2>
             <p style={s}>Diese Website wird bei Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Beim Besuch der Website werden automatisch technische Daten (IP-Adresse, Browsertyp, Zugriffszeit) in Server-Logfiles erfasst. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website). Vercel ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
 
-            <h2 style={h}>7. Schriftarten</h2>
+            <h2 style={h}>8. Schriftarten</h2>
             <p style={s}>Die auf dieser Website verwendeten Schriftarten (Barlow Condensed, Inter Tight) sind lokal eingebunden und werden zusammen mit der Website von unserem Hosting-Anbieter ausgeliefert. Es wird keine Verbindung zu Servern von Google oder anderen Schriftarten-Anbietern hergestellt.</p>
 
-            <h2 style={h}>8. Cookies</h2>
-            <p style={s}>Diese Website verwendet keine Tracking-Cookies und kein Webanalyse-Tool. Es werden keine Daten zu Werbezwecken erhoben. Technisch notwendige Cookies können für die Funktionalität der Website eingesetzt werden.</p>
+            <h2 style={h}>9. Cookies</h2>
+            <p style={s}>Diese Website verwendet keine Tracking-Cookies und kein Webanalyse-Tool. Es werden keine Daten zu Werbezwecken erhoben. Technisch notwendige Cookies können für die Funktionalität der Website eingesetzt werden. Beim Spam-Schutz durch Google reCAPTCHA (Abschnitt 6) kann Google Cookies setzen.</p>
 
-            <h2 style={h}>9. Speicherdauer</h2>
+            <h2 style={h}>10. Speicherdauer</h2>
             <p style={s}>Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen. Bestelldaten werden entsprechend der steuerrechtlichen Aufbewahrungspflicht (7 Jahre gem. § 132 BAO) gespeichert.</p>
 
-            <h2 style={h}>10. Ihre Rechte</h2>
+            <h2 style={h}>11. Ihre Rechte</h2>
             <p style={s}>Sie haben gemäß DSGVO folgende Rechte:</p>
             <p style={{ ...s, paddingLeft: 16 }}>— Recht auf Auskunft (Art. 15 DSGVO)<br/>— Recht auf Berichtigung (Art. 16 DSGVO)<br/>— Recht auf Löschung (Art. 17 DSGVO)<br/>— Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)<br/>— Recht auf Datenübertragbarkeit (Art. 20 DSGVO)<br/>— Widerspruchsrecht (Art. 21 DSGVO)</p>
             <p style={s}>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a></p>
 
-            <h2 style={h}>11. Beschwerderecht</h2>
+            <h2 style={h}>12. Beschwerderecht</h2>
             <p style={s}>Sie haben das Recht, eine Beschwerde bei der zuständigen Datenschutzbehörde einzureichen:</p>
             <p style={s}>Österreichische Datenschutzbehörde<br/>Barichgasse 40–42, 1030 Wien<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>www.dsb.gv.at</a></p>
 
-            <h2 style={h}>12. Änderungen</h2>
+            <h2 style={h}>13. Änderungen</h2>
             <p style={{ ...s, marginBottom: 0 }}>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um den aktuellen rechtlichen Anforderungen zu entsprechen. Stand: Oktober 2026.</p>
           </div>
         </div>

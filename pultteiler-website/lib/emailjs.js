@@ -22,6 +22,12 @@ export const CONFIRM_PUBLIC_KEY = "4ArIDu6wgLlsklooH";
 export const CONFIRM_SERVICE = "service_b7kmnmd";
 export const CONFIRM_TEMPLATE = "template_8cnl2hb";
 
+// ── Google reCAPTCHA v2 (Spam-Schutz für die Bestätigungsmails) ─────────────
+// Website-Schlüssel (öffentlich) aus der reCAPTCHA-Verwaltung. Der geheime
+// Schlüssel gehört NUR in EmailJS (Template → Settings), nie in den Code.
+// Leer = kein reCAPTCHA, die Formulare senden wie bisher.
+export const RECAPTCHA_SITE_KEY = "6Lf6y-gtAAAAAERe-MhmXlCa5hS8ks4u4xCrgfh8";
+
 // Hinweis Sicherheit: Public Key, Service- und Template-IDs sind bei EmailJS
 // absichtlich öffentlich (sie stehen ohnehin im ausgelieferten JavaScript).
 // Der PRIVATE Key darf NIE hier oder sonst im Code stehen.

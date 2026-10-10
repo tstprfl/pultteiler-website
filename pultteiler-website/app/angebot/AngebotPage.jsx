@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { C } from "@/lib/colors";
 import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, CONFIRM_PUBLIC_KEY, CONFIRM_SERVICE, CONFIRM_TEMPLATE } from "@/lib/emailjs";
 
@@ -7,6 +7,7 @@ import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, CONFIRM_PUBLIC_KEY, CON
 const CONFIRM_ENABLED = Boolean(CONFIRM_PUBLIC_KEY && CONFIRM_SERVICE && CONFIRM_TEMPLATE);
 import { CONTACT } from "@/lib/site";
 import { Reveal, Heading, Btn, Honeypot, isBot } from "@/components/ui";
+import Recaptcha from "@/components/Recaptcha";
 
 const LAND_HINWEIS = {
   "Österreich": "🇦🇹 Kauf auf Rechnung. Bundesschulen erhalten auf Wunsch eine E-Rechnung, bitte EKG-Nummer unten angeben.",
@@ -20,6 +21,9 @@ export default function AngebotPage() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [land, setLand] = useState("Österreich");
+  // reCAPTCHA erst nach dem ersten Klick ins Formular laden (keine Google-Verbindung beim reinen Lesen)
+  const [captchaOn, setCaptchaOn] = useState(false);
+  const captchaRef = useRef(null);
 
   const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s" };
   const label = { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 };
@@ -34,6 +38,8 @@ export default function AngebotPage() {
     const d = {};
     fd.forEach((v, k) => { d[k] = v; });
     if (isBot(fd)) { setSent(true); setSending(false); return; }
+    const captcha = captchaRef.current?.getToken() || { ready: false, token: "" };
+    if (captcha.ready && !captcha.token) { setError("Bitte bestätigen Sie zuerst das Kästchen „Ich bin kein Roboter“."); setSending(false); return; }
 
     const bestellung = [
       `ANGEBOTSANFRAGE über pultteiler.eu/angebot`,
@@ -57,6 +63,7 @@ export default function AngebotPage() {
       uid: d["UID-Nummer"] || "–",
       einkaufergruppe: d["EKG-Nummer"] || "–",
       anmerkungen: d["Nachricht"] || "–",
+      "g-recaptcha-response": captcha.token,
     };
 
     try {
@@ -73,6 +80,7 @@ export default function AngebotPage() {
       }
       setSent(true);
     } catch (err) {
+      captchaRef.current?.reset();
       setError(`Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an ${CONTACT.email}`);
     } finally {
       setSending(false);
@@ -112,7 +120,7 @@ export default function AngebotPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} onFocusCapture={() => setCaptchaOn(true)}>
                   <Honeypot/>
                   <div style={field}>
                     <label style={label} htmlFor="ang-schule">Schule / Institution *</label>
@@ -191,6 +199,7 @@ export default function AngebotPage() {
                     <label style={label} htmlFor="ang-msg">Ihre Nachricht</label>
                     <textarea id="ang-msg" rows={4} name="Nachricht" placeholder="Wunschtermin, Fragen, besondere Anforderungen … (optional)" style={{ ...inp, resize: "vertical" }} {...focus}/>
                   </div>
+                  {captchaOn && <Recaptcha ref={captchaRef}/>}
                   <Btn onClick={() => {}} full>{sending ? "Wird gesendet ..." : "Angebot anfordern →"}</Btn>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
                     Unverbindlich & kostenlos. Ihre Daten verwenden wir ausschließlich zur Angebotserstellung, siehe <a href="/datenschutz" style={{ color: C.accentText }}>Datenschutzerklärung</a>.

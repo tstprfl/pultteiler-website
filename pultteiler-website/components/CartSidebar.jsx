@@ -4,6 +4,7 @@ import { C } from "@/lib/colors";
 import { loadEmailJS } from "@/lib/emailjs";
 import { useCart } from "@/components/CartProvider";
 import { useDialog, Honeypot, isBot } from "@/components/ui";
+import Recaptcha from "@/components/Recaptcha";
 import Img from "@/components/Img";
 
 export default function CartSidebar({ onClose }) {
@@ -20,6 +21,7 @@ export default function CartSidebar({ onClose }) {
   const regionLabel = region === "CH" ? "Schweiz (steuerfrei und unverzollt)" : region === "DE" ? "Deutschland (Preise inkl. 20% USt)" : "Österreich (Preise inkl. 20% USt)";
   const panelRef = useRef(null);
   const titleRef = useRef(null);
+  const captchaRef = useRef(null);
   useDialog(panelRef, onClose);
   // Beim Öffnen und bei jedem Schrittwechsel Fokus auf die Überschrift setzen
   // (der zuvor fokussierte Knopf verschwindet beim Schrittwechsel)
@@ -54,6 +56,8 @@ export default function CartSidebar({ onClose }) {
   const handleSubmit = async () => {
     setSending(true);
     setError("");
+    const captcha = captchaRef.current?.getToken() || { ready: false, token: "" };
+    if (captcha.ready && !captcha.token) { setError("Bitte bestätigen Sie zuerst das Kästchen „Ich bin kein Roboter“."); setSending(false); return; }
     const orderNr = generateOrderNr();
     const shippingText = shippingLabel;
     const bestellungText = items.map(i => `${i.qty}x ${i.name}: ${fmt(getPrice(i) * i.qty)}`).join("\n")
@@ -72,6 +76,7 @@ export default function CartSidebar({ onClose }) {
       uid: formValues["UID-Nummer"] || "–",
       einkaufergruppe: formValues["Einkäufergruppe"] || "–",
       anmerkungen: formValues["Anmerkungen"] || "–",
+      "g-recaptcha-response": captcha.token,
     };
     try {
       await loadEmailJS();
@@ -81,6 +86,7 @@ export default function CartSidebar({ onClose }) {
       setConfirmedOrderNr(orderNr);
       clear();
     } catch (err) {
+      captchaRef.current?.reset();
       setError("Bestellung konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail an blaschegg@traunseenet.at");
     } finally {
       setSending(false);
@@ -240,6 +246,7 @@ export default function CartSidebar({ onClose }) {
             <div style={{ background: `${C.accent}08`, border: `1px solid ${C.accent}25`, padding: "12px 16px", marginBottom: 16 }}>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, color: C.textMuted, lineHeight: 1.6, margin: 0 }}>Mit dem Absenden der Bestellung bestätigen Sie, die <a href="/agb" style={{ color: C.accentText, textDecoration: "underline" }}>AGB</a> und <a href="/datenschutz" style={{ color: C.accentText, textDecoration: "underline" }}>Datenschutzerklärung</a> gelesen zu haben. Als Verbraucher haben Sie ein 14-tägiges Widerrufsrecht gem. § 11 FAGG.</p>
             </div>
+            <Recaptcha ref={captchaRef}/>
             <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
               {sending ? "Wird gesendet ..." : "Bestellung absenden →"}
             </button>

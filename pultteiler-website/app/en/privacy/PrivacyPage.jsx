@@ -31,28 +31,31 @@ export default function PrivacyPage() {
             <h2 style={h}>5. EmailJS: sending emails</h2>
             <p style={s}>To send order and contact confirmations, we use the EmailJS service (emailjs.com). The data you enter (name, email address, order data) is processed via the EmailJS servers in order to deliver emails. EmailJS processes data in accordance with its own privacy policy. The legal basis is Art. 6(1)(b) GDPR (performance of a contract).</p>
 
-            <h2 style={h}>6. Hosting: Vercel</h2>
+            <h2 style={h}>6. Google reCAPTCHA: spam protection</h2>
+            <p style={s}>In the quote request form and when submitting an order in the shopping cart, we use Google reCAPTCHA to prevent abuse by automated programs (bots). The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. reCAPTCHA is only loaded once you start filling in the quote form or reach the order review step in the cart. In particular, your IP address, information about your browser and device and your interaction with the checkbox are transmitted to and evaluated by Google. Google may use cookies or similar technologies for this purpose. A transfer to Google LLC in the USA is possible. The legal basis is Art. 6(1)(f) GDPR. Our legitimate interest lies in protecting our forms and our email delivery against abuse. Further information can be found in Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>Terms of Service</a>.</p>
+
+            <h2 style={h}>7. Hosting: Vercel</h2>
             <p style={s}>This website is hosted by Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA). When you visit the website, technical data (IP address, browser type, time of access) is automatically recorded in server log files. The legal basis is Art. 6(1)(f) GDPR (legitimate interest in the secure provision of the website). Vercel is certified under the EU-US Data Privacy Framework.</p>
 
-            <h2 style={h}>7. Fonts</h2>
+            <h2 style={h}>8. Fonts</h2>
             <p style={s}>The fonts used on this website (Barlow Condensed, Inter Tight) are embedded locally and delivered together with the website by our hosting provider. No connection is made to servers of Google or any other font provider.</p>
 
-            <h2 style={h}>8. Cookies</h2>
-            <p style={s}>This website does not use tracking cookies or web analytics tools. No data is collected for advertising purposes. Technically necessary cookies may be used for the functionality of the website.</p>
+            <h2 style={h}>9. Cookies</h2>
+            <p style={s}>This website does not use tracking cookies or web analytics tools. No data is collected for advertising purposes. Technically necessary cookies may be used for the functionality of the website. Google may set cookies as part of the reCAPTCHA spam protection (section 6).</p>
 
-            <h2 style={h}>9. Storage period</h2>
+            <h2 style={h}>10. Storage period</h2>
             <p style={s}>Personal data is only stored for as long as necessary for the respective purpose or as required by statutory retention periods. Order data is stored in accordance with the tax retention obligation (7 years pursuant to § 132 BAO, Austrian Federal Fiscal Code).</p>
 
-            <h2 style={h}>10. Your rights</h2>
+            <h2 style={h}>11. Your rights</h2>
             <p style={s}>Under the GDPR you have the following rights:</p>
             <p style={{ ...s, paddingLeft: 16 }}>— Right of access (Art. 15 GDPR)<br/>— Right to rectification (Art. 16 GDPR)<br/>— Right to erasure (Art. 17 GDPR)<br/>— Right to restriction of processing (Art. 18 GDPR)<br/>— Right to data portability (Art. 20 GDPR)<br/>— Right to object (Art. 21 GDPR)</p>
             <p style={s}>To exercise your rights, please contact: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a></p>
 
-            <h2 style={h}>11. Right to lodge a complaint</h2>
+            <h2 style={h}>12. Right to lodge a complaint</h2>
             <p style={s}>You have the right to lodge a complaint with the competent data protection authority:</p>
             <p style={s}>Austrian Data Protection Authority (Österreichische Datenschutzbehörde)<br/>Barichgasse 40–42, 1030 Vienna, Austria<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>www.dsb.gv.at</a></p>
 
-            <h2 style={h}>12. Changes</h2>
+            <h2 style={h}>13. Changes</h2>
             <p style={{ ...s, marginBottom: 0 }}>We reserve the right to amend this privacy policy as necessary to comply with current legal requirements. Version: April 2026.</p>
           </div>
         </div>
