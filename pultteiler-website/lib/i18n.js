@@ -9,6 +9,7 @@ export const PAGE_PAIRS = [
   { de: "/produkte", en: "/en/products" },
   { de: "/angebot", en: "/en/quote" },
   { de: "/ratgeber", en: "/en/guide" },
+  { de: "/ratgeber/studien-abschreiben-pruefung", en: "/en/guide/research-on-copying-in-exams" },
   { de: "/ratgeber/sichtschutz-klassenarbeit", en: "/en/guide/privacy-screens-for-exams" },
   { de: "/ratgeber/trennwand-schultisch-pruefung", en: "/en/guide/desk-dividers-for-exams" },
   { de: "/ratgeber/abschreiben-verhindern-schularbeit", en: "/en/guide/prevent-cheating-in-exams" },

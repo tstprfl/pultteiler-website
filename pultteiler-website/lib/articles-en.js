@@ -2,6 +2,15 @@
 // deutsches Gegenstück in lib/i18n.js (PAGE_PAIRS).
 export const ARTICLES_EN = [
   {
+    slug: "research-on-copying-in-exams",
+    title: "What Research Says About Copying in Exams: It Comes Down to the Neighbour",
+    seoTitle: "Research on Copying in Exams",
+    description: "Four studies show that copying in exams happens almost only between seat neighbours. What this means for desk dividers, with sources.",
+    teaser: "Copying happens between seat neighbours, not across rows: what field experiments at universities show, and what follows for desk dividers.",
+    date: "2026-10-10",
+    img: "/images/kurhaus-tischreihe.jpg",
+  },
+  {
     slug: "privacy-screens-for-exams",
     title: "Privacy Screens for Class Tests: How to Create Fair Exam Conditions",
     seoTitle: "Privacy Screens for Class Tests",

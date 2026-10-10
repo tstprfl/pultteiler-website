@@ -3,6 +3,15 @@
 // Neue Artikel hier eintragen UND als Ordner unter app/ratgeber/<slug>/page.jsx anlegen. Änderungsdatum in app/sitemap.js (LASTMOD) eintragen.
 export const ARTICLES = [
   {
+    slug: "studien-abschreiben-pruefung",
+    seoTitle: "Studien zu Abschreiben bei Prüfungen",
+    title: "Was Studien über Abschreiben bei Prüfungen zeigen: Der Sitznachbar entscheidet",
+    description: "Vier Studien zeigen: Abschreiben bei Prüfungen findet fast nur zwischen Sitznachbarn statt. Was das für die Trennwand am Schultisch bedeutet — mit Quellen.",
+    teaser: "Abschreiben passiert beim Sitznachbarn, nicht über Reihen hinweg: Was Feldexperimente an Universitäten zeigen — und was daraus für die Trennwand folgt.",
+    date: "2026-10-10",
+    img: "/images/kurhaus-tischreihe.jpg",
+  },
+  {
     slug: "sichtschutz-klassenarbeit",
     seoTitle: "Sichtschutz für Klassenarbeiten in der Schule",
     title: "Sichtschutz für Klassenarbeiten: So schaffen Sie faire Prüfungsbedingungen",

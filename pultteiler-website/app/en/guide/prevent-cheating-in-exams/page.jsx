@@ -19,6 +19,7 @@ export default function Page() {
       lang="en"
       meta={meta}
       related={[
+        { href: "/en/guide/research-on-copying-in-exams", label: "What research says about copying in exams" },
         { href: "/en/guide/privacy-screens-for-exams", label: "Privacy screens for class tests: creating fair exam conditions" },
         { href: "/en/guide/desk-dividers-for-exams", label: "Desk dividers for exams: what really matters" },
         { href: "/en/primary-schools", label: "Pultteiler for primary schools" },

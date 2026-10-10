@@ -16,6 +16,7 @@ export default function Page() {
     <ArticleLayout
       meta={meta}
       related={[
+        { href: "/ratgeber/studien-abschreiben-pruefung", label: "Was Studien über Abschreiben bei Prüfungen zeigen" },
         { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für Klassenarbeiten: faire Prüfungsbedingungen schaffen" },
         { href: "/ratgeber/trennwand-schultisch-pruefung", label: "Trennwand für den Schultisch: Worauf es bei Prüfungen ankommt" },
         { href: "/volksschule", label: "Sichtschutz für die Volksschule" },
