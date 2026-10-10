@@ -15,7 +15,7 @@ const FAQ = [
   },
   {
     q: "Wie schnell ist ein Klassensatz Trennwände aufgebaut?",
-    a: "Ein kompletter Klassensatz steht in unter fünf Minuten: Klammer auf die Tischplatte stecken, Platte einschieben, fertig. Es wird kein Werkzeug benötigt. Viele Schulen lassen die Schülerinnen und Schüler die Teiler zu Beginn der Prüfung selbst aufbauen — das dauert keine zwei Minuten.",
+    a: "Ein kompletter Klassensatz steht in wenigen Augenblicken: Klammer auf die Tischplatte stecken, Platte einschieben, fertig. Es wird kein Werkzeug benötigt. Viele Schulen lassen die Schülerinnen und Schüler die Trennwände zu Beginn der Prüfung selbst aufbauen.",
   },
   {
     q: "Passt die Trennwand auf unsere Schultische?",
@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "Warum eine Klammer statt einer freistehenden Stellwand?",
-    a: "Freistehende Stellwände stehen lose auf dem Tisch und kippen leicht um, etwa bei einem Stoß mit dem Ellbogen. Der Pultteiler wird mit einer Klammer an der Tischplatte befestigt: Er steht fest wie montiert und ist trotzdem ohne Werkzeug in Sekunden auf- und abgebaut.",
+    a: "Freistehende Stellwände stehen lose auf dem Tisch und kippen leicht um, etwa bei einem Stoß mit dem Ellbogen. Der Pultteiler wird mit einer Klammer an der Tischplatte befestigt: Er steht fest wie montiert und ist trotzdem ohne Werkzeug in wenigen Augenblicken auf- und abgebaut.",
   },
   {
     q: "Was hält der Pultteiler im Schulalltag aus?",
@@ -46,7 +46,7 @@ export default function Page() {
       <AudienceLayout
         overline="Für Mittelschulen, Gymnasien & Berufsschulen"
         h1={<>Trennwände für Klassenarbeiten in der Sekundarstufe</>}
-        intro="Schularbeiten, Klassenarbeiten, Tests, Vergleichsarbeiten: In der Sekundarstufe wird häufig und unter Notendruck geprüft. Der Pultteiler macht jede Prüfung fair — als Trennwand für den Schultisch, die das Abschreiben zuverlässig verhindert und in Minuten auf- und abgebaut ist."
+        intro="Schularbeiten, Klassenarbeiten, Tests, Vergleichsarbeiten: In der Sekundarstufe wird häufig und unter Notendruck geprüft. Der Pultteiler macht jede Prüfung fair — als Trennwand für den Schultisch, die das Abschreiben zuverlässig verhindert und in wenigen Augenblicken auf- und abgebaut ist."
         img="/images/pultteiler-einsatz.jpg"
         imgAlt="Sichtschutz-Trennwände auf Schultischen im EDV-Raum einer weiterführenden Schule"
         situation={{
@@ -62,7 +62,7 @@ export default function Page() {
           items: [
             { title: "Höhere Platte (50×40 cm)", text: "Auf die Sitzhöhe ab dem 6. Schuljahr abgestimmt: verdeckt das Nachbarblatt zuverlässig — auch beim Vorbeugen oder Zur-Seite-Lehnen." },
             { title: "Eine Klasse, eine Prüfung", text: "Keine Gruppenteilung, keine zwei Aufgabensätze, kein Raumtausch: Alle schreiben gleichzeitig unter identischen, fairen Bedingungen." },
-            { title: "In Minuten einsatzbereit", text: "Werkzeugloser Aufbau per Stecksystem — die Klasse baut die Teiler zu Prüfungsbeginn selbst auf. Danach zurück in den Koffer." },
+            { title: "In wenigen Augenblicken einsatzbereit", text: "Werkzeugloser Aufbau per Stecksystem — die Klasse baut die Teiler zu Prüfungsbeginn selbst auf. Danach zurück in den Koffer." },
             { title: "Auch für EDV-Räume", text: "Die Klammer passt auf Computertische bis 3 cm Plattenstärke — Sichtschutz auch bei digitalen Tests und Online-Prüfungen." },
             { title: "Zwei Farben zur Wahl", text: "Set B gibt es in Gelb und dezentem Grau — passend zur Einrichtung Ihrer Schule." },
             { title: "Ersatzteile einzeln", text: "Platten, Klammern und Koffer sind einzeln nachbestellbar — Ihre Anschaffung bleibt über Jahre vollständig nutzbar." },

@@ -39,9 +39,9 @@ export default function Page() {
       <p style={A.p}>
         Der Sichtschutz muss das Nachbarblatt auch dann verdecken, wenn sich jemand vorbeugt. Gleichzeitig darf er die Aufsicht nicht behindern: Die Lehrkraft muss jeden Arbeitsplatz einsehen können. Bewährt haben sich <strong style={A.strong}>50×30 cm für die Volksschule</strong> und <strong style={A.strong}>50×40 cm ab dem 6. Schuljahr</strong> — abgestimmt auf die Sitzhöhe der jeweiligen Altersstufe.
       </p>
-      <h3 style={A.h3}>2. Aufbau in Minuten, ohne Werkzeug</h3>
+      <h3 style={A.h3}>2. Aufbau in wenigen Augenblicken, ohne Werkzeug</h3>
       <p style={A.p}>
-        Eine Klassenarbeit dauert 50 bis 100 Minuten — der Aufbau des Sichtschutzes darf davon nichts wegnehmen. Stecksysteme, bei denen eine Klammer auf die Tischplatte gesteckt und die Platte eingeschoben wird, sind in der Praxis am schnellsten: Die Klasse rüstet ihre Tische selbst, in zwei bis drei Minuten steht alles.
+        Eine Klassenarbeit dauert 50 bis 100 Minuten — der Aufbau des Sichtschutzes darf davon nichts wegnehmen. Stecksysteme, bei denen eine Klammer auf die Tischplatte gesteckt und die Platte eingeschoben wird, sind in der Praxis am schnellsten: Die Klasse rüstet ihre Tische selbst, in wenigen Augenblicken steht alles.
       </p>
       <h3 style={A.h3}>3. Robust genug für den Schulalltag</h3>
       <p style={A.p}>

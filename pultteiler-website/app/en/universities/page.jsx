@@ -18,7 +18,7 @@ const FAQ = [
   },
   {
     q: "How quickly can large quantities be set up before an exam?",
-    a: "The plug-in system needs no tools: attach the clamp, insert the panel. A practised team can equip even large lecture halls in a short time, as each workplace takes only a few seconds. After the exam the dividers are stored compactly in stackable wooden cases.",
+    a: "The plug-in system needs no tools: attach the clamp, insert the panel. A practised team can equip even large lecture halls in moments, as each divider is in place with a single movement. After the exam the dividers are stored compactly in stackable wooden cases.",
   },
   {
     q: "Do the dividers fit lecture hall folding desks and lab benches?",
@@ -58,7 +58,7 @@ export default function Page() {
           items: [
             { title: "Large quantities from the factory", text: "As the manufacturer we produce to demand, from a single exam room to fully equipped exam centres. Calculated per project." },
             { title: "Full room capacity", text: "No empty seats in between, no multiple exam versions: every workplace becomes exam-ready and the room stays fully usable." },
-            { title: "Set up in seconds", text: "Tool-free plug-in system: a few seconds per workplace. Even large lecture halls are equipped quickly by a small team, and cleared just as fast." },
+            { title: "Set up in moments", text: "Tool-free plug-in system: every divider stands in moments. Even large lecture halls are equipped quickly by a small team, and cleared just as fast." },
             { title: "Space-saving storage", text: "12 systems per stackable wooden case, larger cases on request. Hundreds of dividers are stored compactly until the next exam date." },
             { title: "Reference: Medical University of Innsbruck", text: "In exam use at the Medical University of Innsbruck, from the lecture hall to the laboratory. Further references are available on request." },
             { title: "Fits your procurement", text: "Written quote for your purchasing department, clear delivery and invoicing terms for your country. Austria, Germany and Switzerland: purchase on invoice." },

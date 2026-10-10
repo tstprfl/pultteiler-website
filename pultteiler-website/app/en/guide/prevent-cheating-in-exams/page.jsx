@@ -63,7 +63,7 @@ export default function Page() {
         The most direct solution: a <Link href="/en/guide/desk-dividers-for-exams" style={A.a}>desk divider</Link> that interrupts the line of sight to the neighbour's paper. The class stays together, in its own room, with a single version of the test. Only the opportunity to copy is gone.
       </p>
       <ul style={A.ul}>
-        <li style={A.li}><strong style={A.strong}>Effort:</strong> a one-off purchase, then 2 to 3 minutes of set-up by the class itself</li>
+        <li style={A.li}><strong style={A.strong}>Effort:</strong> a one-off purchase, then set-up in moments by the class itself</li>
         <li style={A.li}><strong style={A.strong}>Effect:</strong> physical rather than an appeal: the sideways glance hits a wall, the same in every test</li>
         <li style={A.li}><strong style={A.strong}>Side effects:</strong> positive, a calmer exam atmosphere. Outside exams the dividers can be used as a <Link href="/en/guide/low-distraction-workspace" style={A.a}>low-distraction workspace</Link></li>
         <li style={A.li}><strong style={A.strong}>Limits:</strong> replaces neither supervision nor phone rules. It prevents copying from the neighbour, not the crib sheet</li>
@@ -71,14 +71,14 @@ export default function Page() {
 
       <h2 style={A.h2}>The comparison at a glance</h2>
       <ul style={A.ul}>
-        <li style={A.li}><strong style={A.strong}>Recurring effort per exam:</strong> two versions, split classes, room changes and moving furniture cost time again with <em>every</em> test. The privacy screen costs money once and three minutes after that.</li>
+        <li style={A.li}><strong style={A.strong}>Recurring effort per exam:</strong> two versions, split classes, room changes and moving furniture cost time again with <em>every</em> test. The privacy screen costs money once and only moments after that.</li>
         <li style={A.li}><strong style={A.strong}>Fairness and atmosphere:</strong> stricter supervision and suspicion strain relationships. A privacy screen for everyone treats everyone the same.</li>
         <li style={A.li}><strong style={A.strong}>Effectiveness:</strong> only physical measures (distance or privacy screens) reliably remove the opportunity, and a privacy screen does not need a second room.</li>
       </ul>
 
       <h2 style={A.h2}>Conclusion</h2>
       <p style={{ ...A.p, marginBottom: 0 }}>
-        The methods are not mutually exclusive, but in terms of effort versus effect the privacy screen at the desk comes out ahead: bought once, ready in minutes for every test, with no extra effort for preparation, rooms or staff. What makes a good system is covered in our <Link href="/en/guide/desk-dividers-for-exams" style={A.a}>buyer's guide to desk dividers</Link>.
+        The methods are not mutually exclusive, but in terms of effort versus effect the privacy screen at the desk comes out ahead: bought once, ready in moments for every test, with no extra effort for preparation, rooms or staff. What makes a good system is covered in our <Link href="/en/guide/desk-dividers-for-exams" style={A.a}>buyer's guide to desk dividers</Link>.
       </p>
     </ArticleLayout>
   );

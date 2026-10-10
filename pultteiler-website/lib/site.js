@@ -67,7 +67,7 @@ export const AUDIENCES = [
     navLabel: "Volksschule & Primarstufe",
     title: "Volksschule & Primarstufe",
     heading: "Pultteiler für die Volksschule",
-    teaser: "Sichtschutz für die ersten Schularbeiten — kindgerechte Höhe (50×30 cm), in zwei Minuten aufgebaut, ein Koffer pro Klasse.",
+    teaser: "Sichtschutz für die ersten Schularbeiten — kindgerechte Höhe (50×30 cm), in wenigen Augenblicken aufgebaut, ein Koffer pro Klasse.",
     img: "/images/klassenzimmer.png",
     imgAlt: "Pultteiler im Klassenzimmer einer Volksschule",
   },

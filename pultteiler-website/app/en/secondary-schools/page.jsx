@@ -18,7 +18,7 @@ const FAQ = [
   },
   {
     q: "How quickly is a class set of dividers set up?",
-    a: "A complete class set is up in under five minutes: push the clamp onto the desktop, insert the panel, done. No tools are needed. Many schools let students set up the dividers themselves at the start of the exam, which takes less than two minutes.",
+    a: "A complete class set is up in moments: push the clamp onto the desktop, insert the panel, done. No tools are needed. Many schools let students set up the dividers themselves at the start of the exam.",
   },
   {
     q: "Will the divider fit our school desks?",
@@ -42,7 +42,7 @@ export default function Page() {
         ui={UI_EN}
         overline="For secondary schools, grammar schools and vocational schools"
         h1={<>Desk dividers for tests in secondary school</>}
-        intro="Class tests, exams, comparative assessments: in secondary school, students are tested often and under pressure for grades. The Pultteiler makes every exam fair. A desk divider that reliably prevents copying and is set up and removed in minutes."
+        intro="Class tests, exams, comparative assessments: in secondary school, students are tested often and under pressure for grades. The Pultteiler makes every exam fair. A desk divider that reliably prevents copying and is set up and removed in moments."
         img="/images/pultteiler-einsatz.jpg"
         imgAlt="Privacy dividers on desks in the computer room of a secondary school"
         situation={{
@@ -58,7 +58,7 @@ export default function Page() {
           items: [
             { title: "Taller panel (50×40 cm)", text: "Matched to the seating height from school year 6: reliably covers the neighbour's paper, even when leaning forward or to the side." },
             { title: "One class, one exam", text: "No split groups, no two sets of questions, no room swaps: everyone writes at the same time under identical, fair conditions." },
-            { title: "Ready in minutes", text: "Tool-free plug-in set-up: the class sets up the dividers itself at the start of the exam. Afterwards everything goes back into the case." },
+            { title: "Ready in moments", text: "Tool-free plug-in set-up: the class sets up the dividers itself at the start of the exam. Afterwards everything goes back into the case." },
             { title: "For computer rooms too", text: "The clamp fits computer desks up to 3 cm thick, providing privacy for digital tests and online exams." },
             { title: "Two colours", text: "Set B is available in yellow and subtle grey, to match your school's furnishings." },
             { title: "Individual spare parts", text: "Panels, clamps and cases can be reordered individually, so your purchase stays fully usable for years." },

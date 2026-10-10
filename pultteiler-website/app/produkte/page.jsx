@@ -5,7 +5,7 @@ import { alternatesFor } from "@/lib/i18n";
 export const metadata = {
   title: { absolute: "Pultteiler kaufen: Sets und Preise vom Hersteller" },
   description:
-    "Pultteiler-Sets im Holzkoffer (12 Systeme) und Ersatzteile direkt vom Hersteller. Kauf auf Rechnung, Lieferung nach Österreich, Deutschland und in die Schweiz.",
+    "Pultteiler-Sets: Trennwände für Schultische im Holzkoffer (12 Systeme) und Ersatzteile direkt vom Hersteller. Kauf auf Rechnung, Lieferung nach Österreich, Deutschland und in die Schweiz.",
   alternates: alternatesFor("/produkte"),
 };
 

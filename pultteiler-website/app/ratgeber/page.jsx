@@ -7,7 +7,7 @@ import { alternatesFor } from "@/lib/i18n";
 export const metadata = {
   title: "Ratgeber für Schulen: Faire Prüfungen",
   description:
-    "Praxiswissen für Schulen: Abschreiben bei Klassenarbeiten verhindern, Trennwände richtig auswählen, reizarme Arbeitsplätze für ADHS und Inklusion.",
+    "Praxiswissen für Schulen: Abschreiben bei Klassenarbeiten verhindern, Trennwände richtig auswählen, reizarme Arbeitsplätze für konzentriertes Arbeiten.",
   alternates: alternatesFor("/ratgeber"),
 };
 

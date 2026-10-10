@@ -35,7 +35,7 @@ export default function Page() {
       <ul style={A.ul}>
         <li style={A.li}><strong style={A.strong}>Free-standing screens:</strong> cardboard or plastic displays that stand loosely on the desk. Cheap but prone to tipping over: one nudge of an elbow and the screen lies on the neighbour's paper. Cardboard versions also do not last long.</li>
         <li style={A.li}><strong style={A.strong}>Screwed-on systems:</strong> permanently mounted dividers are stable but turn the desk into an exam desk for good. Impractical for normal classrooms, and the assembly effort per exam is unacceptable.</li>
-        <li style={A.li}><strong style={A.strong}>Clamp systems (plug-in):</strong> an elastic clamp grips the desktop and the divider panel is slotted in. Stands as firmly as a mounted screen but is set up and removed in seconds. The standard for exam use, proven for decades.</li>
+        <li style={A.li}><strong style={A.strong}>Clamp systems (plug-in):</strong> an elastic clamp grips the desktop and the divider panel is slotted in. Stands as firmly as a mounted screen but is set up and removed in moments. The standard for exam use, proven for decades.</li>
       </ul>
       <p style={A.p}>
         Important with clamp systems: check the <strong style={A.strong}>thickness of the desktop</strong>. Common clamps hold desktops up to 3 cm, which covers practically all school desks, including computer room desks and most lecture hall writing surfaces.

@@ -33,7 +33,7 @@ export default function Page() {
       <ul style={A.ul}>
         <li style={A.li}><strong style={A.strong}>Stellwände (freistehend):</strong> Aufsteller aus Karton oder Kunststoff, die lose auf dem Tisch stehen. Günstig, aber kippanfällig — ein Stoß mit dem Ellbogen, und die Wand liegt auf dem Nachbarblatt. Bei Kartonvarianten leidet zudem die Haltbarkeit.</li>
         <li style={A.li}><strong style={A.strong}>Geschraubte Systeme:</strong> Fest montierte Trennwände sind stabil, machen den Tisch aber dauerhaft zum Prüfungstisch — für normale Unterrichtsräume unpraktisch, Montageaufwand pro Prüfung inakzeptabel.</li>
-        <li style={A.li}><strong style={A.strong}>Klammersysteme (gesteckt):</strong> Eine elastische Klammer greift die Tischplatte, die Trennplatte wird eingeschoben. Steht fest wie montiert, ist aber in Sekunden auf- und abgebaut — der Standard für den Prüfungseinsatz, seit Jahrzehnten bewährt.</li>
+        <li style={A.li}><strong style={A.strong}>Klammersysteme (gesteckt):</strong> Eine elastische Klammer greift die Tischplatte, die Trennplatte wird eingeschoben. Steht fest wie montiert, ist aber in wenigen Augenblicken auf- und abgebaut — der Standard für den Prüfungseinsatz, seit Jahrzehnten bewährt.</li>
       </ul>
       <p style={A.p}>
         Wichtig bei Klammersystemen: die <strong style={A.strong}>Tischplattenstärke</strong> prüfen. Gängige Klammern fassen Platten bis 3 cm — das deckt praktisch alle Schultische ab, auch Tische in EDV-Räumen und die meisten Hörsaal-Schreibflächen.

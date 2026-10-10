@@ -60,7 +60,7 @@ export default function Page() {
         Die direkteste Lösung: eine <Link href="/ratgeber/trennwand-schultisch-pruefung" style={A.a}>Trennwand am Schultisch</Link>, die die Sichtlinie zum Nachbarblatt unterbricht. Die Klasse bleibt zusammen, im eigenen Raum, mit einer einzigen Angabe — nur die Gelegenheit zum Abschreiben ist weg.
       </p>
       <ul style={A.ul}>
-        <li style={A.li}><strong style={A.strong}>Aufwand:</strong> einmalige Anschaffung, danach 2–3 Minuten Aufbau durch die Klasse selbst</li>
+        <li style={A.li}><strong style={A.strong}>Aufwand:</strong> einmalige Anschaffung, danach Aufbau in wenigen Augenblicken durch die Klasse selbst</li>
         <li style={A.li}><strong style={A.strong}>Wirkung:</strong> physisch statt appellativ — der Seitenblick läuft ins Leere, bei jeder Arbeit gleich</li>
         <li style={A.li}><strong style={A.strong}>Nebenwirkungen:</strong> positiv — ruhigere Prüfungsatmosphäre; die Teiler sind außerhalb der Prüfung als <Link href="/ratgeber/reizarmer-arbeitsplatz-schule" style={A.a}>reizarmer Arbeitsplatz</Link> nutzbar</li>
         <li style={A.li}><strong style={A.strong}>Grenzen:</strong> ersetzt weder Aufsicht noch Handyregeln — verhindert das Abschreiben vom Nachbarn, nicht den Spickzettel</li>
@@ -68,14 +68,14 @@ export default function Page() {
 
       <h2 style={A.h2}>Der Vergleich im Überblick</h2>
       <ul style={A.ul}>
-        <li style={A.li}><strong style={A.strong}>Wiederkehrender Aufwand pro Prüfung:</strong> Zwei Angaben, Klassenteilung, Raumwechsel und Möbelrücken kosten bei <em>jeder</em> Arbeit aufs Neue Zeit. Der Sichtschutz kostet einmal Geld und danach drei Minuten.</li>
+        <li style={A.li}><strong style={A.strong}>Wiederkehrender Aufwand pro Prüfung:</strong> Zwei Angaben, Klassenteilung, Raumwechsel und Möbelrücken kosten bei <em>jeder</em> Arbeit aufs Neue Zeit. Der Sichtschutz kostet einmal Geld und danach nur wenige Augenblicke.</li>
         <li style={A.li}><strong style={A.strong}>Fairness & Klima:</strong> Verschärfte Aufsicht und Verdächtigungen belasten die Beziehung. Ein Sichtschutz für alle behandelt alle gleich.</li>
         <li style={A.li}><strong style={A.strong}>Wirksamkeit:</strong> Nur physische Maßnahmen (Abstand oder Sichtschutz) beseitigen die Gelegenheit zuverlässig — und Sichtschutz braucht dafür keinen zweiten Raum.</li>
       </ul>
 
       <h2 style={A.h2}>Fazit</h2>
       <p style={{ ...A.p, marginBottom: 0 }}>
-        Die Methoden schließen einander nicht aus — aber in der Aufwand-Wirkung-Bilanz liegt der Sichtschutz am Schultisch vorn: einmal angeschafft, bei jeder Schularbeit in Minuten einsatzbereit, ohne Mehraufwand für Vorbereitung, Räume oder Personal. Was ein gutes System auszeichnet, lesen Sie in unserer <Link href="/ratgeber/trennwand-schultisch-pruefung" style={A.a}>Kaufberatung für Trennwände</Link>.
+        Die Methoden schließen einander nicht aus — aber in der Aufwand-Wirkung-Bilanz liegt der Sichtschutz am Schultisch vorn: einmal angeschafft, bei jeder Schularbeit in wenigen Augenblicken einsatzbereit, ohne Mehraufwand für Vorbereitung, Räume oder Personal. Was ein gutes System auszeichnet, lesen Sie in unserer <Link href="/ratgeber/trennwand-schultisch-pruefung" style={A.a}>Kaufberatung für Trennwände</Link>.
       </p>
     </ArticleLayout>
   );

@@ -15,7 +15,7 @@ const FAQ = [
   },
   {
     q: "Wie schnell sind große Stückzahlen vor einer Klausur aufgebaut?",
-    a: "Das Stecksystem kommt ohne Werkzeug aus: Klammer aufstecken, Platte einschieben. Ein eingespieltes Team rüstet damit auch große Hörsäle in kurzer Zeit — pro Arbeitsplatz dauert der Aufbau nur wenige Sekunden. Nach der Prüfung verschwinden die Teiler platzsparend in stapelbaren Holzkoffern.",
+    a: "Das Stecksystem kommt ohne Werkzeug aus: Klammer aufstecken, Platte einschieben. Ein eingespieltes Team rüstet damit auch große Hörsäle in wenigen Augenblicken — jede Trennwand sitzt mit einem Handgriff. Nach der Prüfung verschwinden die Teiler platzsparend in stapelbaren Holzkoffern.",
   },
   {
     q: "Passen die Trennwände auf Hörsaal-Klapptische und Labortische?",
@@ -54,7 +54,7 @@ export default function Page() {
           items: [
             { title: "Hohe Stückzahlen ab Werk", text: "Als Hersteller produzieren wir bedarfsgerecht — vom einzelnen Prüfungsraum bis zur Ausstattung ganzer Prüfungszentren. Projektbezogene Kalkulation." },
             { title: "Volle Raumkapazität", text: "Kein Freilassen jedes zweiten Platzes, keine Mehrfach-Aufgabenversionen: Jeder Arbeitsplatz wird prüfungstauglich — der Raum bleibt voll nutzbar." },
-            { title: "Sekundenschneller Aufbau", text: "Werkzeugloses Stecksystem: wenige Sekunden pro Arbeitsplatz. Auch große Hörsäle sind mit kleinem Team rasch gerüstet — und ebenso schnell wieder geräumt." },
+            { title: "Aufbau in wenigen Augenblicken", text: "Werkzeugloses Stecksystem: Jede Trennwand steht in wenigen Augenblicken. Auch große Hörsäle sind mit kleinem Team rasch gerüstet — und ebenso schnell wieder geräumt." },
             { title: "Platzsparende Lagerung", text: "12 Systeme pro stapelbarem Holzkoffer — auf Anfrage auch größere Koffer. Hunderte Teiler lagern kompakt bis zum nächsten Prüfungstermin." },
             { title: "Referenz MedUni Innsbruck", text: "Im Prüfungseinsatz an der Medizinischen Universität Innsbruck — vom Hörsaal bis ins Labor. Weitere Referenzen nennen wir auf Anfrage gerne." },
             { title: "Beschaffungskonform", text: "Schriftliches Angebot, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH) — passend zu Ihren Einkaufsprozessen." },

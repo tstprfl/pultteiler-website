@@ -91,7 +91,7 @@ export const GALLERY_EN = [
 
 // Zielgruppen (Startseite), Gegenstück zu AUDIENCES in lib/site.js
 export const AUDIENCES_EN = [
-  { id: "primary", href: "/en/primary-schools", title: "Primary schools", teaser: "Privacy screens for the first tests: child-friendly height (50×30 cm), set up in two minutes, one case per class.", img: "/images/klassenzimmer.png", imgAlt: "Pultteiler in a primary school classroom" },
+  { id: "primary", href: "/en/primary-schools", title: "Primary schools", teaser: "Privacy screens for the first tests: child-friendly height (50×30 cm), set up in moments, one case per class.", img: "/images/klassenzimmer.png", imgAlt: "Pultteiler in a primary school classroom" },
   { id: "secondary", href: "/en/secondary-schools", title: "Secondary schools", teaser: "Dividers for tests and exams from school year 6: taller panels (50×40 cm), robust for constant use.", img: "/images/pultteiler-einsatz.jpg", imgAlt: "Pultteiler in the computer room of a secondary school" },
   { id: "universities", href: "/en/universities", title: "Universities and exam centres", teaser: "Large quantities for lecture halls and exam centres: individual quotes, reference Medical University of Innsbruck, delivery across Europe.", img: "/images/kurhaus-saal-totale.jpg", imgAlt: "Exam hall in the Kurhaus Bad Krozingen, every desk fitted with Pultteiler dividers" },
 ];

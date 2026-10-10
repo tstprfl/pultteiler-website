@@ -39,7 +39,7 @@ export default function AnleitungPage() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, marginTop: 2 }} className="contact-g">
-              {["Passt auf alle gängigen Schultische mit einer Tischplattenstärke bis 3 cm. Die Klammer aus dauerelastischem Kunststoff hinterlässt keine Spuren am Tisch.", "Ohne Werkzeug, ohne Schrauben, ohne Klebeflächen. Aufbau und Abbau dauern nur wenige Sekunden pro Tisch."].map((t, i) => (
+              {["Passt auf alle gängigen Schultische mit einer Tischplattenstärke bis 3 cm. Die Klammer aus dauerelastischem Kunststoff hinterlässt keine Spuren am Tisch.", "Ohne Werkzeug, ohne Schrauben, ohne Klebeflächen. Aufbau und Abbau der Trennwand sind in wenigen Augenblicken erledigt."].map((t, i) => (
                 <div key={i} style={{ background: `${C.green}08`, border: `1px solid ${C.green}25`, padding: "32px 28px", display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <div style={{ width: 32, height: 32, background: `${C.green}15`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke={C.green} strokeWidth="2" strokeLinecap="square"/></svg>

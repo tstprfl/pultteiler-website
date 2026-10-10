@@ -39,7 +39,7 @@ export default function HowItWorksPage() {
           </div>
           <Reveal delay={0.15}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, marginTop: 2 }} className="contact-g">
-              {["Fits all common school desks with a desktop up to 3 cm thick. The clamp made of permanently elastic plastic leaves no marks on the desk.", "No tools, no screws, no adhesive pads. Set-up and removal take only a few seconds per desk."].map((t, i) => (
+              {["Fits all common school desks with a desktop up to 3 cm thick. The clamp made of permanently elastic plastic leaves no marks on the desk.", "No tools, no screws, no adhesive pads. Set-up and removal take only moments per desk."].map((t, i) => (
                 <div key={i} style={{ background: `${C.green}08`, border: `1px solid ${C.green}25`, padding: "32px 28px", display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <div style={{ width: 32, height: 32, background: `${C.green}15`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke={C.green} strokeWidth="2" strokeLinecap="square"/></svg>

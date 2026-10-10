@@ -30,10 +30,10 @@ export const ARTICLES_EN = [
   },
   {
     slug: "low-distraction-workspace",
-    title: "A Low-Distraction Workspace at School: Supporting Concentration with ADHD and in Inclusive Classes",
+    title: "A Low-Distraction Workspace at School: Supporting Concentration with Desk Dividers",
     seoTitle: "Low-Distraction Workspace at School",
-    description: "How a low-distraction workspace helps children with ADHD or high distractibility, and how schools set one up without renovation or stigma.",
-    teaser: "How a low-distraction workspace helps children with ADHD or high distractibility, and how schools set it up without renovation.",
+    description: "How a low-distraction workspace helps children concentrate, and how schools set one up with desk dividers without renovation.",
+    teaser: "How a low-distraction workspace helps children concentrate, and how schools set it up without renovation.",
     date: "2026-09-23",
     img: "/images/pultteiler-einsatz.jpg",
   },

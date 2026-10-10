@@ -41,9 +41,9 @@ export default function Page() {
       <p style={A.p}>
         The privacy screen must cover the neighbour's paper even when someone leans forward. At the same time it must not get in the way of supervision: the teacher must be able to see every workplace. Proven sizes are <strong style={A.strong}>50×30 cm for primary school</strong> and <strong style={A.strong}>50×40 cm from school year 6</strong>, matched to the seating height of each age group.
       </p>
-      <h3 style={A.h3}>2. Set up in minutes, without tools</h3>
+      <h3 style={A.h3}>2. Set up in moments, without tools</h3>
       <p style={A.p}>
-        A class test lasts 50 to 100 minutes, and setting up the privacy screens must not take anything away from that. Plug-in systems, where a clamp is pushed onto the desktop and the panel inserted, are the fastest in practice: the class equips its own desks, and everything is ready in two to three minutes.
+        A class test lasts 50 to 100 minutes, and setting up the privacy screens must not take anything away from that. Plug-in systems, where a clamp is pushed onto the desktop and the panel inserted, are the fastest in practice: the class equips its own desks, and everything is ready in moments.
       </p>
       <h3 style={A.h3}>3. Robust enough for everyday school life</h3>
       <p style={A.p}>

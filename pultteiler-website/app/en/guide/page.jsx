@@ -9,7 +9,7 @@ import Img from "@/components/Img";
 export const metadata = {
   title: { absolute: "Guide for Schools: Fair Exams | Pultteiler" },
   description:
-    "Practical knowledge for schools: preventing copying in tests, choosing desk dividers, setting up low-distraction workspaces for ADHD and inclusion.",
+    "Practical knowledge for schools: preventing copying in tests, choosing desk dividers, setting up low-distraction workspaces for focused work.",
   alternates: alternatesFor("/en/guide"),
   openGraph: OG_EN,
 };
