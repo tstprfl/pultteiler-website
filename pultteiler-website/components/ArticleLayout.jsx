@@ -20,8 +20,8 @@ export const A = {
 // Beschriftungen je Sprache; englische Artikel liegen unter /en/guide/<slug>
 const T = {
   de: { home: "/", homeLabel: "Start", index: "/ratgeber", indexLabel: "Ratgeber", badge: "Ratgeber für Schulen", updated: "Aktualisiert am", locale: "de-AT",
-        byline: (y) => `Schulmittel Blaschegg — Hersteller seit über ${y} Jahren`, ctaTitle: "Sichtschutz direkt vom Hersteller",
-        ctaText: (y) => `${SCHOOLS_TEXT} arbeiten mit dem Pultteiler — seit über ${y} Jahren, direkt vom Produzenten, Kauf auf Rechnung.`,
+        byline: (y) => `Schulmittel Blaschegg, Hersteller seit über ${y} Jahren`, ctaTitle: "Sichtschutz direkt vom Hersteller",
+        ctaText: (y) => `${SCHOOLS_TEXT} arbeiten mit dem Pultteiler, seit über ${y} Jahren, direkt vom Produzenten, Kauf auf Rechnung.`,
         quote: "/angebot", quoteCta: "Angebot anfordern →", shop: "/produkte", shopCta: "Zum Shop", related: "Weiterlesen", relatedAria: "Weiterführende Artikel" },
   en: { home: "/en", homeLabel: "Home", index: "/en/guide", indexLabel: "Guide", badge: "Guide for schools", updated: "Updated", locale: "en-GB",
         byline: (y) => `Schulmittel Blaschegg, manufacturer for over ${y} years`, ctaTitle: "Privacy screens direct from the manufacturer",
@@ -72,7 +72,7 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
 
           {meta.img && (
             <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard, marginBottom: 36 }}>
-              <Img sizes="(max-width: 900px) 100vw, 900px" src={meta.img} alt={meta.imgAlt || meta.title} style={{ width: "100%", height: 340, objectFit: "cover", display: "block" }}/>
+              <Img sizes="(max-width: 900px) 100vw, 900px" src={meta.img} alt={meta.imgAlt || meta.title} style={{ width: "100%", height: 340, objectFit: "cover", objectPosition: meta.imgPos || "center", display: "block" }}/>
             </div>
           )}
 

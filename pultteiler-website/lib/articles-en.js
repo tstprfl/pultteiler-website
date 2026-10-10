@@ -8,7 +8,7 @@ export const ARTICLES_EN = [
     description: "Four studies show that copying in exams happens almost only between seat neighbours. What this means for desk dividers, with sources.",
     teaser: "Copying happens between seat neighbours, not across rows: what field experiments at universities show, and what follows for desk dividers.",
     date: "2026-10-10",
-    img: "/images/kurhaus-tischreihe.jpg",
+    img: "/images/kurhaus-saal-totale.jpg",
   },
   {
     slug: "privacy-screens-for-exams",

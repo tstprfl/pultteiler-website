@@ -15,9 +15,9 @@ export default function VersandPage() {
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
-                { icon: "🇦🇹", label: "Österreich", val: "€ 10,00 je Bestellung", sub: "inkl. USt — ab 3 Koffer-Sets kostenlos" },
-                { icon: "🇩🇪", label: "Deutschland", val: "€ 12,00 je Bestellung", sub: "inkl. USt — ab 3 Koffer-Sets kostenlos" },
-                { icon: "🇨🇭", label: "Schweiz", val: "€ 25,00 je Bestellung", sub: "steuerfrei & unverzollt — ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇦🇹", label: "Österreich", val: "€ 10,00 je Bestellung", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇩🇪", label: "Deutschland", val: "€ 12,00 je Bestellung", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇨🇭", label: "Schweiz", val: "€ 25,00 je Bestellung", sub: "steuerfrei und unverzollt, ab 3 Koffer-Sets kostenlos" },
                 { icon: "🌍", label: "Andere Länder", val: "Auf Anfrage", sub: "Bitte kontaktieren Sie uns" },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
@@ -35,14 +35,14 @@ export default function VersandPage() {
             <h2 style={h}>2. Lieferzeiten</h2>
             <p style={s}>Die Lieferzeit beträgt in der Regel <strong>5–10 Werktage</strong> ab Auftragsbestätigung. Für Lieferungen in die Schweiz kann die Lieferzeit geringfügig länger ausfallen. Bei Lieferverzögerungen werden Sie von uns unverzüglich informiert.</p>
             <h2 style={h}>3. Versandkosten im Detail</h2>
-            {bullet("Österreich: € 10,00 Versandpauschale je Bestellung (inkl. 20% USt) — für Koffer-Sets und Ersatzteile")}
-            {bullet("Deutschland: € 12,00 Versandpauschale je Bestellung (inkl. 20% USt) — für Koffer-Sets und Ersatzteile")}
+            {bullet("Österreich: € 10,00 Versandpauschale je Bestellung (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
+            {bullet("Deutschland: € 12,00 Versandpauschale je Bestellung (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
             {bullet("Schweiz: € 25,00 Versandpauschale je Bestellung, steuerfrei und unverzollt")}
             {bullet("Ab 3 Koffer-Sets in einer Bestellung: versandkostenfrei in alle drei Länder")}
-            {bullet("Andere Länder: Versandkosten auf Anfrage — bitte kontaktieren Sie uns")}
+            {bullet("Andere Länder: Versandkosten auf Anfrage, bitte kontaktieren Sie uns")}
             <p style={s}>Alle Preise im Shop für Österreich und Deutschland verstehen sich inklusive 20% Umsatzsteuer; die enthaltene Steuer wird im Warenkorb und auf der Rechnung ausgewiesen.</p>
             <h2 style={h}>4. Lieferung in die Schweiz</h2>
-            <p style={s}>Lieferungen in die Schweiz erfolgen <strong>steuerfrei und unverzollt</strong>. Der im Shop ausgewiesene Preis zuzüglich der Versandpauschale ist Ihr Endpreis — es fallen für Sie keine zusätzlichen Zollgebühren oder Einfuhrsteuern an.</p>
+            <p style={s}>Lieferungen in die Schweiz erfolgen <strong>steuerfrei und unverzollt</strong>. Der im Shop ausgewiesene Preis zuzüglich der Versandpauschale ist Ihr Endpreis, es fallen für Sie keine zusätzlichen Zollgebühren oder Einfuhrsteuern an.</p>
             <h2 style={h}>5. Steuerfreie Lieferung nach Deutschland</h2>
             <p style={s}>Unternehmen und Institutionen in Deutschland können bei Angabe einer gültigen deutschen UID-Nummer eine steuerfreie innergemeinschaftliche Lieferung in Anspruch nehmen. Ein deutsches Bankkonto für die Zahlung ist vorhanden.</p>
             <h2 style={h}>6. E-Rechnung für österreichische Bundesschulen</h2>
@@ -55,7 +55,7 @@ export default function VersandPage() {
             <div style={{ background: C.bgElevated, border: `1px solid ${C.border}`, padding: "20px 24px", marginBottom: 20 }}>
               <p style={{ ...s, margin: 0 }}><strong>Schulmittel Blaschegg</strong><br/>Michael Blaschegg<br/>Stücklbachstraße 13<br/>4813 Altmünster<br/>Österreich</p>
             </div>
-            <p style={s}>Die unmittelbaren Kosten der Rücksendung trägt der Käufer. Wir empfehlen die Rücksendung per <strong>Hermes</strong> — die Kosten betragen ca. <strong>€ 6,50</strong>.</p>
+            <p style={s}>Die unmittelbaren Kosten der Rücksendung trägt der Käufer. Wir empfehlen die Rücksendung per <strong>Hermes</strong>, die Kosten betragen ca. <strong>€ 6,50</strong>.</p>
             <h2 style={h}>9. Rückerstattung</h2>
             <p style={s}>Nach Eingang des wirksamen Widerrufs erstatten wir den Kaufpreis unverzüglich, spätestens jedoch <strong>binnen 14 Tagen</strong>. Die Rückerstattung erfolgt über dasselbe Zahlungsmittel, das bei der ursprünglichen Transaktion verwendet wurde.</p>
             <h2 style={h}>10. Zustand der rückgesendeten Ware</h2>

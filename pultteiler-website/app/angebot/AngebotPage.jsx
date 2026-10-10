@@ -9,9 +9,9 @@ import { CONTACT } from "@/lib/site";
 import { Reveal, Heading, Btn } from "@/components/ui";
 
 const LAND_HINWEIS = {
-  "Österreich": "🇦🇹 Kauf auf Rechnung. Bundesschulen erhalten auf Wunsch eine E-Rechnung — bitte EKG-Nummer unten angeben.",
-  "Deutschland": "🇩🇪 Kauf auf Rechnung. Mit Ihrer deutschen UID-Nummer liefern wir steuerfrei — ein deutsches Bankkonto für die Zahlung ist vorhanden.",
-  "Schweiz": "🇨🇭 Kauf auf Rechnung. Lieferung steuerfrei und unverzollt — der angebotene Preis ist Ihr Endpreis, Lieferung inklusive.",
+  "Österreich": "🇦🇹 Kauf auf Rechnung. Bundesschulen erhalten auf Wunsch eine E-Rechnung, bitte EKG-Nummer unten angeben.",
+  "Deutschland": "🇩🇪 Kauf auf Rechnung. Mit Ihrer deutschen UID-Nummer liefern wir steuerfrei, ein deutsches Bankkonto für die Zahlung ist vorhanden.",
+  "Schweiz": "🇨🇭 Kauf auf Rechnung. Lieferung steuerfrei und unverzollt, der angebotene Preis ist Ihr Endpreis, Lieferung inklusive.",
   "Anderes Land": "🌍 Gerne prüfen wir Lieferung und Konditionen für Ihr Land und melden uns mit einem individuellen Angebot.",
 };
 
@@ -86,14 +86,14 @@ export default function AngebotPage() {
             overline="Angebot anfordern"
             title="Ihr unverbindliches Angebot"
             align="center"
-            sub="Sagen Sie uns, was Ihre Schule braucht — Sie erhalten kurzfristig ein schriftliches Angebot. Kauf auf Rechnung, keine Kreditkarte, keine Vorkasse."
+            sub="Sagen Sie uns, was Ihre Schule braucht, Sie erhalten kurzfristig ein schriftliches Angebot. Kauf auf Rechnung, keine Kreditkarte, keine Vorkasse."
           />
 
           {/* Kauf-auf-Rechnung-Hinweis — immer sichtbar */}
           <Reveal>
             <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "18px 24px", marginBottom: 2, textAlign: "center" }}>
               <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", color: C.text }}>
-                ✓ KAUF AUF RECHNUNG — SO BESTELLEN SCHULEN: erst die Lieferung, dann die Rechnung.
+                ✓ KAUF AUF RECHNUNG, SO BESTELLEN SCHULEN: erst die Lieferung, dann die Rechnung.
               </span>
             </div>
           </Reveal>
@@ -149,13 +149,13 @@ export default function AngebotPage() {
 
                   {land === "Österreich" && (
                     <div style={field}>
-                      <label style={label} htmlFor="ang-ekg">EKG-Nummer (optional — für E-Rechnung an Bundesschulen)</label>
+                      <label style={label} htmlFor="ang-ekg">EKG-Nummer (optional, für E-Rechnung an Bundesschulen)</label>
                       <input id="ang-ekg" type="text" name="EKG-Nummer" placeholder="Ihre Einkäufergruppe, z. B. für Bundesschulen" style={inp} {...focus}/>
                     </div>
                   )}
                   {land === "Deutschland" && (
                     <div style={field}>
-                      <label style={label} htmlFor="ang-uid">UID-Nummer (optional — für steuerfreie Lieferung)</label>
+                      <label style={label} htmlFor="ang-uid">UID-Nummer (optional, für steuerfreie Lieferung)</label>
                       <input id="ang-uid" type="text" name="UID-Nummer" placeholder="DE…" style={inp} {...focus}/>
                     </div>
                   )}
@@ -174,16 +174,16 @@ export default function AngebotPage() {
                       <label style={label} htmlFor="ang-set">Gewünschtes Set</label>
                       <select id="ang-set" name="Set" style={{ ...inp, cursor: "pointer" }} {...focus}>
                         <option>Bitte beraten Sie mich</option>
-                        <option>Set A — Gelb — bis 5. Schuljahr (Platte 50×30 cm)</option>
-                        <option>Set B — Gelb — ab 6. Schuljahr (Platte 50×40 cm)</option>
-                        <option>Set B — Grau — ab 6. Schuljahr (Platte 50×40 cm)</option>
+                        <option>Set A Gelb, bis 5. Schuljahr (Platte 50×30 cm)</option>
+                        <option>Set B Gelb, ab 6. Schuljahr (Platte 50×40 cm)</option>
+                        <option>Set B Grau, ab 6. Schuljahr (Platte 50×40 cm)</option>
                         <option>Ersatzteile (Platten, Klammern, Koffer)</option>
                       </select>
                     </div>
                   </div>
                   <div style={field}>
                     <label style={label} htmlFor="ang-menge">Menge *</label>
-                    <input id="ang-menge" type="text" name="Menge" placeholder="z. B. 3 Koffer à 12 Teiler — oder: 250 Teiler für Prüfungszentrum" required style={inp} {...focus}/>
+                    <input id="ang-menge" type="text" name="Menge" placeholder="z. B. 3 Koffer à 12 Teiler oder 250 Teiler für Prüfungszentrum" required style={inp} {...focus}/>
                   </div>
                   <div style={{ marginBottom: 26 }}>
                     <label style={label} htmlFor="ang-msg">Ihre Nachricht</label>
@@ -191,7 +191,7 @@ export default function AngebotPage() {
                   </div>
                   <Btn onClick={() => {}} full>{sending ? "Wird gesendet ..." : "Angebot anfordern →"}</Btn>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
-                    Unverbindlich & kostenlos. Ihre Daten verwenden wir ausschließlich zur Angebotserstellung — siehe <a href="/datenschutz" style={{ color: C.accentText }}>Datenschutzerklärung</a>.
+                    Unverbindlich & kostenlos. Ihre Daten verwenden wir ausschließlich zur Angebotserstellung, siehe <a href="/datenschutz" style={{ color: C.accentText }}>Datenschutzerklärung</a>.
                   </p>
                   {error && (
                     <div style={{ background: "#FEF2F2", border: `1px solid ${C.red}`, padding: "12px 16px", marginTop: 12 }}>
@@ -207,7 +207,7 @@ export default function AngebotPage() {
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 36px", marginTop: 2, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
               <div>
                 <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 4 }}>Lieber direkt sprechen?</div>
-                <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person} — <a href="tel:+436769354033" style={{ color: C.accentText, textDecoration: "none" }}>{CONTACT.phone1}</a></div>
+                <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person} · <a href="tel:+436769354033" style={{ color: C.accentText, textDecoration: "none" }}>{CONTACT.phone1}</a></div>
               </div>
               <Btn href="/kontakt" variant="secondary">Zum Kontakt</Btn>
             </div>

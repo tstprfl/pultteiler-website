@@ -25,7 +25,7 @@ const UI_DE = {
   contactCta: "Kontakt",
   trust: ["Kauf auf Rechnung", "Direkt vom Hersteller", SCHOOLS_TEXT_SHORT, `Seit über ${YEARS} Jahren`],
   orderTitle: "So einfach bestellen Schulen bei uns",
-  orderSub: "Kein Kreditkarten-Checkout, keine Vorkasse: Sie bestellen per Anfrage oder direkt im Shop — und zahlen bequem auf Rechnung, wie es Schulen und Schulerhalter gewohnt sind.",
+  orderSub: "Kein Kreditkarten-Checkout, keine Vorkasse: Sie bestellen per Anfrage oder direkt im Shop und zahlen bequem auf Rechnung, wie es Schulen und Schulerhalter gewohnt sind.",
   countries: COUNTRY_INFO,
   faqTitle: "Häufige Fragen",
 };

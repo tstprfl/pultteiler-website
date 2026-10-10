@@ -3,7 +3,7 @@ import ArticleLayout, { A } from "@/components/ArticleLayout";
 import { ARTICLES } from "@/lib/articles";
 import { alternatesFor } from "@/lib/i18n";
 
-const meta = { ...ARTICLES.find((a) => a.slug === "studien-abschreiben-pruefung"), short: "Studien zu Abschreiben", imgAlt: "Prüfungssaal mit Trennwänden auf jedem Tisch" };
+const meta = { ...ARTICLES.find((a) => a.slug === "studien-abschreiben-pruefung"), short: "Studien zu Abschreiben", imgAlt: "Prüfungssaal mit Trennwänden auf jedem Tisch", imgPos: "center 72%" };
 
 export const metadata = {
   title: meta.seoTitle || meta.title,

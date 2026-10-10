@@ -11,23 +11,23 @@ export const metadata = {
 const FAQ = [
   {
     q: "Liefern Sie auch mehrere hundert Trennwände für große Prüfungen?",
-    a: "Ja. Hochschulen und Prüfungszentren beliefern wir mit hohen Stückzahlen — als Hersteller produzieren wir bedarfsgerecht und stellen auch Koffer mit mehr als 12 Teilern zusammen. Fordern Sie ein individuelles Angebot mit Ihrer benötigten Menge an, wir kalkulieren projektbezogen.",
+    a: "Ja. Hochschulen und Prüfungszentren beliefern wir mit hohen Stückzahlen. Als Hersteller produzieren wir bedarfsgerecht und stellen auch Koffer mit mehr als 12 Teilern zusammen. Fordern Sie ein individuelles Angebot mit Ihrer benötigten Menge an, wir kalkulieren projektbezogen.",
   },
   {
     q: "Wie schnell sind große Stückzahlen vor einer Klausur aufgebaut?",
-    a: "Das Stecksystem kommt ohne Werkzeug aus: Klammer aufstecken, Platte einschieben. Ein eingespieltes Team rüstet damit auch große Hörsäle in wenigen Augenblicken — jede Trennwand sitzt mit einem Handgriff. Nach der Prüfung verschwinden die Teiler platzsparend in stapelbaren Holzkoffern.",
+    a: "Das Stecksystem kommt ohne Werkzeug aus: Klammer aufstecken, Platte einschieben. Ein eingespieltes Team rüstet damit auch große Hörsäle in wenigen Augenblicken, jede Trennwand sitzt mit einem Handgriff. Nach der Prüfung verschwinden die Teiler platzsparend in stapelbaren Holzkoffern.",
   },
   {
     q: "Passen die Trennwände auf Hörsaal-Klapptische und Labortische?",
-    a: "Die dauerelastische Klammer hält auf allen Tischplatten bis 3 cm Stärke — darunter die meisten Hörsaal-Schreibflächen, Seminar- und Labortische. Die MedUni Innsbruck setzt unsere Teiler unter anderem in Laborräumen ein. Bei speziellen Tischformaten klären wir die Eignung gerne vorab, auf Wunsch mit Musterlieferung.",
+    a: "Die dauerelastische Klammer hält auf allen Tischplatten bis 3 cm Stärke, darunter die meisten Hörsaal-Schreibflächen, Seminar- und Labortische. Die MedUni Innsbruck setzt unsere Teiler unter anderem in Laborräumen ein. Bei speziellen Tischformaten klären wir die Eignung gerne vorab, auf Wunsch mit Musterlieferung.",
   },
   {
     q: "Welche Referenzen gibt es im Hochschulbereich?",
-    a: "Unsere Teiler sind unter anderem an der Medizinischen Universität Innsbruck im Prüfungseinsatz. Insgesamt beliefern wir seit über 40 Jahren mehrere hundert Bildungseinrichtungen in Österreich, Deutschland und der Schweiz — von der Volksschule bis zur Universität.",
+    a: "Unsere Teiler sind unter anderem an der Medizinischen Universität Innsbruck im Prüfungseinsatz. Insgesamt beliefern wir seit über 40 Jahren mehrere hundert Bildungseinrichtungen in Österreich, Deutschland und der Schweiz, von der Volksschule bis zur Universität.",
   },
   {
     q: "Wie läuft Beschaffung und Rechnungsstellung ab?",
-    a: "Sie erhalten ein schriftliches Angebot für Ihre Beschaffungsstelle und zahlen nach Lieferung auf Rechnung — keine Vorkasse, keine Kreditkarte. Österreichische Bundeseinrichtungen erhalten E-Rechnungen mit EKG-Nummer, deutsche Einrichtungen mit UID-Nummer eine steuerfreie Lieferung (deutsches Bankkonto vorhanden), Schweizer Einrichtungen eine steuerfreie, unverzollte Lieferung.",
+    a: "Sie erhalten ein schriftliches Angebot für Ihre Beschaffungsstelle und zahlen nach Lieferung auf Rechnung, keine Vorkasse, keine Kreditkarte. Österreichische Bundeseinrichtungen erhalten E-Rechnungen mit EKG-Nummer, deutsche Einrichtungen mit UID-Nummer eine steuerfreie Lieferung (deutsches Bankkonto vorhanden), Schweizer Einrichtungen eine steuerfreie, unverzollte Lieferung.",
   },
 ];
 
@@ -38,31 +38,31 @@ export default function Page() {
       <AudienceLayout
         overline="Für Universitäten, Fachhochschulen & Prüfungszentren"
         h1={<>Sichtschutz für Klausuren in Hörsaal und Prüfungszentrum</>}
-        intro="Wenn hunderte Studierende gleichzeitig schreiben, muss die Prüfungsaufsicht sich auf die Ausstattung verlassen können. Unsere Trennwände sichern Klausuren und schriftliche Prüfungen in Hörsälen, Seminarräumen und Prüfungszentren — in hohen Stückzahlen, direkt vom Hersteller, im Einsatz u. a. an der MedUni Innsbruck."
+        intro="Wenn hunderte Studierende gleichzeitig schreiben, muss die Prüfungsaufsicht sich auf die Ausstattung verlassen können. Unsere Trennwände sichern Klausuren und schriftliche Prüfungen in Hörsälen, Seminarräumen und Prüfungszentren, in hohen Stückzahlen, direkt vom Hersteller, im Einsatz u. a. an der MedUni Innsbruck."
         img="/images/kurhaus-saal-totale.jpg"
         imgAlt="Prüfungssaal im Kurhaus Bad Krozingen, alle Tische mit Pultteilern ausgestattet"
         situation={{
           title: "Die Situation bei Großprüfungen",
           paragraphs: [
-            "Aufnahmetests, Modulklausuren, Staatsprüfungen: An Hochschulen entscheiden schriftliche Prüfungen über Studienplätze und Abschlüsse — entsprechend hoch sind die Anforderungen an Täuschungssicherheit und Rechtssicherheit. Gleichzeitig sitzen die Teilnehmenden in Hörsälen dichter als in jedem Klassenzimmer.",
-            "Jeden zweiten Platz freizulassen halbiert die Raumkapazität; mehrere Aufgabenversionen zu erstellen vervielfacht den Korrekturaufwand und bleibt angreifbar. Die wirtschaftlichere Lösung: Sichtschutz direkt am Arbeitsplatz. Mit dem Pultteiler nutzen Sie die volle Raumkapazität — bei voller Täuschungssicherheit für jede Prüfungsvariante.",
-            "Als Hersteller liefern wir die Stückzahlen, die Sie brauchen, kalkulieren projektbezogen und stehen auch nach Jahren mit Ersatzteilen bereit. Die Medizinische Universität Innsbruck vertraut bei Prüfungen — bis hinein in die Laborräume — auf unsere Teiler.",
+            "Aufnahmetests, Modulklausuren, Staatsprüfungen: An Hochschulen entscheiden schriftliche Prüfungen über Studienplätze und Abschlüsse, entsprechend hoch sind die Anforderungen an Täuschungssicherheit und Rechtssicherheit. Gleichzeitig sitzen die Teilnehmenden in Hörsälen dichter als in jedem Klassenzimmer.",
+            "Jeden zweiten Platz freizulassen halbiert die Raumkapazität; mehrere Aufgabenversionen zu erstellen vervielfacht den Korrekturaufwand und bleibt angreifbar. Die wirtschaftlichere Lösung: Sichtschutz direkt am Arbeitsplatz. Mit dem Pultteiler nutzen Sie die volle Raumkapazität, bei voller Täuschungssicherheit für jede Prüfungsvariante.",
+            "Als Hersteller liefern wir die Stückzahlen, die Sie brauchen, kalkulieren projektbezogen und stehen auch nach Jahren mit Ersatzteilen bereit. Die Medizinische Universität Innsbruck vertraut bei Prüfungen bis hinein in die Laborräume auf unsere Teiler.",
           ],
         }}
         benefits={{
           title: "Darum setzen Hochschulen auf den Pultteiler",
           items: [
-            { title: "Hohe Stückzahlen ab Werk", text: "Als Hersteller produzieren wir bedarfsgerecht — vom einzelnen Prüfungsraum bis zur Ausstattung ganzer Prüfungszentren. Projektbezogene Kalkulation." },
-            { title: "Volle Raumkapazität", text: "Kein Freilassen jedes zweiten Platzes, keine Mehrfach-Aufgabenversionen: Jeder Arbeitsplatz wird prüfungstauglich — der Raum bleibt voll nutzbar." },
-            { title: "Aufbau in wenigen Augenblicken", text: "Werkzeugloses Stecksystem: Jede Trennwand steht in wenigen Augenblicken. Auch große Hörsäle sind mit kleinem Team rasch gerüstet — und ebenso schnell wieder geräumt." },
-            { title: "Platzsparende Lagerung", text: "12 Systeme pro stapelbarem Holzkoffer — auf Anfrage auch größere Koffer. Hunderte Teiler lagern kompakt bis zum nächsten Prüfungstermin." },
-            { title: "Referenz MedUni Innsbruck", text: "Im Prüfungseinsatz an der Medizinischen Universität Innsbruck — vom Hörsaal bis ins Labor. Weitere Referenzen nennen wir auf Anfrage gerne." },
-            { title: "Beschaffungskonform", text: "Schriftliches Angebot, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH) — passend zu Ihren Einkaufsprozessen." },
+            { title: "Hohe Stückzahlen ab Werk", text: "Als Hersteller produzieren wir bedarfsgerecht, vom einzelnen Prüfungsraum bis zur Ausstattung ganzer Prüfungszentren. Projektbezogene Kalkulation." },
+            { title: "Volle Raumkapazität", text: "Kein Freilassen jedes zweiten Platzes, keine Mehrfach-Aufgabenversionen: Jeder Arbeitsplatz wird prüfungstauglich, der Raum bleibt voll nutzbar." },
+            { title: "Aufbau in wenigen Augenblicken", text: "Werkzeugloses Stecksystem: Jede Trennwand steht in wenigen Augenblicken. Auch große Hörsäle sind mit kleinem Team rasch gerüstet und ebenso schnell wieder geräumt." },
+            { title: "Platzsparende Lagerung", text: "12 Systeme pro stapelbarem Holzkoffer, auf Anfrage auch größere Koffer. Hunderte Teiler lagern kompakt bis zum nächsten Prüfungstermin." },
+            { title: "Referenz MedUni Innsbruck", text: "Im Prüfungseinsatz an der Medizinischen Universität Innsbruck, vom Hörsaal bis ins Labor. Weitere Referenzen nennen wir auf Anfrage gerne." },
+            { title: "Beschaffungskonform", text: "Schriftliches Angebot, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH), passend zu Ihren Einkaufsprozessen." },
           ],
         }}
         faq={FAQ}
         ctaTitle="Planen Sie Ihre nächste Großprüfung mit uns"
-        ctaSub="Schicken Sie uns Stückzahl und Termin — wir antworten kurzfristig mit einem individuellen Angebot inklusive aller Liefer- und Rechnungsdetails für AT, DE und CH."
+        ctaSub="Schicken Sie uns Stückzahl und Termin, wir antworten kurzfristig mit einem individuellen Angebot inklusive aller Liefer- und Rechnungsdetails für AT, DE und CH."
       />
     </>
   );

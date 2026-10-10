@@ -4,7 +4,7 @@ import { articleEn } from "@/lib/articles-en";
 import { alternatesFor } from "@/lib/i18n";
 import { OG_EN } from "@/lib/en";
 
-const meta = { ...articleEn("research-on-copying-in-exams"), short: "Research on copying", imgAlt: "Exam hall with desk dividers on every desk" };
+const meta = { ...articleEn("research-on-copying-in-exams"), short: "Research on copying", imgAlt: "Exam hall with desk dividers on every desk", imgPos: "center 72%" };
 
 export const metadata = {
   title: { absolute: `${meta.seoTitle} | Pultteiler` },

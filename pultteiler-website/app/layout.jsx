@@ -17,7 +17,7 @@ import { YEARS, CONTACT } from "@/lib/site";
 export const metadata = {
   metadataBase: new URL("https://www.pultteiler.eu"),
   title: {
-    default: "Pultteiler — Sichtschutz für Schultische bei Klassenarbeiten & Prüfungen",
+    default: "Pultteiler: Sichtschutz für Schultische bei Klassenarbeiten und Prüfungen",
     template: "%s | Pultteiler",
   },
   description: `Sichtschutz für Schultische: verhindert Abschreiben bei Schularbeiten und Prüfungen. Direkt vom Hersteller, seit über ${YEARS} Jahren. Kauf auf Rechnung.`,
@@ -25,8 +25,8 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "de_AT",
-    siteName: "Pultteiler — Schulmittel Blaschegg",
-    images: [{ url: "/images/pultteiler-einsatz.jpg", alt: "Pultteiler — Sichtschutz-Trennwände auf Schultischen" }],
+    siteName: "Pultteiler | Schulmittel Blaschegg",
+    images: [{ url: "/images/pultteiler-einsatz.jpg", alt: "Pultteiler: Sichtschutz-Trennwände auf Schultischen" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -42,7 +42,7 @@ const orgJsonLd = {
   alternateName: "Pultteiler",
   url: "https://www.pultteiler.eu",
   logo: "https://www.pultteiler.eu/images/Klammer_2.png",
-  description: `Hersteller von Pultteilern — Sichtschutz-Trennwänden für Schultische bei schriftlichen Prüfungen. Seit über ${YEARS} Jahren, mehrere hundert Schulen in Österreich, Deutschland und der Schweiz.`,
+  description: `Hersteller von Pultteilern, Sichtschutz-Trennwänden für Schultische bei schriftlichen Prüfungen. Seit über ${YEARS} Jahren, mehrere hundert Schulen in Österreich, Deutschland und der Schweiz.`,
   address: {
     "@type": "PostalAddress",
     streetAddress: CONTACT.street,

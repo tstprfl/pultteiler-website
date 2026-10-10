@@ -18,9 +18,9 @@ export default function ShippingPage() {
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
-                { icon: "🇦🇹", label: "Austria", val: "€ 10.00 per order", sub: "incl. VAT — free from 3 case sets" },
-                { icon: "🇩🇪", label: "Germany", val: "€ 12.00 per order", sub: "incl. VAT — free from 3 case sets" },
-                { icon: "🇨🇭", label: "Switzerland", val: "€ 25.00 per order", sub: "tax-free and duty-free — free from 3 case sets" },
+                { icon: "🇦🇹", label: "Austria", val: "€ 10.00 per order", sub: "incl. VAT, free from 3 case sets" },
+                { icon: "🇩🇪", label: "Germany", val: "€ 12.00 per order", sub: "incl. VAT, free from 3 case sets" },
+                { icon: "🇨🇭", label: "Switzerland", val: "€ 25.00 per order", sub: "tax-free and duty-free, free from 3 case sets" },
                 { icon: "🌍", label: "Other countries", val: "On request", sub: "Please contact us" },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>

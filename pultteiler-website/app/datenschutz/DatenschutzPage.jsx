@@ -25,10 +25,10 @@ export default function DatenschutzPage() {
             <h2 style={h}>4. Weitergabe von Daten an Dritte</h2>
             <p style={s}>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur, soweit dies zur Vertragserfüllung erforderlich ist (z.B. Übermittlung der Lieferadresse an den Paketdienstleister) oder eine gesetzliche Verpflichtung besteht. Darüber hinaus werden Ihre Daten nicht an Dritte weitergegeben.</p>
 
-            <h2 style={h}>5. EmailJS — E-Mail-Versand</h2>
+            <h2 style={h}>5. EmailJS (E-Mail-Versand)</h2>
             <p style={s}>Für den Versand von Bestell- und Kontaktbestätigungen nutzen wir den Dienst EmailJS (emailjs.com). Dabei werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Bestelldaten) über die Server von EmailJS verarbeitet, um E-Mails zuzustellen. EmailJS verarbeitet Daten gemäß seiner eigenen Datenschutzrichtlinie. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
 
-            <h2 style={h}>6. Hosting — Vercel</h2>
+            <h2 style={h}>6. Hosting (Vercel)</h2>
             <p style={s}>Diese Website wird bei Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Beim Besuch der Website werden automatisch technische Daten (IP-Adresse, Browsertyp, Zugriffszeit) in Server-Logfiles erfasst. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website). Vercel ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
 
             <h2 style={h}>7. Schriftarten</h2>

@@ -90,7 +90,7 @@ export default function Footer() {
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Proven privacy screens for school and exam desks, direct from the manufacturer for over {YEARS} years. Delivery to other countries on request.</p>
           ) : (
             <>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Der bewährte Sichtschutz für Schultische — direkt vom Produzenten, seit über {YEARS} Jahren. {SCHOOLS_TEXT}.</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Der bewährte Sichtschutz für Schultische, direkt vom Produzenten, seit über {YEARS} Jahren. {SCHOOLS_TEXT}.</p>
               <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginTop: 12 }}>✓ Kauf auf Rechnung</p>
             </>
           )}

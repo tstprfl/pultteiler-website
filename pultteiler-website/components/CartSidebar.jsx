@@ -35,7 +35,7 @@ export default function CartSidebar({ onClose }) {
   };
 
   const orderSummaryForMailto = () => {
-    const lines = items.map(i => `${i.qty}x ${i.name} — ${fmt(getPrice(i) * i.qty)}`).join("\n");
+    const lines = items.map(i => `${i.qty}x ${i.name}: ${fmt(getPrice(i) * i.qty)}`).join("\n");
     const plzOrt = `${formValues["PLZ"] || ""} ${formValues["Ort"] || ""}`.trim();
     const vatLine = vatRate > 0 ? `\n${vatLabel}: ${fmt(vat)}` : "";
     return `Region: ${regionLabel}\n\n${lines}\n\nZwischensumme: ${fmt(total)}\nVersand: ${shippingLabel}\nGesamtbetrag: ${fmt(grandTotal)}${vatLine}\n\nRechnungsadresse:\n${formValues["Name / Schule"] || ""}\n${formValues["Ansprechperson"] || ""}\n${formValues["Adresse"] || ""}\n${plzOrt}\n${formValues["Land"] || ""}\nE-Mail: ${formValues["email"] || ""}\nTelefon: ${formValues["Telefon"] || "–"}`;
@@ -55,7 +55,7 @@ export default function CartSidebar({ onClose }) {
     setError("");
     const orderNr = generateOrderNr();
     const shippingText = shippingLabel;
-    const bestellungText = items.map(i => `${i.qty}x ${i.name} — ${fmt(getPrice(i) * i.qty)}`).join("\n")
+    const bestellungText = items.map(i => `${i.qty}x ${i.name}: ${fmt(getPrice(i) * i.qty)}`).join("\n")
       + `\n\nZwischensumme: ${fmt(total)}\nVersand: ${shippingLabel}` + (vatRate > 0 ? `\nGesamt inkl. USt: ${fmt(grandTotal)} (${vatLabel}: ${fmt(vat)})` : "\nSteuerfrei (Schweiz)");
     const plzOrt = `${formValues["PLZ"] || ""} ${formValues["Ort"] || ""}`.trim();
     const adresseText = [formValues["Name / Schule"], formValues["Ansprechperson"], formValues["Adresse"], plzOrt, formValues["Land"]].filter(Boolean).join("\n");
@@ -180,7 +180,7 @@ export default function CartSidebar({ onClose }) {
               <textarea aria-label="Anmerkungen zur Bestellung (optional)" name="Anmerkungen" placeholder="Anmerkungen zur Bestellung (optional)" rows={3} style={{ ...inp, resize: "vertical" }} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <label style={{ display: "flex", alignItems: "flex-start", gap: 10, marginTop: 8, marginBottom: 16, cursor: "pointer" }}>
                 <input type="checkbox" name="Zahlung" value="Rechnung" required style={{ marginTop: 3, accentColor: C.accent, width: 16, height: 16, flexShrink: 0 }}/>
-                <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5 }}>Zahlung per Rechnung — Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.</span>
+                <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5 }}>Zahlung per Rechnung: Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.</span>
               </label>
               <button type="submit" style={{ width: "100%", background: C.dark, color: C.white, border: "none", padding: "16px", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>Weiter zur Kontrolle →</button>
             </form>
