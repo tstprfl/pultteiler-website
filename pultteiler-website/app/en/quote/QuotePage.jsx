@@ -3,7 +3,7 @@ import { useState } from "react";
 import { C } from "@/lib/colors";
 import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE } from "@/lib/emailjs";
 import { CONTACT } from "@/lib/site";
-import { Reveal, Heading, Btn } from "@/components/ui";
+import { Reveal, Heading, Btn, Honeypot, isBot } from "@/components/ui";
 
 // Englisches Angebotsformular. Die Benachrichtigung an Blaschegg läuft über dieselbe
 // EmailJS-Vorlage wie /angebot, markiert als englische Anfrage. Eine automatische
@@ -25,6 +25,7 @@ export default function QuotePage() {
     const fd = new FormData(e.target);
     const d = {};
     fd.forEach((v, k) => { d[k] = v; });
+    if (isBot(fd)) { setSent(true); setSending(false); return; }
 
     const bestellung = [
       `ANGEBOTSANFRAGE (ENGLISCH) über pultteiler.eu/en/quote`,
@@ -86,6 +87,7 @@ export default function QuotePage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
+                  <Honeypot/>
                   <div style={field}>
                     <label style={label} htmlFor="q-org">School / institution *</label>
                     <input id="q-org" type="text" name="Schulname" placeholder="e.g. University of …" required style={inp} {...focus}/>

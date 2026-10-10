@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { C } from "@/lib/colors";
 import { loadEmailJS } from "@/lib/emailjs";
-import { Reveal, Heading, Btn } from "@/components/ui";
+import { Reveal, Heading, Btn, Honeypot, isBot } from "@/components/ui";
 
 export default function KontaktPage() {
   const [sent, setSent] = useState(false);
@@ -17,6 +17,7 @@ export default function KontaktPage() {
     const fd = new FormData(e.target);
     const data = {};
     fd.forEach((v, k) => { data[k] = v; });
+    if (isBot(fd)) { setSent(true); setContactSending(false); return; }
     try {
       await loadEmailJS();
       await window.emailjs.send("service_cobcbsg", "template_7kke6e4", {
@@ -43,6 +44,7 @@ export default function KontaktPage() {
               ) : (
                 <><h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 28px" }}>Nachricht senden</h2>
                 <form onSubmit={handleContactSubmit}>
+                  <Honeypot/>
                   {[{ label: "Name / Institution", ph: "Ihr Name oder Schulname", type: "text", name: "Name" }, { label: "E-Mail", ph: "ihre@email.at", type: "email", name: "email" }].map((f, i) => (
                     <div key={i} style={{ marginBottom: 16 }}><label style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 }} htmlFor={`kontakt-${f.name}`}>{f.label}</label><input id={`kontakt-${f.name}`} type={f.type} name={f.name} placeholder={f.ph} required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/></div>
                   ))}

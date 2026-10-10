@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { C } from "@/lib/colors";
 import { loadEmailJS } from "@/lib/emailjs";
 import { useCart } from "@/components/CartProvider";
-import { useDialog } from "@/components/ui";
+import { useDialog, Honeypot, isBot } from "@/components/ui";
 import Img from "@/components/Img";
 
 export default function CartSidebar({ onClose }) {
@@ -44,6 +44,7 @@ export default function CartSidebar({ onClose }) {
   const goToKontrolle = (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
+    if (isBot(fd)) { setStep("confirmed"); clear(); return; }
     const vals = {};
     fd.forEach((v, k) => { if (!k.startsWith("_")) vals[k] = v; });
     setFormValues(vals);
@@ -165,6 +166,7 @@ export default function CartSidebar({ onClose }) {
             </div>
             <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 12 }}>Rechnungsadresse</div>
             <form onSubmit={goToKontrolle}>
+              <Honeypot/>
               <input aria-label="Name oder Schulname" type="text" name="Name / Schule" placeholder="Name oder Schulname *" required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input aria-label="Ansprechperson" type="text" name="Ansprechperson" placeholder="Ansprechperson" style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input aria-label="Straße und Hausnummer" type="text" name="Adresse" placeholder="Straße und Hausnummer *" required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>

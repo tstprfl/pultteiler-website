@@ -22,6 +22,12 @@ export const CONFIRM_PUBLIC_KEY = "4ArIDu6wgLlsklooH";
 export const CONFIRM_SERVICE = "service_b7kmnmd";
 export const CONFIRM_TEMPLATE = "template_8cnl2hb";
 
+// Hinweis Sicherheit: Public Key, Service- und Template-IDs sind bei EmailJS
+// absichtlich öffentlich (sie stehen ohnehin im ausgelieferten JavaScript).
+// Der PRIVATE Key darf NIE hier oder sonst im Code stehen.
+// Schutz gegen Missbrauch wird im EmailJS-Dashboard eingestellt
+// (Account → Security, Template → Settings → reCAPTCHA).
+
 // Lädt das EmailJS-SDK aus dem eigenen Bundle (npm-Paket, kein externes CDN)
 // und initialisiert es mit dem ALTEN Account.
 // (Für die Bestätigung wird der neue Public Key pro Versand separat mitgegeben.)
@@ -29,6 +35,7 @@ export const loadEmailJS = async () => {
   if (typeof window === "undefined") return;
   if (window.emailjs) return;
   const { default: emailjs } = await import("@emailjs/browser");
-  emailjs.init(EMAILJS_PUBLIC_KEY);
+  // blockHeadless: keine Sendungen aus automatisierten (headless) Browsern
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY, blockHeadless: true });
   window.emailjs = emailjs;
 };

@@ -1,8 +1,41 @@
+// Content Security Policy: Skripte, Schriften, Bilder nur von der eigenen Domain,
+// Verbindungen nach außen nur zu EmailJS (Formulare). 'unsafe-inline' braucht
+// Next.js für seine Inline-Skripte bei statischen Seiten, 'unsafe-eval' nur im Dev-Modus.
+const isDev = process.env.NODE_ENV !== "production";
+const csp = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self'",
+  "connect-src 'self' https://api.emailjs.com",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+const securityHeaders = [
+  { key: "Content-Security-Policy", value: csp },
+  // Seite darf nicht in fremde Seiten eingebettet werden (Clickjacking)
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+  { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Kein "X-Powered-By: Next.js" mitsenden
+  poweredByHeader: false,
   // Nur die Standardqualität zulassen; sonst kann jeder q=1..100 anfordern und
   // damit das Kontingent an Bild-Transformationen bei Vercel aufbrauchen
   images: { qualities: [75] },
+  async headers() {
+    return [{ source: "/:path*", headers: securityHeaders }];
+  },
   async redirects() {
     return [
       // Alte Webnode-URLs auf neue Seiten umleiten

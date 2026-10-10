@@ -6,7 +6,7 @@ import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, CONFIRM_PUBLIC_KEY, CON
 // Bestätigung nur senden, wenn der neue Account vollständig hinterlegt ist
 const CONFIRM_ENABLED = Boolean(CONFIRM_PUBLIC_KEY && CONFIRM_SERVICE && CONFIRM_TEMPLATE);
 import { CONTACT } from "@/lib/site";
-import { Reveal, Heading, Btn } from "@/components/ui";
+import { Reveal, Heading, Btn, Honeypot, isBot } from "@/components/ui";
 
 const LAND_HINWEIS = {
   "Österreich": "🇦🇹 Kauf auf Rechnung. Bundesschulen erhalten auf Wunsch eine E-Rechnung, bitte EKG-Nummer unten angeben.",
@@ -33,6 +33,7 @@ export default function AngebotPage() {
     const fd = new FormData(e.target);
     const d = {};
     fd.forEach((v, k) => { d[k] = v; });
+    if (isBot(fd)) { setSent(true); setSending(false); return; }
 
     const bestellung = [
       `ANGEBOTSANFRAGE über pultteiler.eu/angebot`,
@@ -112,6 +113,7 @@ export default function AngebotPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
+                  <Honeypot/>
                   <div style={field}>
                     <label style={label} htmlFor="ang-schule">Schule / Institution *</label>
                     <input id="ang-schule" type="text" name="Schulname" placeholder="z. B. Volksschule Musterstadt" required style={inp} {...focus}/>

@@ -46,6 +46,17 @@ export function Btn({ children, onClick, href, variant = "primary", full = false
   return <button onClick={onClick} className={cls} style={style}>{children}</button>;
 }
 
+// Honeypot gegen Formular-Bots: für Menschen unsichtbar und nicht per Tab erreichbar,
+// automatische Ausfüller tragen hier etwas ein. Dann wird nichts versendet.
+export function Honeypot() {
+  return (
+    <div aria-hidden="true" style={{ position: "absolute", left: -10000, top: "auto", width: 1, height: 1, overflow: "hidden" }}>
+      <label>Bitte leer lassen <input type="text" name="_hp" tabIndex={-1} autoComplete="off" defaultValue=""/></label>
+    </div>
+  );
+}
+export const isBot = (formData) => Boolean(formData.get("_hp"));
+
 export function AddToCartBtn({ product }) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
