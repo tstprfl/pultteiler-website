@@ -10,8 +10,7 @@
 // ── ALTER Account (unverändert lassen) ──────────────────────────────────────
 export const EMAILJS_PUBLIC_KEY = "xV1NC72BHupwuOiKH";
 export const EMAILJS_SERVICE = "service_cobcbsg";
-export const TEMPLATE_ANFRAGE = "template_7kke6e4";   // Benachrichtigung an Blaschegg (Bestellung, Anfrage, Kontakt)
-export const TEMPLATE_BESTELLUNG = "template_ko0cjvs"; // Bestellbestätigung an den Kunden
+export const TEMPLATE_ANFRAGE = "template_7kke6e4";   // Benachrichtigung an Blaschegg
 
 // ── NEUER Account — nur für die Angebots-Eingangsbestätigung ─────────────────
 // Hier die drei Werte aus dem NEUEN EmailJS-Account eintragen:
@@ -23,12 +22,6 @@ export const CONFIRM_PUBLIC_KEY = "4ArIDu6wgLlsklooH";
 export const CONFIRM_SERVICE = "service_b7kmnmd";
 export const CONFIRM_TEMPLATE = "template_8cnl2hb";
 
-// Hinweis Sicherheit: Public Key, Service- und Template-IDs sind bei EmailJS
-// absichtlich öffentlich (sie stehen ohnehin im ausgelieferten JavaScript).
-// Der PRIVATE Key darf NIE hier oder sonst im Code stehen.
-// Schutz gegen Missbrauch wird im EmailJS-Dashboard eingestellt
-// (Account → Security).
-
 // Lädt das EmailJS-SDK aus dem eigenen Bundle (npm-Paket, kein externes CDN)
 // und initialisiert es mit dem ALTEN Account.
 // (Für die Bestätigung wird der neue Public Key pro Versand separat mitgegeben.)
@@ -36,7 +29,6 @@ export const loadEmailJS = async () => {
   if (typeof window === "undefined") return;
   if (window.emailjs) return;
   const { default: emailjs } = await import("@emailjs/browser");
-  // blockHeadless: keine Sendungen aus automatisierten (headless) Browsern
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY, blockHeadless: true });
+  emailjs.init(EMAILJS_PUBLIC_KEY);
   window.emailjs = emailjs;
 };

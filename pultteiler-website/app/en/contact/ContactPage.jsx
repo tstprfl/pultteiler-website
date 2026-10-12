@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { C } from "@/lib/colors";
-import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE } from "@/lib/emailjs";
-import { Reveal, Heading, Btn, Honeypot, isBot } from "@/components/ui";
+import { loadEmailJS } from "@/lib/emailjs";
+import { Reveal, Heading, Btn } from "@/components/ui";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -17,10 +17,9 @@ export default function ContactPage() {
     const fd = new FormData(e.target);
     const data = {};
     fd.forEach((v, k) => { data[k] = v; });
-    if (isBot(fd)) { setSent(true); setContactSending(false); return; }
     try {
       await loadEmailJS();
-      await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANFRAGE, {
+      await window.emailjs.send("service_cobcbsg", "template_7kke6e4", {
         kunde_email: data["email"] || "", order_nr: "KONTAKT (EN)", region: "Kontaktanfrage (englisch)",
         bestellung: data["Nachricht"] || "", versand: "–", gesamt: "–",
         adresse: data["Name"] || "", telefon: "–", uid: "–", einkaufergruppe: "–",
@@ -44,7 +43,6 @@ export default function ContactPage() {
               ) : (
                 <><h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 28px" }}>Send a message</h2>
                 <form onSubmit={handleContactSubmit}>
-                  <Honeypot/>
                   {[{ label: "Name / institution", ph: "Your name or institution", type: "text", name: "Name" }, { label: "Email", ph: "you@institution.org", type: "email", name: "email" }].map((f, i) => (
                     <div key={i} style={{ marginBottom: 16 }}><label style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 }} htmlFor={`contact-${f.name}`}>{f.label}</label><input id={`contact-${f.name}`} type={f.type} name={f.name} placeholder={f.ph} required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/></div>
                   ))}
