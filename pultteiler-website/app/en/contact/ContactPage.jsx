@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { C } from "@/lib/colors";
-import { loadEmailJS } from "@/lib/emailjs";
+import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE } from "@/lib/emailjs";
 import { Reveal, Heading, Btn, Honeypot, isBot } from "@/components/ui";
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
     if (isBot(fd)) { setSent(true); setContactSending(false); return; }
     try {
       await loadEmailJS();
-      await window.emailjs.send("service_cobcbsg", "template_7kke6e4", {
+      await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANFRAGE, {
         kunde_email: data["email"] || "", order_nr: "KONTAKT (EN)", region: "Kontaktanfrage (englisch)",
         bestellung: data["Nachricht"] || "", versand: "–", gesamt: "–",
         adresse: data["Name"] || "", telefon: "–", uid: "–", einkaufergruppe: "–",

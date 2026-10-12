@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { C } from "@/lib/colors";
-import { loadEmailJS } from "@/lib/emailjs";
+import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, TEMPLATE_BESTELLUNG } from "@/lib/emailjs";
 import { useCart } from "@/components/CartProvider";
 import { useDialog, Honeypot, isBot } from "@/components/ui";
 import Img from "@/components/Img";
@@ -75,8 +75,8 @@ export default function CartSidebar({ onClose }) {
     };
     try {
       await loadEmailJS();
-      await window.emailjs.send("service_cobcbsg", "template_7kke6e4", templateParams);
-      try { await window.emailjs.send("service_cobcbsg", "template_ko0cjvs", templateParams); } catch (e) { console.warn("Kunden-E-Mail konnte nicht gesendet werden:", e); }
+      await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANFRAGE, templateParams);
+      try { await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_BESTELLUNG, templateParams); } catch (e) { console.warn("Kunden-E-Mail konnte nicht gesendet werden:", e); }
       setStep("confirmed");
       setConfirmedOrderNr(orderNr);
       clear();

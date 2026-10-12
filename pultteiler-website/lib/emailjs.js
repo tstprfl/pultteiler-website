@@ -10,7 +10,8 @@
 // ── ALTER Account (unverändert lassen) ──────────────────────────────────────
 export const EMAILJS_PUBLIC_KEY = "xV1NC72BHupwuOiKH";
 export const EMAILJS_SERVICE = "service_cobcbsg";
-export const TEMPLATE_ANFRAGE = "template_7kke6e4";   // Benachrichtigung an Blaschegg
+export const TEMPLATE_ANFRAGE = "template_7kke6e4";   // Benachrichtigung an Blaschegg (Bestellung, Anfrage, Kontakt)
+export const TEMPLATE_BESTELLUNG = "template_ko0cjvs"; // Bestellbestätigung an den Kunden
 
 // ── NEUER Account — nur für die Angebots-Eingangsbestätigung ─────────────────
 // Hier die drei Werte aus dem NEUEN EmailJS-Account eintragen:
