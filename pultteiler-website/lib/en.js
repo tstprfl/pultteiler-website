@@ -10,7 +10,7 @@ export const COUNTRIES_EN = [
     lines: [
       "Purchase on invoice, no prepayment, no credit card",
       "E-invoice for federal schools with your EKG number",
-      "Free shipping from 3 case sets",
+      "Case sets delivered free of charge",
     ],
   },
   {
@@ -30,7 +30,7 @@ export const COUNTRIES_EN = [
     lines: [
       "Purchase on invoice, no prepayment, no credit card",
       "Tax-free, duty-free delivery: the quoted price is your final price",
-      "Free shipping from 3 case sets",
+      "Delivery always included",
     ],
   },
   {
