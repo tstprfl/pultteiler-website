@@ -18,9 +18,9 @@ export default function ShippingPage() {
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
-                { icon: "🇦🇹", label: "Austria", val: "€ 10.00 per order", sub: "incl. VAT, free from 3 case sets" },
-                { icon: "🇩🇪", label: "Germany", val: "€ 12.00 per order", sub: "incl. VAT, free from 3 case sets" },
-                { icon: "🇨🇭", label: "Switzerland", val: "€ 25.00 per order", sub: "tax-free and duty-free, free from 3 case sets" },
+                { icon: "🇦🇹", label: "Austria", val: "€ 10.00 per parcel", sub: "incl. VAT, free from 3 case sets" },
+                { icon: "🇩🇪", label: "Germany", val: "€ 12.00 per parcel", sub: "incl. VAT, free from 3 case sets" },
+                { icon: "🇨🇭", label: "Switzerland", val: "€ 25.00 per parcel", sub: "tax-free and duty-free, free from 3 case sets" },
                 { icon: "🌍", label: "Other countries", val: "On request", sub: "Please contact us" },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
@@ -38,14 +38,15 @@ export default function ShippingPage() {
             <h2 style={h}>2. Delivery times</h2>
             <p style={s}>Delivery usually takes <strong>5 to 10 working days</strong> from order confirmation. Deliveries to Switzerland may take slightly longer. If there is a delay, we will inform you immediately.</p>
             <h2 style={h}>3. Shipping costs in detail</h2>
-            {bullet("Austria: € 10.00 flat shipping rate per order (incl. 20% VAT), for case sets and spare parts")}
-            {bullet("Germany: € 12.00 flat shipping rate per order (incl. 20% VAT), for case sets and spare parts")}
-            {bullet("Switzerland: € 25.00 flat shipping rate per order, tax-free and duty-free")}
-            {bullet("Orders of 3 or more case sets: free shipping to all three countries")}
+            {bullet("Austria: € 10.00 flat shipping rate per parcel (incl. 20% VAT), for case sets and spare parts")}
+            {bullet("Germany: € 12.00 flat shipping rate per parcel (incl. 20% VAT), for case sets and spare parts")}
+            {bullet("Switzerland: € 25.00 flat shipping rate per parcel, tax-free and duty-free")}
+            {bullet("Case sets: up to 2 sets ship as one parcel per order; orders of 3 or more case sets ship free to all three countries")}
+            {bullet("Spare parts: one parcel holds up to 24 clamp double packs or 12 divider panels; an empty case ships on its own. Larger quantities are split into several parcels and the flat rate applies per parcel. The cart shows the number of parcels.")}
             {bullet("Other countries: shipping costs on request, please contact us")}
             <p style={s}>All shop prices for Austria and Germany include 20% VAT; the VAT contained is shown in the cart and on the invoice.</p>
             <h2 style={h}>4. Delivery to Switzerland</h2>
-            <p style={s}>Deliveries to Switzerland are <strong>tax-free and duty-free</strong>. The price shown in the shop plus the flat shipping rate is your final price: no additional customs duties or import taxes are charged to you.</p>
+            <p style={s}>Deliveries to Switzerland are <strong>tax-free and duty-free</strong>. The price shown in the shop plus the flat shipping rate per parcel is your final price: no additional customs duties or import taxes are charged to you.</p>
             <h2 style={h}>5. Tax-free delivery to Germany</h2>
             <p style={s}>Companies and institutions in Germany can receive a tax-free intra-community delivery by providing a valid German VAT ID. A German bank account is available for payment.</p>
             <h2 style={h}>6. E-invoices for Austrian federal schools</h2>

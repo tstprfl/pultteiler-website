@@ -15,9 +15,9 @@ export default function VersandPage() {
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
               {[
-                { icon: "🇦🇹", label: "Österreich", val: "€ 10,00 je Bestellung", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
-                { icon: "🇩🇪", label: "Deutschland", val: "€ 12,00 je Bestellung", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
-                { icon: "🇨🇭", label: "Schweiz", val: "€ 25,00 je Bestellung", sub: "steuerfrei und unverzollt, ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇦🇹", label: "Österreich", val: "€ 10,00 je Paket", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇩🇪", label: "Deutschland", val: "€ 12,00 je Paket", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇨🇭", label: "Schweiz", val: "€ 25,00 je Paket", sub: "steuerfrei und unverzollt, ab 3 Koffer-Sets kostenlos" },
                 { icon: "🌍", label: "Andere Länder", val: "Auf Anfrage", sub: "Bitte kontaktieren Sie uns" },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
@@ -35,10 +35,11 @@ export default function VersandPage() {
             <h2 style={h}>2. Lieferzeiten</h2>
             <p style={s}>Die Lieferzeit beträgt in der Regel <strong>5–10 Werktage</strong> ab Auftragsbestätigung. Für Lieferungen in die Schweiz kann die Lieferzeit geringfügig länger ausfallen. Bei Lieferverzögerungen werden Sie von uns unverzüglich informiert.</p>
             <h2 style={h}>3. Versandkosten im Detail</h2>
-            {bullet("Österreich: € 10,00 Versandpauschale je Bestellung (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
-            {bullet("Deutschland: € 12,00 Versandpauschale je Bestellung (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
-            {bullet("Schweiz: € 25,00 Versandpauschale je Bestellung, steuerfrei und unverzollt")}
-            {bullet("Ab 3 Koffer-Sets in einer Bestellung: versandkostenfrei in alle drei Länder")}
+            {bullet("Österreich: € 10,00 Versandpauschale je Paket (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
+            {bullet("Deutschland: € 12,00 Versandpauschale je Paket (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
+            {bullet("Schweiz: € 25,00 Versandpauschale je Paket, steuerfrei und unverzollt")}
+            {bullet("Koffer-Sets: bis 2 Sets ein Paket je Bestellung, ab 3 Koffer-Sets in einer Bestellung versandkostenfrei in alle drei Länder")}
+            {bullet("Ersatzteile: in ein Paket passen bis zu 24 Klammer-Doppelpacks oder 12 Teilerplatten, ein leerer Koffer wird einzeln versandt. Größere Mengen werden auf mehrere Pakete verteilt, die Versandpauschale gilt je Paket. Der Warenkorb zeigt die Anzahl der Pakete.")}
             {bullet("Andere Länder: Versandkosten auf Anfrage, bitte kontaktieren Sie uns")}
             <p style={s}>Alle Preise im Shop für Österreich und Deutschland verstehen sich inklusive 20% Umsatzsteuer; die enthaltene Steuer wird im Warenkorb und auf der Rechnung ausgewiesen.</p>
             <h2 style={h}>4. Lieferung in die Schweiz</h2>

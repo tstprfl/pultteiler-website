@@ -1,8 +1,23 @@
 // Preise AT/DE BRUTTO inkl. 20% USt (priceAT), Schweiz steuerfrei (priceCH). Mit deutscher UID-Nummer gilt der Nettopreis (brutto / 1,2).
-// Preisliste Stand Oktober 2026. Versand je Bestellung und Lieferland (brutto) siehe SHIPPING, ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
+// Preisliste Stand Oktober 2026. Versand je Paket und Lieferland (brutto) siehe SHIPPING, ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
+// Ersatzteile: perPackage = Stück, die in ein Paket passen. Mehr Stück ergeben ein weiteres Paket und damit eine weitere Versandpauschale.
+// Koffer-Sets zählen als ein Paket je Bestellung (bis FREE_SHIPPING_SETS, danach frei), Ersatzteile werden daneben in eigene Pakete gerechnet.
 export const VAT_RATE = 0.20;
 export const SHIPPING = { AT: 10.00, DE: 12.00, CH: 25.00 };
 export const FREE_SHIPPING_SETS = 3;
+
+// Anzahl der Pakete einer Bestellung (Warenkorbzeilen mit id, qty und optional perPackage)
+export function countPackages(items) {
+  if (!items.length) return 0;
+  const setIds = SETS.map(s => s.id);
+  const hasSets = items.some(i => setIds.includes(i.id) && i.qty > 0);
+  // Ersatzteile: jedes Teil belegt 1/perPackage eines Pakets, Summe aufgerundet
+  const partsShare = items
+    .filter(i => !setIds.includes(i.id))
+    .reduce((s, i) => s + i.qty / (i.perPackage || 1), 0);
+  const partsPackages = Math.ceil(partsShare - 1e-9);
+  return Math.max(hasSets ? 1 : 0, partsPackages, 1);
+}
 
 export const SETS = [
   { id: "gelb-vs", name: "Set A Gelb, bis 5. Schuljahr", short: "Set A Gelb", desc: "1 Holzkoffer mit 12 Teilerplatten (50×30 cm) und 12 Klammern. Empfohlen bis zum 5. Schuljahr.", priceAT: 261, priceCH: 237, tag: "", color: "#C08B2D", img: "/images/koffer-gelb.jpg" },
@@ -11,11 +26,11 @@ export const SETS = [
 ];
 
 export const PARTS = [
-  { id: "klammer-2", name: "Klammer (2 Stück)", short: "2x Klammer", desc: "Hochwertige, dauerelastische Klammer im Doppelpack.", priceAT: 19.40, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Klammer_1.png" },
-  { id: "platte-a", name: "Teilerplatte A Gelb, 50×30 cm", short: "Platte A gelb klein", desc: "Einzelne Ersatzplatte, bis 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 9.30, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
-  { id: "platte-b-gelb", name: "Teilerplatte B Gelb, 50×40 cm", short: "Platte B gelb groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.30, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
-  { id: "platte-b-grau", name: "Teilerplatte B Grau, 50×40 cm", short: "Platte B grau groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.30, tag: "Ersatzteil", color: "#777", img: "/images/pultteiler_grau.png" },
-  { id: "koffer-leer", name: "Koffer ohne Inhalt", short: "Holzkoffer leer", desc: "Leerer Holzkoffer als Ersatz. Material: Holz.", priceAT: 45.20, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Koffer_1.png" },
+  { id: "klammer-2", name: "Klammer (2 Stück)", short: "2x Klammer", desc: "Hochwertige, dauerelastische Klammer im Doppelpack.", priceAT: 19.40, perPackage: 24, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Klammer_1.png" },
+  { id: "platte-a", name: "Teilerplatte A Gelb, 50×30 cm", short: "Platte A gelb klein", desc: "Einzelne Ersatzplatte, bis 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 9.30, perPackage: 12, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
+  { id: "platte-b-gelb", name: "Teilerplatte B Gelb, 50×40 cm", short: "Platte B gelb groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.30, perPackage: 12, tag: "Ersatzteil", color: "#C08B2D", img: "/images/pultteiler_gelb.png" },
+  { id: "platte-b-grau", name: "Teilerplatte B Grau, 50×40 cm", short: "Platte B grau groß", desc: "Einzelne Ersatzplatte, ab 5. Schulstufe. Aus hochwertigem Kunststoff.", priceAT: 10.30, perPackage: 12, tag: "Ersatzteil", color: "#777", img: "/images/pultteiler_grau.png" },
+  { id: "koffer-leer", name: "Koffer ohne Inhalt", short: "Holzkoffer leer", desc: "Leerer Holzkoffer als Ersatz. Material: Holz.", priceAT: 45.20, perPackage: 1, tag: "Ersatzteil", color: "#C08B2D", img: "/images/Koffer_1.png" },
 ];
 
 export const GALLERY = [

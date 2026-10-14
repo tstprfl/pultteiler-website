@@ -12,21 +12,21 @@ const eur = (n) => `€ ${n.toFixed(2).replace(".", ",")}`;
 const KONDITIONEN = {
   AT: [
     { label: "Preise", val: "Inkl. 20% USt", sub: "Die enthaltene Umsatzsteuer wird im Warenkorb ausgewiesen." },
-    { label: "Versand Österreich", val: `${eur(SHIPPING.AT)} je Bestellung`, sub: "inkl. USt, für Koffer-Sets und Ersatzteile" },
+    { label: "Versand Österreich", val: `${eur(SHIPPING.AT)} je Paket`, sub: <>inkl. USt. Die Versandkosten richten sich nach der Stückzahl. <Link href="/versand" style={{ color: C.accentText }}>Details zum Versand</Link></> },
     { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
     { label: "Österreichische Bundesschulen", val: "E-Rechnung", sub: "mit Ihrer EKG-Nummer, Zahlung auf Rechnung" },
     { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
   ],
   DE: [
     { label: "Preise", val: "Inkl. 20% USt", sub: "Die enthaltene Umsatzsteuer wird im Warenkorb ausgewiesen." },
-    { label: "Versand Deutschland", val: `${eur(SHIPPING.DE)} je Bestellung`, sub: "inkl. USt, für Koffer-Sets und Ersatzteile" },
+    { label: "Versand Deutschland", val: `${eur(SHIPPING.DE)} je Paket`, sub: <>inkl. USt. Die Versandkosten richten sich nach der Stückzahl. <Link href="/versand" style={{ color: C.accentText }}>Details zum Versand</Link></> },
     { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
     { label: "Mit UID-Nummer", val: "Steuerfrei", sub: "Nettopreis, innergemeinschaftliche Lieferung, deutsches Bankkonto vorhanden" },
     { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
   ],
   CH: [
     { label: "Preise", val: "Steuerfrei", sub: "unverzollt" },
-    { label: "Versand Schweiz", val: `${eur(SHIPPING.CH)} je Bestellung`, sub: "für Koffer-Sets, Ersatzteile auf Anfrage" },
+    { label: "Versand Schweiz", val: `${eur(SHIPPING.CH)} je Paket`, sub: <>für Koffer-Sets, Ersatzteile auf Anfrage. <Link href="/versand" style={{ color: C.accentText }}>Details zum Versand</Link></> },
     { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" },
     { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" },
   ],
@@ -113,7 +113,7 @@ export default function Produkte() {
           {region !== "CH" && (
             <>
               <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>Ersatzteile nachbestellen</h2>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile inkl. 20% USt. Versand: {eur(SHIPPING[region])} je Bestellung.</p>
+              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>Alle Ersatzteile inkl. 20% USt. Versand {eur(SHIPPING[region])} je Paket, die Versandkosten richten sich nach der Stückzahl. Der Warenkorb zeigt den Betrag vor der Bestellung. <Link href="/versand" style={{ color: C.accentText }}>Details zum Versand</Link></p>
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {PARTS.map((p, i) => (
                   <Reveal key={p.id} delay={i * 0.08}>

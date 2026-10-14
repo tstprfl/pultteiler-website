@@ -7,10 +7,10 @@ import { useDialog } from "@/components/ui";
 import Img from "@/components/Img";
 
 export default function CartSidebar({ onClose }) {
-  const { items, updateQty, remove, total, count, region, getPrice, shipping, clear, vatRate, vat, grandTotal, setCount, freeShippingSets } = useCart();
+  const { items, updateQty, remove, total, count, region, getPrice, shipping, clear, vatRate, vat, grandTotal, setCount, freeShippingSets, packages } = useCart();
   const fmt = (n) => `€ ${n.toFixed(2)}`;
   const vatLabel = `enthaltene USt ${Math.round(vatRate * 100)}%`;
-  const shippingLabel = shipping === 0 ? (items.length > 0 && setCount >= freeShippingSets ? `Kostenlos (ab ${freeShippingSets} Koffer-Sets)` : "Kostenlos") : fmt(shipping);
+  const shippingLabel = shipping === 0 ? (items.length > 0 && setCount >= freeShippingSets ? `Kostenlos (ab ${freeShippingSets} Koffer-Sets)` : "Kostenlos") : (packages > 1 ? `${fmt(shipping)} (${packages} Pakete)` : fmt(shipping));
   const [step, setStep] = useState("cart");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -130,6 +130,7 @@ export default function CartSidebar({ onClose }) {
             <div style={{ borderTop: `1px solid ${C.border}`, padding: "24px 28px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Zwischensumme</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(total)}</span></div>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>Versand ({region})</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
+              {shipping > 0 && packages > 1 && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>Versand in {packages} Paketen, die Pauschale gilt je Paket.</p>}
               {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>Ab {freeShippingSets} Koffer-Sets entfällt der Versand.</p>}
               {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
               <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>Gesamt</span><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.accentText }}>{fmt(grandTotal)}</span></div>
