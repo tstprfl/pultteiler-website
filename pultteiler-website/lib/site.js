@@ -34,7 +34,7 @@ export const COUNTRY_INFO = [
     lines: [
       "Kauf auf Rechnung, keine Vorkasse, keine Kreditkarte",
       "E-Rechnung für Bundesschulen mit Ihrer EKG-Nummer",
-      "Koffer-Sets versandkostenfrei",
+      "Versandkostenfrei ab 3 Koffer-Sets",
     ],
   },
   {
@@ -54,7 +54,7 @@ export const COUNTRY_INFO = [
     lines: [
       "Kauf auf Rechnung, keine Vorkasse, keine Kreditkarte",
       "Steuerfreie, unverzollte Lieferung, Endpreis ohne Zollgebühren",
-      "Lieferung immer inklusive",
+      "Versandkostenfrei ab 3 Koffer-Sets",
     ],
   },
 ];
