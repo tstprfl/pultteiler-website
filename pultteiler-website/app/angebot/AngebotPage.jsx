@@ -47,6 +47,7 @@ export default function AngebotPage() {
     const params = {
       kunde_email: d["email"] || "",
       order_nr: "Angebotsanfrage",
+      betreff: `Angebotsanfrage von ${d["Schulname"] || "unbekannt"}`,
       region: d["Land"] || "–",
       bestellung,
       versand: "–",

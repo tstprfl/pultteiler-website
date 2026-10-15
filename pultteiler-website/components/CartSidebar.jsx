@@ -62,6 +62,7 @@ export default function CartSidebar({ onClose }) {
     const templateParams = {
       kunde_email: formValues["email"] || "",
       order_nr: orderNr,
+      betreff: `Bestellung Nr. ${orderNr}`,
       region: region === "CH" ? "Schweiz" : region === "DE" ? "Deutschland" : "Österreich",
       bestellung: bestellungText,
       versand: shippingText,

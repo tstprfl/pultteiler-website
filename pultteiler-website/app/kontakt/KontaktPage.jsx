@@ -20,7 +20,7 @@ export default function KontaktPage() {
     try {
       await loadEmailJS();
       await window.emailjs.send("service_cobcbsg", "template_7kke6e4", {
-        kunde_email: data["email"] || "", order_nr: "KONTAKT", region: "Kontaktanfrage",
+        kunde_email: data["email"] || "", order_nr: "KONTAKT", region: "Kontaktanfrage", betreff: `Kontaktanfrage von ${data["Name"] || "unbekannt"}`,
         bestellung: data["Nachricht"] || "", versand: "–", gesamt: "–",
         adresse: data["Name"] || "", telefon: "–", uid: "–", einkaufergruppe: "–",
         anmerkungen: "Kontaktanfrage über pultteiler.eu",

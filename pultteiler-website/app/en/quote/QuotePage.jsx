@@ -40,6 +40,7 @@ export default function QuotePage() {
     const params = {
       kunde_email: d["email"] || "",
       order_nr: "Angebotsanfrage (EN)",
+      betreff: `Angebotsanfrage (EN) von ${d["Schulname"] || "unbekannt"}`,
       region: d["Land"] || "–",
       bestellung,
       versand: "–",
