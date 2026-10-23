@@ -157,8 +157,8 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
           <div style={{ display: "flex", flexDirection: "column", gap: 2, marginBottom: 56 }}>
             {SETS.map((p) => [p, localizeProduct(p, en)]).map(([p, v], i) => (
               <Reveal key={p.id} delay={i * 0.1}>
-                <div id={p.id} style={{ scrollMarginTop: 96, background: C.bgCard, border: `1px solid ${C.border}`, display: "grid", gridTemplateColumns: "260px 1fr", overflow: "hidden", transition: "border-color 0.3s" }} className="prod-card" onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
-                  <div style={{ borderRight: `1px solid ${C.border}`, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, background: C.bgElevated }}><Img sizes="300px" src={p.img} alt={v.name} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 200, display: "block" }}/></div>
+                <div id={p.id} style={{ scrollMarginTop: 96, background: C.bgCard, border: `1px solid ${C.border}`, display: "grid", gridTemplateColumns: "380px 1fr", overflow: "hidden", transition: "border-color 0.3s" }} className="prod-card" onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
+                  <div style={{ borderRight: `1px solid ${C.border}`, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, background: C.bgElevated }}><Img sizes="400px" src={p.img} alt={v.name} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 320, display: "block" }}/></div>
                   <div style={{ padding: "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <Badge>{t.original}</Badge>
                     <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{v.name}</h3>
@@ -181,7 +181,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
               {PARTS.map((p) => [p, localizeProduct(p, en)]).map(([p, v], i) => (
                 <Reveal key={p.id} delay={i * 0.08}>
                   <div id={p.id} style={{ scrollMarginTop: 96, background: C.bgCard, border: `1px solid ${C.border}`, overflow: "hidden", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
-                    {p.img && <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, padding: 16, display: "flex", alignItems: "center", justifyContent: "center", height: 160, overflow: "hidden" }}><Img sizes="300px" src={p.img} alt={v.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/></div>}
+                    {p.img && <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, padding: 16, display: "flex", alignItems: "center", justifyContent: "center", height: 240, overflow: "hidden" }}><Img sizes="400px" src={p.img} alt={v.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/></div>}
                     <div style={{ padding: "20px 24px 28px" }}>
                       <Badge>{v.tag}</Badge>
                       <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{v.name}</h3>

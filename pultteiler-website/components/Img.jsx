@@ -6,6 +6,7 @@ const SIZES = {
   "/images/Klammer_1.png": [378, 515],
   "/images/Klammer_2.png": [430, 577],
   "/images/Koffer_1.png": [1200, 1600],
+  "/images/koffer-leer.png": [1006, 922],
   "/images/klassenzimmer.png": [597, 340],
   "/images/kurhaus-blick-buehne.jpg": [1200, 1600],
   "/images/kurhaus-klammer-detail.jpg": [1600, 1200],
