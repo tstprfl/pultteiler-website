@@ -53,7 +53,7 @@ const konditionen = (en) => {
 // Texte der Shop-Seite
 const T = {
   de: {
-    badge: "Online-Shop", h1: "Pultteiler kaufen: Sets und Preise", h1CH: "Pultteiler für die Schweiz: Sets und Preise",
+    badge: "Online-Shop", h1: "Pultteiler kaufen: Sets und Einzelteile",
     intro: "Sichtschutz-Trennwände für Schultische direkt vom Hersteller. Jeder Holzkoffer enthält 12 komplette Systeme. Kauf auf Rechnung, keine Kreditkarte, keine Vorkasse.",
     land: "Lieferland", countries: { AT: "Österreich", DE: "Deutschland", CH: "Schweiz" }, other: "Anderes Land? → Angebot anfordern", quote: "/angebot",
     box: { AT: "Preise und Versand für Österreich", DE: "Preise und Versand für Deutschland", CH: "Preise und Versand für die Schweiz" },
@@ -63,7 +63,7 @@ const T = {
     shipDetails: "Details zum Versand", shipHref: "/versand",
   },
   en: {
-    badge: "Online shop", h1: "Buy Pultteiler: sets and prices", h1CH: "Pultteiler for Switzerland: sets and prices",
+    badge: "Online shop", h1: "Buy Pultteiler: sets and spare parts",
     intro: "Privacy screens for school desks direct from the manufacturer. Every wooden case contains 12 complete systems. Purchase on invoice, no credit card, no prepayment.",
     land: "Delivery country", countries: { AT: "Austria", DE: "Germany", CH: "Switzerland" }, other: "Other country? → Request a quote", quote: "/en/quote",
     box: { AT: "Prices and shipping for Austria", DE: "Prices and shipping for Germany", CH: "Prices and shipping for Switzerland" },
@@ -117,7 +117,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ marginBottom: 40 }}>
             <div style={{ marginBottom: 16 }}><Badge>{t.badge}</Badge></div>
-            <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>{ch ? t.h1CH : t.h1}</h1>
+            <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>{t.h1}</h1>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.6, maxWidth: 620, margin: 0 }}>
               {t.intro}
             </p>
