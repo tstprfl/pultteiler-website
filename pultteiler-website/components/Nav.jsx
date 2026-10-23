@@ -55,12 +55,15 @@ export default function Nav() {
     <>
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : "transparent", borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href={en ? EN_START : "/"} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+          <Link href={en ? EN_START : "/"} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
             <Img sizes="56px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
             <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </Link>
-          <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            <div className="desk-nav" style={{ display: "flex", gap: 2, alignItems: "center" }}>
+          {/* Menüpunkte links bündig nach dem Logo, damit „Start“ und „Home“ beim Sprachwechsel an derselben Stelle beginnen;
+              Angebot, Sprachschalter und Warenkorb bleiben rechts. Der Abstand zum Logo hängt nur von der Fensterbreite ab
+              (schmal bis 4 px, damit die längere deutsche Leiste ab 1121 px noch passt) */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 4, flex: 1, minWidth: 0 }}>
+            <div className="desk-nav" style={{ display: "flex", gap: 2, alignItems: "center", flex: 1, marginLeft: "clamp(4px, calc(100vw - 1150px), 40px)" }}>
               {items.map(n => n.children ? (
                 <div key={n.id} style={{ position: "relative" }} onMouseEnter={() => setDdOpen(true)} onMouseLeave={() => setDdOpen(false)}>
                   <button onClick={() => setDdOpen(v => !v)} aria-expanded={ddOpen} aria-haspopup="true" style={linkStyle(groupActive(n))}>
@@ -77,7 +80,8 @@ export default function Nav() {
               ) : (
                 <Link key={n.id} href={n.href} style={linkStyle(isActive(n.href))}>{n.label}</Link>
               ))}
-              <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "10px 18px", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap", marginLeft: 8 }}>{quote.short}</Link>
+              <span aria-hidden="true" style={{ flex: 1, minWidth: 6 }}/>
+              <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "10px 18px", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
             </div>
             <div role="group" aria-label={en ? "Language" : "Sprache"} style={{ display: "flex", border: `1px solid ${C.border}`, marginLeft: 8, flexShrink: 0 }}>
               {langs.map(l => (
