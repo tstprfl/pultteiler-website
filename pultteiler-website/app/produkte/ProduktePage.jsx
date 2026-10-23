@@ -43,7 +43,7 @@ const konditionen = (en) => {
     ],
     CH: [
       en ? { label: "Prices", val: "Tax-free", sub: "duty-free" } : { label: "Preise", val: "Steuerfrei", sub: "unverzollt" },
-      { label: en ? "Shipping to Switzerland" : "Versand Schweiz", val: perParcel("CH"), sub: en ? <>for case sets, spare parts on request. {details}</> : <>für Koffer-Sets, Ersatzteile auf Anfrage. {details}</> },
+      { label: en ? "Shipping to Switzerland" : "Versand Schweiz", val: perParcel("CH"), sub: en ? <>Shipping costs depend on the quantity. {details}</> : <>Die Versandkosten richten sich nach der Stückzahl. {details}</> },
       free,
       pay,
     ],
@@ -59,9 +59,8 @@ const T = {
     box: { AT: "Preise und Versand für Österreich", DE: "Preise und Versand für Deutschland", CH: "Preise und Versand für die Schweiz" },
     sets: "Koffer-Sets", original: "Das Original", taxFree: "steuerfrei", inclVat: "inkl. 20% USt", inclVatShort: "inkl. USt",
     parts: "Ersatzteile nachbestellen",
-    partsInfo: (ship) => `Alle Ersatzteile inkl. 20% USt. Versand ${ship} je Paket, die Versandkosten richten sich nach der Stückzahl. Der Warenkorb zeigt den Betrag vor der Bestellung. `,
+    partsInfo: (ship, ch) => `Alle Ersatzteile ${ch ? "steuerfrei und unverzollt" : "inkl. 20% USt"}. Versand ${ship} je Paket, die Versandkosten richten sich nach der Stückzahl. Der Warenkorb zeigt den Betrag vor der Bestellung. `,
     shipDetails: "Details zum Versand", shipHref: "/versand",
-    partsCH: "Ersatzteile für die Schweiz?", partsCHLink: "Gerne per Angebot →",
   },
   en: {
     badge: "Online shop", h1: "Buy Pultteiler: sets and prices", h1CH: "Pultteiler for Switzerland: sets and prices",
@@ -70,9 +69,8 @@ const T = {
     box: { AT: "Prices and shipping for Austria", DE: "Prices and shipping for Germany", CH: "Prices and shipping for Switzerland" },
     sets: "Case sets", original: "The original", taxFree: "tax-free", inclVat: "incl. 20% VAT", inclVatShort: "incl. VAT",
     parts: "Reorder spare parts",
-    partsInfo: (ship) => `All spare parts incl. 20% VAT. Shipping ${ship} per parcel, shipping costs depend on the quantity. The cart shows the amount before you order. `,
+    partsInfo: (ship, ch) => `All spare parts ${ch ? "tax-free and duty-free" : "incl. 20% VAT"}. Shipping ${ship} per parcel, shipping costs depend on the quantity. The cart shows the amount before you order. `,
     shipDetails: "Shipping details", shipHref: "/en/shipping",
-    partsCH: "Spare parts for Switzerland?", partsCHLink: "Request a quote →",
   },
 };
 
@@ -175,34 +173,29 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
             ))}
           </div>
 
-          {/* Ersatzteile (Bruttopreise AT und DE) */}
-          {shown !== "CH" && (
-            <>
-              <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>{t.parts}</h2>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>{t.partsInfo(eur(SHIPPING[shown], en))}<Link href={t.shipHref} style={{ color: C.accentText }}>{t.shipDetails}</Link></p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {PARTS.map((p) => [p, localizeProduct(p, en)]).map(([p, v], i) => (
-                  <Reveal key={p.id} delay={i * 0.08}>
-                    <div id={p.id} style={{ scrollMarginTop: 96, background: C.bgCard, border: `1px solid ${C.border}`, overflow: "hidden", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
-                      {p.img && <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, padding: 16, display: "flex", alignItems: "center", justifyContent: "center", height: 160, overflow: "hidden" }}><Img sizes="300px" src={p.img} alt={v.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/></div>}
-                      <div style={{ padding: "20px 24px 28px" }}>
-                        <Badge>{v.tag}</Badge>
-                        <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{v.name}</h3>
-                        <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{v.desc}</p>
-                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                          <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>€ {p.priceAT.toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{t.inclVatShort}</span></div>
-                          <AddToCartBtn product={p} label={v.short} en={en}/>
-                        </div>
+          {/* Ersatzteile (AT und DE brutto, Schweiz steuerfrei) */}
+          <>
+            <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>{t.parts}</h2>
+            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>{t.partsInfo(eur(SHIPPING[shown], en), shown === "CH")}<Link href={t.shipHref} style={{ color: C.accentText }}>{t.shipDetails}</Link></p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              {PARTS.map((p) => [p, localizeProduct(p, en)]).map(([p, v], i) => (
+                <Reveal key={p.id} delay={i * 0.08}>
+                  <div id={p.id} style={{ scrollMarginTop: 96, background: C.bgCard, border: `1px solid ${C.border}`, overflow: "hidden", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
+                    {p.img && <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, padding: 16, display: "flex", alignItems: "center", justifyContent: "center", height: 160, overflow: "hidden" }}><Img sizes="300px" src={p.img} alt={v.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/></div>}
+                    <div style={{ padding: "20px 24px 28px" }}>
+                      <Badge>{v.tag}</Badge>
+                      <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{v.name}</h3>
+                      <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{v.desc}</p>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                        <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>€ {price(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVatShort}</span></div>
+                        <AddToCartBtn product={p} label={v.short} en={en}/>
                       </div>
                     </div>
-                  </Reveal>
-                ))}
-              </div>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, margin: "24px 0 0" }}>
-                {t.partsCH} <Link href={t.quote} style={{ color: C.accentText, textDecoration: "none" }}>{t.partsCHLink}</Link>
-              </p>
-            </>
-          )}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </>
         </div>
       </section>
     </div>

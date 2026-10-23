@@ -10,7 +10,7 @@ export const SHOP_CH_PATH = "/produkte/schweiz";
 
 export const SHOPS = {
   ATDE: { path: "/produkte", pathEn: "/en/products", countries: ["AT", "DE"], price: (p) => p.priceAT, vatIncluded: true, products: [...SETS, ...PARTS] },
-  CH: { path: SHOP_CH_PATH, pathEn: "/en/products/switzerland", countries: ["CH"], price: (p) => p.priceCH ?? p.priceAT, vatIncluded: false, products: SETS },
+  CH: { path: SHOP_CH_PATH, pathEn: "/en/products/switzerland", countries: ["CH"], price: (p) => p.priceCH ?? p.priceAT, vatIncluded: false, products: [...SETS, ...PARTS] },
 };
 
 const returnPolicy = (countries, en) => ({
