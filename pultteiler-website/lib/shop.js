@@ -38,7 +38,7 @@ export function productJsonLd(shop, en = false) {
       name: s.name,
       description: s.desc,
       sku: s.id,
-      image: `${BASE_URL}${s.img}`,
+      image: [s.img, ...(s.moreImgs || [])].map((i) => `${BASE_URL}${i}`),
       brand: { "@type": "Brand", name: "Pultteiler" },
       offers: {
         "@type": "Offer",
@@ -71,7 +71,8 @@ export function merchantFeed(shop, suffix = "") {
       <g:title>${xml(title)}</g:title>
       <g:description>${xml(desc)}</g:description>
       <g:link>${BASE_URL}${shop.path}#${xml(p.id)}</g:link>
-      <g:image_link>${BASE_URL}${xml(p.img)}</g:image_link>
+      <g:image_link>${BASE_URL}${xml(p.img)}</g:image_link>${(p.moreImgs || []).map((i) => `
+      <g:additional_image_link>${BASE_URL}${xml(i)}</g:additional_image_link>`).join("")}
       <g:availability>in_stock</g:availability>
       <g:price>${shop.price(p).toFixed(2)} EUR</g:price>
       <g:condition>new</g:condition>

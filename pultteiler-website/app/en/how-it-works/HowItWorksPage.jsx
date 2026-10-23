@@ -32,7 +32,7 @@ export default function HowItWorksPage() {
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.7, margin: 0 }}>Simply remove the dividers and put them back into the supplied wooden case: space-saving and ready for the next exam.</p>
                 </div>
                 <div style={{ background: C.bgElevated, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, minHeight: 240 }}>
-                  <Img sizes="(max-width: 768px) 100vw, 480px" src="/images/koffer-gelb.jpg" alt="Wooden case with Pultteiler dividers" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 240, display: "block" }}/>
+                  <Img sizes="(max-width: 768px) 100vw, 480px" src="/images/set-gelb.jpg" alt="Wooden case with Pultteiler dividers" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 240, display: "block" }}/>
                 </div>
               </div>
             </Reveal>
