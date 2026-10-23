@@ -12,9 +12,11 @@ export default function Home() {
   return (
     <div>
       {/* ═══ HERO ═══ */}
-      <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px 32px 80px", background: C.bg, position: "relative", overflow: "hidden" }}>
+      {/* Oben ausgerichtet statt senkrecht zentriert: Deutsch und Englisch sind unterschiedlich lang, so beginnt der Inhalt
+          in beiden Sprachen an derselben Stelle und springt beim Sprachwechsel nicht */}
+      <section style={{ minHeight: "100vh", display: "flex", alignItems: "flex-start", padding: "140px 32px 80px", background: C.bg, position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 1, width: "100%" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "center" }} className="hero-g">
+          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "start" }} className="hero-g">
             <div>
               <Reveal><p style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(22px, 2.2vw, 30px)", letterSpacing: "0.03em", color: C.text, margin: 0, lineHeight: 1.1 }}>Das Original seit 1986<span style={{ color: C.textMuted, fontWeight: 500 }}> · direkt vom Hersteller</span></p></Reveal>
               <Reveal delay={0.1}><h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>für <span style={{ color: "#F0C645" }}>Schultische.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>Trennwände und Sichtschutz für faire Prüfungen.</span></h1></Reveal>
@@ -23,7 +25,7 @@ export default function Home() {
               <Reveal delay={0.35}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 24, lineHeight: 1.5 }}>✓ Kauf auf Rechnung: keine Kreditkarte, keine Vorkasse</p></Reveal>
               <Reveal delay={0.4}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.5 }}>✓ <a href="#medien" onClick={(e) => { e.preventDefault(); document.getElementById("medien")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ color: C.text, textDecoration: "underline", textUnderlineOffset: 4 }}>{PRESSE_T.de.hero} ↓</a></p></Reveal>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div className="hero-right" style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 48 }}>
               <Reveal delay={0.1}><div className="hero-plates" style={{ display: "flex", gap: 12, justifyContent: "center" }}>
                 <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 10, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(-3deg)", border: "2px solid #D4AD2E" }}>
                   <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇦🇹<br/>E-Rechnungen<br/>für Bundes-<br/>schulen<br/>mit Ihrer EKG</span>
