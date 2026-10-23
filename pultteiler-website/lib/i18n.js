@@ -23,6 +23,12 @@ export const PAGE_PAIRS = [
   { de: "/datenschutz", en: "/en/privacy" },
 ];
 
+// Regionale Zusatzseiten eines Seitenpaars (hreflang), z.B. der Schweizer Shop mit eigenen Preisen.
+// Sie haben keine englische Entsprechung; der Sprachumschalter führt auf die englische Seite des Paars.
+export const REGIONAL = {
+  "/produkte": { "de-CH": "/produkte/schweiz" },
+};
+
 export const EN_START = "/en";
 
 export const isEnPath = (pathname = "") => pathname === "/en" || pathname.startsWith("/en/");
@@ -30,15 +36,16 @@ export const isEnPath = (pathname = "") => pathname === "/en" || pathname.starts
 // Ziel des Sprachumschalters: passende Seite der anderen Sprache, sonst deren Startseite
 export function switchTarget(pathname = "") {
   if (isEnPath(pathname)) return PAGE_PAIRS.find((p) => p.en === pathname)?.de || "/";
-  return PAGE_PAIRS.find((p) => p.de === pathname)?.en || EN_START;
+  const de = Object.keys(REGIONAL).find((k) => Object.values(REGIONAL[k]).includes(pathname)) || pathname;
+  return PAGE_PAIRS.find((p) => p.de === de)?.en || EN_START;
 }
 
-// alternates für die Metadaten einer Seite (canonical + hreflang de/en/x-default)
+// alternates für die Metadaten einer Seite (canonical + hreflang de/en/x-default, dazu regionale Seiten aus REGIONAL)
 export function alternatesFor(path) {
   const pair = PAGE_PAIRS.find((p) => p.de === path || p.en === path);
   return {
     canonical: path,
-    languages: { de: pair.de, en: pair.en, "x-default": pair.de },
+    languages: { de: pair.de, ...REGIONAL[pair.de], en: pair.en, "x-default": pair.de },
   };
 }
 

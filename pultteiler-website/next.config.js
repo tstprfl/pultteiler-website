@@ -16,8 +16,8 @@ const nextConfig = {
       { source: '/es-order-finished/', destination: '/produkte', permanent: true },
       { source: '/hochschulen-und-universitaten', destination: '/hochschulen', permanent: true },
       { source: '/hochschulen-und-universitaten/', destination: '/hochschulen', permanent: true },
-      { source: '/produkte-fur-die-schweiz', destination: '/produkte', permanent: true },
-      { source: '/produkte-fur-die-schweiz/', destination: '/produkte', permanent: true },
+      { source: '/produkte-fur-die-schweiz', destination: '/produkte/schweiz', permanent: true },
+      { source: '/produkte-fur-die-schweiz/', destination: '/produkte/schweiz', permanent: true },
       { source: '/produkte-1', destination: '/produkte', permanent: true },
       { source: '/produkte-1/', destination: '/produkte', permanent: true },
       // Alte Produktseiten
