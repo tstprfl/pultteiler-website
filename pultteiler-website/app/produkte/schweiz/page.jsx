@@ -7,7 +7,7 @@ export const metadata = {
   title: { absolute: "Pultteiler Schweiz: Sets und Preise vom Hersteller" },
   description:
     "Pultteiler-Sets für die Schweiz: Trennwände für Schultische im Holzkoffer (12 Systeme) vom Hersteller, steuerfrei und unverzollt, Kauf auf Rechnung.",
-  alternates: { ...alternatesFor("/produkte"), canonical: SHOP_CH_PATH },
+  alternates: alternatesFor(SHOP_CH_PATH, "/produkte"),
 };
 
 const jsonLd = productJsonLd(SHOPS.CH);

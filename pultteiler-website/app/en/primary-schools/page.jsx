@@ -30,7 +30,7 @@ const FAQ = [
   },
   {
     q: "How does our school order?",
-    a: "You send us a request and receive a written quote. Schools in Austria, Germany and Switzerland pay on invoice after delivery, no credit card, no prepayment. For other countries we check delivery and terms individually.",
+    a: "You order via the request form or in the online shop and pay conveniently on invoice, no credit card, no prepayment. Austrian federal schools receive an e-invoice with their EKG number on request, German schools with a VAT ID a tax-free delivery. For other countries we check delivery and terms individually.",
   },
 ];
 

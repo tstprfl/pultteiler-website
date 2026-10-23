@@ -1,17 +1,19 @@
 // Shop-Daten je Lieferland für Produktdaten (JSON-LD) und Google-Merchant-Feeds.
-// Österreich und Deutschland teilen sich /produkte (Preise inkl. 20% USt), die Schweiz hat eigene Preise auf /produkte/schweiz.
+// Österreich und Deutschland teilen sich /produkte (Preise inkl. 20% USt), die Schweiz hat eigene Preise auf /produkte/schweiz;
+// englisch gleich aufgebaut unter /en/products und /en/products/switzerland.
 // Versand und Rückgabe gemäß /versand und AGB; bei Änderungen dort auch hier anpassen.
 import { SETS, PARTS, SHIPPING } from "@/lib/data";
+import { localizeProduct } from "@/lib/en";
 
 export const BASE_URL = "https://www.pultteiler.eu";
 export const SHOP_CH_PATH = "/produkte/schweiz";
 
 export const SHOPS = {
-  ATDE: { path: "/produkte", countries: ["AT", "DE"], price: (p) => p.priceAT, vatIncluded: true, products: [...SETS, ...PARTS] },
-  CH: { path: SHOP_CH_PATH, countries: ["CH"], price: (p) => p.priceCH ?? p.priceAT, vatIncluded: false, products: SETS },
+  ATDE: { path: "/produkte", pathEn: "/en/products", countries: ["AT", "DE"], price: (p) => p.priceAT, vatIncluded: true, products: [...SETS, ...PARTS] },
+  CH: { path: SHOP_CH_PATH, pathEn: "/en/products/switzerland", countries: ["CH"], price: (p) => p.priceCH ?? p.priceAT, vatIncluded: false, products: SETS },
 };
 
-const returnPolicy = (countries) => ({
+const returnPolicy = (countries, en) => ({
   "@type": "MerchantReturnPolicy",
   applicableCountry: countries,
   returnPolicyCountry: "AT",
@@ -19,11 +21,11 @@ const returnPolicy = (countries) => ({
   merchantReturnDays: 14,
   returnMethod: "https://schema.org/ReturnByMail",
   returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
-  merchantReturnLink: `${BASE_URL}/versand`,
+  merchantReturnLink: `${BASE_URL}${en ? "/en/shipping" : "/versand"}`,
 });
 
-// Produktdaten der Koffer-Sets für die Shop-Seite eines Lieferlands
-export function productJsonLd(shop) {
+// Produktdaten der Koffer-Sets für die Shop-Seite eines Lieferlands (en: englische Seite)
+export function productJsonLd(shop, en = false) {
   const shippingDetails = shop.countries.map((country) => ({
     "@type": "OfferShippingDetails",
     shippingRate: { "@type": "MonetaryAmount", value: SHIPPING[country].toFixed(2), currency: "EUR" },
@@ -31,7 +33,7 @@ export function productJsonLd(shop) {
   }));
   return {
     "@context": "https://schema.org",
-    "@graph": SETS.map((s) => ({
+    "@graph": SETS.map((p) => localizeProduct(p, en)).map((s) => ({
       "@type": "Product",
       name: s.name,
       description: s.desc,
@@ -45,10 +47,10 @@ export function productJsonLd(shop) {
         priceSpecification: { "@type": "UnitPriceSpecification", price: shop.price(s).toFixed(2), priceCurrency: "EUR", valueAddedTaxIncluded: shop.vatIncluded },
         availability: "https://schema.org/InStock",
         itemCondition: "https://schema.org/NewCondition",
-        url: `${BASE_URL}${shop.path}`,
+        url: `${BASE_URL}${en ? shop.pathEn : shop.path}`,
         seller: { "@type": "Organization", name: "Schulmittel Blaschegg" },
         shippingDetails,
-        hasMerchantReturnPolicy: returnPolicy(shop.countries),
+        hasMerchantReturnPolicy: returnPolicy(shop.countries, en),
       },
     })),
   };

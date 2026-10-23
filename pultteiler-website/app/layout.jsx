@@ -12,6 +12,7 @@ import { CartProvider } from "@/components/CartProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ScrollToTop } from "@/components/ui";
+import LanguageHint from "@/components/LanguageHint";
 import { YEARS, CONTACT } from "@/lib/site";
 
 export const metadata = {
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
             <main>{children}</main>
             <Footer/>
             <ScrollToTop/>
+            <LanguageHint/>
           </div>
         </CartProvider>
       </body>

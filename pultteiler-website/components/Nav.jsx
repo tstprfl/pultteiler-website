@@ -36,7 +36,7 @@ export default function Nav() {
     } catch {}
   }, [pathname]);
 
-  // Englische Seiten: eigene Navigation ohne Warenkorb (Bestellung per Angebot)
+  // Englische Seiten: eigene Navigation, Warenkorb wie auf Deutsch
   const en = isEnPath(pathname);
   const items = en ? NAV_EN : NAV;
   const quote = en ? { href: "/en/quote", short: "Quote →", long: "Request a quote →" } : { href: "/angebot", short: "Angebot →", long: "Angebot anfordern →" };
@@ -88,8 +88,7 @@ export default function Nav() {
                 </Link>
               ))}
             </div>
-            {/* Auf EN-Seiten bleibt der Platz des Warenkorb-Buttons reserviert, damit die Leiste beim Sprachwechsel nicht springt */}
-            <button onClick={() => { if (!en) setCartOpen(true); }} aria-label="Warenkorb öffnen" aria-hidden={en ? "true" : undefined} tabIndex={en ? -1 : 0} style={{ background: "none", border: "none", cursor: en ? "default" : "pointer", padding: "8px 12px", position: "relative", visibility: en ? "hidden" : "visible" }}>
+            <button onClick={() => setCartOpen(true)} aria-label={en ? "Open cart" : "Warenkorb öffnen"} style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               {count > 0 && <span style={{ position: "absolute", top: 2, right: 4, background: C.accentText, color: C.white, width: 18, height: 18, borderRadius: "50%", fontSize: 10, fontWeight: 700, fontFamily: "'Inter Tight', sans-serif", display: "flex", alignItems: "center", justifyContent: "center" }}>{count}</span>}
             </button>

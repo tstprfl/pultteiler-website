@@ -1,5 +1,5 @@
-// Englische Texte der Testversion. Inhaltlich deckungsgleich mit den deutschen Seiten;
-// für andere Länder werden bewusst keine Preise oder Lieferbedingungen zugesagt (nur "auf Anfrage").
+// Englische Texte. Inhaltlich deckungsgleich mit den deutschen Seiten; der Shop mit Preisen gilt wie auf Deutsch
+// für Österreich, Deutschland und die Schweiz, für andere Länder werden bewusst keine Preise oder Lieferbedingungen zugesagt (nur "auf Anfrage").
 import { YEARS, CONTACT } from "@/lib/site";
 
 export const COUNTRIES_EN = [
@@ -54,17 +54,29 @@ export const UI_EN = {
   contactCta: "Contact us",
   trust: ["Direct from the manufacturer", "Several hundred schools in AT, DE and CH", `For over ${YEARS} years`, "Delivery to other countries on request"],
   orderTitle: "How ordering works",
-  orderSub: "No credit card checkout: you send us a request and receive a written quote. In Austria, Germany and Switzerland you pay on invoice after delivery.",
+  orderSub: "No credit card checkout, no prepayment: you order on request or directly in the online shop and pay conveniently on invoice, as schools and school authorities are used to.",
   countries: COUNTRIES_EN,
   faqTitle: "Frequently asked questions",
 };
 
-// Englische Bezeichnungen der Sets (Reihenfolge und id wie SETS in lib/data.js)
+// Englische Bezeichnungen der Sets und Ersatzteile (id wie SETS und PARTS in lib/data.js).
+// Im Warenkorb bleiben die deutschen Daten; Bestellungen erreichen Blaschegg mit deutschen Produktnamen.
 export const SETS_EN = {
-  "gelb-vs": { name: "Set A: yellow, up to school year 5", desc: "1 wooden case with 12 divider panels (50×30 cm) and 12 clamps. Recommended up to school year 5." },
-  "gelb-ms": { name: "Set B: yellow, from school year 6", desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps. Recommended from school year 6." },
-  "grau-ms": { name: "Set B: grey, from school year 6", desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps. Recommended from school year 6." },
+  "gelb-vs": { name: "Set A: yellow, up to school year 5", short: "Set A yellow", desc: "1 wooden case with 12 divider panels (50×30 cm) and 12 clamps. Recommended up to school year 5." },
+  "gelb-ms": { name: "Set B: yellow, from school year 6", short: "Set B yellow", desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps. Recommended from school year 6." },
+  "grau-ms": { name: "Set B: grey, from school year 6", short: "Set B grey", desc: "1 wooden case with 12 divider panels (50×40 cm) and 12 clamps. Recommended from school year 6." },
 };
+
+export const PARTS_EN = {
+  "klammer-2": { name: "Clamp (pack of 2)", short: "2x clamp", desc: "High-quality, permanently elastic clamp, pack of two.", tag: "Spare part" },
+  "platte-a": { name: "Divider panel A yellow, 50×30 cm", short: "Panel A yellow small", desc: "Single replacement panel, up to school year 5. Made of high-quality plastic.", tag: "Spare part" },
+  "platte-b-gelb": { name: "Divider panel B yellow, 50×40 cm", short: "Panel B yellow large", desc: "Single replacement panel, from school year 5. Made of high-quality plastic.", tag: "Spare part" },
+  "platte-b-grau": { name: "Divider panel B grey, 50×40 cm", short: "Panel B grey large", desc: "Single replacement panel, from school year 5. Made of high-quality plastic.", tag: "Spare part" },
+  "koffer-leer": { name: "Empty case", short: "Wooden case, empty", desc: "Empty wooden case as a replacement. Material: wood.", tag: "Spare part" },
+};
+
+// Produkt in der Sprache der Seite (deutsche Daten aus lib/data.js, englische Texte darübergelegt)
+export const localizeProduct = (p, en) => (en ? { ...p, ...(SETS_EN[p.id] || PARTS_EN[p.id]) } : p);
 
 // openGraph der englischen Seiten (Next.js ersetzt openGraph je Seite komplett, daher vollständig)
 export const OG_EN = {

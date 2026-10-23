@@ -144,7 +144,7 @@ export default function HomeEn() {
       {/* ═══ LÄNDER / BESTELLUNG ═══ */}
       <section style={{ padding: "96px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Heading overline="Ordering made for schools" title="How ordering works in your country" sub="No credit card checkout: you send us a request and receive a written quote. In Austria, Germany and Switzerland you pay on invoice after delivery."/>
+          <Heading overline="Ordering made for schools" title="How ordering works in your country" sub="No credit card checkout: you order on request or in the online shop and pay on invoice after delivery, just as schools and school authorities need."/>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 2 }}>
             {COUNTRY_INFO.map((c, i) => (
               <Reveal key={c.code} delay={i * 0.08}>

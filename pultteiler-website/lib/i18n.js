@@ -24,10 +24,10 @@ export const PAGE_PAIRS = [
 ];
 
 // Regionale Zusatzseiten eines Seitenpaars (hreflang), z.B. der Schweizer Shop mit eigenen Preisen.
-// Sie haben keine englische Entsprechung; der Sprachumschalter führt auf die englische Seite des Paars.
-export const REGIONAL = {
-  "/produkte": { "de-CH": "/produkte/schweiz" },
-};
+// base = deutsche Seite des Paars in PAGE_PAIRS; der Sprachumschalter wechselt zwischen de und en der Regionalseite.
+export const REGIONAL_PAIRS = [
+  { base: "/produkte", region: "CH", de: "/produkte/schweiz", en: "/en/products/switzerland" },
+];
 
 export const EN_START = "/en";
 
@@ -35,17 +35,24 @@ export const isEnPath = (pathname = "") => pathname === "/en" || pathname.starts
 
 // Ziel des Sprachumschalters: passende Seite der anderen Sprache, sonst deren Startseite
 export function switchTarget(pathname = "") {
+  const regional = REGIONAL_PAIRS.find((r) => r.de === pathname || r.en === pathname);
+  if (regional) return isEnPath(pathname) ? regional.de : regional.en;
   if (isEnPath(pathname)) return PAGE_PAIRS.find((p) => p.en === pathname)?.de || "/";
-  const de = Object.keys(REGIONAL).find((k) => Object.values(REGIONAL[k]).includes(pathname)) || pathname;
-  return PAGE_PAIRS.find((p) => p.de === de)?.en || EN_START;
+  return PAGE_PAIRS.find((p) => p.de === pathname)?.en || EN_START;
 }
 
-// alternates für die Metadaten einer Seite (canonical + hreflang de/en/x-default, dazu regionale Seiten aus REGIONAL)
-export function alternatesFor(path) {
-  const pair = PAGE_PAIRS.find((p) => p.de === path || p.en === path);
+// alternates für die Metadaten einer Seite (canonical + hreflang de/en/x-default, dazu regionale Seiten aus REGIONAL_PAIRS).
+// Regionalseiten übergeben ihren eigenen Pfad als canonical und die Basisseite als base.
+export function alternatesFor(path, base = path) {
+  const pair = PAGE_PAIRS.find((p) => p.de === base || p.en === base);
+  const regional = {};
+  REGIONAL_PAIRS.filter((r) => r.base === pair.de).forEach((r) => {
+    regional[`de-${r.region}`] = r.de;
+    regional[`en-${r.region}`] = r.en;
+  });
   return {
     canonical: path,
-    languages: { de: pair.de, ...REGIONAL[pair.de], en: pair.en, "x-default": pair.de },
+    languages: { de: pair.de, en: pair.en, ...regional, "x-default": pair.de },
   };
 }
 

@@ -1,12 +1,12 @@
 import { ARTICLES } from "@/lib/articles";
-import { PAGE_PAIRS } from "@/lib/i18n";
+import { PAGE_PAIRS, REGIONAL_PAIRS } from "@/lib/i18n";
 
 // Letzte inhaltliche Änderung je Seite (<lastmod> in der Sitemap).
 // Bei jeder inhaltlichen Änderung einer Seite hier das Datum anpassen: Google nutzt lastmod nur,
 // solange es verlässlich ist. Seiten ohne Eintrag erscheinen ohne lastmod.
 // Erstbefüllung aus der Git-Historie der jeweiligen Seitendateien, Stand 2026-10-01.
 const LASTMOD = {
-  "/": "2026-10-10",
+  "/": "2026-10-23",
   "/volksschule": "2026-10-10",
   "/sekundarstufe": "2026-10-10",
   "/hochschulen": "2026-10-10",
@@ -27,11 +27,12 @@ const LASTMOD = {
   "/impressum": "2026-09-29",
   "/agb": "2026-09-30",
   "/datenschutz": "2026-09-29",
-  "/en": "2026-10-10",
-  "/en/primary-schools": "2026-10-10",
-  "/en/secondary-schools": "2026-10-10",
+  "/en": "2026-10-23",
+  "/en/primary-schools": "2026-10-23",
+  "/en/secondary-schools": "2026-10-23",
   "/en/universities": "2026-10-10",
-  "/en/products": "2026-10-01",
+  "/en/products": "2026-10-23",
+  "/en/products/switzerland": "2026-10-23",
   "/en/quote": "2026-09-29",
   "/en/guide": "2026-10-10",
   "/en/guide/research-on-copying-in-exams": "2026-10-10",
@@ -69,6 +70,7 @@ export default function sitemap() {
     { path: "/agb", changeFrequency: "yearly", priority: 0.3 },
     { path: "/datenschutz", changeFrequency: "yearly", priority: 0.3 },
     ...PAGE_PAIRS.map((p) => ({ path: p.en, changeFrequency: "monthly", priority: 0.6 })),
+    ...REGIONAL_PAIRS.map((r) => ({ path: r.en, changeFrequency: "monthly", priority: 0.6 })),
   ];
   return pages.map(({ path, ...p }) => ({
     url: path === "/" ? base : `${base}${path}`,
