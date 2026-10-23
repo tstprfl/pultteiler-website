@@ -46,6 +46,24 @@ export function Btn({ children, onClick, href, variant = "primary", full = false
   return <button onClick={onClick} className={cls} style={style}>{children}</button>;
 }
 
+// Mengenfeld zum direkten Eintippen (z.B. 50), zwischen den Knöpfen − und +.
+// Leeres Feld ist beim Tippen erlaubt; beim Verlassen springt es auf den gültigen Wert zurück.
+export function QtyInput({ value, onChange, label, onEnter, style }) {
+  const [text, setText] = useState(String(value));
+  useEffect(() => { setText(String(value)); }, [value]);
+  const change = (e) => {
+    const v = e.target.value.replace(/\D/g, "").slice(0, 4);
+    setText(v);
+    if (v && Number(v) > 0) onChange(Number(v));
+  };
+  return (
+    <input type="text" inputMode="numeric" pattern="[0-9]*" aria-label={label} value={text}
+      onChange={change} onFocus={e => e.target.select()} onBlur={() => setText(String(value))}
+      onKeyDown={e => { if (e.key === "Enter" && onEnter) { e.preventDefault(); onEnter(); } }}
+      style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, textAlign: "center", background: "transparent", border: "none", borderRadius: 0, padding: 0, MozAppearance: "textfield", ...style }}/>
+  );
+}
+
 export function AddToCartBtn({ product }) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
@@ -55,7 +73,7 @@ export function AddToCartBtn({ product }) {
     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
       <div style={{ display: "flex", alignItems: "center", border: `1px solid ${C.border}`, background: C.bgCard }}>
         <button onClick={() => setQty(q => Math.max(1, q - 1))} aria-label={`${product.short || product.name}: Menge verringern`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
-        <span aria-live="polite" style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 28, textAlign: "center" }}>{qty}</span>
+        <QtyInput value={qty} onChange={setQty} onEnter={handleAdd} label={`${product.short || product.name}: Menge`} style={{ width: 44, height: 40 }}/>
         <button onClick={() => setQty(q => q + 1)} aria-label={`${product.short || product.name}: Menge erhöhen`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
       </div>
       <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s" }}>{added ? "✓ Hinzugefügt" : "In den Warenkorb"}</button>

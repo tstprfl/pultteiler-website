@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { C } from "@/lib/colors";
 import { loadEmailJS } from "@/lib/emailjs";
 import { useCart } from "@/components/CartProvider";
-import { useDialog } from "@/components/ui";
+import { useDialog, QtyInput } from "@/components/ui";
 import Img from "@/components/Img";
 
 export default function CartSidebar({ onClose }) {
@@ -118,7 +118,7 @@ export default function CartSidebar({ onClose }) {
                   <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted }}>€ {getPrice(item).toFixed(2)} / Stk.</div>
                   <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 10 }}>
                     <button onClick={() => updateQty(item.id, item.qty - 1)} aria-label={`${item.short}: Menge verringern`} style={{ width: 28, height: 28, background: C.bgCard, border: `1px solid ${C.border}`, color: C.text, cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
-                    <span aria-live="polite" style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, minWidth: 20, textAlign: "center" }}>{item.qty}</span>
+                    <QtyInput value={item.qty} onChange={n => updateQty(item.id, n)} label={`${item.short}: Menge`} style={{ width: 44, height: 28, border: `1px solid ${C.border}`, background: C.bgCard }}/>
                     <button onClick={() => updateQty(item.id, item.qty + 1)} aria-label={`${item.short}: Menge erhöhen`} style={{ width: 28, height: 28, background: C.bgCard, border: `1px solid ${C.border}`, color: C.text, cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
                     <button onClick={() => remove(item.id)} aria-label={`${item.short} entfernen`} style={{ background: "none", border: "none", cursor: "pointer", color: C.red, fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", marginLeft: "auto" }}>Entfernen</button>
                   </div>
