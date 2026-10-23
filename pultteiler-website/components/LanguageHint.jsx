@@ -5,8 +5,10 @@ import { usePathname } from "next/navigation";
 import { C } from "@/lib/colors";
 import { isEnPath, switchTarget } from "@/lib/i18n";
 
-// Dezenter Sprachhinweis unten links: Besucher mit nicht-deutscher Browsersprache sehen auf deutschen Seiten
+// Dezenter Sprachhinweis unten links: Besucher mit englischer Browsersprache sehen auf deutschen Seiten
 // einen Link zur englischen Fassung, Besucher mit deutscher Browsersprache auf englischen Seiten einen Link zur deutschen.
+// Andere Sprachen (z.B. Französisch, Italienisch) bekommen keinen Hinweis: dort bietet der Browser selbst die
+// Übersetzung in ihre Sprache an, ein zusätzlicher Hinweis auf Englisch würde nur doppeln.
 // Keine automatische Weiterleitung (Google rät davon ab). Wegklicken, der Link selbst oder ein Sprachwechsel
 // über den DE|EN-Schalter blenden den Hinweis dauerhaft aus.
 const KEY = "pt-lang-hint-off";
@@ -28,8 +30,8 @@ export default function LanguageHint() {
     lastLang.current = en;
     let off = false;
     try { off = localStorage.getItem(KEY) === "1"; } catch {}
-    const browserDe = (navigator.languages?.[0] || navigator.language || "").toLowerCase().startsWith("de");
-    setShow(!off && (en ? browserDe : !browserDe));
+    const browserLang = (navigator.languages?.[0] || navigator.language || "").toLowerCase();
+    setShow(!off && (en ? browserLang.startsWith("de") : browserLang.startsWith("en")));
   }, [en]);
 
   if (!show) return null;
