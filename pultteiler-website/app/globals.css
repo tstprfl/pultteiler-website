@@ -23,16 +23,39 @@ body { margin: 0; background: #E4F0F0; }
   .hero-right { margin-top: 0 !important; }
   .press-g > div { flex-basis: 100% !important; }
   .hero-circle { display: none !important; }
-  .hero-plates { flex-wrap: wrap !important; justify-content: center !important; }
-  .hero-plates > div { width: 130px !important; height: 85px !important; }
-  .hero-plates span { font-size: 9px !important; }
+  /* Drei Hinweiskärtchen nebeneinander in einer Zeile, Breite aus dem Platz statt fester 160 px */
+  .hero-plates, .shop-plates { flex-wrap: nowrap !important; justify-content: center !important; gap: 8px !important; padding: 6px 0 !important; }
+  .hero-plates > div, .shop-plates > div { width: calc((100% - 16px) / 3) !important; min-width: 0 !important; height: 96px !important; padding: 6px !important; }
+  .hero-plates span, .shop-plates span { font-size: 8.5px !important; }
   .region-btns { flex-direction: column !important; align-items: center !important; }
   .region-btns button { width: 100% !important; max-width: 320px !important; }
-  .shop-plates { flex-wrap: wrap !important; justify-content: center !important; }
-  .shop-plates > div { width: 130px !important; height: 85px !important; }
-  .shop-plates span { font-size: 9px !important; }
   section { padding-left: 16px !important; padding-right: 16px !important; }
   .hero-g { gap: 32px !important; }
   h1 { font-size: clamp(36px, 10vw, 56px) !important; }
   .gallery-grid { grid-template-columns: 1fr !important; min-width: 0 !important; }
+  /* Karten und Textboxen: schmalere Innenabstände, damit die Textspalte breiter wird */
+  .card-pad { padding: 28px 20px !important; }
+  .article-body { padding: 28px 20px 24px !important; }
+  /* Menü und Fußzeile */
+  .mob-menu { padding: 8px 16px 20px !important; }
+  .footer-legal { padding-right: 64px !important; }
+  .footer-legal > div { flex-wrap: wrap !important; gap: 12px 20px !important; }
+}
+
+/* Kopfzeile auf schmalen Telefonen: kleineres Logo und weniger Rand, damit Logo, DE|EN, Warenkorb und Menü in eine Zeile passen */
+@media (max-width: 480px) {
+  .nav-row { padding: 0 16px !important; }
+  .nav-logo { gap: 8px !important; }
+  .nav-logo img { width: 44px !important; height: 44px !important; }
+  .nav-word { font-size: 22px !important; }
+  .nav-cart { padding: 8px 8px !important; }
+}
+
+/* Sehr schmale Telefone (bis 360 px): Wortmarke und Sprachschalter noch etwas kompakter */
+@media (max-width: 360px) {
+  .nav-logo img { width: 40px !important; height: 40px !important; }
+  .nav-word { font-size: 20px !important; }
+  .nav-lang a { width: 32px !important; }
+  .nav-cart { padding: 8px 6px !important; }
+  .mob-btn { padding: 8px 4px !important; }
 }

@@ -46,9 +46,9 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
                 <Btn href={ui.quoteHref}>{ui.quoteCta}</Btn>
                 <Btn href={ui.shopHref} variant="secondary">{ui.shopCta}</Btn>
               </div>
-              <p style={{ ...f.small, marginTop: 24, fontWeight: 600, color: C.text }}>
-                {ui.trust.map((t) => `✓ ${t}`).join("  ·  ")}
-              </p>
+              <ul style={{ ...f.small, marginTop: 24, fontWeight: 600, color: C.text, listStyle: "none", padding: 0, display: "flex", flexWrap: "wrap", gap: "4px 18px" }}>
+                {ui.trust.map((t) => <li key={t} style={{ whiteSpace: "nowrap" }}>✓ {t}</li>)}
+              </ul>
             </div>
             <div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}>
               <Img src={img} alt={imgAlt} priority style={{ width: "100%", height: 380, objectFit: "cover", display: "block" }}/>

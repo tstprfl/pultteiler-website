@@ -71,13 +71,13 @@ export function AddToCartBtn({ product, label, en = false }) {
   const [qty, setQty] = useState(1);
   const handleAdd = () => { add(product, qty); setAdded(true); setTimeout(() => { setAdded(false); setQty(1); }, 1500); };
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
       <div style={{ display: "flex", alignItems: "center", border: `1px solid ${C.border}`, background: C.bgCard }}>
         <button onClick={() => setQty(q => Math.max(1, q - 1))} aria-label={`${label || product.short || product.name}: ${en ? "decrease quantity" : "Menge verringern"}`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
         <QtyInput value={qty} onChange={setQty} onEnter={handleAdd} label={`${label || product.short || product.name}: ${en ? "quantity" : "Menge"}`} style={{ width: 44, height: 40 }}/>
         <button onClick={() => setQty(q => q + 1)} aria-label={`${label || product.short || product.name}: ${en ? "increase quantity" : "Menge erhöhen"}`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
       </div>
-      <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s" }}>{added ? (en ? "✓ Added" : "✓ Hinzugefügt") : (en ? "Add to cart" : "In den Warenkorb")}</button>
+      <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s", whiteSpace: "nowrap" }}>{added ? (en ? "✓ Added" : "✓ Hinzugefügt") : (en ? "Add to cart" : "In den Warenkorb")}</button>
     </div>
   );
 }

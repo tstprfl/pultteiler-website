@@ -14,7 +14,7 @@ export default function TermsPage() {
           <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "14px 20px", marginBottom: 2 }}>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/agb" style={{ color: C.accentText }}>German version</a> of these terms and conditions is legally binding.</p>
           </div>
-          <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
+          <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>§ 1 Scope</h2>
             <p style={s}>These General Terms and Conditions apply to all orders placed via the online shop at pultteiler.eu with Schulmittel Blaschegg, Michael Blaschegg, Stücklbachstraße 13, 4813 Altmünster, Austria (hereinafter “Seller”). Deviating terms of the buyer are not recognised unless the Seller expressly agrees to their validity in writing.</p>
             <h2 style={h}>§ 2 Conclusion of contract</h2>

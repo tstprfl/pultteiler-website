@@ -100,7 +100,7 @@ export default function AngebotPage() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
+            <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
               {sent ? (
                 <div style={{ textAlign: "center", padding: "64px 0" }}>
                   <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 48, color: C.green }}>✓</div>

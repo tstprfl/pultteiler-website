@@ -37,7 +37,7 @@ export default function ContactPage() {
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
           <Heading as="h1" overline="Contact" title="We are here for you" align="center"/>
           <div style={{ maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 2 }}>
-            <Reveal><div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
+            <Reveal><div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
               {sent ? (
                 <div style={{ textAlign: "center", padding: "64px 0" }}><div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 48, color: C.green }}>✓</div><h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "12px 0 8px" }}>Message sent</h2><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted }}>We will get back to you shortly.</p></div>
               ) : (
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 </form></>
               )}
             </div></Reveal>
-            <Reveal delay={0.1}><div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
+            <Reveal delay={0.1}><div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
               <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 32px" }}>Contact details</h2>
               {[{ icon: "●", label: "Contact person", val: "Michael Blaschegg" }, { icon: "⌂", label: "Address", val: "Stücklbachstraße 13, 4813 Altmünster, Austria" }, { icon: "✉", label: "Email", val: "blaschegg@traunseenet.at", href: "mailto:blaschegg@traunseenet.at" }, { icon: "☎", label: "Phone", val: "+43 (0) 676 935 40 33\n+43 (0) 699 129 613 70", href: "tel:+436769354033" }, { icon: "◆", label: "VAT ID", val: "ATU37758404" }, { icon: "▣", label: "Business register", val: "R013F6512, BH Gmunden" }, { icon: "€", label: "Bank account Austria", val: "IBAN: AT88 3451 0000 0202 6441 · BIC: RZOOAT2L510" }, { icon: "€", label: "Bank account Germany", val: "IBAN: DE22 7105 0000 0000 1254 68 · BIC: BYLADEM1BGL" }].map((c, i) => (
                 <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start", marginBottom: 28 }}>

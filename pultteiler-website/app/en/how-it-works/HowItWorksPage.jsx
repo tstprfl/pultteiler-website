@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 2, marginTop: 2 }}>
             <Reveal delay={0.1}>
               <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, display: "grid", gridTemplateColumns: "1.2fr 1fr", overflow: "hidden", transition: "border-color 0.3s" }} className="prod-card" onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
-                <div style={{ padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div className="card-pad" style={{ padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 16px" }}>After the exam</h2>
                   <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.7, margin: 0 }}>Simply remove the dividers and put them back into the supplied wooden case: space-saving and ready for the next exam.</p>
                 </div>

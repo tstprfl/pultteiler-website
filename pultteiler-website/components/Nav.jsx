@@ -54,10 +54,10 @@ export default function Nav() {
   return (
     <>
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : "transparent", borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href={en ? EN_START : "/"} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
+        <div className="nav-row" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <Link href={en ? EN_START : "/"} className="nav-logo" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
             <Img sizes="56px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
-            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
+            <span className="nav-word" style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </Link>
           {/* Menüpunkte links bündig nach dem Logo, damit „Start“ und „Home“ beim Sprachwechsel an derselben Stelle beginnen;
               Angebot, Sprachschalter und Warenkorb bleiben rechts. Der Abstand zum Logo hängt nur von der Fensterbreite ab
@@ -83,7 +83,7 @@ export default function Nav() {
               <span aria-hidden="true" style={{ flex: 1, minWidth: 6 }}/>
               <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "10px 18px", fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
             </div>
-            <div role="group" aria-label={en ? "Language" : "Sprache"} style={{ display: "flex", border: `1px solid ${C.border}`, marginLeft: 8, flexShrink: 0 }}>
+            <div role="group" className="nav-lang" aria-label={en ? "Language" : "Sprache"} style={{ display: "flex", border: `1px solid ${C.border}`, marginLeft: 8, flexShrink: 0 }}>
               {langs.map(l => (
                 <Link key={l.code} href={l.href} scroll={false} hrefLang={l.code} lang={l.code} title={l.title} aria-current={l.active ? "true" : undefined}
                   onClick={l.active ? (e) => e.preventDefault() : rememberScroll}
@@ -92,7 +92,7 @@ export default function Nav() {
                 </Link>
               ))}
             </div>
-            <button onClick={() => setCartOpen(true)} aria-label={en ? "Open cart" : "Warenkorb öffnen"} style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
+            <button onClick={() => setCartOpen(true)} className="nav-cart" aria-label={en ? "Open cart" : "Warenkorb öffnen"} style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               {count > 0 && <span style={{ position: "absolute", top: 2, right: 4, background: C.accentText, color: C.white, width: 18, height: 18, borderRadius: "50%", fontSize: 10, fontWeight: 700, fontFamily: "'Inter Tight', sans-serif", display: "flex", alignItems: "center", justifyContent: "center" }}>{count}</span>}
             </button>
@@ -102,7 +102,7 @@ export default function Nav() {
           </div>
         </div>
         {open && (
-          <div style={{ background: C.bg, borderBottom: `1px solid ${C.border}`, padding: "8px 32px 20px", maxHeight: "calc(100vh - 72px)", overflow: "auto" }}>
+          <div className="mob-menu" style={{ background: C.bg, borderBottom: `1px solid `, padding: "8px 32px 20px", maxHeight: "calc(100vh - 72px)", overflow: "auto" }}>
             {items.map(n => n.children ? (
               <div key={n.id}>
                 <div style={{ padding: "14px 16px 6px", fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted }}>{n.label}</div>

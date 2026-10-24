@@ -29,7 +29,7 @@ export default function VersandPage() {
               ))}
             </div>
           </Reveal>
-          <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px", marginTop: 2 }}>
+          <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px", marginTop: 2 }}>
             <h2 style={{ ...h, marginTop: 0 }}>1. Versandbedingungen</h2>
             <p style={s}>Wir versenden alle Bestellungen direkt ab Werk in Altmünster am Traunsee. Der Versand erfolgt mit einem zuverlässigen Paketdienstleister. Nach Eingang und Bearbeitung Ihrer Bestellung erhalten Sie eine Bestätigungs-E-Mail.</p>
             <h2 style={h}>2. Lieferzeiten</h2>

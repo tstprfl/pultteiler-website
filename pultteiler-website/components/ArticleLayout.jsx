@@ -81,7 +81,7 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
           </div>
 
           {/* CTA-Box */}
-          <aside style={{ background: C.dark, padding: "36px 40px", marginTop: 2 }}>
+          <aside className="card-pad" style={{ background: C.dark, padding: "36px 40px", marginTop: 2 }}>
             <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.white, margin: "0 0 8px", letterSpacing: "0.03em" }}>{t.ctaTitle}</h2>
             <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, margin: "0 0 24px" }}>
               {t.ctaText(YEARS)}

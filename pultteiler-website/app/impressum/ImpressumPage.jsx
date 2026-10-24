@@ -11,7 +11,7 @@ export default function ImpressumPage() {
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Heading as="h1" overline="Rechtliches" title="Impressum"/>
-          <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
+          <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>Angaben gem. § 5 ECG</h2>
             <p style={s}><strong>Schulmittel Blaschegg</strong><br/>Michael Blaschegg<br/>Herstellung von sonstigen Kunststoffwaren a.n.g.</p>
             <h2 style={h}>Firmensitz</h2>

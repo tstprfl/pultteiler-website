@@ -32,7 +32,7 @@ export default function ShippingPage() {
               ))}
             </div>
           </Reveal>
-          <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px", marginTop: 2 }}>
+          <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px", marginTop: 2 }}>
             <h2 style={{ ...h, marginTop: 0 }}>1. Shipping terms</h2>
             <p style={s}>We ship all orders directly from our factory in Altmünster on Lake Traunsee, Austria. Shipping is handled by a reliable parcel service. After your order has been received and processed, you will receive a confirmation email.</p>
             <h2 style={h}>2. Delivery times</h2>

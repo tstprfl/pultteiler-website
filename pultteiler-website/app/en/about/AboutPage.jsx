@@ -16,7 +16,7 @@ export default function AboutPage() {
             { title: "Popular with schools", texts: ["Many schools in Austria and Germany are enthusiastic about this aid. The Pultteiler is used in primary schools, secondary schools, grammar schools and universities alike, wherever written exams are part of everyday school life.", "It is made in Altmünster on Lake Traunsee, Austria, and delivered from there to schools across Europe."] },
           ].map((section, si) => (
             <Reveal key={si} delay={(si + 1) * 0.05}>
-              <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px", marginBottom: 2 }}>
+              <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px", marginBottom: 2 }}>
                 <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 24px" }}>{section.title}</h2>
                 {section.texts.map((t, ti) => <p key={ti} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.75, margin: ti === section.texts.length - 1 ? 0 : "0 0 20px" }}>{t}</p>)}
               </div>
