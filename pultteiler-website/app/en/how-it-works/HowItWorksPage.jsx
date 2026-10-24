@@ -28,8 +28,8 @@ export default function HowItWorksPage() {
             <Reveal delay={0.1}>
               <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, display: "grid", gridTemplateColumns: "1.2fr 1fr", overflow: "hidden", transition: "border-color 0.3s" }} className="prod-card" onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                 <div className="card-pad" style={{ padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 16px" }}>After the exam</h2>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.7, margin: 0 }}>Simply remove the dividers and put them back into the supplied wooden case: space-saving and ready for the next exam.</p>
+                  <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 16px" }}>After the exam</h2>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.7, margin: 0 }}>Simply remove the dividers and put them back into the supplied wooden case: space-saving and ready for the next exam.</p>
                 </div>
                 <div style={{ background: C.bgElevated, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, minHeight: 240 }}>
                   <Img sizes="(max-width: 768px) 100vw, 480px" src="/images/set-gelb.jpg" alt="Wooden case with Pultteiler dividers" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 240, display: "block" }}/>
@@ -44,14 +44,14 @@ export default function HowItWorksPage() {
                   <div style={{ width: 32, height: 32, background: `${C.green}15`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke={C.green} strokeWidth="2" strokeLinecap="square"/></svg>
                   </div>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 }}>{t}</p>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 }}>{t}</p>
                 </div>
               ))}
             </div>
           </Reveal>
           <Reveal delay={0.2}>
             <div style={{ marginTop: 56, textAlign: "center" }}>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, marginBottom: 24 }}>Convinced? Get the Pultteiler direct from the manufacturer.</p>
+              <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, marginBottom: 24 }}>Convinced? Get the Pultteiler direct from the manufacturer.</p>
               <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/contact" variant="secondary">Contact us</Btn></div>
             </div>
           </Reveal>

@@ -13,8 +13,8 @@ export default function QuotePage() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
-  const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s" };
-  const label = { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 };
+  const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s" };
+  const label = { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 };
   const field = { marginBottom: 18 };
   const focus = { onFocus: (e) => (e.target.style.borderColor = C.accent), onBlur: (e) => (e.target.style.borderColor = C.border) };
 
@@ -78,9 +78,9 @@ export default function QuotePage() {
             <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
               {sent ? (
                 <div style={{ textAlign: "center", padding: "64px 0" }}>
-                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 48, color: C.green }}>✓</div>
-                  <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "12px 0 8px" }}>Request received</h3>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6 }}>
+                  <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 48, color: C.green }}>✓</div>
+                  <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "12px 0 8px" }}>Request received</h3>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6 }}>
                     Thank you! We will get back to you soon with your quote.
                     <br/>For questions you can reach us at {CONTACT.email}.
                   </p>
@@ -147,12 +147,12 @@ export default function QuotePage() {
                     <textarea id="q-msg" rows={4} name="Nachricht" placeholder="Preferred date, questions, special requirements … (optional)" style={{ ...inp, resize: "vertical" }} {...focus}/>
                   </div>
                   <Btn onClick={() => {}} full>{sending ? "Sending ..." : "Request a quote →"}</Btn>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
                     Non-binding and free of charge. We use your data only to prepare your quote, see our <a href="/en/privacy" style={{ color: C.accentText }}>privacy policy</a>.
                   </p>
                   {error && (
                     <div style={{ background: "#FEF2F2", border: `1px solid ${C.red}`, padding: "12px 16px", marginTop: 12 }}>
-                      <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.red, lineHeight: 1.5 }}>{error}</div>
+                      <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.red, lineHeight: 1.5 }}>{error}</div>
                     </div>
                   )}
                 </form>
@@ -162,8 +162,8 @@ export default function QuotePage() {
 
           <Reveal delay={0.1}>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 36px", marginTop: 2 }}>
-              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 4 }}>Prefer to write directly?</div>
-              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person}: <a href={`mailto:${CONTACT.email}`} style={{ color: C.accentText, textDecoration: "none" }}>{CONTACT.email}</a></div>
+              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 4 }}>Prefer to write directly?</div>
+              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person}: <a href={`mailto:${CONTACT.email}`} style={{ color: C.accentText, textDecoration: "none" }}>{CONTACT.email}</a></div>
             </div>
           </Reveal>
         </div>

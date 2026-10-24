@@ -2,9 +2,9 @@
 import { C } from "@/lib/colors";
 import { Reveal, Heading, Btn } from "@/components/ui";
 
-const s = { fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 20px" };
-const h = { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: "#1A2A2A", margin: "40px 0 16px" };
-const bullet = (text) => <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 8px", paddingLeft: 16 }}>— {text}</p>;
+const s = { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 20px" };
+const h = { fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 24, color: "#1A2A2A", margin: "40px 0 16px" };
+const bullet = (text) => <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 8px", paddingLeft: 16 }}>— {text}</p>;
 
 export default function VersandPage() {
   return (
@@ -22,9 +22,9 @@ export default function VersandPage() {
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <div style={{ fontSize: 32, marginBottom: 8 }}>{m.icon}</div>
-                  <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 8 }}>{m.label}</div>
-                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 18, color: C.accentText, marginBottom: 4 }}>{m.val}</div>
-                  <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted }}>{m.sub}</div>
+                  <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 8 }}>{m.label}</div>
+                  <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 18, color: C.accentText, marginBottom: 4 }}>{m.val}</div>
+                  <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted }}>{m.sub}</div>
                 </div>
               ))}
             </div>

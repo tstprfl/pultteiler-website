@@ -2,8 +2,8 @@
 import { C } from "@/lib/colors";
 import { Heading } from "@/components/ui";
 
-const s = { fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 20px" };
-const h = { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: "#1A2A2A", margin: "40px 0 16px" };
+const s = { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 20px" };
+const h = { fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 24, color: "#1A2A2A", margin: "40px 0 16px" };
 
 export default function TermsPage() {
   return (
@@ -12,7 +12,7 @@ export default function TermsPage() {
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Heading as="h1" overline="Legal" title="General terms and conditions"/>
           <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "14px 20px", marginBottom: 2 }}>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/agb" style={{ color: C.accentText }}>German version</a> of these terms and conditions is legally binding.</p>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/agb" style={{ color: C.accentText }}>German version</a> of these terms and conditions is legally binding.</p>
           </div>
           <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>§ 1 Scope</h2>

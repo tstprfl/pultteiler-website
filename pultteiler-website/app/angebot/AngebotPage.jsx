@@ -21,8 +21,8 @@ export default function AngebotPage() {
   const [error, setError] = useState("");
   const [land, setLand] = useState("Österreich");
 
-  const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s" };
-  const label = { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 };
+  const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s" };
+  const label = { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 };
   const field = { marginBottom: 18 };
   const focus = { onFocus: (e) => (e.target.style.borderColor = C.accent), onBlur: (e) => (e.target.style.borderColor = C.border) };
 
@@ -93,7 +93,7 @@ export default function AngebotPage() {
           {/* Kauf-auf-Rechnung-Hinweis — immer sichtbar */}
           <Reveal>
             <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "18px 24px", marginBottom: 2, textAlign: "center" }}>
-              <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", color: C.text }}>
+              <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", color: C.text }}>
                 ✓ KAUF AUF RECHNUNG, SO BESTELLEN SCHULEN: erst die Lieferung, dann die Rechnung.
               </span>
             </div>
@@ -103,9 +103,9 @@ export default function AngebotPage() {
             <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
               {sent ? (
                 <div style={{ textAlign: "center", padding: "64px 0" }}>
-                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 48, color: C.green }}>✓</div>
-                  <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "12px 0 8px" }}>Anfrage eingegangen</h3>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6 }}>
+                  <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 48, color: C.green }}>✓</div>
+                  <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "12px 0 8px" }}>Anfrage eingegangen</h3>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6 }}>
                     Vielen Dank! Wir melden uns kurzfristig mit Ihrem Angebot.
                     {CONFIRM_ENABLED ? <><br/>Eine Eingangsbestätigung ist an Ihre E-Mail-Adresse unterwegs.</> : null}
                     <br/>Bei Rückfragen erreichen Sie uns unter {CONTACT.phone1}.
@@ -145,7 +145,7 @@ export default function AngebotPage() {
 
                   {/* Länderspezifischer Hinweis */}
                   <div style={{ background: C.bgElevated, border: `1px solid ${C.border}`, padding: "12px 16px", marginBottom: 18 }}>
-                    <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: 0 }}>{LAND_HINWEIS[land]}</p>
+                    <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: 0 }}>{LAND_HINWEIS[land]}</p>
                   </div>
 
                   {land === "Österreich" && (
@@ -191,12 +191,12 @@ export default function AngebotPage() {
                     <textarea id="ang-msg" rows={4} name="Nachricht" placeholder="Wunschtermin, Fragen, besondere Anforderungen … (optional)" style={{ ...inp, resize: "vertical" }} {...focus}/>
                   </div>
                   <Btn onClick={() => {}} full>{sending ? "Wird gesendet ..." : "Angebot anfordern →"}</Btn>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 14, lineHeight: 1.6 }}>
                     Unverbindlich & kostenlos. Ihre Daten verwenden wir ausschließlich zur Angebotserstellung, siehe <a href="/datenschutz" style={{ color: C.accentText }}>Datenschutzerklärung</a>.
                   </p>
                   {error && (
                     <div style={{ background: "#FEF2F2", border: `1px solid ${C.red}`, padding: "12px 16px", marginTop: 12 }}>
-                      <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.red, lineHeight: 1.5 }}>{error}</div>
+                      <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.red, lineHeight: 1.5 }}>{error}</div>
                     </div>
                   )}
                 </form>
@@ -207,8 +207,8 @@ export default function AngebotPage() {
           <Reveal delay={0.1}>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 36px", marginTop: 2, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
               <div>
-                <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 4 }}>Lieber direkt sprechen?</div>
-                <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person} · <a href="tel:+436769354033" style={{ color: C.accentText, textDecoration: "none" }}>{CONTACT.phone1}</a></div>
+                <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 4 }}>Lieber direkt sprechen?</div>
+                <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: C.text }}>{CONTACT.person} · <a href="tel:+436769354033" style={{ color: C.accentText, textDecoration: "none" }}>{CONTACT.phone1}</a></div>
               </div>
               <Btn href="/kontakt" variant="secondary">Zum Kontakt</Btn>
             </div>

@@ -41,8 +41,8 @@ export default function LanguageHint() {
 
   return (
     <aside lang={text.lang} aria-label={text.msg} style={{ position: "fixed", left: 16, right: 76, bottom: 24, zIndex: 90, maxWidth: 380, background: C.bgCard, border: `1px solid ${C.border}`, borderLeft: `4px solid ${C.accent}`, boxShadow: "0 4px 20px rgba(0,0,0,0.12)", padding: "14px 44px 14px 18px" }}>
-      <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5, margin: "0 0 6px" }}>{text.msg}</p>
-      <Link href={switchTarget(pathname)} hrefLang={text.lang} onClick={dismiss} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 700, color: C.accentText, textDecoration: "none" }}>{text.link}</Link>
+      <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5, margin: "0 0 6px" }}>{text.msg}</p>
+      <Link href={switchTarget(pathname)} hrefLang={text.lang} onClick={dismiss} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, color: C.accentText, textDecoration: "none" }}>{text.link}</Link>
       <button onClick={dismiss} aria-label={text.close} style={{ position: "absolute", top: 8, right: 8, width: 32, height: 32, background: "none", border: "none", cursor: "pointer", color: C.textMuted, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center" }}>✕</button>
     </aside>
   );

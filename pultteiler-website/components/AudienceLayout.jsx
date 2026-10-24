@@ -7,12 +7,12 @@ import { Btn } from "@/components/ui";
 import Img from "@/components/Img";
 
 const f = {
-  overline: { fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" },
-  h1: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(40px, 6vw, 76px)", color: C.text, lineHeight: 0.98, margin: "24px 0 24px", letterSpacing: "0.02em" },
-  h2: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(30px, 4.5vw, 48px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 },
-  h3: { fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em", color: C.text, margin: "0 0 10px" },
-  body: { fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "0 0 18px" },
-  small: { fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 },
+  overline: { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" },
+  h1: { fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(40px, 6vw, 76px)", color: C.text, lineHeight: 0.98, margin: "24px 0 24px", letterSpacing: "0.02em" },
+  h2: { fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(30px, 4.5vw, 48px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 },
+  h3: { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: "0.06em", color: C.text, margin: "0 0 10px" },
+  body: { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "0 0 18px" },
+  small: { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 },
 };
 
 // Beschriftungen und Links — Standard deutsch; die englische Seite übergibt eigene Werte über `ui`.
@@ -105,7 +105,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
           <h2 style={{ ...f.h2, marginBottom: 32 }}>{ui.faqTitle}</h2>
           {faq.map((item, i) => (
             <details key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, marginBottom: 2, padding: "0 26px" }}>
-              <summary style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, padding: "20px 0", cursor: "pointer", listStylePosition: "inside" }}>{item.q}</summary>
+              <summary style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, padding: "20px 0", cursor: "pointer", listStylePosition: "inside" }}>{item.q}</summary>
               <p style={{ ...f.body, fontSize: 15, paddingBottom: 20 }}>{item.a}</p>
             </details>
           ))}

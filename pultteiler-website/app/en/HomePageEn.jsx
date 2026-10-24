@@ -19,23 +19,23 @@ export default function HomeEn() {
         <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 1, width: "100%" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "start" }} className="hero-g">
             <div>
-              <Reveal><p style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(22px, 2.2vw, 30px)", letterSpacing: "0.03em", color: C.text, margin: 0, lineHeight: 1.1 }}>The original since 1986<span style={{ color: C.textMuted, fontWeight: 500 }}> · direct from the manufacturer</span></p></Reveal>
-              <Reveal delay={0.1}><h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>for <span style={{ color: "#F0C645" }}>School desks.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>The privacy screen for fair exams.</span></h1></Reveal>
-              <Reveal delay={0.2}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>The proven desk divider for class tests and exams: it prevents copying, creates a low-distraction workspace and is set up in moments thanks to its plug-in system. Several hundred schools in Austria, Germany and Switzerland rely on it. Fits all common school desks up to 3 cm thick.</p></Reveal>
+              <Reveal><p style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(22px, 2.2vw, 30px)", letterSpacing: "0.03em", color: C.text, margin: 0, lineHeight: 1.1 }}>The original since 1986<span style={{ color: C.textMuted, fontWeight: 500 }}> · direct from the manufacturer</span></p></Reveal>
+              <Reveal delay={0.1}><h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>for <span style={{ color: "#F0C645" }}>School desks.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>The privacy screen for fair exams.</span></h1></Reveal>
+              <Reveal delay={0.2}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>The proven desk divider for class tests and exams: it prevents copying, creates a low-distraction workspace and is set up in moments thanks to its plug-in system. Several hundred schools in Austria, Germany and Switzerland rely on it. Fits all common school desks up to 3 cm thick.</p></Reveal>
               <Reveal delay={0.3}><div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/products" variant="secondary">View products</Btn><Btn href="/en/how-it-works" variant="secondary">How it works</Btn></div></Reveal>
-              <Reveal delay={0.35}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 24, lineHeight: 1.5 }}>✓ Delivery to other countries on request</p></Reveal>
-              <Reveal delay={0.4}><p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.5 }}>↓ <a href="#medien" onClick={(e) => { e.preventDefault(); document.getElementById("medien")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ color: C.text, textDecoration: "underline", textUnderlineOffset: 4 }}>{PRESSE_T.en.hero}</a></p></Reveal>
+              <Reveal delay={0.35}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 24, lineHeight: 1.5 }}>✓ Delivery to other countries on request</p></Reveal>
+              <Reveal delay={0.4}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.5 }}>↓ <a href="#medien" onClick={(e) => { e.preventDefault(); document.getElementById("medien")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ color: C.text, textDecoration: "underline", textUnderlineOffset: 4 }}>{PRESSE_T.en.hero}</a></p></Reveal>
             </div>
             <div className="hero-right" style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 48 }}>
               <Reveal delay={0.1}><div className="hero-plates" style={{ display: "flex", gap: 12, justifyContent: "center" }}>
                 <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 10, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(-3deg)", border: "2px solid #D4AD2E" }}>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇦🇹<br/>E-invoices<br/>for federal<br/>schools<br/>with your EKG</span>
+                  <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇦🇹<br/>E-invoices<br/>for federal<br/>schools<br/>with your EKG</span>
                 </div>
                 <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 10, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(2deg)", border: "2px solid #D4AD2E" }}>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 8, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇩🇪<br/>tax-free<br/>With German<br/>VAT ID<br/>German bank<br/>account</span>
+                  <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 8, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇩🇪<br/>tax-free<br/>With German<br/>VAT ID<br/>German bank<br/>account</span>
                 </div>
                 <div style={{ width: 160, height: 100, background: "#F0C645", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", padding: 10, cursor: "default", boxShadow: "4px 6px 16px rgba(0,0,0,0.15)", transform: "rotate(-1deg)", border: "2px solid #D4AD2E" }}>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇨🇭<br/>Tax-free,<br/>duty-free<br/>delivery to<br/>Switzerland</span>
+                  <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 9, fontWeight: 700, color: C.dark, lineHeight: 1.4, letterSpacing: "0.04em" }}>🇨🇭<br/>Tax-free,<br/>duty-free<br/>delivery to<br/>Switzerland</span>
                 </div>
               </div></Reveal>
               <Reveal delay={0.15}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler in exam use at the Medical University of Innsbruck" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
@@ -56,8 +56,8 @@ export default function HomeEn() {
             { val: "✓", label: "Purchase on invoice (AT, DE, CH)" },
           ].map((m, i) => (
             <Reveal key={i} delay={i * 0.08}><div style={{ textAlign: "center", padding: "8px 0" }}>
-              <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 52, color: "#F0C645", lineHeight: 1 }}>{m.val}</div>
-              <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", color: "rgba(255,255,255,0.7)", marginTop: 10 }}>{m.label}</div>
+              <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 52, color: "#F0C645", lineHeight: 1 }}>{m.val}</div>
+              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", color: "rgba(255,255,255,0.7)", marginTop: 10 }}>{m.label}</div>
             </div></Reveal>
           ))}
         </div>
@@ -78,9 +78,9 @@ export default function HomeEn() {
                     <Img sizes="(max-width: 768px) 100vw, 33vw" src={a.img} alt={a.imgAlt} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                   </div>
                   <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
-                    <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", letterSpacing: "0.02em", lineHeight: 1.05 }}>{a.title.toUpperCase()}</h3>
-                    <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
-                    <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Learn more →</span>
+                    <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", letterSpacing: "0.02em", lineHeight: 1.05 }}>{a.title.toUpperCase()}</h3>
+                    <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
+                    <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Learn more →</span>
                   </div>
                 </Link>
               </Reveal>
@@ -103,8 +103,8 @@ export default function HomeEn() {
               { title: "Delivery across Europe", text: "Delivered across Europe direct from the manufacturer. Tax-free to Germany with a VAT ID, tax-free and duty-free to Switzerland, other countries on request." },
             ].map((u, i) => (
               <Reveal key={i} delay={i * 0.06}><div style={{ background: C.bg, border: `1px solid ${C.border}`, padding: "36px 32px", transition: "all 0.3s", cursor: "default", height: "100%" }} onMouseEnter={e => { e.currentTarget.style.borderColor = C.accent; }} onMouseLeave={e => { e.currentTarget.style.borderColor = C.border; }}>
-                <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.08em", color: C.text, margin: "0 0 10px" }}>{u.title}</h3>
-                <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 }}>{u.text}</p>
+                <h3 style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.08em", color: C.text, margin: "0 0 10px" }}>{u.title}</h3>
+                <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: 0 }}>{u.text}</p>
               </div></Reveal>
             ))}
           </div>
@@ -117,10 +117,10 @@ export default function HomeEn() {
           <div className="hero-g" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 56, alignItems: "center" }}>
             <div>
               <Heading overline="The original" title="Direct from the manufacturer"/>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "-24px 0 18px" }}>
+              <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "-24px 0 18px" }}>
                 The Pultteiler is also available from school suppliers, but it is made in only one place: at our premises in Altmünster on Lake Traunsee, Austria. On pultteiler.eu you buy the original straight from the source.
               </p>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "0 0 24px" }}>
+              <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.75, margin: "0 0 24px" }}>
                 In our home region of Upper Austria, the Pultteiler has been standard equipment in schools for decades, and from here we supply several hundred schools in Austria, Germany and Switzerland.
               </p>
               <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
@@ -129,7 +129,7 @@ export default function HomeEn() {
                   "All spare parts from the factory, even after many years",
                   "Special requests possible, e.g. cases with more than 12 dividers",
                 ].map((l, i) => (
-                  <li key={i} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.text, lineHeight: 1.6, padding: "6px 0" }}>✓ {l}</li>
+                  <li key={i} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: C.text, lineHeight: 1.6, padding: "6px 0" }}>✓ {l}</li>
                 ))}
               </ul>
               <div style={{ marginTop: 28 }}><Btn href="/en/gallery" variant="secondary">See references and photos →</Btn></div>
@@ -152,9 +152,9 @@ export default function HomeEn() {
               <Reveal key={c.code} delay={i * 0.08}>
                 <div style={{ background: C.bg, border: `1px solid ${C.border}`, padding: "32px 30px", height: "100%" }}>
                   <div style={{ fontSize: 32, marginBottom: 10 }}>{c.flag}</div>
-                  <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 14px", letterSpacing: "0.03em" }}>{c.name.toUpperCase()}</h3>
+                  <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 14px", letterSpacing: "0.03em" }}>{c.name.toUpperCase()}</h3>
                   <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
-                    {c.lines.map((l, j) => <li key={j} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, padding: "5px 0" }}>— {l}</li>)}
+                    {c.lines.map((l, j) => <li key={j} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, padding: "5px 0" }}>— {l}</li>)}
                   </ul>
                 </div>
               </Reveal>
@@ -171,9 +171,9 @@ export default function HomeEn() {
             {ARTICLES.map((a, i) => (
               <Reveal key={a.slug} delay={i * 0.07}>
                 <Link href={`/en/guide/${a.slug}`} className="hover-lift" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 28px 30px", textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
-                  <h3 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, fontWeight: 700, color: C.text, lineHeight: 1.45, margin: "0 0 12px" }}>{a.title}</h3>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: "0 0 16px", flex: 1 }}>{a.teaser}</p>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Read →</span>
+                  <h3 style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 700, color: C.text, lineHeight: 1.45, margin: "0 0 12px" }}>{a.title}</h3>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: "0 0 16px", flex: 1 }}>{a.teaser}</p>
+                  <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Read →</span>
                 </Link>
               </Reveal>
             ))}

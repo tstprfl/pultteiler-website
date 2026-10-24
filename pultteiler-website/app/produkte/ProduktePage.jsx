@@ -102,7 +102,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
     const style = {
       padding: "12px 24px", background: active ? C.accentText : C.bgCard, color: active ? C.white : C.textMuted,
       border: `1px solid ${active ? C.accentText : C.border}`, cursor: "pointer", transition: "all 0.2s",
-      fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none",
+      fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none",
     };
     // Wechsel zwischen Schweiz und Österreich/Deutschland führt auf die andere Shop-Seite
     if (ch !== (r === "CH")) {
@@ -117,35 +117,35 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
           <div style={{ marginBottom: 40 }}>
             <div style={{ marginBottom: 16 }}><Badge>{t.badge}</Badge></div>
-            <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>{t.h1}</h1>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.6, maxWidth: 620, margin: 0 }}>
+            <h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1 }}>{t.h1}</h1>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.6, maxWidth: 620, margin: 0 }}>
               {t.intro}
             </p>
           </div>
 
           {/* Region-Umschalter — Produkte bleiben immer sichtbar */}
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 32 }}>
-            <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>{t.land}</span>
+            <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>{t.land}</span>
             <div style={{ display: "flex", gap: 2 }}>
               {toggleBtn("AT", t.countries.AT)}
               {toggleBtn("DE", t.countries.DE)}
               {toggleBtn("CH", t.countries.CH)}
             </div>
-            <Link href={t.quote} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, textDecoration: "none" }}>{t.other}</Link>
+            <Link href={t.quote} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, textDecoration: "none" }}>{t.other}</Link>
           </div>
 
           {/* Preise und Versand: Konditionen je Lieferland */}
           <Reveal>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderLeft: `4px solid ${C.accent}`, padding: "24px 28px", marginBottom: 40 }}>
-              <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, marginBottom: 16 }}>
+              <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, marginBottom: 16 }}>
                 {t.box[shown]}
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px 24px" }}>
                 {konditionen(en)[shown].map((k) => (
                   <div key={k.label}>
-                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 600, color: C.textMuted, marginBottom: 4 }}>{k.label}</div>
-                    <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.accentText, lineHeight: 1.1, marginBottom: 4 }}>{k.val}</div>
-                    <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>{k.sub}</div>
+                    <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 600, color: C.textMuted, marginBottom: 4 }}>{k.label}</div>
+                    <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.accentText, lineHeight: 1.1, marginBottom: 4 }}>{k.val}</div>
+                    <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>{k.sub}</div>
                   </div>
                 ))}
               </div>
@@ -153,7 +153,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
           </Reveal>
 
           {/* Sets */}
-          <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 24px", letterSpacing: "0.03em" }}>{t.sets}</h2>
+          <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 24px", letterSpacing: "0.03em" }}>{t.sets}</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 2, marginBottom: 56 }}>
             {SETS.map((p) => [p, localizeProduct(p, en)]).map(([p, v], i) => (
               <Reveal key={p.id} delay={i * 0.1}>
@@ -161,10 +161,10 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
                   <div style={{ borderRight: `1px solid ${C.border}`, overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", padding: 16, background: C.bgElevated }}><Img sizes="400px" src={p.img} alt={v.name} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "contain", maxHeight: 320, display: "block" }}/></div>
                   <div style={{ padding: "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <Badge>{t.original}</Badge>
-                    <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{v.name}</h3>
-                    <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 20px" }}>{v.desc}</p>
+                    <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{v.name}</h3>
+                    <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 20px" }}>{v.desc}</p>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-                      <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 36, color: C.text }}>€ {price(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVat}</span></div>
+                      <div><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 36, color: C.text }}>€ {price(p).toFixed(2)}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVat}</span></div>
                       <AddToCartBtn product={p} label={v.short} en={en}/>
                     </div>
                   </div>
@@ -175,8 +175,8 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
 
           {/* Ersatzteile (AT und DE brutto, Schweiz steuerfrei) */}
           <>
-            <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>{t.parts}</h2>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>{t.partsInfo(eur(SHIPPING[shown], en), shown === "CH")}<Link href={t.shipHref} style={{ color: C.accentText }}>{t.shipDetails}</Link></p>
+            <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(28px, 4vw, 40px)", color: C.text, margin: "0 0 8px", letterSpacing: "0.03em" }}>{t.parts}</h2>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 24px" }}>{t.partsInfo(eur(SHIPPING[shown], en), shown === "CH")}<Link href={t.shipHref} style={{ color: C.accentText }}>{t.shipDetails}</Link></p>
             <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
               {PARTS.map((p) => [p, localizeProduct(p, en)]).map(([p, v], i) => (
                 <Reveal key={p.id} delay={i * 0.08}>
@@ -184,10 +184,10 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
                     {p.img && <div style={{ background: C.bgElevated, borderBottom: `1px solid ${C.border}`, padding: 16, display: "flex", alignItems: "center", justifyContent: "center", height: 240, overflow: "hidden" }}><Img sizes="400px" src={p.img} alt={v.name} loading="lazy" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", display: "block" }}/></div>}
                     <div style={{ padding: "20px 24px 28px" }}>
                       <Badge>{v.tag}</Badge>
-                      <h3 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{v.name}</h3>
-                      <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{v.desc}</p>
+                      <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{v.name}</h3>
+                      <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{v.desc}</p>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-                        <div><span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>€ {price(p).toFixed(2)}</span><span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVatShort}</span></div>
+                        <div><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>€ {price(p).toFixed(2)}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVatShort}</span></div>
                         <AddToCartBtn product={p} label={v.short} en={en}/>
                       </div>
                     </div>

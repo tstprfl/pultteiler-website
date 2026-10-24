@@ -22,22 +22,22 @@ export function ScrollToTop() {
 }
 
 export function Badge({ children, color = C.accentText }) {
-  return <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color, background: `${color}15`, padding: "5px 12px", display: "inline-block" }}>{children}</span>;
+  return <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color, background: `${color}15`, padding: "5px 12px", display: "inline-block" }}>{children}</span>;
 }
 
 export function Heading({ overline, title, sub, align = "left", as: Tag = "h2" }) {
   return (
     <div style={{ textAlign: align, marginBottom: 56 }}>
       {overline && <div style={{ marginBottom: 16 }}><Badge>{overline}</Badge></div>}
-      <Tag style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(32px, 5vw, 56px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1, whiteSpace: "pre-line" }}>{title}</Tag>
-      {sub && <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, maxWidth: align === "center" ? 560 : "none", margin: align === "center" ? "0 auto" : 0, lineHeight: 1.6 }}>{sub}</p>}
+      <Tag style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(32px, 5vw, 56px)", color: C.text, margin: "0 0 16px", letterSpacing: "0.03em", lineHeight: 1, whiteSpace: "pre-line" }}>{title}</Tag>
+      {sub && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, maxWidth: align === "center" ? 560 : "none", margin: align === "center" ? "0 auto" : 0, lineHeight: 1.6 }}>{sub}</p>}
     </div>
   );
 }
 
 export function Btn({ children, onClick, href, variant = "primary", full = false }) {
   const p = variant === "primary";
-  const style = { background: p ? C.dark : "transparent", color: p ? C.white : C.text, border: p ? "none" : `1.5px solid ${C.borderLight}`, padding: "14px 32px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.2s", width: full ? "100%" : "auto", textDecoration: "none", display: "inline-block", textAlign: "center" };
+  const style = { background: p ? C.dark : "transparent", color: p ? C.white : C.text, border: p ? "none" : `1.5px solid ${C.borderLight}`, padding: "14px 32px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.2s", width: full ? "100%" : "auto", textDecoration: "none", display: "inline-block", textAlign: "center" };
 
   const cls = p ? "btn-primary" : "btn-secondary";
   if (href) {
@@ -60,7 +60,7 @@ export function QtyInput({ value, onChange, label, onEnter, style }) {
     <input type="text" inputMode="numeric" pattern="[0-9]*" aria-label={label} value={text}
       onChange={change} onFocus={e => e.target.select()} onBlur={() => setText(String(value))}
       onKeyDown={e => { if (e.key === "Enter" && onEnter) { e.preventDefault(); onEnter(); } }}
-      style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, textAlign: "center", background: "transparent", border: "none", borderRadius: 0, padding: 0, MozAppearance: "textfield", ...style }}/>
+      style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, textAlign: "center", background: "transparent", border: "none", borderRadius: 0, padding: 0, MozAppearance: "textfield", ...style }}/>
   );
 }
 
@@ -77,7 +77,7 @@ export function AddToCartBtn({ product, label, en = false }) {
         <QtyInput value={qty} onChange={setQty} onEnter={handleAdd} label={`${label || product.short || product.name}: ${en ? "quantity" : "Menge"}`} style={{ width: 44, height: 40 }}/>
         <button onClick={() => setQty(q => q + 1)} aria-label={`${label || product.short || product.name}: ${en ? "increase quantity" : "Menge erhöhen"}`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
       </div>
-      <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s", whiteSpace: "nowrap" }}>{added ? (en ? "✓ Added" : "✓ Hinzugefügt") : (en ? "Add to cart" : "In den Warenkorb")}</button>
+      <button onClick={handleAdd} style={{ background: added ? C.green : C.dark, color: C.white, border: "none", padding: "12px 24px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.3s", whiteSpace: "nowrap" }}>{added ? (en ? "✓ Added" : "✓ Hinzugefügt") : (en ? "Add to cart" : "In den Warenkorb")}</button>
     </div>
   );
 }

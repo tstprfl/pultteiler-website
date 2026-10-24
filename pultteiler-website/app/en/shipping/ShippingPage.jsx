@@ -2,9 +2,9 @@
 import { C } from "@/lib/colors";
 import { Reveal, Heading, Btn } from "@/components/ui";
 
-const s = { fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 20px" };
-const h = { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: "#1A2A2A", margin: "40px 0 16px" };
-const bullet = (text) => <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 8px", paddingLeft: 16 }}>— {text}</p>;
+const s = { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 20px" };
+const h = { fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 24, color: "#1A2A2A", margin: "40px 0 16px" };
+const bullet = (text) => <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 8px", paddingLeft: 16 }}>— {text}</p>;
 
 export default function ShippingPage() {
   return (
@@ -13,7 +13,7 @@ export default function ShippingPage() {
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Heading as="h1" overline="Delivery and returns" title="Shipping and returns"/>
           <div style={{ background: `${C.accent}10`, border: `1px solid ${C.accent}40`, padding: "14px 20px", marginBottom: 2 }}>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/versand" style={{ color: C.accentText }}>German version</a> of the shipping and withdrawal terms is legally binding.</p>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.6, margin: 0 }}>Convenience translation. Only the <a href="/versand" style={{ color: C.accentText }}>German version</a> of the shipping and withdrawal terms is legally binding.</p>
           </div>
           <Reveal>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 2, marginBottom: 2 }}>
@@ -25,9 +25,9 @@ export default function ShippingPage() {
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <div style={{ fontSize: 32, marginBottom: 8 }}>{m.icon}</div>
-                  <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 8 }}>{m.label}</div>
-                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 18, color: C.accentText, marginBottom: 4 }}>{m.val}</div>
-                  <div style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted }}>{m.sub}</div>
+                  <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, marginBottom: 8 }}>{m.label}</div>
+                  <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 18, color: C.accentText, marginBottom: 4 }}>{m.val}</div>
+                  <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted }}>{m.sub}</div>
                 </div>
               ))}
             </div>

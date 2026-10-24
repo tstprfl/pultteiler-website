@@ -2,6 +2,13 @@
 body { margin: 0; background: #E4F0F0; }
 ::selection { background: #1A9E9E; color: #FFF; }
 
+/* Schriften: Archivo (Breitenachse) für Überschriften, Preise und Kennwerte, schmal und schwer gesetzt;
+   Source Sans 3 für Fließtext. Die Schriftfamilien stehen inline in den Komponenten, Breite und Gewicht gelten zentral hier. */
+[style*="Archivo Variable"] { font-stretch: 84%; letter-spacing: -0.01em !important; }
+[style*="Archivo Variable"][style*="font-weight:600"], [style*="Archivo Variable"][style*="font-weight: 600"] { font-weight: 760 !important; }
+[style*="Archivo Variable"][style*="font-weight:700"], [style*="Archivo Variable"][style*="font-weight: 700"] { font-weight: 820 !important; }
+[style*="Archivo Variable"][style*="font-weight:500"], [style*="Archivo Variable"][style*="font-weight: 500"] { font-weight: 650 !important; }
+
 /* Dezente Hover-Effekte — nur mit Maus und wenn keine reduzierte Bewegung gewünscht ist */
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26,42,42,0.22); }

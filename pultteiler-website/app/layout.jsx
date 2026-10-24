@@ -1,16 +1,11 @@
 // Schriften selbst gehostet (Fontsource), damit keine Verbindung zu Google-Servern entsteht
-import "@fontsource/barlow-condensed/500.css";
-import "@fontsource/barlow-condensed/600.css";
-import "@fontsource/barlow-condensed/700.css";
-import "@fontsource/inter-tight/300.css";
-import "@fontsource/inter-tight/400.css";
-import "@fontsource/inter-tight/500.css";
-import "@fontsource/inter-tight/600.css";
-import "@fontsource/inter-tight/700.css";
+import "@fontsource-variable/archivo/wdth.css";   // Überschriften, Breitenachse (schmal gesetzt in globals.css)
+import "@fontsource-variable/source-sans-3";       // Fließtext, Knöpfe, Beschriftungen
 import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ui";
 import LanguageHint from "@/components/LanguageHint";
 import { YEARS, CONTACT } from "@/lib/site";
@@ -70,6 +65,7 @@ export default function RootLayout({ children }) {
             <main>{children}</main>
             <Footer/>
             <ScrollToTop/>
+            <CookieConsent/>
             <LanguageHint/>
           </div>
         </CartProvider>

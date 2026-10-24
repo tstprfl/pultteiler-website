@@ -5,7 +5,7 @@ import { C } from "@/lib/colors";
 import { Reveal, Heading } from "@/components/ui";
 import { PRESSE, PRESSE_T, formatDate } from "@/lib/presse";
 
-const font = "'Inter Tight', sans-serif";
+const font = "'Source Sans 3 Variable', sans-serif";
 
 // id="medien": Sprungziel der Hero-Zeile (#medien); scrollMarginTop hält Abstand zur fixen Navigation
 export default function PressStrip({ lang = "de" }) {
@@ -22,7 +22,7 @@ export default function PressStrip({ lang = "de" }) {
                 {m.logo ? (
                   <img src={m.logo} alt={m.name} style={{ height: 36, width: "auto", display: "block", margin: "0 auto" }}/>
                 ) : (
-                  <div style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 700, fontSize: "clamp(28px, 3vw, 38px)", letterSpacing: "0.04em", color: C.text, lineHeight: 1 }}>{m.name}</div>
+                  <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 700, fontSize: "clamp(28px, 3vw, 38px)", letterSpacing: "0.04em", color: C.text, lineHeight: 1 }}>{m.name}</div>
                 )}
                 <ul style={{ listStyle: "none", margin: "16px 0 0", padding: 0, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px 16px" }}>
                   {m.articles.map((a) => (

@@ -16,9 +16,9 @@ export default function Page() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>Praxiswissen</span>
-          <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, lineHeight: 1, margin: "20px 0 14px", letterSpacing: "0.02em" }}>Ratgeber für Schulen</h1>
-          <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.7, maxWidth: 620, margin: "0 0 48px" }}>
+          <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>Praxiswissen</span>
+          <h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(38px, 5.5vw, 64px)", color: C.text, lineHeight: 1, margin: "20px 0 14px", letterSpacing: "0.02em" }}>Ratgeber für Schulen</h1>
+          <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, lineHeight: 1.7, maxWidth: 620, margin: "0 0 48px" }}>
             Faire Prüfungen, konzentriertes Arbeiten, reizarme Lernumgebungen: gesammeltes Praxiswissen aus über 40 Jahren Zusammenarbeit mit Schulen in Österreich, Deutschland und der Schweiz.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(400px, 100%), 1fr))", gap: 2 }}>
@@ -28,9 +28,9 @@ export default function Page() {
                   <Img sizes="(max-width: 768px) 100vw, 33vw" src={a.img} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                 </div>
                 <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
-                  <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", lineHeight: 1.08, letterSpacing: "0.02em" }}>{a.title}</h2>
-                  <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
-                  <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Artikel lesen →</span>
+                  <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", lineHeight: 1.08, letterSpacing: "0.02em" }}>{a.title}</h2>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
+                  <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Artikel lesen →</span>
                 </div>
               </Link>
             ))}

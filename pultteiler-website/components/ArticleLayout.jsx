@@ -8,10 +8,10 @@ import Img from "@/components/Img";
 
 // Typografie für Artikel-Inhalte — in den Artikel-Dateien wiederverwenden
 export const A = {
-  h2: { fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(26px, 3.5vw, 36px)", color: C.text, margin: "44px 0 14px", letterSpacing: "0.03em", lineHeight: 1.05 },
-  h3: { fontFamily: "'Inter Tight', sans-serif", fontSize: 17, fontWeight: 700, color: C.text, margin: "28px 0 10px" },
-  p: { fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: "#3A4A4A", lineHeight: 1.8, margin: "0 0 18px" },
-  ul: { fontFamily: "'Inter Tight', sans-serif", fontSize: 16, color: "#3A4A4A", lineHeight: 1.8, margin: "0 0 18px", paddingLeft: 24 },
+  h2: { fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(26px, 3.5vw, 36px)", color: C.text, margin: "44px 0 14px", letterSpacing: "0.03em", lineHeight: 1.05 },
+  h3: { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, fontWeight: 700, color: C.text, margin: "28px 0 10px" },
+  p: { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: "#3A4A4A", lineHeight: 1.8, margin: "0 0 18px" },
+  ul: { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: "#3A4A4A", lineHeight: 1.8, margin: "0 0 18px", paddingLeft: 24 },
   li: { marginBottom: 8 },
   a: { color: C.accentText, textDecoration: "underline" },
   strong: { color: C.text },
@@ -53,7 +53,7 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: 24 }}>
-            <ol style={{ display: "flex", gap: 8, listStyle: "none", margin: 0, padding: 0, fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted, flexWrap: "wrap" }}>
+            <ol style={{ display: "flex", gap: 8, listStyle: "none", margin: 0, padding: 0, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, flexWrap: "wrap" }}>
               <li><Link href={t.home} style={{ color: C.textMuted, textDecoration: "none" }}>{t.homeLabel}</Link></li>
               <li aria-hidden="true">›</li>
               <li><Link href={t.index} style={{ color: C.textMuted, textDecoration: "none" }}>{t.indexLabel}</Link></li>
@@ -63,9 +63,9 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
           </nav>
 
           <header>
-            <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>{t.badge}</span>
-            <h1 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: "clamp(34px, 5vw, 56px)", color: C.text, lineHeight: 1.02, margin: "20px 0 14px", letterSpacing: "0.02em" }}>{meta.title}</h1>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, margin: "0 0 32px" }}>
+            <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>{t.badge}</span>
+            <h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(34px, 5vw, 56px)", color: C.text, lineHeight: 1.02, margin: "20px 0 14px", letterSpacing: "0.02em" }}>{meta.title}</h1>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, margin: "0 0 32px" }}>
               <time dateTime={meta.date}>{t.updated} {new Date(meta.date + "T12:00:00").toLocaleDateString(t.locale, { day: "numeric", month: "long", year: "numeric" })}</time> · {t.byline(YEARS)}
             </p>
           </header>
@@ -82,24 +82,24 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
 
           {/* CTA-Box */}
           <aside className="card-pad" style={{ background: C.dark, padding: "36px 40px", marginTop: 2 }}>
-            <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.white, margin: "0 0 8px", letterSpacing: "0.03em" }}>{t.ctaTitle}</h2>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, margin: "0 0 24px" }}>
+            <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.white, margin: "0 0 8px", letterSpacing: "0.03em" }}>{t.ctaTitle}</h2>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.75)", lineHeight: 1.7, margin: "0 0 24px" }}>
               {t.ctaText(YEARS)}
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href={t.quote} style={{ background: C.accentText, color: C.white, padding: "13px 28px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.quoteCta}</a>
-              <a href={t.shop} style={{ background: "transparent", color: C.white, border: "1.5px solid rgba(255,255,255,0.35)", padding: "13px 28px", fontFamily: "'Inter Tight', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.shopCta}</a>
+              <a href={t.quote} style={{ background: C.accentText, color: C.white, padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.quoteCta}</a>
+              <a href={t.shop} style={{ background: "transparent", color: C.white, border: "1.5px solid rgba(255,255,255,0.35)", padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.shopCta}</a>
             </div>
           </aside>
 
           {/* Weiterführende Links */}
           {related.length > 0 && (
             <nav aria-label={t.relatedAria} style={{ marginTop: 48 }}>
-              <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 16px", letterSpacing: "0.03em" }}>{t.related}</h2>
+              <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 16px", letterSpacing: "0.03em" }}>{t.related}</h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 2 }}>
                 {related.map((r) => (
                   <Link key={r.href} href={r.href} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "20px 24px", textDecoration: "none", display: "block" }}>
-                    <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, lineHeight: 1.5 }}>{r.label} →</span>
+                    <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 600, color: C.text, lineHeight: 1.5 }}>{r.label} →</span>
                   </Link>
                 ))}
               </div>

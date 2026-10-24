@@ -17,13 +17,13 @@ export default function AboutPage() {
           ].map((section, si) => (
             <Reveal key={si} delay={(si + 1) * 0.05}>
               <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px", marginBottom: 2 }}>
-                <h2 style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 24px" }}>{section.title}</h2>
-                {section.texts.map((t, ti) => <p key={ti} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.75, margin: ti === section.texts.length - 1 ? 0 : "0 0 20px" }}>{t}</p>)}
+                <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 24px" }}>{section.title}</h2>
+                {section.texts.map((t, ti) => <p key={ti} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: C.textMuted, lineHeight: 1.75, margin: ti === section.texts.length - 1 ? 0 : "0 0 20px" }}>{t}</p>)}
               </div>
             </Reveal>
           ))}
           <Reveal delay={0.3}><div style={{ marginTop: 48, textAlign: "center" }}>
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 15, color: C.textMuted, marginBottom: 24 }}>Questions about the Pultteiler? We are happy to help.</p>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: C.textMuted, marginBottom: 24 }}>Questions about the Pultteiler? We are happy to help.</p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/products">View products</Btn><Btn href="/en/contact" variant="secondary">Contact us</Btn></div>
           </div></Reveal>
         </div>
