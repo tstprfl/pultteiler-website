@@ -5,6 +5,7 @@ import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
 import { usePathname } from "next/navigation";
 import Img from "@/components/Img";
 import { isEnPath } from "@/lib/i18n";
+import { CookieSettingsLink } from "@/components/CookieConsent";
 
 const COLS = [
   {
@@ -84,34 +85,35 @@ export default function Footer() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
             <Img sizes="44px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" loading="lazy" style={{ width: 44, height: 44, objectFit: "contain", borderRadius: 4 }}/>
-            <span style={{ fontFamily: "'Barlow Condensed', 'Inter Tight', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
+            <span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </div>
           {en ? (
-            <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Proven privacy screens for school and exam desks, direct from the manufacturer for over {YEARS} years. Delivery to other countries on request.</p>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Proven privacy screens for school and exam desks, direct from the manufacturer for over {YEARS} years. Delivery to other countries on request.</p>
           ) : (
             <>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Der bewährte Sichtschutz für Schultische, direkt vom Produzenten, seit über {YEARS} Jahren. {SCHOOLS_TEXT}.</p>
-              <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginTop: 12 }}>✓ Kauf auf Rechnung</p>
+              <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.7 }}>Der bewährte Sichtschutz für Schultische, direkt vom Produzenten, seit über {YEARS} Jahren. {SCHOOLS_TEXT}.</p>
+              <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginTop: 12 }}>✓ Kauf auf Rechnung</p>
             </>
           )}
         </div>
         {cols.map(col => (
           <div key={col.title}>
-            <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, margin: "0 0 20px" }}>{col.title}</h2>
-            {col.links.map(l => <Link key={l.href} href={l.href} style={{ display: "block", fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, padding: "5px 0", textDecoration: "none" }}>{l.label}</Link>)}
+            <h2 style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, margin: "0 0 20px" }}>{col.title}</h2>
+            {col.links.map(l => <Link key={l.href} href={l.href} style={{ display: "block", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, padding: "5px 0", textDecoration: "none" }}>{l.label}</Link>)}
           </div>
         ))}
         <div>
-          <h2 style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, margin: "0 0 20px" }}>{en ? "Contact" : "Kontakt"}</h2>
-          <p style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 13, color: C.text, lineHeight: 2 }}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster{en ? ", Austria" : ""}<br/><a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>+43 (0) 676 935 40 33<br/>+43 (0) 699 129 613 70</p>
+          <h2 style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, margin: "0 0 20px" }}>{en ? "Contact" : "Kontakt"}</h2>
+          <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 2 }}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster{en ? ", Austria" : ""}<br/><a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>+43 (0) 676 935 40 33<br/>+43 (0) 699 129 613 70</p>
         </div>
       </div>
       <div className="footer-legal" style={{ maxWidth: 1280, margin: "48px auto 0", borderTop: `1px solid ${C.border}`, paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, alignItems: "center" }}>
-        <span style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted }}>© {new Date().getFullYear()} Schulmittel Blaschegg</span>
+        <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted }}>© {new Date().getFullYear()} Schulmittel Blaschegg</span>
         <div style={{ display: "flex", gap: 20 }}>
           {(en ? LEGAL_EN : LEGAL_DE).map(l => (
-            <Link key={l.href} href={l.href} style={{ fontFamily: "'Inter Tight', sans-serif", fontSize: 12, color: C.textMuted, textDecoration: "underline" }}>{l.label}</Link>
+            <Link key={l.href} href={l.href} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, textDecoration: "underline" }}>{l.label}</Link>
           ))}
+          <CookieSettingsLink style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, textDecoration: "underline" }}>{en ? "Cookie settings" : "Cookie-Einstellungen"}</CookieSettingsLink>
         </div>
       </div>
     </footer>
