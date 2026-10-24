@@ -5,7 +5,7 @@ import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import CookieConsent from "@/components/CookieConsent";
+import { Analytics } from "@vercel/analytics/next";
 import { ScrollToTop } from "@/components/ui";
 import LanguageHint from "@/components/LanguageHint";
 import { YEARS, CONTACT } from "@/lib/site";
@@ -65,7 +65,8 @@ export default function RootLayout({ children }) {
             <main>{children}</main>
             <Footer/>
             <ScrollToTop/>
-            <CookieConsent/>
+            {/* Vercel Web Analytics: Seitenaufrufe ohne Cookies und ohne personenbezogene Kennungen, daher ohne Einwilligungsbanner */}
+            <Analytics/>
             <LanguageHint/>
           </div>
         </CartProvider>

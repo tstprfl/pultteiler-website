@@ -104,7 +104,3 @@ export const CONTACT = {
   phone2: "+43 (0) 699 129 613 70",
   uid: "ATU37758404",
 };
-
-// Google Analytics 4: Mess-ID des Webdatenstroms www.pultteiler.eu (Property 546949524).
-// Wird nur nach Einwilligung über das Cookie-Banner geladen (components/CookieConsent.jsx).
-export const GA_ID = "G-5G0ZPC3RRQ";

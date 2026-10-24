@@ -5,7 +5,6 @@ import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
 import { usePathname } from "next/navigation";
 import Img from "@/components/Img";
 import { isEnPath } from "@/lib/i18n";
-import { CookieSettingsLink } from "@/components/CookieConsent";
 
 const COLS = [
   {
@@ -113,7 +112,6 @@ export default function Footer() {
           {(en ? LEGAL_EN : LEGAL_DE).map(l => (
             <Link key={l.href} href={l.href} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, textDecoration: "underline" }}>{l.label}</Link>
           ))}
-          <CookieSettingsLink style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, textDecoration: "underline" }}>{en ? "Cookie settings" : "Cookie-Einstellungen"}</CookieSettingsLink>
         </div>
       </div>
     </footer>
