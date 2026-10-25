@@ -67,7 +67,7 @@ export default function ShippingPage() {
             <h2 style={h}>11. Exceptions to the right of withdrawal</h2>
             <p style={{ ...s, marginBottom: 0 }}>The right of withdrawal does not apply to goods made individually to customer specifications. For questions, please contact us at <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a>.</p>
           </div>
-          <Reveal delay={0.2}><div style={{ marginTop: 32, display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/contact" variant="secondary">Questions? Contact us</Btn></div></Reveal>
+          <Reveal delay={0.2}><div style={{ marginTop: 32, display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/en/products">View products →</Btn><Btn href="/en/quote" variant="secondary">Request a quote</Btn><Btn href="/en/contact" variant="secondary">Questions? Contact us</Btn></div></Reveal>
         </div>
       </section>
     </div>

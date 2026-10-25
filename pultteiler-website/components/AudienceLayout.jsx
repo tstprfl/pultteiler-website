@@ -30,6 +30,10 @@ const UI_DE = {
   faqTitle: "Häufige Fragen",
 };
 
+// Hauptknopf ist der Shop (mit Pfeil), Angebot und Kontakt stehen daneben ohne Pfeil
+const plain = (t) => t.replace(/\s*→$/, "");
+const arrow = (t) => `${plain(t)} →`;
+
 export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situation, benefits, faq, ctaTitle, ctaSub, ui: uiOverride }) {
   const ui = { ...UI_DE, ...uiOverride };
   return (
@@ -43,8 +47,8 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
               <h1 style={f.h1}>{h1}</h1>
               <p style={{ ...f.body, fontSize: 17, maxWidth: 560 }}>{intro}</p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 28 }}>
-                <Btn href={ui.quoteHref}>{ui.quoteCta}</Btn>
-                <Btn href={ui.shopHref} variant="secondary">{ui.shopCta}</Btn>
+                <Btn href={ui.shopHref}>{arrow(ui.shopCta)}</Btn>
+                <Btn href={ui.quoteHref} variant="secondary">{plain(ui.quoteCta)}</Btn>
               </div>
               <ul style={{ ...f.small, marginTop: 24, fontWeight: 600, color: C.text, listStyle: "none", padding: 0, display: "flex", flexWrap: "wrap", gap: "4px 18px" }}>
                 {ui.trust.map((t) => <li key={t} style={{ whiteSpace: "nowrap" }}>✓ {t}</li>)}
@@ -118,7 +122,8 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
           <h2 style={f.h2}>{ctaTitle}</h2>
           <p style={{ ...f.body, maxWidth: 560, margin: "0 auto 32px" }}>{ctaSub}</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Btn href={ui.quoteHref}>{ui.quoteCta}</Btn>
+            <Btn href={ui.shopHref}>{arrow(ui.shopCta)}</Btn>
+            <Btn href={ui.quoteHref} variant="secondary">{plain(ui.quoteCta)}</Btn>
             <Btn href={ui.contactHref} variant="secondary">{ui.contactCta}</Btn>
           </div>
         </div>
