@@ -14,14 +14,14 @@ export default function Home() {
       {/* ═══ HERO ═══ */}
       {/* Oben ausgerichtet statt senkrecht zentriert: Deutsch und Englisch sind unterschiedlich lang, so beginnt der Inhalt
           in beiden Sprachen an derselben Stelle und springt beim Sprachwechsel nicht */}
-      <section style={{ minHeight: "100vh", display: "flex", alignItems: "flex-start", padding: "140px 32px 80px", background: C.bg, position: "relative", overflow: "hidden" }}>
+      <section className="hero-sec" style={{ minHeight: "100vh", display: "flex", alignItems: "flex-start", padding: "140px 32px 80px", background: C.bg, position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 1, width: "100%" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "start" }} className="hero-g">
             <div>
               <Reveal><p style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(22px, 2.2vw, 30px)", letterSpacing: "0.03em", color: C.text, margin: 0, lineHeight: 1.1 }}>Das Original seit 1986<span style={{ color: C.textMuted, fontWeight: 500 }}> · direkt vom Hersteller</span></p></Reveal>
               <Reveal delay={0.1}><h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>für <span style={{ color: "#F0C645" }}>Schultische.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>Trennwände und Sichtschutz für faire Prüfungen.</span></h1></Reveal>
-              <Reveal delay={0.2}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>Die bewährte Trennwand für Schultische bei Schularbeiten, Klassenarbeiten und Prüfungen: verhindert Abschreiben, schafft einen reizarmen Arbeitsplatz und steht dank Stecksystem in wenigen Augenblicken. {SCHOOLS_TEXT} vertrauen darauf. Passend für alle gängigen Schultische bis 3 cm Plattenstärke.</p></Reveal>
-              <Reveal delay={0.3}><div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/angebot">Angebot anfordern →</Btn><Btn href="/produkte" variant="secondary">Zum Shop</Btn><Btn href="/anleitung" variant="secondary">Zur Anleitung</Btn></div></Reveal>
+              <Reveal delay={0.2}><div className="hero-btns" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 32 }}><Btn href="/produkte">Zum Shop →</Btn><Btn href="/angebot" variant="secondary">Angebot anfordern</Btn><Btn href="/anleitung" variant="secondary">Zur Anleitung</Btn></div></Reveal>
+              <Reveal delay={0.3}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 8px" }}>Die bewährte Trennwand für Schultische bei Schularbeiten, Klassenarbeiten und Prüfungen: verhindert Abschreiben, schafft einen reizarmen Arbeitsplatz und steht dank Stecksystem in wenigen Augenblicken. {SCHOOLS_TEXT} vertrauen darauf. Passend für alle gängigen Schultische bis 3 cm Plattenstärke.</p></Reveal>
               <Reveal delay={0.35}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 24, lineHeight: 1.5 }}>✓ Kauf auf Rechnung: keine Kreditkarte, keine Vorkasse</p></Reveal>
               <Reveal delay={0.4}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.5 }}>↓ <a href="#medien" onClick={(e) => { e.preventDefault(); document.getElementById("medien")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ color: C.text, textDecoration: "underline", textUnderlineOffset: 4 }}>{PRESSE_T.de.hero}</a></p></Reveal>
             </div>
@@ -208,7 +208,7 @@ export default function Home() {
       <section style={{ padding: "96px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <Reveal><div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <Heading overline="Jetzt loslegen" title="Bereit für faire Prüfungen?" align="center" sub="Fordern Sie ein unverbindliches Angebot für Ihre Schule an oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."/>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/angebot">Angebot anfordern →</Btn><Btn href="/produkte" variant="secondary">Zum Shop</Btn></div>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/produkte">Zum Shop →</Btn><Btn href="/angebot" variant="secondary">Angebot anfordern</Btn></div>
         </div></Reveal>
       </section>
     </div>

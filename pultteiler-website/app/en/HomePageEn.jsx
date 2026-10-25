@@ -15,14 +15,14 @@ export default function HomeEn() {
       {/* ═══ HERO ═══ */}
       {/* Oben ausgerichtet statt senkrecht zentriert: Deutsch und Englisch sind unterschiedlich lang, so beginnt der Inhalt
           in beiden Sprachen an derselben Stelle und springt beim Sprachwechsel nicht */}
-      <section style={{ minHeight: "100vh", display: "flex", alignItems: "flex-start", padding: "140px 32px 80px", background: C.bg, position: "relative", overflow: "hidden" }}>
+      <section className="hero-sec" style={{ minHeight: "100vh", display: "flex", alignItems: "flex-start", padding: "140px 32px 80px", background: C.bg, position: "relative", overflow: "hidden" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 1, width: "100%" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 64, alignItems: "start" }} className="hero-g">
             <div>
               <Reveal><p style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(22px, 2.2vw, 30px)", letterSpacing: "0.03em", color: C.text, margin: 0, lineHeight: 1.1 }}>The original since 1986<span style={{ color: C.textMuted, fontWeight: 500 }}> · direct from the manufacturer</span></p></Reveal>
               <Reveal delay={0.1}><h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>for <span style={{ color: "#F0C645" }}>School desks.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>The privacy screen for fair exams.</span></h1></Reveal>
-              <Reveal delay={0.2}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 40px" }}>The proven desk divider for class tests and exams: it prevents copying, creates a low-distraction workspace and is set up in moments thanks to its plug-in system. Several hundred schools in Austria, Germany and Switzerland rely on it. Fits all common school desks up to 3 cm thick.</p></Reveal>
-              <Reveal delay={0.3}><div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/products" variant="secondary">View products</Btn><Btn href="/en/how-it-works" variant="secondary">How it works</Btn></div></Reveal>
+              <Reveal delay={0.2}><div className="hero-btns" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 32 }}><Btn href="/en/products">View products →</Btn><Btn href="/en/quote" variant="secondary">Request a quote</Btn><Btn href="/en/how-it-works" variant="secondary">How it works</Btn></div></Reveal>
+              <Reveal delay={0.3}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 8px" }}>The proven desk divider for class tests and exams: it prevents copying, creates a low-distraction workspace and is set up in moments thanks to its plug-in system. Several hundred schools in Austria, Germany and Switzerland rely on it. Fits all common school desks up to 3 cm thick.</p></Reveal>
               <Reveal delay={0.35}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 24, lineHeight: 1.5 }}>✓ Delivery to other countries on request</p></Reveal>
               <Reveal delay={0.4}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.5 }}>↓ <a href="#medien" onClick={(e) => { e.preventDefault(); document.getElementById("medien")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ color: C.text, textDecoration: "underline", textUnderlineOffset: 4 }}>{PRESSE_T.en.hero}</a></p></Reveal>
             </div>
@@ -185,7 +185,7 @@ export default function HomeEn() {
       <section style={{ padding: "96px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <Reveal><div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
           <Heading overline="Get started" title="Ready for fair exams?" align="center" sub="Request a non-binding quote for your school. We reply soon with price and delivery terms for your country."/>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/quote">Request a quote →</Btn><Btn href="/en/products" variant="secondary">View products</Btn></div>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/products">View products →</Btn><Btn href="/en/quote" variant="secondary">Request a quote</Btn></div>
         </div></Reveal>
       </section>
     </div>

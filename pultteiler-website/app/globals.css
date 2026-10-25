@@ -38,6 +38,9 @@ body { margin: 0; background: #E4F0F0; }
   .region-btns button { width: 100% !important; max-width: 320px !important; }
   section { padding-left: 16px !important; padding-right: 16px !important; }
   .hero-g { gap: 32px !important; }
+  .hero-sec { padding-top: 100px !important; }   /* Knöpfe ohne Scrollen sichtbar */
+  .hero-btns { gap: 10px !important; }
+  .hero-btns a { width: 100% !important; }
   h1 { font-size: clamp(36px, 10vw, 56px) !important; }
   .gallery-grid { grid-template-columns: 1fr !important; min-width: 0 !important; }
   /* Karten und Textboxen: schmalere Innenabstände, damit die Textspalte breiter wird */
