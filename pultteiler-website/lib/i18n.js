@@ -67,7 +67,7 @@ export const NAV_EN = [
       { id: "universities", label: "Universities & exam centres", href: "/en/universities" },
     ],
   },
-  { id: "products", label: "Products", href: "/en/products" },
+  { id: "quote", label: "Quote", href: "/en/quote" },
   { id: "guide", label: "Guide", href: "/en/guide" },
   { id: "how", label: "How it works", href: "/en/how-it-works" },
   { id: "about", label: "About us", href: "/en/about" },

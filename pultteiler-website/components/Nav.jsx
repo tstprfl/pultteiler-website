@@ -39,7 +39,8 @@ export default function Nav() {
   // Englische Seiten: eigene Navigation, Warenkorb wie auf Deutsch
   const en = isEnPath(pathname);
   const items = en ? NAV_EN : NAV;
-  const quote = en ? { href: "/en/quote", short: "Quote →", long: "Request a quote →" } : { href: "/angebot", short: "Angebot →", long: "Angebot anfordern →" };
+  // Schwarzer Knopf rechts: der Shop (Angebot ist ein normaler Menüpunkt)
+  const quote = en ? { href: "/en/products", short: "Shop →", long: "View products →" } : { href: "/produkte", short: "Shop →", long: "Zum Shop →" };
   // Fester DE|EN-Schalter: beide Sprachen immer sichtbar, gleiche Breite, kein Verschieben der Navigation
   const langs = [
     { code: "de", label: "DE", title: "Deutsch", active: !en, href: en ? switchTarget(pathname) : pathname },

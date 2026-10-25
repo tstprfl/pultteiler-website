@@ -60,7 +60,7 @@ export const NAV = [
       { id: "hochschulen", label: "Hochschulen & Prüfungszentren", href: "/hochschulen" },
     ],
   },
-  { id: "produkte", label: "Shop", href: "/produkte" },
+  { id: "angebot", label: "Angebot", href: "/angebot" },
   { id: "ratgeber", label: "Ratgeber", href: "/ratgeber" },
   { id: "anleitung", label: "So funktioniert's", href: "/anleitung" },
   { id: "ueber-uns", label: "Über uns", href: "/ueber-uns" },
