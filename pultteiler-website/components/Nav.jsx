@@ -39,7 +39,7 @@ export default function Nav() {
   // Englische Seiten: eigene Navigation, Warenkorb wie auf Deutsch
   const en = isEnPath(pathname);
   const items = en ? NAV_EN : NAV;
-  // Schwarzer Knopf rechts: der Shop (Angebot ist ein normaler Menüpunkt)
+  // Schwarzer Knopf rechts: der Shop
   const quote = en ? { href: "/en/products", short: "Shop →", long: "View products →" } : { href: "/produkte", short: "Shop →", long: "Zum Shop →" };
   // Fester DE|EN-Schalter: beide Sprachen immer sichtbar, gleiche Breite, kein Verschieben der Navigation
   const langs = [
@@ -61,7 +61,7 @@ export default function Nav() {
             <span className="nav-word" style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </Link>
           {/* Menüpunkte links bündig nach dem Logo, damit „Start“ und „Home“ beim Sprachwechsel an derselben Stelle beginnen;
-              Angebot, Sprachschalter und Warenkorb bleiben rechts. Der Abstand zum Logo hängt nur von der Fensterbreite ab
+              Shop-Knopf, Sprachschalter und Warenkorb bleiben rechts. Der Abstand zum Logo hängt nur von der Fensterbreite ab
               (schmal bis 4 px, damit die längere deutsche Leiste ab 1121 px noch passt) */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 4, flex: 1, minWidth: 0 }}>
             <div className="desk-nav" style={{ display: "flex", gap: 2, alignItems: "center", flex: 1, marginLeft: "clamp(4px, calc(100vw - 1150px), 40px)" }}>

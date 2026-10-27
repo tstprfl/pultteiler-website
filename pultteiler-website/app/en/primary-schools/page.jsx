@@ -66,7 +66,7 @@ export default function Page() {
         }}
         faq={FAQ}
         ctaTitle="Ready for fair tests?"
-        ctaSub="Request a non-binding quote for your primary school. We reply soon with price and delivery terms for your country."
+        ctaSub="Order directly in the shop: purchase on invoice, delivery in 5–10 working days. For quantities, special requests or other countries, write to us via the contact form."
       />
     </div>
   );

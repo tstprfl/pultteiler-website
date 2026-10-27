@@ -35,7 +35,7 @@ export default function KontaktPage() {
     <div style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <Heading as="h1" overline="Kontakt" title="Wir sind für Sie da" align="center"/>
+          <Heading as="h1" overline="Kontakt" title="Wir sind für Sie da" align="center" sub="Fragen zu Bestellung, Stückzahlen, Sonderwünschen oder Lieferung in andere Länder? Schreiben Sie uns, wir antworten kurzfristig."/>
           <div style={{ maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 2 }}>
             <Reveal><div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
               {sent ? (

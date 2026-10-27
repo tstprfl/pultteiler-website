@@ -17,22 +17,19 @@ const f = {
 
 // Beschriftungen und Links — Standard deutsch; die englische Seite übergibt eigene Werte über `ui`.
 const UI_DE = {
-  quoteHref: "/angebot",
-  quoteCta: "Angebot anfordern →",
   shopHref: "/produkte",
   shopCta: "Zum Shop",
   contactHref: "/kontakt",
   contactCta: "Kontakt",
   trust: ["Kauf auf Rechnung", "Direkt vom Hersteller", SCHOOLS_TEXT_SHORT, `Seit über ${YEARS} Jahren`],
   orderTitle: "So einfach bestellen Schulen bei uns",
-  orderSub: "Kein Kreditkarten-Checkout, keine Vorkasse: Sie bestellen per Anfrage oder direkt im Shop und zahlen bequem auf Rechnung, wie es Schulen und Schulerhalter gewohnt sind.",
+  orderSub: "Kein Kreditkarten-Checkout, keine Vorkasse: Sie bestellen direkt im Shop und zahlen bequem auf Rechnung, wie es Schulen und Schulerhalter gewohnt sind. Fragen beantworten wir über das Kontaktformular.",
   countries: COUNTRY_INFO,
   faqTitle: "Häufige Fragen",
 };
 
-// Hauptknopf ist der Shop (mit Pfeil), Angebot und Kontakt stehen daneben ohne Pfeil
-const plain = (t) => t.replace(/\s*→$/, "");
-const arrow = (t) => `${plain(t)} →`;
+// Hauptknopf ist der Shop (mit Pfeil), Kontakt steht daneben ohne Pfeil
+const arrow = (t) => `${t.replace(/\s*→$/, "")} →`;
 
 export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situation, benefits, faq, ctaTitle, ctaSub, ui: uiOverride }) {
   const ui = { ...UI_DE, ...uiOverride };
@@ -48,7 +45,7 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
               <p style={{ ...f.body, fontSize: 17, maxWidth: 560 }}>{intro}</p>
               <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 28 }}>
                 <Btn href={ui.shopHref}>{arrow(ui.shopCta)}</Btn>
-                <Btn href={ui.quoteHref} variant="secondary">{plain(ui.quoteCta)}</Btn>
+                <Btn href={ui.contactHref} variant="secondary">{ui.contactCta}</Btn>
               </div>
               <ul style={{ ...f.small, marginTop: 24, fontWeight: 600, color: C.text, listStyle: "none", padding: 0, display: "flex", flexWrap: "wrap", gap: "4px 18px" }}>
                 {ui.trust.map((t) => <li key={t} style={{ whiteSpace: "nowrap" }}>✓ {t}</li>)}
@@ -123,7 +120,6 @@ export default function AudienceLayout({ overline, h1, intro, img, imgAlt, situa
           <p style={{ ...f.body, maxWidth: 560, margin: "0 auto 32px" }}>{ctaSub}</p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Btn href={ui.shopHref}>{arrow(ui.shopCta)}</Btn>
-            <Btn href={ui.quoteHref} variant="secondary">{plain(ui.quoteCta)}</Btn>
             <Btn href={ui.contactHref} variant="secondary">{ui.contactCta}</Btn>
           </div>
         </div>

@@ -5,6 +5,11 @@ const nextConfig = {
   images: { qualities: [75] },
   async redirects() {
     return [
+      // Angebotsanfrage abgeschafft (Oktober 2026): alte Adressen auf das Kontaktformular
+      { source: '/angebot', destination: '/kontakt', permanent: true },
+      { source: '/angebot/', destination: '/kontakt', permanent: true },
+      { source: '/en/quote', destination: '/en/contact', permanent: true },
+      { source: '/en/quote/', destination: '/en/contact', permanent: true },
       // Alte Webnode-URLs auf neue Seiten umleiten
       { source: '/neuigkeiten', destination: '/', permanent: true },
       { source: '/neuigkeiten/', destination: '/', permanent: true },

@@ -76,7 +76,7 @@ export default function Page() {
 
       <h2 style={A.h2}>Fazit</h2>
       <p style={A.p}>
-        Die Forschung ist sich einig: Abschreiben bei Prüfungen ist vor allem eine Frage der Gelegenheit, und die Gelegenheit heißt Sitznachbar. Wer die Sichtlinie zum Nachbarblatt unterbricht, löst das Problem an der Wurzel. Die Trennwand am Schultisch ist dafür der Weg mit dem geringsten Aufwand. Gerne beraten wir Sie zur passenden Ausstattung, <Link href="/angebot" style={A.a}>fordern Sie ein unverbindliches Angebot an</Link>.
+        Die Forschung ist sich einig: Abschreiben bei Prüfungen ist vor allem eine Frage der Gelegenheit, und die Gelegenheit heißt Sitznachbar. Wer die Sichtlinie zum Nachbarblatt unterbricht, löst das Problem an der Wurzel. Die Trennwand am Schultisch ist dafür der Weg mit dem geringsten Aufwand. Gerne beraten wir Sie zur passenden Ausstattung, <Link href="/kontakt" style={A.a}>schreiben Sie uns über das Kontaktformular</Link>.
       </p>
 
       <h2 style={A.h2}>Quellen</h2>

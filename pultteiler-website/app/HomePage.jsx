@@ -20,7 +20,7 @@ export default function Home() {
             <div>
               <Reveal><p style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(22px, 2.2vw, 30px)", letterSpacing: "0.03em", color: C.text, margin: 0, lineHeight: 1.1 }}>Das Original seit 1986<span style={{ color: C.textMuted, fontWeight: 500 }}> · direkt vom Hersteller</span></p></Reveal>
               <Reveal delay={0.1}><h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(48px, 7vw, 96px)", color: C.text, lineHeight: 0.95, margin: "24px 0 28px" }}><span style={{ color: "#A01830" }}>Pultteiler</span><br/>für <span style={{ color: "#F0C645" }}>Schultische.</span><span style={{ display: "block", color: C.textMuted, fontSize: "0.6em", lineHeight: 1.1, marginTop: 14 }}>Trennwände und Sichtschutz für faire Prüfungen.</span></h1></Reveal>
-              <Reveal delay={0.2}><div className="hero-btns" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 32 }}><Btn href="/produkte">Zum Shop →</Btn><Btn href="/angebot" variant="secondary">Angebot anfordern</Btn><Btn href="/anleitung" variant="secondary">Zur Anleitung</Btn></div></Reveal>
+              <Reveal delay={0.2}><div className="hero-btns" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 32 }}><Btn href="/produkte">Zum Shop →</Btn><Btn href="/anleitung" variant="secondary">Zur Anleitung</Btn><Btn href="/kontakt" variant="secondary">Kontakt</Btn></div></Reveal>
               <Reveal delay={0.3}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 8px" }}>Die bewährte Trennwand für Schultische bei Schularbeiten, Klassenarbeiten und Prüfungen: verhindert Abschreiben, schafft einen reizarmen Arbeitsplatz und steht dank Stecksystem in wenigen Augenblicken. {SCHOOLS_TEXT} vertrauen darauf. Passend für alle gängigen Schultische bis 3 cm Plattenstärke.</p></Reveal>
               <Reveal delay={0.35}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 24, lineHeight: 1.5 }}>✓ Kauf auf Rechnung: keine Kreditkarte, keine Vorkasse</p></Reveal>
               <Reveal delay={0.4}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.5 }}>↓ <a href="#medien" onClick={(e) => { e.preventDefault(); document.getElementById("medien")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ color: C.text, textDecoration: "underline", textUnderlineOffset: 4 }}>{PRESSE_T.de.hero}</a></p></Reveal>
@@ -169,7 +169,7 @@ export default function Home() {
       {/* ═══ LÄNDER / BESTELLUNG ═══ */}
       <section style={{ padding: "96px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <Heading overline="Schulgerecht bestellen" title="Kauf auf Rechnung in jedem Land" sub="Kein Kreditkarten-Checkout: Sie bestellen per Anfrage oder im Shop und zahlen nach Lieferung auf Rechnung, so wie Schulen und Schulerhalter es brauchen."/>
+          <Heading overline="Schulgerecht bestellen" title="Kauf auf Rechnung in jedem Land" sub="Kein Kreditkarten-Checkout: Sie bestellen im Shop und zahlen nach Lieferung auf Rechnung, so wie Schulen und Schulerhalter es brauchen."/>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))", gap: 2 }}>
             {COUNTRY_INFO.map((c, i) => (
               <Reveal key={c.code} delay={i * 0.08}>
@@ -207,8 +207,8 @@ export default function Home() {
       {/* ═══ CTA ═══ */}
       <section style={{ padding: "96px 32px", background: C.bgCard, borderTop: `1px solid ${C.border}` }}>
         <Reveal><div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <Heading overline="Jetzt loslegen" title="Bereit für faire Prüfungen?" align="center" sub="Fordern Sie ein unverbindliches Angebot für Ihre Schule an oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."/>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/produkte">Zum Shop →</Btn><Btn href="/angebot" variant="secondary">Angebot anfordern</Btn></div>
+          <Heading overline="Jetzt loslegen" title="Bereit für faire Prüfungen?" align="center" sub="Bestellen Sie direkt im Shop: Kauf auf Rechnung, Lieferung in 5–10 Werktagen. Fragen zu Stückzahlen, Sonderwünschen oder anderen Ländern beantworten wir gerne über das Kontaktformular."/>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/produkte">Zum Shop →</Btn><Btn href="/kontakt" variant="secondary">Kontakt</Btn></div>
         </div></Reveal>
       </section>
     </div>

@@ -27,7 +27,7 @@ const FAQ = [
   },
   {
     q: "Wie läuft Beschaffung und Rechnungsstellung ab?",
-    a: "Sie erhalten ein schriftliches Angebot für Ihre Beschaffungsstelle und zahlen nach Lieferung auf Rechnung, keine Vorkasse, keine Kreditkarte. Österreichische Bundeseinrichtungen erhalten E-Rechnungen mit EKG-Nummer, deutsche Einrichtungen mit UID-Nummer eine steuerfreie Lieferung (deutsches Bankkonto vorhanden), Schweizer Einrichtungen eine steuerfreie, unverzollte Lieferung.",
+    a: "Sie bestellen im Shop und zahlen nach Lieferung auf Rechnung, keine Vorkasse, keine Kreditkarte. Für große Stückzahlen oder eine Bestellung über Ihre Beschaffungsstelle schreiben Sie uns über das Kontaktformular, wir stellen die Unterlagen zusammen. Österreichische Bundeseinrichtungen erhalten E-Rechnungen mit EKG-Nummer, deutsche Einrichtungen mit UID-Nummer eine steuerfreie Lieferung (deutsches Bankkonto vorhanden), Schweizer Einrichtungen eine steuerfreie, unverzollte Lieferung.",
   },
 ];
 
@@ -57,12 +57,12 @@ export default function Page() {
             { title: "Aufbau in wenigen Augenblicken", text: "Werkzeugloses Stecksystem: Jede Trennwand steht in wenigen Augenblicken. Auch große Hörsäle sind mit kleinem Team rasch gerüstet und ebenso schnell wieder geräumt." },
             { title: "Platzsparende Lagerung", text: "12 Systeme pro stapelbarem Holzkoffer, auf Anfrage auch größere Koffer. Hunderte Teiler lagern kompakt bis zum nächsten Prüfungstermin." },
             { title: "Referenz MedUni Innsbruck", text: "Im Prüfungseinsatz an der Medizinischen Universität Innsbruck, vom Hörsaal bis ins Labor. Weitere Referenzen nennen wir auf Anfrage gerne." },
-            { title: "Beschaffungskonform", text: "Schriftliches Angebot, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH), passend zu Ihren Einkaufsprozessen." },
+            { title: "Beschaffungskonform", text: "Bestellung im Shop oder per Nachricht an uns, Lieferung auf Rechnung, E-Rechnung (AT), steuerfreie Lieferung mit UID (DE) bzw. unverzollt (CH), passend zu Ihren Einkaufsprozessen." },
           ],
         }}
         faq={FAQ}
         ctaTitle="Planen Sie Ihre nächste Großprüfung mit uns"
-        ctaSub="Schicken Sie uns Stückzahl und Termin, wir antworten kurzfristig mit einem individuellen Angebot inklusive aller Liefer- und Rechnungsdetails für AT, DE und CH."
+        ctaSub="Bestellen Sie direkt im Shop oder schicken Sie uns Stückzahl und Termin über das Kontaktformular. Wir antworten kurzfristig mit allen Liefer- und Rechnungsdetails für AT, DE und CH."
       />
     </>
   );

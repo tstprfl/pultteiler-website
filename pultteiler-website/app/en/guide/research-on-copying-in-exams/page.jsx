@@ -79,7 +79,7 @@ export default function Page() {
 
       <h2 style={A.h2}>Conclusion</h2>
       <p style={A.p}>
-        The research agrees: copying in exams is above all a question of opportunity, and the opportunity is the seat neighbour. Whoever interrupts the line of sight to the neighbour's paper solves the problem at its root. The desk divider is the way to do this with the least effort. We are happy to advise you on the right equipment: <Link href="/en/quote" style={A.a}>request a non-binding quote</Link>.
+        The research agrees: copying in exams is above all a question of opportunity, and the opportunity is the seat neighbour. Whoever interrupts the line of sight to the neighbour's paper solves the problem at its root. The desk divider is the way to do this with the least effort. We are happy to advise you on the right equipment: <Link href="/en/contact" style={A.a}>write to us via the contact form</Link>.
       </p>
 
       <h2 style={A.h2}>Sources</h2>

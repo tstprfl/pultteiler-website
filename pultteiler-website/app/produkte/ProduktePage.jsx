@@ -55,7 +55,7 @@ const T = {
   de: {
     badge: "Online-Shop", h1: "Pultteiler kaufen: Sets und Einzelteile",
     intro: "Sichtschutz-Trennwände für Schultische direkt vom Hersteller. Jeder Holzkoffer enthält 12 komplette Systeme. Kauf auf Rechnung, keine Kreditkarte, keine Vorkasse.",
-    land: "Lieferland", countries: { AT: "Österreich", DE: "Deutschland", CH: "Schweiz" }, other: "Anderes Land? → Angebot anfordern", quote: "/angebot",
+    land: "Lieferland", countries: { AT: "Österreich", DE: "Deutschland", CH: "Schweiz" }, other: "Anderes Land? → Kontakt aufnehmen", quote: "/kontakt",
     box: { AT: "Preise und Versand für Österreich", DE: "Preise und Versand für Deutschland", CH: "Preise und Versand für die Schweiz" },
     sets: "Koffer-Sets", original: "Das Original", taxFree: "steuerfrei", inclVat: "inkl. 20% USt", inclVatShort: "inkl. USt",
     parts: "Ersatzteile nachbestellen",
@@ -65,7 +65,7 @@ const T = {
   en: {
     badge: "Online shop", h1: "Buy Pultteiler: sets and spare parts",
     intro: "Privacy screens for school desks direct from the manufacturer. Every wooden case contains 12 complete systems. Purchase on invoice, no credit card, no prepayment.",
-    land: "Delivery country", countries: { AT: "Austria", DE: "Germany", CH: "Switzerland" }, other: "Other country? → Request a quote", quote: "/en/quote",
+    land: "Delivery country", countries: { AT: "Austria", DE: "Germany", CH: "Switzerland" }, other: "Other country? → Contact us", quote: "/en/contact",
     box: { AT: "Prices and shipping for Austria", DE: "Prices and shipping for Germany", CH: "Prices and shipping for Switzerland" },
     sets: "Case sets", original: "The original", taxFree: "tax-free", inclVat: "incl. 20% VAT", inclVatShort: "incl. VAT",
     parts: "Reorder spare parts",

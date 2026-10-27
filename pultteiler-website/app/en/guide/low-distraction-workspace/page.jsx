@@ -21,7 +21,7 @@ export default function Page() {
       related={[
         { href: "/en/primary-schools", label: "Pultteiler for primary schools" },
         { href: "/en/guide/privacy-screens-for-exams", label: "Privacy screens for class tests: creating fair exam conditions" },
-        { href: "/en/quote", label: "Request a non-binding quote for your school" },
+        { href: "/en/contact", label: "Questions about the Pultteiler? Contact us" },
       ]}
     >
       <p style={A.p}>
@@ -62,7 +62,7 @@ export default function Page() {
 
       <h2 style={A.h2}>Conclusion</h2>
       <p style={{ ...A.p, marginBottom: 0 }}>
-        A low-distraction workspace is one of the simplest effective measures for focused work: a divider everyone knows, a well-chosen place, a fixed ritual. Schools that buy dividers for exams anyway already have the equipment in house. We are happy to advise you on the right equipment: <Link href="/en/quote" style={A.a}>request a non-binding quote</Link>.
+        A low-distraction workspace is one of the simplest effective measures for focused work: a divider everyone knows, a well-chosen place, a fixed ritual. Schools that buy dividers for exams anyway already have the equipment in house. We are happy to advise you on the right equipment: <Link href="/en/contact" style={A.a}>write to us via the contact form</Link>.
       </p>
     </ArticleLayout>
   );

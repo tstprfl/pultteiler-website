@@ -35,7 +35,7 @@ const FAQ = [
   },
   {
     q: "Wie läuft die Bestellung für unsere Schule ab?",
-    a: "Sie bestellen per Anfrageformular oder direkt im Shop und zahlen auf Rechnung, keine Kreditkarte, keine Vorkasse. Österreichische Bundesschulen erhalten E-Rechnungen mit ihrer EKG-Nummer, deutsche Schulen mit UID-Nummer eine steuerfreie innergemeinschaftliche Lieferung. In die Schweiz liefern wir steuerfrei und unverzollt.",
+    a: "Sie bestellen direkt im Shop und zahlen auf Rechnung, keine Kreditkarte, keine Vorkasse. Österreichische Bundesschulen erhalten E-Rechnungen mit ihrer EKG-Nummer, deutsche Schulen mit UID-Nummer eine steuerfreie innergemeinschaftliche Lieferung. In die Schweiz liefern wir steuerfrei und unverzollt.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function Page() {
         }}
         faq={FAQ}
         ctaTitle="Faire Klassenarbeiten ab der nächsten Prüfung"
-        ctaSub="Fordern Sie ein unverbindliches Angebot für Ihre Schule an oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."
+        ctaSub="Bestellen Sie direkt im Shop: Kauf auf Rechnung, Lieferung in 5–10 Werktagen. Bei Fragen zu Stückzahlen oder Sonderwünschen schreiben Sie uns über das Kontaktformular."
       />
     </>
   );

@@ -22,11 +22,11 @@ const T = {
   de: { home: "/", homeLabel: "Start", index: "/ratgeber", indexLabel: "Ratgeber", badge: "Ratgeber für Schulen", updated: "Aktualisiert am", locale: "de-AT",
         byline: (y) => `Schulmittel Blaschegg, Hersteller seit über ${y} Jahren`, ctaTitle: "Sichtschutz direkt vom Hersteller",
         ctaText: (y) => `${SCHOOLS_TEXT} arbeiten mit dem Pultteiler, seit über ${y} Jahren, direkt vom Produzenten, Kauf auf Rechnung.`,
-        quote: "/angebot", quoteCta: "Angebot anfordern →", shop: "/produkte", shopCta: "Zum Shop", related: "Weiterlesen", relatedAria: "Weiterführende Artikel" },
+        contact: "/kontakt", contactCta: "Kontakt", shop: "/produkte", shopCta: "Zum Shop", related: "Weiterlesen", relatedAria: "Weiterführende Artikel" },
   en: { home: "/en", homeLabel: "Home", index: "/en/guide", indexLabel: "Guide", badge: "Guide for schools", updated: "Updated", locale: "en-GB",
         byline: (y) => `Schulmittel Blaschegg, manufacturer for over ${y} years`, ctaTitle: "Privacy screens direct from the manufacturer",
         ctaText: (y) => `Several hundred schools in Austria, Germany and Switzerland work with the Pultteiler, direct from the manufacturer for over ${y} years. Delivery to other countries on request.`,
-        quote: "/en/quote", quoteCta: "Request a quote →", shop: "/en/products", shopCta: "View products", related: "Read more", relatedAria: "Related articles" },
+        contact: "/en/contact", contactCta: "Contact us", shop: "/en/products", shopCta: "View products", related: "Read more", relatedAria: "Related articles" },
 };
 
 export function articleJsonLd({ title, description, slug, date, path }, lang = "de") {
@@ -88,7 +88,7 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href={t.shop} style={{ background: C.accentText, color: C.white, padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.shopCta} →</a>
-              <a href={t.quote} style={{ background: "transparent", color: C.white, border: "1.5px solid rgba(255,255,255,0.35)", padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.quoteCta.replace(/\s*→$/, "")}</a>
+              <a href={t.contact} style={{ background: "transparent", color: C.white, border: "1.5px solid rgba(255,255,255,0.35)", padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.contactCta}</a>
             </div>
           </aside>
 

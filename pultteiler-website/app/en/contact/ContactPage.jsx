@@ -35,7 +35,7 @@ export default function ContactPage() {
     <div lang="en" style={{ paddingTop: 72 }}>
       <section style={{ padding: "80px 32px 96px", background: C.bg }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <Heading as="h1" overline="Contact" title="We are here for you" align="center"/>
+          <Heading as="h1" overline="Contact" title="We are here for you" align="center" sub="Questions about ordering, quantities, special requests or delivery to other countries? Write to us, we reply soon."/>
           <div style={{ maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 2 }}>
             <Reveal><div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "40px 36px" }}>
               {sent ? (

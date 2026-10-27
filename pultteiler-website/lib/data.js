@@ -60,7 +60,6 @@ export const NAV = [
       { id: "hochschulen", label: "Hochschulen & Prüfungszentren", href: "/hochschulen" },
     ],
   },
-  { id: "angebot", label: "Angebot", href: "/angebot" },
   { id: "ratgeber", label: "Ratgeber", href: "/ratgeber" },
   { id: "anleitung", label: "So funktioniert's", href: "/anleitung" },
   { id: "ueber-uns", label: "Über uns", href: "/ueber-uns" },
@@ -71,5 +70,4 @@ export const NAV = [
 export const NAV_SECONDARY = [
   { id: "galerie", label: "Referenzen & Galerie", href: "/galerie" },
   { id: "versand", label: "Versand & Rückgabe", href: "/versand" },
-  { id: "angebot", label: "Angebot anfordern", href: "/angebot" },
 ];

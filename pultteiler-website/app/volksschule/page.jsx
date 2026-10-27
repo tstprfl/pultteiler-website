@@ -27,7 +27,7 @@ const FAQ = [
   },
   {
     q: "Wie bestellt unsere Schule, geht Kauf auf Rechnung?",
-    a: "Ja, ausschließlich: Sie bestellen per Anfrageformular oder im Shop und zahlen bequem auf Rechnung, keine Kreditkarte, keine Vorkasse. Österreichische Bundesschulen erhalten auf Wunsch eine E-Rechnung mit ihrer EKG-Nummer, deutsche Schulen mit UID-Nummer eine steuerfreie Lieferung.",
+    a: "Ja, ausschließlich: Sie bestellen im Shop und zahlen bequem auf Rechnung, keine Kreditkarte, keine Vorkasse. Österreichische Bundesschulen erhalten auf Wunsch eine E-Rechnung mit ihrer EKG-Nummer, deutsche Schulen mit UID-Nummer eine steuerfreie Lieferung.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Page() {
         }}
         faq={FAQ}
         ctaTitle="Bereit für faire Schularbeiten?"
-        ctaSub="Fordern Sie ein unverbindliches Angebot für Ihre Volksschule an oder bestellen Sie direkt im Shop. Kauf auf Rechnung, Lieferung in 5–10 Werktagen."
+        ctaSub="Bestellen Sie direkt im Shop: Kauf auf Rechnung, Lieferung in 5–10 Werktagen. Bei Fragen zu Stückzahlen oder Sonderwünschen schreiben Sie uns über das Kontaktformular."
       />
     </>
   );

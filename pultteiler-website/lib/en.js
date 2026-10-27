@@ -40,21 +40,19 @@ export const COUNTRIES_EN = [
     lines: [
       "Delivery on request",
       "We check shipping and terms for your country",
-      "You receive an individual written quote",
+      "Write to us via the contact form for shipping costs and terms",
     ],
   },
 ];
 
 export const UI_EN = {
-  quoteHref: "/en/quote",
-  quoteCta: "Request a quote →",
   shopHref: "/en/products",
   shopCta: "View products",
   contactHref: "/en/contact",
   contactCta: "Contact us",
   trust: ["Direct from the manufacturer", "Several hundred schools in AT, DE and CH", `For over ${YEARS} years`, "Delivery to other countries on request"],
   orderTitle: "How ordering works",
-  orderSub: "No credit card checkout, no prepayment: you order on request or directly in the online shop and pay conveniently on invoice, as schools and school authorities are used to.",
+  orderSub: "No credit card checkout, no prepayment: you order directly in the online shop and pay conveniently on invoice, as schools and school authorities are used to. Questions? Use the contact form.",
   countries: COUNTRIES_EN,
   faqTitle: "Frequently asked questions",
 };
@@ -105,5 +103,5 @@ export const GALLERY_EN = [
 export const AUDIENCES_EN = [
   { id: "primary", href: "/en/primary-schools", title: "Primary schools", teaser: "Privacy screens for the first tests: child-friendly height (50×30 cm), set up in moments, one case per class.", img: "/images/klassenzimmer.png", imgAlt: "Pultteiler in a primary school classroom" },
   { id: "secondary", href: "/en/secondary-schools", title: "Secondary schools", teaser: "Dividers for tests and exams from school year 6: taller panels (50×40 cm), robust for constant use.", img: "/images/pultteiler-einsatz.jpg", imgAlt: "Pultteiler in the computer room of a secondary school" },
-  { id: "universities", href: "/en/universities", title: "Universities and exam centres", teaser: "Large quantities for lecture halls and exam centres: individual quotes, reference Medical University of Innsbruck, delivery across Europe.", img: "/images/kurhaus-saal-totale.jpg", imgAlt: "Exam hall in the Kurhaus Bad Krozingen, every desk fitted with Pultteiler dividers" },
+  { id: "universities", href: "/en/universities", title: "Universities and exam centres", teaser: "Large quantities for lecture halls and exam centres, reference Medical University of Innsbruck, delivery across Europe.", img: "/images/kurhaus-saal-totale.jpg", imgAlt: "Exam hall in the Kurhaus Bad Krozingen, every desk fitted with Pultteiler dividers" },
 ];

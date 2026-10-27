@@ -52,7 +52,7 @@ export default function HowItWorksPage() {
           <Reveal delay={0.2}>
             <div style={{ marginTop: 56, textAlign: "center" }}>
               <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: C.textMuted, marginBottom: 24 }}>Convinced? Get the Pultteiler direct from the manufacturer.</p>
-              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/products">View products →</Btn><Btn href="/en/quote" variant="secondary">Request a quote</Btn><Btn href="/en/contact" variant="secondary">Contact us</Btn></div>
+              <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}><Btn href="/en/products">View products →</Btn><Btn href="/en/contact" variant="secondary">Contact us</Btn></div>
             </div>
           </Reveal>
         </div>

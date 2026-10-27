@@ -14,7 +14,7 @@ export const metadata = {
 const FAQ = [
   {
     q: "Can you supply several hundred dividers for large exams?",
-    a: "Yes. We supply universities and exam centres in large quantities. As the manufacturer we produce to demand and can also assemble cases with more than 12 dividers. Request an individual quote with the quantity you need and we will calculate it for your project.",
+    a: "Yes. We supply universities and exam centres in large quantities. As the manufacturer we produce to demand and can also assemble cases with more than 12 dividers. Order in the shop or write to us via the contact form with the quantity you need and we will put together the details for your project.",
   },
   {
     q: "How quickly can large quantities be set up before an exam?",
@@ -30,7 +30,7 @@ const FAQ = [
   },
   {
     q: "Do you deliver outside Austria, Germany and Switzerland?",
-    a: "Yes, on request. Tell us your country, the quantity and your preferred date. We will check delivery and terms for your country and send you an individual written quote.",
+    a: "Yes, on request. Tell us your country, the quantity and your preferred date. Write to us via the contact form; we will check delivery and terms for your country and reply with all details.",
   },
 ];
 
@@ -61,12 +61,12 @@ export default function Page() {
             { title: "Set up in moments", text: "Tool-free plug-in system: every divider stands in moments. Even large lecture halls are equipped quickly by a small team, and cleared just as fast." },
             { title: "Space-saving storage", text: "12 systems per stackable wooden case, larger cases on request. Hundreds of dividers are stored compactly until the next exam date." },
             { title: "Reference: Medical University of Innsbruck", text: "In exam use at the Medical University of Innsbruck, from the lecture hall to the laboratory. Further references are available on request." },
-            { title: "Fits your procurement", text: "Written quote for your purchasing department, clear delivery and invoicing terms for your country. Austria, Germany and Switzerland: purchase on invoice." },
+            { title: "Fits your procurement", text: "Order in the shop or by message to us, clear delivery and invoicing terms for your country. Austria, Germany and Switzerland: purchase on invoice." },
           ],
         }}
         faq={FAQ}
         ctaTitle="Plan your next large exam with us"
-        ctaSub={`Send us the quantity and date and we will reply soon with an individual quote. You can also write to us directly at ${CONTACT.email}.`}
+        ctaSub={`Order directly in the shop or send us the quantity and date via the contact form. You can also write to us directly at ${CONTACT.email}.`}
       />
     </div>
   );

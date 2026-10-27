@@ -18,7 +18,7 @@ export default function Page() {
       related={[
         { href: "/volksschule", label: "Pultteiler für die Volksschule & Primarstufe" },
         { href: "/ratgeber/sichtschutz-klassenarbeit", label: "Sichtschutz für Klassenarbeiten: faire Prüfungsbedingungen schaffen" },
-        { href: "/angebot", label: "Unverbindliches Angebot für Ihre Schule anfordern" },
+        { href: "/kontakt", label: "Fragen zum Pultteiler? Kontakt aufnehmen" },
       ]}
     >
       <p style={A.p}>
@@ -59,7 +59,7 @@ export default function Page() {
 
       <h2 style={A.h2}>Fazit</h2>
       <p style={{ ...A.p, marginBottom: 0 }}>
-        Ein reizarmer Arbeitsplatz gehört zu den einfachsten wirksamen Maßnahmen für konzentriertes Arbeiten: eine Trennwand, die alle kennen, ein durchdachter Platz, ein festes Ritual. Schulen, die ihre Teiler ohnehin für Prüfungen anschaffen, haben die Ausstattung dafür bereits im Haus. Gerne beraten wir Sie zur passenden Ausstattung, <Link href="/angebot" style={A.a}>fordern Sie ein unverbindliches Angebot an</Link>.
+        Ein reizarmer Arbeitsplatz gehört zu den einfachsten wirksamen Maßnahmen für konzentriertes Arbeiten: eine Trennwand, die alle kennen, ein durchdachter Platz, ein festes Ritual. Schulen, die ihre Teiler ohnehin für Prüfungen anschaffen, haben die Ausstattung dafür bereits im Haus. Gerne beraten wir Sie zur passenden Ausstattung, <Link href="/kontakt" style={A.a}>schreiben Sie uns über das Kontaktformular</Link>.
       </p>
     </ArticleLayout>
   );
