@@ -40,7 +40,6 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
   .hero-g { gap: 32px !important; }
   .hero-sec { padding-top: 100px !important; }   /* Knöpfe ohne Scrollen sichtbar */
   .hero-btns { gap: 10px !important; }
-  .hero-btns a { width: 100% !important; }
   h1 { font-size: clamp(36px, 10vw, 56px) !important; }
   .gallery-grid { grid-template-columns: 1fr !important; min-width: 0 !important; }
   /* Karten und Textboxen: schmalere Innenabstände, damit die Textspalte breiter wird */
@@ -54,6 +53,9 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
 
 /* Kopfzeile auf schmalen Telefonen: kleineres Logo und weniger Rand, damit Logo, DE|EN, Warenkorb und Menü in eine Zeile passen */
 @media (max-width: 480px) {
+  /* Nur auf schmalen Handys: Shop-Knopf über die volle Breite, die beiden anderen teilen sich die Zeile darunter */
+  .hero-btns a { flex: 1 1 auto !important; text-align: center !important; padding-left: 16px !important; padding-right: 16px !important; }
+  .hero-btns a.btn-primary { flex-basis: 100% !important; }
   .nav-row { padding: 0 16px !important; }
   .nav-logo { gap: 8px !important; }
   .nav-logo img { width: 44px !important; height: 44px !important; }
