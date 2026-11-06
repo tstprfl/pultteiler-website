@@ -23,13 +23,20 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
 }
 
 /* Telefonnummer in der Desktop-Leiste nur, wenn genug Platz ist */
-@media (max-width: 1239px) { .nav-phone { display: none !important; } }
+@media (max-width: 1299px) { .nav-phone { display: none !important; } }
+
+/* Kopfzeile: einheitliche Hover-Fläche für Telefon, Warenkorb und Menü */
+@media (hover: hover) { .hdr-item:hover { background: #D5E5E5 !important; } .hdr-fill:hover { background: #0E5A5A !important; } }
 
 /* Navigation bricht früher um, da sie mehr Einträge hat */
 @media (max-width: 1120px) {
   .desk-nav { display: none !important; }
   .mob-btn { display: block !important; }
   .mob-shop { display: inline-flex !important; }
+  .nav-cart-label { display: none !important; }
+  .cart-count { position: absolute !important; top: 0; right: 0; min-width: 18px !important; height: 18px !important; padding: 0 4px !important; font-size: 11px !important; }
+  .nav-cart { padding: 0 8px !important; }
+  .mob-shop { font-size: 14px !important; padding: 0 12px !important; }
   .mob-phone { display: inline-flex !important; }
 }
 

@@ -25,15 +25,6 @@ export default function Home() {
               <Reveal delay={0.3}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 17, color: C.textMuted, lineHeight: 1.7, maxWidth: 520, margin: "0 0 8px" }}>Die bewährte Trennwand für Schultische bei Schularbeiten, Klassenarbeiten und Prüfungen: verhindert Abschreiben, schafft einen reizarmen Arbeitsplatz und steht dank Stecksystem in wenigen Augenblicken. {SCHOOLS_TEXT} vertrauen darauf. Passend für alle gängigen Schultische bis 3 cm Plattenstärke.</p></Reveal>
               <Reveal delay={0.35}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 24, lineHeight: 1.5 }}>✓ Kauf auf Rechnung: keine Kreditkarte, keine Vorkasse</p></Reveal>
               <Reveal delay={0.4}><p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.5 }}>↓ <a href="#medien" onClick={(e) => { e.preventDefault(); document.getElementById("medien")?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ color: C.text, textDecoration: "underline", textUnderlineOffset: 4 }}>{PRESSE_T.de.hero}</a></p></Reveal>
-              <Reveal delay={0.45}><ul className="hero-chips" style={{ listStyle: "none", padding: 0, margin: "22px 0 0", display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {[
-                  { flag: "🇦🇹", text: "E-Rechnung für Bundesschulen" },
-                  { flag: "🇩🇪", text: "Steuerfrei mit UID-Nummer" },
-                  { flag: "🇨🇭", text: "Steuerfrei und unverzollt" },
-                ].map((c) => (
-                  <li key={c.text} style={{ display: "inline-flex", alignItems: "center", gap: 8, border: `1px solid ${C.border}`, background: C.bgCard, padding: "7px 12px", borderRadius: 6, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, whiteSpace: "nowrap" }}><span aria-hidden="true">{c.flag}</span>{c.text}</li>
-                ))}
-              </ul></Reveal>
             </div>
             <div className="hero-right" style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 48 }}>
               <Reveal delay={0.15}><div style={{ overflow: "hidden", border: `1px solid ${C.border}`, background: C.bgCard }}><Img sizes="(max-width: 768px) 100vw, 25vw" src="/images/meduni-innsbruck_2.jpeg" alt="Pultteiler im Prüfungseinsatz an der MedUni Innsbruck" style={{ width: "100%", height: 170, objectFit: "cover", display: "block" }}/></div></Reveal>
