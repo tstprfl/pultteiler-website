@@ -8,8 +8,9 @@ const nextConfig = {
       // Angebotsanfrage abgeschafft (Oktober 2026): alte Adressen auf das Kontaktformular
       { source: '/angebot', destination: '/kontakt', permanent: true },
       { source: '/angebot/', destination: '/kontakt', permanent: true },
-      { source: '/en/quote', destination: '/en/contact', permanent: true },
-      { source: '/en/quote/', destination: '/en/contact', permanent: true },
+      // Englische Fassung offline (November 2026): alle /en-Adressen auf die deutsche Startseite
+      { source: '/en', destination: '/', permanent: true },
+      { source: '/en/:path*', destination: '/', permanent: true },
       // Alte Webnode-URLs auf neue Seiten umleiten
       { source: '/neuigkeiten', destination: '/', permanent: true },
       { source: '/neuigkeiten/', destination: '/', permanent: true },

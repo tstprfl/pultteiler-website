@@ -1,12 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
 import { C } from "@/lib/colors";
 import { loadEmailJS } from "@/lib/emailjs";
 import { useCart } from "@/components/CartProvider";
 import { useDialog, QtyInput } from "@/components/ui";
 import Img from "@/components/Img";
-import { isEnPath } from "@/lib/i18n";
 import { localizeProduct } from "@/lib/en";
 
 // Warenkorb auf Deutsch oder Englisch, je nach Sprache der aktuellen Seite.
@@ -14,7 +12,7 @@ import { localizeProduct } from "@/lib/en";
 // und erhalten keine automatische Bestätigung, da die Kundenvorlage in EmailJS deutsch ist.
 export default function CartSidebar({ onClose }) {
   const { items, updateQty, remove, total, count, region, getPrice, shipping, clear, vatRate, vat, grandTotal, setCount, freeShippingSets, packages } = useCart();
-  const en = isEnPath(usePathname());
+  const en = false;   // englische Fassung abgeschaltet (November 2026)
   const tx = (de, enText) => (en ? enText : de);
   const shortName = (item) => localizeProduct(item, en).short;
   const fmt = (n) => `€ ${n.toFixed(2)}`;

@@ -7,7 +7,6 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { ScrollToTop } from "@/components/ui";
-import LanguageHint from "@/components/LanguageHint";
 import { YEARS, CONTACT } from "@/lib/site";
 
 export const metadata = {
@@ -67,7 +66,6 @@ export default function RootLayout({ children }) {
             <ScrollToTop/>
             {/* Vercel Web Analytics: Seitenaufrufe ohne Cookies und ohne personenbezogene Kennungen, daher ohne Einwilligungsbanner */}
             <Analytics/>
-            <LanguageHint/>
           </div>
         </CartProvider>
       </body>

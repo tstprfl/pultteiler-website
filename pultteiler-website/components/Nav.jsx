@@ -7,7 +7,6 @@ import { NAV } from "@/lib/data";
 import { useCart } from "@/components/CartProvider";
 import CartSidebar from "@/components/CartSidebar";
 import Img from "@/components/Img";
-import { NAV_EN, EN_START, isEnPath, switchTarget } from "@/lib/i18n";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -20,34 +19,10 @@ export default function Nav() {
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 20); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
   useEffect(() => { setOpen(false); setDdOpen(false); }, [pathname]);
 
-  // Sprachwechsel ohne Springen: Scrollposition merken und auf der Zielseite wiederherstellen.
-  // Die deutsche und die englische Seite sind gleich aufgebaut, daher passt die absolute Position.
-  const SCROLL_KEY = "pt-lang-scroll";
-  const rememberScroll = () => { try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch {} };
-  useEffect(() => {
-    try {
-      const y = sessionStorage.getItem(SCROLL_KEY);
-      if (y === null) return;
-      sessionStorage.removeItem(SCROLL_KEY);
-      const restore = () => window.scrollTo({ top: Math.min(Number(y), document.documentElement.scrollHeight - window.innerHeight), behavior: "instant" });
-      restore();
-      requestAnimationFrame(restore);
-      setTimeout(restore, 120);
-    } catch {}
-  }, [pathname]);
-
-  // Englische Seiten: eigene Navigation, Warenkorb wie auf Deutsch
-  const en = isEnPath(pathname);
-  const items = en ? NAV_EN : NAV;
+  const items = NAV;
   // Schwarzer Knopf rechts: der Shop
-  const quote = en ? { href: "/en/products", short: "Shop →", long: "View products →" } : { href: "/produkte", short: "Shop →", long: "Zum Shop →" };
-  // Fester DE|EN-Schalter: beide Sprachen immer sichtbar, gleiche Breite, kein Verschieben der Navigation
-  const langs = [
-    { code: "de", label: "DE", title: "Deutsch", active: !en, href: en ? switchTarget(pathname) : pathname },
-    { code: "en", label: "EN", title: "English", active: en, href: en ? pathname : switchTarget(pathname) },
-  ];
-
-  const isActive = (href) => (href === "/" || href === "/en") ? pathname === href : pathname.startsWith(href);
+  const quote = { href: "/produkte", short: "Shop →", long: "Zum Shop →" };
+  const isActive = (href) => href === "/" ? pathname === href : pathname.startsWith(href);
   const groupActive = (n) => n.children?.some((c) => isActive(c.href));
 
   const linkStyle = (active) => ({ background: active ? C.surface : "none", border: "none", padding: "8px 14px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: active ? C.text : C.textMuted, transition: "all 0.2s", textDecoration: "none", whiteSpace: "nowrap", cursor: "pointer" });
@@ -56,12 +31,12 @@ export default function Nav() {
     <>
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : "transparent", borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
         <div className="nav-row" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href={en ? EN_START : "/"} className="nav-logo" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
+          <Link href="/" className="nav-logo" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
             <Img sizes="56px" src="/images/Klammer_2.png" alt="Pultteiler Klammer" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
             <span className="nav-word" style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, letterSpacing: "0.05em" }}>Pultteiler</span>
           </Link>
           {/* Menüpunkte links bündig nach dem Logo, damit „Start“ und „Home“ beim Sprachwechsel an derselben Stelle beginnen;
-              Shop-Knopf, Sprachschalter und Warenkorb bleiben rechts. Der Abstand zum Logo hängt nur von der Fensterbreite ab
+              Shop-Knopf und Warenkorb bleiben rechts. Der Abstand zum Logo hängt nur von der Fensterbreite ab
               (schmal bis 4 px, damit die längere deutsche Leiste ab 1121 px noch passt) */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 4, flex: 1, minWidth: 0 }}>
             <div className="desk-nav" style={{ display: "flex", gap: 2, alignItems: "center", flex: 1, marginLeft: "clamp(4px, calc(100vw - 1150px), 40px)" }}>
@@ -84,20 +59,11 @@ export default function Nav() {
               <span aria-hidden="true" style={{ flex: 1, minWidth: 6 }}/>
               <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "12px 22px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
             </div>
-            <div role="group" className="nav-lang" aria-label={en ? "Language" : "Sprache"} style={{ display: "flex", border: `1px solid ${C.border}`, marginLeft: 8, flexShrink: 0 }}>
-              {langs.map(l => (
-                <Link key={l.code} href={l.href} scroll={false} hrefLang={l.code} lang={l.code} title={l.title} aria-current={l.active ? "true" : undefined}
-                  onClick={l.active ? (e) => e.preventDefault() : rememberScroll}
-                  style={{ width: 38, textAlign: "center", padding: "7px 0", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", color: l.active ? C.white : C.textMuted, background: l.active ? C.dark : "transparent", textDecoration: "none", cursor: l.active ? "default" : "pointer", transition: "background 0.2s, color 0.2s" }}>
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-            <button onClick={() => setCartOpen(true)} className="nav-cart" aria-label={en ? "Open cart" : "Warenkorb öffnen"} style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
+            <button onClick={() => setCartOpen(true)} className="nav-cart" aria-label="Warenkorb öffnen" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
               <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               {count > 0 && <span style={{ position: "absolute", top: 2, right: 4, background: C.accentText, color: C.white, width: 18, height: 18, borderRadius: "50%", fontSize: 10, fontWeight: 700, fontFamily: "'Source Sans 3 Variable', sans-serif", display: "flex", alignItems: "center", justifyContent: "center" }}>{count}</span>}
             </button>
-            <button onClick={() => setOpen(!open)} className="mob-btn" aria-label={en ? "Menu" : "Menü"} aria-expanded={open} style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 8 }}>
+            <button onClick={() => setOpen(!open)} className="mob-btn" aria-label="Menü" aria-expanded={open} style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 8 }}>
               <svg width="24" height="24" viewBox="0 0 24 24" stroke={C.text} strokeWidth="2" fill="none">{open ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></>}</svg>
             </button>
           </div>
