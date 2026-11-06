@@ -25,7 +25,7 @@ export default function Nav() {
   const isActive = (href) => href === "/" ? pathname === href : pathname.startsWith(href);
   const groupActive = (n) => n.children?.some((c) => isActive(c.href));
 
-  const linkStyle = (active) => ({ background: active ? C.surface : "none", border: "none", padding: "8px 14px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: active ? C.text : C.textMuted, transition: "all 0.2s", textDecoration: "none", whiteSpace: "nowrap", cursor: "pointer" });
+  const linkStyle = (active) => ({ background: active ? C.surface : "none", border: "none", padding: "8px 12px", borderRadius: 6, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, letterSpacing: "0.02em", color: active ? C.text : C.textMuted, transition: "all 0.2s", textDecoration: "none", whiteSpace: "nowrap", cursor: "pointer" });
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function Nav() {
                   {ddOpen && (
                     <div style={{ position: "absolute", top: "100%", left: 0, minWidth: 280, background: C.bgCard, border: `1px solid ${C.border}`, boxShadow: "0 8px 24px rgba(0,0,0,0.10)", paddingTop: 4, paddingBottom: 4 }}>
                       {n.children.map(c => (
-                        <Link key={c.id} href={c.href} style={{ display: "block", padding: "12px 18px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", color: isActive(c.href) ? C.text : C.textMuted, background: isActive(c.href) ? C.surface : "none", textDecoration: "none" }}>{c.label}</Link>
+                        <Link key={c.id} href={c.href} style={{ display: "block", padding: "12px 18px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, letterSpacing: "0.02em", color: isActive(c.href) ? C.text : C.textMuted, background: isActive(c.href) ? C.surface : "none", textDecoration: "none" }}>{c.label}</Link>
                       ))}
                     </div>
                   )}
@@ -57,7 +57,7 @@ export default function Nav() {
                 <Link key={n.id} href={n.href} style={linkStyle(isActive(n.href))}>{n.label}</Link>
               ))}
               <span aria-hidden="true" style={{ flex: 1, minWidth: 6 }}/>
-              <Link href={quote.href} className="nav-shop" style={{ background: C.dark, color: C.white, padding: "12px 22px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
+              <Link href={quote.href} className="nav-shop" style={{ background: C.dark, color: C.white, padding: "12px 22px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
             </div>
             {/* Handy: kompakter Shop-Knopf direkt in der Kopfzeile (Desktop-Knopf steckt in .desk-nav) */}
             <Link href={quote.href} className="mob-shop" style={{ display: "none", background: C.dark, color: C.white, padding: "0 14px", height: 36, alignItems: "center", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap", marginLeft: 4 }}>{quote.short}</Link>
@@ -78,11 +78,11 @@ export default function Nav() {
               <div key={n.id}>
                 <div style={{ padding: "14px 16px 6px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted }}>{n.label}</div>
                 {n.children.map(c => (
-                  <Link key={c.id} href={c.href} style={{ display: "block", width: "100%", textAlign: "left", background: isActive(c.href) ? C.surface : "none", padding: "12px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.08em", color: isActive(c.href) ? C.text : C.textMuted, textDecoration: "none" }}>{c.label}</Link>
+                  <Link key={c.id} href={c.href} style={{ display: "block", width: "100%", textAlign: "left", background: isActive(c.href) ? C.surface : "none", padding: "12px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, fontWeight: 600, letterSpacing: "0.02em", color: isActive(c.href) ? C.text : C.textMuted, textDecoration: "none" }}>{c.label}</Link>
                 ))}
               </div>
             ) : (
-              <Link key={n.id} href={n.href} style={{ display: "block", width: "100%", textAlign: "left", background: isActive(n.href) ? C.surface : "none", padding: "14px 16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.1em", color: isActive(n.href) ? C.text : C.textMuted, textDecoration: "none" }}>{n.label}</Link>
+              <Link key={n.id} href={n.href} style={{ display: "block", width: "100%", textAlign: "left", background: isActive(n.href) ? C.surface : "none", padding: "14px 16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, fontWeight: 600, letterSpacing: "0.02em", color: isActive(n.href) ? C.text : C.textMuted, textDecoration: "none" }}>{n.label}</Link>
             ))}
           </div>
         )}
