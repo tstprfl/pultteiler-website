@@ -35,7 +35,15 @@ export default function Nav() {
   const { count } = useCart();
   const pathname = usePathname();
 
-  useEffect(() => { const fn = () => setScrolled(window.scrollY > 20); window.addEventListener("scroll", fn); return () => window.removeEventListener("scroll", fn); }, []);
+  // Hintergrund sofort richtig setzen: Nach dem Neuladen stellt der Browser die Scrollposition wieder her, ohne ein Scroll-Ereignis auszulösen
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 20);
+    fn();
+    const t = setTimeout(fn, 100);
+    window.addEventListener("scroll", fn, { passive: true });
+    window.addEventListener("pageshow", fn);
+    return () => { clearTimeout(t); window.removeEventListener("scroll", fn); window.removeEventListener("pageshow", fn); };
+  }, []);
   useEffect(() => { setOpen(false); setDd(null); }, [pathname]);
   useEffect(() => {
     const esc = (e) => { if (e.key === "Escape") setDd(null); };
