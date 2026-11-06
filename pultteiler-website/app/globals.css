@@ -58,13 +58,13 @@ body { margin: 0; background: #E4F0F0; }
   .nav-logo { gap: 8px !important; }
   .nav-logo img { width: 44px !important; height: 44px !important; }
   .nav-word { font-size: 22px !important; }
-  .nav-cart { padding: 8px 8px !important; }
+  .nav-cart { padding: 0 9px !important; height: 38px !important; margin-left: 4px !important; }
 }
 
 /* Sehr schmale Telefone (bis 360 px): Wortmarke und Sprachschalter noch etwas kompakter */
 @media (max-width: 360px) {
   .nav-logo img { width: 40px !important; height: 40px !important; }
   .nav-word { font-size: 20px !important; }
-  .nav-cart { padding: 8px 6px !important; }
+  .nav-cart { padding: 0 7px !important; height: 36px !important; margin-left: 2px !important; }
   .mob-btn { padding: 8px 4px !important; }
 }
