@@ -23,6 +23,7 @@ body { margin: 0; background: #E4F0F0; }
 @media (max-width: 1120px) {
   .desk-nav { display: none !important; }
   .mob-btn { display: block !important; }
+  .mob-shop { display: inline-flex !important; }
 }
 
 @media (max-width: 768px) {

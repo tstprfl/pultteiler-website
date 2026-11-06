@@ -59,6 +59,8 @@ export default function Nav() {
               <span aria-hidden="true" style={{ flex: 1, minWidth: 6 }}/>
               <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "12px 22px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
             </div>
+            {/* Handy: kompakter Shop-Knopf direkt in der Kopfzeile (Desktop-Knopf steckt in .desk-nav) */}
+            <Link href={quote.href} className="mob-shop" style={{ display: "none", background: C.dark, color: C.white, padding: "0 14px", height: 36, alignItems: "center", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap", marginLeft: 4 }}>{quote.short}</Link>
             <button onClick={() => setCartOpen(true)} className="nav-cart" aria-label="Warenkorb öffnen" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
               <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               {count > 0 && <span style={{ position: "absolute", top: 2, right: 4, background: C.accentText, color: C.white, width: 18, height: 18, borderRadius: "50%", fontSize: 10, fontWeight: 700, fontFamily: "'Source Sans 3 Variable', sans-serif", display: "flex", alignItems: "center", justifyContent: "center" }}>{count}</span>}
