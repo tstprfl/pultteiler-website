@@ -82,7 +82,7 @@ export default function Nav() {
                 <Link key={n.id} href={n.href} style={linkStyle(isActive(n.href))}>{n.label}</Link>
               ))}
               <span aria-hidden="true" style={{ flex: 1, minWidth: 6 }}/>
-              <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "10px 18px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
+              <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "12px 22px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
             </div>
             <div role="group" className="nav-lang" aria-label={en ? "Language" : "Sprache"} style={{ display: "flex", border: `1px solid ${C.border}`, marginLeft: 8, flexShrink: 0 }}>
               {langs.map(l => (
@@ -94,7 +94,7 @@ export default function Nav() {
               ))}
             </div>
             <button onClick={() => setCartOpen(true)} className="nav-cart" aria-label={en ? "Open cart" : "Warenkorb öffnen"} style={{ background: "none", border: "none", cursor: "pointer", padding: "8px 12px", position: "relative" }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke={C.text} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               {count > 0 && <span style={{ position: "absolute", top: 2, right: 4, background: C.accentText, color: C.white, width: 18, height: 18, borderRadius: "50%", fontSize: 10, fontWeight: 700, fontFamily: "'Source Sans 3 Variable', sans-serif", display: "flex", alignItems: "center", justifyContent: "center" }}>{count}</span>}
             </button>
             <button onClick={() => setOpen(!open)} className="mob-btn" aria-label={en ? "Menu" : "Menü"} aria-expanded={open} style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 8 }}>
@@ -103,7 +103,9 @@ export default function Nav() {
           </div>
         </div>
         {open && (
-          <div className="mob-menu" style={{ background: C.bg, borderBottom: `1px solid `, padding: "8px 32px 20px", maxHeight: "calc(100vh - 72px)", overflow: "auto" }}>
+          <div className="mob-menu" style={{ background: C.bg, borderBottom: `1px solid ${C.border}`, padding: "8px 32px 20px", maxHeight: "calc(100vh - 72px)", overflow: "auto" }}>
+            {/* Shop zuerst: schwarzer Knopf über der Liste */}
+            <Link href={quote.href} style={{ display: "block", textAlign: "center", background: C.dark, color: C.white, padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", marginBottom: 12 }}>{quote.long}</Link>
             {items.map(n => n.children ? (
               <div key={n.id}>
                 <div style={{ padding: "14px 16px 6px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted }}>{n.label}</div>
@@ -114,7 +116,6 @@ export default function Nav() {
             ) : (
               <Link key={n.id} href={n.href} style={{ display: "block", width: "100%", textAlign: "left", background: isActive(n.href) ? C.surface : "none", padding: "14px 16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.1em", color: isActive(n.href) ? C.text : C.textMuted, textDecoration: "none" }}>{n.label}</Link>
             ))}
-            <Link href={quote.href} style={{ display: "block", textAlign: "center", background: C.dark, color: C.white, padding: "15px 16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", marginTop: 12 }}>{quote.long}</Link>
           </div>
         )}
       </nav>
