@@ -130,7 +130,7 @@ export default function Nav() {
             <Link href="/" style={{ display: "block", padding: "14px 16px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: pathname === "/" ? C.text : C.textMuted, background: pathname === "/" ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>Startseite</Link>
             {NAV.map((n) => n.children ? (
               <div key={n.id}>
-                <div style={{ padding: "14px 16px 6px", fontFamily: FONT, fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.textMuted }}>{n.label}</div>
+                <div style={{ padding: "14px 16px 6px", fontFamily: FONT, fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.textMuted }}>{n.label}</div>
                 {n.children.map((c) => (
                   <Link key={c.id} href={c.href} style={{ display: "block", padding: "12px 28px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: isActive(c.href) ? C.text : C.textMuted, background: isActive(c.href) ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>{c.label}</Link>
                 ))}

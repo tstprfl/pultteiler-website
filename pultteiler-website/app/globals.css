@@ -1,4 +1,6 @@
 *, *::before, *::after { box-sizing: border-box; }
+/* Lange deutsche Wörter in Überschriften (z.B. Geschäftsbedingungen) trennen statt überstehen */
+h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
 body { margin: 0; background: #E4F0F0; }
 ::selection { background: #1A9E9E; color: #FFF; }
 
@@ -62,6 +64,7 @@ button, .btn-primary, .btn-secondary, .nav-shop, .qty-box, input, select, textar
 /* Kopfzeile auf schmalen Telefonen: kleineres Logo und weniger Rand, damit Logo, Shop, Einkaufskorb und Menü in eine Zeile passen */
 @media (max-width: 480px) {
   /* Shop: Länderauswahl teilt sich die volle Breite statt überzustehen */
+  .cart-body { padding: 12px 18px !important; }
   .region-toggle { width: 100% !important; }
   .region-toggle > * { flex: 1 1 0 !important; padding: 12px 4px !important; text-align: center !important; min-width: 0 !important; }
   /* Nur auf schmalen Handys: Shop-Knopf über die volle Breite, die beiden anderen teilen sich die Zeile darunter */

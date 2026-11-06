@@ -46,7 +46,7 @@ export default function Home() {
           ].map((m, i) => (
             <Reveal key={i} delay={i * 0.08}><div style={{ textAlign: "center", padding: "8px 0" }}>
               <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 52, color: "#F0C645", lineHeight: 1 }}>{m.val}</div>
-              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", color: "rgba(255,255,255,0.7)", marginTop: 10 }}>{m.label}</div>
+              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.16em", color: "rgba(255,255,255,0.7)", marginTop: 10 }}>{m.label}</div>
             </div></Reveal>
           ))}
         </div>
@@ -69,7 +69,7 @@ export default function Home() {
                   <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
                     <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", letterSpacing: "0.02em", lineHeight: 1.05 }}>{a.title.toUpperCase()}</h3>
                     <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.65, margin: "0 0 18px", flex: 1 }}>{a.teaser}</p>
-                    <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Mehr erfahren →</span>
+                    <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Mehr erfahren →</span>
                   </div>
                 </Link>
               </Reveal>
@@ -144,8 +144,8 @@ export default function Home() {
                     <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 44, color: C.accentText, lineHeight: 0.6, marginBottom: 16 }}>„</div>
                     <blockquote style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text, lineHeight: 1.7, margin: "0 0 20px", flex: 1 }}>{t.quote}</blockquote>
                     <figcaption>
-                      {t.name && <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, color: C.text }}>{t.name}</div>}
-                      <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted }}>{t.role} · {t.school}</div>
+                      {t.name && <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, color: C.text }}>{t.name}</div>}
+                      <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted }}>{t.role} · {t.school}</div>
                     </figcaption>
                   </figure>
                 </Reveal>
@@ -185,8 +185,8 @@ export default function Home() {
               <Reveal key={a.slug} delay={i * 0.07}>
                 <Link href={`/ratgeber/${a.slug}`} className="hover-lift" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 28px 30px", textDecoration: "none", display: "flex", flexDirection: "column", height: "100%", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
                   <h3 style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 700, color: C.text, lineHeight: 1.45, margin: "0 0 12px" }}>{a.title}</h3>
-                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.6, margin: "0 0 16px", flex: 1 }}>{a.teaser}</p>
-                  <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Lesen →</span>
+                  <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 16px", flex: 1 }}>{a.teaser}</p>
+                  <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", color: C.accentText }}>Lesen →</span>
                 </Link>
               </Reveal>
             ))}

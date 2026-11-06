@@ -102,7 +102,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
     const style = {
       padding: "12px 24px", background: active ? C.tafel : C.bgCard, color: active ? C.white : C.textMuted,
       border: `1px solid ${active ? C.accentText : C.border}`, cursor: "pointer", transition: "all 0.2s",
-      fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none",
+      fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none",
     };
     // Wechsel zwischen Schweiz und Österreich/Deutschland führt auf die andere Shop-Seite
     if (ch !== (r === "CH")) {
@@ -125,13 +125,13 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
 
           {/* Region-Umschalter — Produkte bleiben immer sichtbar */}
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 32 }}>
-            <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>{t.land}</span>
+            <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>{t.land}</span>
             <div className="region-toggle" style={{ display: "flex", gap: 2 }}>
               {toggleBtn("AT", t.countries.AT)}
               {toggleBtn("DE", t.countries.DE)}
               {toggleBtn("CH", t.countries.CH)}
             </div>
-            <Link href={t.quote} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, textDecoration: "none" }}>{t.other}</Link>
+            <Link href={t.quote} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.accentText, fontWeight: 600, textDecoration: "none" }}>{t.other}</Link>
           </div>
 
           {/* Preise und Versand: Konditionen je Lieferland */}
@@ -143,9 +143,9 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px 24px" }}>
                 {konditionen(en)[shown].map((k) => (
                   <div key={k.label}>
-                    <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 600, color: C.textMuted, marginBottom: 4 }}>{k.label}</div>
+                    <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 600, color: C.textMuted, marginBottom: 4 }}>{k.label}</div>
                     <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.accentText, lineHeight: 1.1, marginBottom: 4 }}>{k.val}</div>
-                    <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, lineHeight: 1.5 }}>{k.sub}</div>
+                    <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.5 }}>{k.sub}</div>
                   </div>
                 ))}
               </div>
@@ -164,7 +164,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
                     <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "12px 0 8px" }}>{v.name}</h3>
                     <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: "0 0 20px" }}>{v.desc}</p>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-                      <div><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 36, color: C.text }}>{eur(price(p))}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVat}</span></div>
+                      <div><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 36, color: C.text }}>{eur(price(p))}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVat}</span></div>
                       <AddToCartBtn product={p} label={v.short} en={en}/>
                     </div>
                   </div>
@@ -185,9 +185,9 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
                     <div style={{ padding: "20px 24px 28px" }}>
                       <Badge>{v.tag}</Badge>
                       <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, margin: "10px 0 6px" }}>{v.name}</h3>
-                      <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{v.desc}</p>
+                      <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.5, margin: "0 0 20px" }}>{v.desc}</p>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-                        <div><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>{eur(price(p))}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVatShort}</span></div>
+                        <div><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text }}>{eur(price(p))}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, marginLeft: 8 }}>{shown === "CH" ? t.taxFree : t.inclVatShort}</span></div>
                         <AddToCartBtn product={p} label={v.short} en={en}/>
                       </div>
                     </div>

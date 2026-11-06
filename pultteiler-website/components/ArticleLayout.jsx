@@ -53,7 +53,7 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: 24 }}>
-            <ol style={{ display: "flex", gap: 8, listStyle: "none", margin: 0, padding: 0, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, flexWrap: "wrap" }}>
+            <ol style={{ display: "flex", gap: 8, listStyle: "none", margin: 0, padding: 0, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, flexWrap: "wrap" }}>
               <li><Link href={t.home} style={{ color: C.textMuted, textDecoration: "none" }}>{t.homeLabel}</Link></li>
               <li aria-hidden="true">›</li>
               <li><Link href={t.index} style={{ color: C.textMuted, textDecoration: "none" }}>{t.indexLabel}</Link></li>
@@ -63,9 +63,9 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
           </nav>
 
           <header>
-            <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>{t.badge}</span>
+            <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.06em", color: C.accentText, background: `${C.accent}15`, padding: "5px 12px", display: "inline-block" }}>{t.badge}</span>
             <h1 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: "clamp(34px, 5vw, 56px)", color: C.text, lineHeight: 1.02, margin: "20px 0 14px", letterSpacing: "0.02em" }}>{meta.title}</h1>
-            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted, margin: "0 0 32px" }}>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 32px" }}>
               <time dateTime={meta.date}>{t.updated} {new Date(meta.date + "T12:00:00").toLocaleDateString(t.locale, { day: "numeric", month: "long", year: "numeric" })}</time> · {t.byline(YEARS)}
             </p>
           </header>
@@ -87,8 +87,8 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
               {t.ctaText(YEARS)}
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href={t.shop} style={{ background: C.tafel, color: C.white, padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.shopCta} →</a>
-              <a href={t.contact} style={{ background: "transparent", color: C.white, border: "1.5px solid rgba(255,255,255,0.35)", padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.contactCta}</a>
+              <a href={t.shop} style={{ background: C.tafel, color: C.white, padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.shopCta} →</a>
+              <a href={t.contact} style={{ background: "transparent", color: C.white, border: "1.5px solid rgba(255,255,255,0.35)", padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.contactCta}</a>
             </div>
           </aside>
 

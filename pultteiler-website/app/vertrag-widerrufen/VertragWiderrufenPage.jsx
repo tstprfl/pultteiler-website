@@ -17,7 +17,7 @@ export default function VertragWiderrufenPage() {
 
   const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 6, fontFamily: font, fontSize: 16, color: C.text, boxSizing: "border-box" };
   const label = { fontFamily: font, fontSize: 14, fontWeight: 700, color: C.text, display: "block", marginBottom: 6 };
-  const hint = { fontFamily: font, fontSize: 13, color: C.textMuted, margin: "6px 0 0" };
+  const hint = { fontFamily: font, fontSize: 14, color: C.textMuted, margin: "6px 0 0" };
 
   const submit = async (e) => {
     e.preventDefault();

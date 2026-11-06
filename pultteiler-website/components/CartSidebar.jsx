@@ -115,10 +115,10 @@ export default function CartSidebar({ onClose }) {
         </div>
 
         {step === "cart" && (<>
-          <div style={{ flex: 1, overflow: "auto", padding: "16px 28px" }}>
+          <div className="cart-body" style={{ flex: 1, overflow: "auto", padding: "16px 28px" }}>
             {items.length === 0 ? (
               <div style={{ textAlign: "center", padding: "64px 0" }}>
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke={C.border} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: 16 }}><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke={C.border} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: 16 }}><path d="m15 11-1 9"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"/><path d="M4.5 15.5h15"/><path d="m5 11 4-7"/><path d="m9 11 1 9"/></svg>
                 <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted }}>{tx("Ihr Warenkorb ist leer.", "Your cart is empty.")}</p>
               </div>
             ) : items.map(item => (
@@ -126,30 +126,32 @@ export default function CartSidebar({ onClose }) {
                 <div style={{ width: 64, height: 64, background: C.bgCard, border: `1px solid ${C.border}`, flexShrink: 0, overflow: "hidden" }}>
                   <Img sizes="80px" src={item.img} alt={shortName(item)} style={{ width: "100%", height: "100%", objectFit: "cover" }} onError={e => e.target.style.display = "none"}/>
                 </div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 600, color: C.text, marginBottom: 4 }}>{shortName(item)}</div>
-                  <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted }}>{fmt(getPrice(item))} {tx("/ Stk.", "/ pc.")}</div>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 10 }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "baseline", gap: "2px 12px", marginBottom: 4 }}>
+                    <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, fontWeight: 600, color: C.text }}>{shortName(item)}</span>
+                    <span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, whiteSpace: "nowrap" }}>{fmt(getPrice(item) * item.qty)}</span>
+                  </div>
+                  <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted }}>{fmt(getPrice(item))} {tx("/ Stk.", "/ pc.")}</div>
+                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginTop: 10 }}>
                     <button onClick={() => updateQty(item.id, item.qty - 1)} aria-label={`${shortName(item)}: ${tx("Menge verringern", "decrease quantity")}`} style={{ width: 28, height: 28, background: C.bgCard, border: `1px solid ${C.border}`, color: C.text, cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
                     <QtyInput value={item.qty} onChange={n => updateQty(item.id, n)} label={`${shortName(item)}: ${tx("Menge", "quantity")}`} style={{ width: 44, height: 28, border: `1px solid ${C.border}`, background: C.bgCard }}/>
                     <button onClick={() => updateQty(item.id, item.qty + 1)} aria-label={`${shortName(item)}: ${tx("Menge erhöhen", "increase quantity")}`} style={{ width: 28, height: 28, background: C.bgCard, border: `1px solid ${C.border}`, color: C.text, cursor: "pointer", fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>
-                    <button onClick={() => remove(item.id)} aria-label={tx(`${shortName(item)} entfernen`, `Remove ${shortName(item)}`)} style={{ background: "none", border: "none", cursor: "pointer", color: C.red, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", marginLeft: "auto" }}>{tx("Entfernen", "Remove")}</button>
+                    <button onClick={() => remove(item.id)} aria-label={tx(`${shortName(item)} entfernen`, `Remove ${shortName(item)}`)} style={{ background: "none", border: "none", cursor: "pointer", color: C.red, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.02em", padding: "4px 0", marginLeft: "auto" }}>{tx("Entfernen", "Remove")}</button>
                   </div>
                 </div>
-                <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.text, flexShrink: 0 }}>{fmt(getPrice(item) * item.qty)}</div>
               </div>
             ))}
           </div>
           {items.length > 0 && (
             <div style={{ borderTop: `1px solid ${C.border}`, padding: "24px 28px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted }}>{tx("Zwischensumme", "Subtotal")}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text }}>{fmt(total)}</span></div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted }}>{tx("Versand", "Shipping")} ({region})</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
-              {shipping > 0 && packages > 1 && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>{tx(`Versand in ${packages} Paketen, die Pauschale gilt je Paket.`, `Shipped in ${packages} parcels, the flat rate applies per parcel.`)}</p>}
-              {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>{tx(`Ab ${freeShippingSets} Koffer-Sets entfällt der Versand.`, `Shipping is free from ${freeShippingSets} case sets.`)}</p>}
-              {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted }}>{tx("Zwischensumme", "Subtotal")}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text }}>{fmt(total)}</span></div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted }}>{tx("Versand", "Shipping")} ({region})</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: shipping === 0 ? C.green : C.text }}>{shippingLabel}</span></div>
+              {shipping > 0 && packages > 1 && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 8px" }}>{tx(`Versand in ${packages} Paketen, die Pauschale gilt je Paket.`, `Shipped in ${packages} parcels, the flat rate applies per parcel.`)}</p>}
+              {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, margin: "0 0 8px" }}>{tx(`Ab ${freeShippingSets} Koffer-Sets entfällt der Versand.`, `Shipping is free from ${freeShippingSets} case sets.`)}</p>}
+              {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
               <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>{tx("Gesamt", "Total")}</span><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.accentText }}>{fmt(grandTotal)}</span></div>
-              <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Jetzt bestellen →", "Order now →")}</button>
-              <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{en
+              <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Jetzt bestellen →", "Order now →")}</button>
+              <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{en
                 ? (region === "CH" ? "Tax-free and duty-free. Payment on invoice." : region === "DE" ? "Prices incl. 20% VAT. Tax-free at the net price with a German VAT ID. Payment on invoice." : "Prices incl. 20% VAT. Payment on invoice.")
                 : (region === "CH" ? "Steuerfrei und unverzollt. Zahlung per Rechnung." : region === "DE" ? "Preise inkl. 20% USt. Mit deutscher UID-Nummer steuerfrei zum Nettopreis. Zahlung per Rechnung." : "Preise inkl. 20% USt. Zahlung per Rechnung.")}</p>
             </div>
@@ -158,20 +160,20 @@ export default function CartSidebar({ onClose }) {
 
         {step === "checkout" && (
           <div style={{ flex: 1, overflow: "auto", padding: "24px 28px" }}>
-            <button onClick={() => setStep("cart")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>{tx("← Zurück zum Warenkorb", "← Back to cart")}</button>
+            <button onClick={() => setStep("cart")} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>{tx("← Zurück zum Warenkorb", "← Back to cart")}</button>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 24 }}>
-              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>{tx("Ihre Bestellung", "Your order")}</div>
+              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>{tx("Ihre Bestellung", "Your order")}</div>
               {items.map(item => (
-                <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13 }}>
+                <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14 }}>
                   <span style={{ color: C.text }}>{item.qty}x {shortName(item)}</span>
                   <span style={{ color: C.textMuted }}>{fmt(getPrice(item) * item.qty)}</span>
                 </div>
               ))}
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14 }}>
                 <span style={{ color: C.textMuted }}>{tx("Versand", "Shipping")}</span>
                 <span style={{ color: shipping === 0 ? C.green : C.textMuted }}>{shippingLabel}</span>
               </div>
-              {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13 }}>
+              {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14 }}>
                 <span style={{ color: C.textMuted }}>{vatLabel}</span>
                 <span style={{ color: C.textMuted }}>{fmt(vat)}</span>
               </div>}
@@ -180,7 +182,7 @@ export default function CartSidebar({ onClose }) {
                 <span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 20, color: C.accentText }}>{fmt(grandTotal)}</span>
               </div>
             </div>
-            <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 12 }}>{tx("Rechnungsadresse", "Billing address")}</div>
+            <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 12 }}>{tx("Rechnungsadresse", "Billing address")}</div>
             <form onSubmit={goToKontrolle}>
               <input aria-label={tx("Name oder Schulname", "Name or school name")} type="text" name="Name / Schule" placeholder={tx("Name oder Schulname *", "Name or school name *")} required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input aria-label={tx("Ansprechperson", "Contact person")} type="text" name="Ansprechperson" placeholder={tx("Ansprechperson", "Contact person")} style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
@@ -197,29 +199,29 @@ export default function CartSidebar({ onClose }) {
               <textarea aria-label={tx("Anmerkungen zur Bestellung (optional)", "Notes on your order (optional)")} name="Anmerkungen" placeholder={tx("Anmerkungen zur Bestellung (optional)", "Notes on your order (optional)")} rows={3} style={{ ...inp, resize: "vertical" }} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <label style={{ display: "flex", alignItems: "flex-start", gap: 10, marginTop: 8, marginBottom: 16, cursor: "pointer" }}>
                 <input type="checkbox" name="Zahlung" value="Rechnung" required style={{ marginTop: 3, accentColor: C.accent, width: 16, height: 16, flexShrink: 0 }}/>
-                <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5 }}>{tx("Zahlung per Rechnung: Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.", "Payment on invoice: you receive the invoice with the delivery or by email.")}</span>
+                <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text, lineHeight: 1.5 }}>{tx("Zahlung per Rechnung: Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.", "Payment on invoice: you receive the invoice with the delivery or by email.")}</span>
               </label>
-              <button type="submit" style={{ width: "100%", background: C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter zur Kontrolle →", "Continue to review →")}</button>
+              <button type="submit" style={{ width: "100%", background: C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter zur Kontrolle →", "Continue to review →")}</button>
             </form>
           </div>
         )}
 
         {step === "kontrolle" && (
           <div style={{ flex: 1, overflow: "auto", padding: "24px 28px" }}>
-            <button onClick={() => { setStep("checkout"); setError(""); }} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>{tx("← Zurück zur Eingabe", "← Back to your details")}</button>
+            <button onClick={() => { setStep("checkout"); setError(""); }} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", padding: 0, marginBottom: 20 }}>{tx("← Zurück zur Eingabe", "← Back to your details")}</button>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 16 }}>
-              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>{tx("Ihre Bestellung", "Your order")}</div>
+              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>{tx("Ihre Bestellung", "Your order")}</div>
               {items.map(item => (
-                <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13 }}>
+                <div key={item.id} style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14 }}>
                   <span style={{ color: C.text }}>{item.qty}x {shortName(item)}</span>
                   <span style={{ color: C.textMuted }}>{fmt(getPrice(item) * item.qty)}</span>
                 </div>
               ))}
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14 }}>
                 <span style={{ color: C.textMuted }}>{tx("Versand", "Shipping")}</span>
                 <span style={{ color: shipping === 0 ? C.green : C.textMuted }}>{shippingLabel}</span>
               </div>
-              {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13 }}>
+              {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14 }}>
                 <span style={{ color: C.textMuted }}>{vatLabel}</span>
                 <span style={{ color: C.textMuted }}>{fmt(vat)}</span>
               </div>}
@@ -229,7 +231,7 @@ export default function CartSidebar({ onClose }) {
               </div>
             </div>
             <div style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "16px 20px", marginBottom: 24 }}>
-              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>{tx("Rechnungsadresse", "Billing address")}</div>
+              <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 10 }}>{tx("Rechnungsadresse", "Billing address")}</div>
               {[
                 { label: tx("Name / Schule", "Name / school"), key: "Name / Schule" },
                 { label: tx("Ansprechperson", "Contact person"), key: "Ansprechperson" },
@@ -245,7 +247,7 @@ export default function CartSidebar({ onClose }) {
                 const val = f.key === "_plzort" ? `${formValues["PLZ"] || ""} ${formValues["Ort"] || ""}`.trim() : formValues[f.key];
                 if (!val) return null;
                 return (
-                  <div key={f.label} style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, gap: 12 }}>
+                  <div key={f.label} style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, gap: 12 }}>
                     <span style={{ color: C.textMuted, flexShrink: 0 }}>{f.label}</span>
                     <span style={{ color: C.text, textAlign: "right" }}>{val}</span>
                   </div>
@@ -253,7 +255,7 @@ export default function CartSidebar({ onClose }) {
               })}
             </div>
             <div style={{ background: `${C.accent}08`, border: `1px solid ${C.accent}25`, padding: "14px 16px", marginBottom: 16 }}>
-              <ul style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, lineHeight: 1.6, margin: 0, paddingLeft: 18 }}>
+              <ul style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, margin: 0, paddingLeft: 18 }}>
                 <li>Es gelten unsere <a href="/agb" target="_blank" style={{ color: C.accentText, textDecoration: "underline" }}>AGB</a>; Sie können sie dort jederzeit abrufen, speichern und ausdrucken.</li>
                 <li>Als Verbraucher haben Sie ein 14-tägiges Widerrufsrecht: <a href="/widerrufsbelehrung" target="_blank" style={{ color: C.accentText, textDecoration: "underline" }}>Widerrufsbelehrung und Muster-Widerrufsformular</a>. Den Widerruf können Sie auch online unter <a href="/vertrag-widerrufen" target="_blank" style={{ color: C.accentText, textDecoration: "underline" }}>„Vertrag widerrufen“</a> erklären.</li>
                 <li>Informationen zum Umgang mit Ihren Daten: <a href="/datenschutz" target="_blank" style={{ color: C.accentText, textDecoration: "underline" }}>Datenschutzerklärung</a>.</li>
@@ -261,14 +263,14 @@ export default function CartSidebar({ onClose }) {
                 <li>Nach dem Absenden erhalten Sie eine Bestätigung Ihrer Bestellung per E-Mail.</li>
               </ul>
             </div>
-            <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
+            <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
               {sending ? tx("Wird gesendet ...", "Sending ...") : tx("Zahlungspflichtig bestellen", "Order with obligation to pay")}
             </button>
-            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{tx("Zahlung per Rechnung. Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.", "Payment on invoice. You receive the invoice with the delivery or by email.")}</p>
+            <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{tx("Zahlung per Rechnung. Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.", "Payment on invoice. You receive the invoice with the delivery or by email.")}</p>
             {error && (
               <div style={{ background: "#FEF2F2", border: `1px solid ${C.red}`, padding: "14px 18px", marginTop: 16 }}>
-                <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.red, lineHeight: 1.5 }}>{error}</div>
-                <a href={`mailto:blaschegg@traunseenet.at?subject=${encodeURIComponent(tx("Bestellung über pultteiler.eu", "Order via pultteiler.eu"))}&body=${encodeURIComponent(orderSummaryForMailto())}`} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.red, fontWeight: 600, display: "inline-block", marginTop: 8 }}>{tx("→ Alternativ per E-Mail bestellen", "→ Order by email instead")}</a>
+                <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.red, lineHeight: 1.5 }}>{error}</div>
+                <a href={`mailto:blaschegg@traunseenet.at?subject=${encodeURIComponent(tx("Bestellung über pultteiler.eu", "Order via pultteiler.eu"))}&body=${encodeURIComponent(orderSummaryForMailto())}`} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.red, fontWeight: 600, display: "inline-block", marginTop: 8 }}>{tx("→ Alternativ per E-Mail bestellen", "→ Order by email instead")}</a>
               </div>
             )}
           </div>
@@ -279,9 +281,9 @@ export default function CartSidebar({ onClose }) {
             <div style={{ textAlign: "center" }}>
               <div style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 64, color: C.green, marginBottom: 8 }}>✓</div>
               <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 12px" }}>{tx("Bestellung eingegangen", "Order received")}</h3>
-              {confirmedOrderNr && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", margin: "0 0 12px" }}>{tx("Bestellnr.", "Order no.")} {confirmedOrderNr}</p>}
+              {confirmedOrderNr && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", margin: "0 0 12px" }}>{tx("Bestellnr.", "Order no.")} {confirmedOrderNr}</p>}
               <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, maxWidth: 300, margin: "0 auto 24px" }}>{tx("Vielen Dank für Ihre Bestellung! Wir haben Ihre Anfrage erhalten und melden uns in Kürze mit einer Bestätigung per E-Mail.", "Thank you for your order! We have received it and will get back to you shortly with a confirmation by email.")}</p>
-              <button onClick={onClose} style={{ background: C.tafel, color: C.white, border: "none", padding: "14px 32px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter einkaufen", "Continue shopping")}</button>
+              <button onClick={onClose} style={{ background: C.tafel, color: C.white, border: "none", padding: "14px 32px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter einkaufen", "Continue shopping")}</button>
             </div>
           </div>
         )}

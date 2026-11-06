@@ -28,7 +28,7 @@ export default function PressStrip({ lang = "de" }) {
                   {m.articles.map((a) => (
                     <li key={a.url}>
                       <a href={a.url} target="_blank" rel="noopener noreferrer" title={`${t.open}: ${a.title}`} aria-label={`${m.name}, ${formatDate(a.date, lang)}: ${a.title}`}
-                         style={{ fontFamily: font, fontSize: 13, fontWeight: 600, color: C.accentText, textDecoration: "underline", textUnderlineOffset: 3 }}>
+                         style={{ fontFamily: font, fontSize: 14, fontWeight: 600, color: C.accentText, textDecoration: "underline", textUnderlineOffset: 3 }}>
                         <time dateTime={a.date}>{formatDate(a.date, lang)}</time>{a.label ? ` · ${a.label[lang] || a.label.de}` : ""} →
                       </a>
                     </li>
@@ -38,7 +38,7 @@ export default function PressStrip({ lang = "de" }) {
             ))}
           </div>
         </Reveal>
-        <p style={{ fontFamily: font, fontSize: 12, color: C.textMuted, textAlign: "center", margin: "20px 0 0", lineHeight: 1.6 }}>{t.note}</p>
+        <p style={{ fontFamily: font, fontSize: 14, color: C.textMuted, textAlign: "center", margin: "20px 0 0", lineHeight: 1.6 }}>{t.note}</p>
       </div>
     </section>
   );

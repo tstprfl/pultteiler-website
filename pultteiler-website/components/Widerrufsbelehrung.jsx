@@ -18,7 +18,7 @@ export default function Widerrufsbelehrung({ headingLevel = "h2", withForm = tru
   return (
     <div>
       <H style={{ ...h, marginTop: 0 }}>Widerrufsbelehrung</H>
-      <p style={{ ...p, fontSize: 13, color: C.textMuted }}>Gilt für Verbraucher im Sinne des Konsumentenschutzgesetzes (KSchG).</p>
+      <p style={{ ...p, fontSize: 14, color: C.textMuted }}>Gilt für Verbraucher im Sinne des Konsumentenschutzgesetzes (KSchG).</p>
       <H style={h}>Widerrufsrecht</H>
       <p style={p}>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
       <p style={p}>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben bzw. hat.</p>
@@ -52,7 +52,7 @@ export function MusterWiderrufsformular({ headingLevel = "h2" }) {
         <li style={{ marginBottom: 8 }}>Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)</li>
         <li style={{ marginBottom: 8 }}>Datum</li>
       </ul>
-      <p style={{ ...p, fontSize: 13, margin: 0 }}>(*) Unzutreffendes streichen.</p>
+      <p style={{ ...p, fontSize: 14, margin: 0 }}>(*) Unzutreffendes streichen.</p>
     </div>
   );
 }
