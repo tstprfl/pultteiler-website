@@ -13,7 +13,7 @@ const FONT = "'Source Sans 3 Variable', sans-serif";
 
 // Symbole (Lucide, ISC-Lizenz): Einkaufskorb und Telefon
 const BasketIcon = ({ size = 26, color = "currentColor" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="m15 11-1 9"/><path d="m19 11-4-7"/><path d="M2 11h20"/><path d="m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4"/><path d="M4.5 15.5h15"/><path d="m5 11 4-7"/><path d="m9 11 1 9"/>
   </svg>
 );
@@ -35,14 +35,15 @@ export default function Nav() {
   const { count } = useCart();
   const pathname = usePathname();
 
-  // Hintergrund sofort richtig setzen: Nach dem Neuladen stellt der Browser die Scrollposition wieder her, ohne ein Scroll-Ereignis auszulösen
+  // Nach dem Neuladen stellt der Browser die Scrollposition teils ohne Scroll-Ereignis wieder her; die Kopfzeile ist daher nie durchsichtig (oben Seitenfarbe, beim Scrollen weiß)
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20);
     fn();
     const t = setTimeout(fn, 100);
     window.addEventListener("scroll", fn, { passive: true });
     window.addEventListener("pageshow", fn);
-    return () => { clearTimeout(t); window.removeEventListener("scroll", fn); window.removeEventListener("pageshow", fn); };
+    window.addEventListener("load", fn);
+    return () => { clearTimeout(t); window.removeEventListener("scroll", fn); window.removeEventListener("pageshow", fn); window.removeEventListener("load", fn); };
   }, []);
   useEffect(() => { setOpen(false); setDd(null); }, [pathname]);
   useEffect(() => {
@@ -67,7 +68,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : "transparent", borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
+      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? C.bgCard : C.bg, borderBottom: scrolled ? `1px solid ${C.border}` : "1px solid transparent", transition: "all 0.3s" }}>
         <div className="nav-row" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 32px", height: 72, display: "flex", alignItems: "center", gap: 24 }}>
           <Link href="/" className="nav-logo" aria-label="Pultteiler, zur Startseite" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
             <Img sizes="56px" src="/images/Klammer_2.png" alt="" style={{ width: 56, height: 56, objectFit: "contain", borderRadius: 4 }}/>
@@ -108,11 +109,12 @@ export default function Nav() {
 
           {/* Rechts: Shop und Einkaufskorb, beide in Tafelgrün */}
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginLeft: "auto" }}>
+            <a href={CONTACT.tel1} className="nav-phone hdr-item" aria-label={`Anrufen: ${CONTACT.phone1}`} style={{ display: "inline-flex", alignItems: "center", gap: 8, height: 44, padding: "0 12px", borderRadius: 6, fontFamily: FONT, fontSize: 18, fontWeight: 700, color: C.text, textDecoration: "none", whiteSpace: "nowrap", marginRight: 4 }}><span style={{ color: C.tafel, display: "inline-flex" }}><PhoneIcon size={22}/></span>{CONTACT.phone1}</a>
             <a href={CONTACT.tel1} className="mob-phone hdr-item" aria-label={`Anrufen: ${CONTACT.phone1}`} style={{ display: "none", alignItems: "center", justifyContent: "center", width: 40, height: 40, borderRadius: 6, color: C.tafel, textDecoration: "none" }}><PhoneIcon size={24}/></a>
             <Link href={shop.href} className="nav-shop hdr-fill" aria-current={pathname.startsWith("/produkte") ? "page" : undefined} style={{ display: "inline-flex", alignItems: "center", height: 44, padding: "0 24px", borderRadius: 6, background: C.tafel, color: C.white, fontFamily: FONT, fontSize: 16, fontWeight: 700, letterSpacing: "0.02em", textDecoration: "none", whiteSpace: "nowrap" }}>{shop.short}</Link>
-            <button onClick={() => setCartOpen(true)} className="nav-cart hdr-item" aria-label={count > 0 ? `Warenkorb öffnen, ${count} Artikel` : "Warenkorb öffnen"} style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", width: 48, height: 44, background: "none", border: "none", borderRadius: 6, cursor: "pointer" }}>
-              <BasketIcon size={28} color={C.tafel}/>
-              {count > 0 && <span aria-hidden="true" style={{ position: "absolute", top: 2, right: 2, minWidth: 20, height: 20, padding: "0 5px", borderRadius: 10, background: C.tafel, color: C.white, border: `2px solid ${C.bg}`, fontFamily: FONT, fontSize: 11, fontWeight: 700, display: "inline-flex", alignItems: "center", justifyContent: "center", lineHeight: 1 }}>{count}</span>}
+            <button onClick={() => setCartOpen(true)} className="nav-cart hdr-item" aria-label={count > 0 ? `Warenkorb öffnen, ${count} Artikel` : "Warenkorb öffnen"} style={{ position: "relative", display: "inline-flex", alignItems: "center", justifyContent: "center", width: 58, height: 56, background: "none", border: "none", borderRadius: 6, cursor: "pointer" }}>
+              <BasketIcon size={40} color={C.tafel}/>
+              {count > 0 && <span aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, minWidth: 22, height: 22, padding: "0 5px", borderRadius: 10, background: C.tafel, color: C.white, border: `2px solid ${C.bg}`, fontFamily: FONT, fontSize: 12, fontWeight: 700, display: "inline-flex", alignItems: "center", justifyContent: "center", lineHeight: 1 }}>{count}</span>}
             </button>
             <button onClick={() => setOpen(!open)} className="mob-btn hdr-item" aria-label="Menü" aria-expanded={open} style={{ display: "none", background: "none", border: "none", cursor: "pointer", padding: 8, borderRadius: 6 }}>
               <svg width="24" height="24" viewBox="0 0 24 24" stroke={C.text} strokeWidth="2" fill="none">{open ? <><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></> : <><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></>}</svg>

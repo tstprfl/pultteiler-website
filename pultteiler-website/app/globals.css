@@ -31,7 +31,9 @@ button, .btn-primary, .btn-secondary, .nav-shop, .qty-box, input, select, textar
   .desk-nav { display: none !important; }
   .mob-btn { display: block !important; }
   .nav-shop { height: 38px !important; padding: 0 14px !important; font-size: 15px !important; }
-  .nav-cart { width: 40px !important; height: 40px !important; }
+  .nav-cart { width: 48px !important; height: 48px !important; }
+  .nav-cart svg { width: 36px !important; height: 36px !important; }
+  .nav-phone { display: none !important; }
   .mob-phone { display: inline-flex !important; }
 }
 
@@ -82,3 +84,7 @@ button, .btn-primary, .btn-secondary, .nav-shop, .qty-box, input, select, textar
 
 /* Sehr schmale Telefone: Hörer-Symbol ausblenden, Nummer steht im Menü und auf der Startseite */
 @media (max-width: 345px) { .mob-phone { display: none !important; } }
+/* Mittlere Breiten: Nummer bleibt sichtbar, Menüpunkte rücken enger */
+@media (min-width: 1121px) and (max-width: 1279px) { .desk-nav > * > a, .desk-nav > * > button, .desk-nav > a { padding: 0 9px !important; } .nav-row { gap: 12px !important; } }
+/* Schmale Telefone: engere Abstände, damit Hörer, Shop, Korb und Menü in eine Zeile passen */
+@media (max-width: 400px) { .nav-row { gap: 8px !important; padding: 0 12px !important; } .nav-row > div:last-child { gap: 2px !important; } .nav-cart { width: 46px !important; } }
