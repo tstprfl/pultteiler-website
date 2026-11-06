@@ -21,7 +21,7 @@ export default function Nav() {
 
   const items = NAV;
   // Schwarzer Knopf rechts: der Shop
-  const quote = { href: "/produkte", short: "Shop →", long: "Zum Shop →" };
+  const quote = { href: "/produkte", short: "Shop", long: "Zum Shop" };
   const isActive = (href) => href === "/" ? pathname === href : pathname.startsWith(href);
   const groupActive = (n) => n.children?.some((c) => isActive(c.href));
 
