@@ -49,8 +49,8 @@ export default function VersandPage() {
             <h2 style={h}>6. E-Rechnung für österreichische Bundesschulen</h2>
             <p style={s}>Für Schulen des Bundes in Österreich stellen wir E-Rechnungen aus. Bitte geben Sie Ihre EKG-Nummer im Bestellformular an.</p>
             <h2 style={h}>7. Widerrufsrecht & Rückgabe</h2>
-            <p style={s}>Verbraucher im Sinne des Konsumentenschutzgesetzes haben das Recht, den Vertrag innerhalb von <strong>14 Tagen ohne Angabe von Gründen zu widerrufen</strong> (§ 11 FAGG). Die Frist beginnt mit dem Tag, an dem Sie oder ein von Ihnen benannter Dritter die Ware in Empfang genommen hat.</p>
-            <p style={s}>Um Ihr Widerrufsrecht auszuüben, informieren Sie uns bitte per E-Mail an <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a> oder per Post an: Schulmittel Blaschegg, Stücklbachstraße 13, 4813 Altmünster, Österreich.</p>
+            <p style={s}>Verbraucher im Sinne des Konsumentenschutzgesetzes haben das Recht, den Vertrag binnen <strong>14 Tagen ohne Angabe von Gründen zu widerrufen</strong>. Die Frist beginnt mit dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die letzte Ware in Besitz genommen haben.</p>
+            <p style={s}>Sie können per E-Mail an <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a>, per Post oder online unter <a href="/vertrag-widerrufen" style={{ color: C.accentText, fontWeight: 700 }}>Vertrag widerrufen</a> widerrufen. Die vollständige <a href="/widerrufsbelehrung" style={{ color: C.accentText, textDecoration: "none" }}>Widerrufsbelehrung mit Muster-Widerrufsformular</a> gilt ergänzend.</p>
             <h2 style={h}>8. Rücksendung</h2>
             <p style={s}>Nach Ausübung des Widerrufsrechts senden Sie die Ware bitte unverzüglich und spätestens innerhalb von <strong>14 Tagen</strong> an unsere Adresse zurück.</p>
             <div style={{ background: C.bgElevated, border: `1px solid ${C.border}`, padding: "20px 24px", marginBottom: 20 }}>
@@ -58,7 +58,7 @@ export default function VersandPage() {
             </div>
             <p style={s}>Die unmittelbaren Kosten der Rücksendung trägt der Käufer. Wir empfehlen die Rücksendung per <strong>Hermes</strong>, die Kosten betragen ca. <strong>€ 6,50</strong>.</p>
             <h2 style={h}>9. Rückerstattung</h2>
-            <p style={s}>Nach Eingang des wirksamen Widerrufs erstatten wir den Kaufpreis unverzüglich, spätestens jedoch <strong>binnen 14 Tagen</strong>. Die Rückerstattung erfolgt über dasselbe Zahlungsmittel, das bei der ursprünglichen Transaktion verwendet wurde.</p>
+            <p style={s}>Nach Eingang Ihres Widerrufs erstatten wir alle Zahlungen, die wir von Ihnen erhalten haben, <strong>einschließlich der Lieferkosten</strong>, unverzüglich, spätestens jedoch <strong>binnen 14 Tagen</strong>. Die Rückerstattung erfolgt über dasselbe Zahlungsmittel, das bei der ursprünglichen Transaktion verwendet wurde. Wir können die Rückzahlung verweigern, bis wir die Ware zurückerhalten haben oder Sie den Nachweis der Rücksendung erbracht haben.</p>
             <h2 style={h}>10. Zustand der rückgesendeten Ware</h2>
             <p style={s}>Sie sind nur für einen etwaigen Wertverlust der Ware verantwortlich, der auf einen zur Prüfung der Beschaffenheit nicht notwendigen Umgang zurückzuführen ist.</p>
             <h2 style={h}>11. Ausnahmen vom Widerrufsrecht</h2>

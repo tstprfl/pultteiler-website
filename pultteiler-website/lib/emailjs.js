@@ -32,3 +32,9 @@ export const loadEmailJS = async () => {
   emailjs.init(EMAILJS_PUBLIC_KEY);
   window.emailjs = emailjs;
 };
+
+// ── Online-Widerruf (§ 13a FAGG) ─────────────────────────────────────────────
+// Eingangsbestätigung an den Kunden: eigene Vorlage im ALTEN Account (service_cobcbsg) mit
+// "To Email" = {{kunde_email}}. Platzhalter: {{name}}, {{vertrag}}, {{kunde_email}}, {{eingang}}, {{inhalt}}.
+// Solange leer, wird die Bestätigung nur auf der Seite angezeigt (die Meldung an Blaschegg geht immer raus).
+export const TEMPLATE_WIDERRUF_KUNDE = "";

@@ -20,16 +20,17 @@ export default function DatenschutzPage() {
 
             <h2 style={h}>3. Zweck der Datenverarbeitung</h2>
             <p style={s}>Ihre personenbezogenen Daten werden für folgende Zwecke verarbeitet:</p>
-            <p style={{ ...s, paddingLeft: 16 }}>— Abwicklung von Bestellungen und Lieferungen (Art. 6 Abs. 1 lit. b DSGVO)<br/>— Beantwortung von Kontaktanfragen (Art. 6 Abs. 1 lit. b DSGVO)<br/>— Rechnungsstellung und buchhalterische Dokumentation (Art. 6 Abs. 1 lit. c DSGVO)<br/>— Ausstellung von E-Rechnungen an österreichische Bundesschulen (Art. 6 Abs. 1 lit. c DSGVO)</p>
+            <p style={{ ...s, paddingLeft: 16 }}>— Abwicklung von Bestellungen und Lieferungen (Art. 6 Abs. 1 lit. b DSGVO)<br/>— Beantwortung von Kontaktanfragen (Art. 6 Abs. 1 lit. b DSGVO)<br/>— Rechnungsstellung und buchhalterische Dokumentation (Art. 6 Abs. 1 lit. c DSGVO)<br/>— Ausstellung von E-Rechnungen an österreichische Bundesschulen (Art. 6 Abs. 1 lit. c DSGVO)<br/>— Bearbeitung von Widerrufserklärungen und Versand der Eingangsbestätigung (Art. 6 Abs. 1 lit. c DSGVO)</p>
 
             <h2 style={h}>4. Weitergabe von Daten an Dritte</h2>
             <p style={s}>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur, soweit dies zur Vertragserfüllung erforderlich ist (z.B. Übermittlung der Lieferadresse an den Paketdienstleister) oder eine gesetzliche Verpflichtung besteht. Darüber hinaus werden Ihre Daten nicht an Dritte weitergegeben.</p>
 
             <h2 style={h}>5. EmailJS (E-Mail-Versand)</h2>
-            <p style={s}>Für den Versand von Bestell- und Kontaktbestätigungen nutzen wir den Dienst EmailJS (emailjs.com). Dabei werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Bestelldaten) über die Server von EmailJS verarbeitet, um E-Mails zuzustellen. EmailJS verarbeitet Daten gemäß seiner eigenen Datenschutzrichtlinie. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
+            <p style={s}>Für die Übermittlung von Bestellungen, Kontaktanfragen und Widerrufserklärungen sowie für die zugehörigen Bestätigungen per E-Mail nutzen wir EmailJS, einen Dienst der EmailJS Pte. Ltd. Dabei werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Anschrift, Telefonnummer, Bestell- und Nachrichteninhalt) an EmailJS übermittelt und zur Zustellung der E-Mails verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung und vorvertragliche Anfragen) beziehungsweise Art. 6 Abs. 1 lit. c DSGVO (Widerruf).</p>
+            <p style={s}>Die Server von EmailJS stehen in den USA und werden von Amazon Web Services betrieben. Die Übermittlung in die USA erfolgt auf Grundlage von Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2 lit. c DSGVO). Weitere Informationen: <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>emailjs.com/legal/privacy-policy</a>.</p>
 
             <h2 style={h}>6. Hosting (Vercel)</h2>
-            <p style={s}>Diese Website wird bei Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Beim Besuch der Website werden automatisch technische Daten (IP-Adresse, Browsertyp, Zugriffszeit) in Server-Logfiles erfasst. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website). Vercel ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
+            <p style={s}>Diese Website wird bei Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA) gehostet. Beim Besuch der Website werden automatisch technische Daten (IP-Adresse, Browsertyp, Zugriffszeit) in Server-Logfiles erfasst. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren Bereitstellung der Website). Diese Protokolldaten werden bei Vercel in unserem Tarif nach spätestens einer Stunde gelöscht. Vercel ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
 
             <h2 style={h}>7. Schriftarten</h2>
             <p style={s}>Die auf dieser Website verwendeten Schriftarten (Archivo, Source Sans 3) sind lokal eingebunden und werden zusammen mit der Website von unserem Hosting-Anbieter ausgeliefert. Es wird keine Verbindung zu Servern von Google oder anderen Schriftarten-Anbietern hergestellt.</p>
@@ -54,7 +55,7 @@ export default function DatenschutzPage() {
             <p style={s}>Österreichische Datenschutzbehörde<br/>Barichgasse 40–42, 1030 Wien<br/><a href="https://www.dsb.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>www.dsb.gv.at</a></p>
 
             <h2 style={h}>13. Änderungen</h2>
-            <p style={{ ...s, marginBottom: 0 }}>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um den aktuellen rechtlichen Anforderungen zu entsprechen. Stand: Oktober 2026.</p>
+            <p style={{ ...s, marginBottom: 0 }}>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um den aktuellen rechtlichen Anforderungen zu entsprechen. Stand: November 2026.</p>
           </div>
         </div>
       </section>

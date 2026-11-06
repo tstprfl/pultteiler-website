@@ -32,11 +32,12 @@ const COLS = [
       { href: "/versand", label: "Versand & Rückgabe" },
       { href: "/ueber-uns", label: "Über uns" },
       { href: "/kontakt", label: "Kontakt" },
+      { href: "/vertrag-widerrufen", label: "Vertrag widerrufen" },
     ],
   },
 ];
 
-const LEGAL_DE = [{ href: "/impressum", label: "Impressum" }, { href: "/agb", label: "AGB" }, { href: "/datenschutz", label: "Datenschutz" }];
+const LEGAL_DE = [{ href: "/impressum", label: "Impressum" }, { href: "/agb", label: "AGB" }, { href: "/widerrufsbelehrung", label: "Widerrufsbelehrung" }, { href: "/datenschutz", label: "Datenschutz" }];
 
 export default function Footer() {
   const cols = COLS;
@@ -68,6 +69,7 @@ export default function Footer() {
           {LEGAL_DE.map(l => (
             <Link key={l.href} href={l.href} style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.textMuted, textDecoration: "underline" }}>{l.label}</Link>
           ))}
+          <Link href="/vertrag-widerrufen" style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, color: C.accentText, textDecoration: "underline" }}>Vertrag widerrufen</Link>
         </div>
       </div>
     </footer>

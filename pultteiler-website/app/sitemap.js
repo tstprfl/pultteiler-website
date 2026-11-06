@@ -20,11 +20,13 @@ const LASTMOD = {
   "/anleitung": "2026-10-10",
   "/galerie": "2026-10-10",
   "/ueber-uns": "2026-10-10",
-  "/versand": "2026-09-30",
   "/kontakt": "2026-09-29",
-  "/impressum": "2026-09-29",
-  "/agb": "2026-09-30",
-  "/datenschutz": "2026-09-29",
+  "/datenschutz": "2026-11-06",
+  "/agb": "2026-11-06",
+  "/impressum": "2026-11-06",
+  "/versand": "2026-11-06",
+  "/widerrufsbelehrung": "2026-11-06",
+  "/vertrag-widerrufen": "2026-11-06",
 };
 
 export default function sitemap() {
@@ -46,6 +48,8 @@ export default function sitemap() {
     { path: "/impressum", changeFrequency: "yearly", priority: 0.3 },
     { path: "/agb", changeFrequency: "yearly", priority: 0.3 },
     { path: "/datenschutz", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/widerrufsbelehrung", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/vertrag-widerrufen", changeFrequency: "yearly", priority: 0.3 },
   ];
   return pages.map(({ path, ...p }) => ({
     url: path === "/" ? base : `${base}${path}`,
