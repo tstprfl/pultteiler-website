@@ -60,11 +60,11 @@ export default function Nav() {
   const isActive = (href) => href === "/" ? pathname === href : pathname.startsWith(href);
   const groupActive = (n) => n.children?.some((c) => isActive(c.href)) || (n.href && isActive(n.href));
 
-  // Menüpunkte: ruhig, aktive Seite nur durch dunklere Schrift und Unterstrich in Tafelgrün
-  const linkStyle = (active) => ({ display: "inline-flex", alignItems: "center", gap: 6, height: 40, padding: "0 14px", background: "none", border: "none", borderRadius: 6, cursor: "pointer", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: active ? C.text : C.textMuted, textDecoration: active ? "underline" : "none", textDecorationColor: C.tafel, textDecorationThickness: 2, textUnderlineOffset: 8, whiteSpace: "nowrap" });
+  // Menüpunkte: dunkle Schrift (gut lesbar), aktive Seite durch Unterstrich in Tafelgrün
+  const linkStyle = (active) => ({ display: "inline-flex", alignItems: "center", gap: 6, height: 40, padding: "0 14px", background: "none", border: "none", borderRadius: 6, cursor: "pointer", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: C.text, textDecoration: active ? "underline" : "none", textDecorationColor: C.tafel, textDecorationThickness: 2, textUnderlineOffset: 8, whiteSpace: "nowrap" });
   const panel = { position: "absolute", top: "100%", left: 0, paddingTop: 8, zIndex: 120 };
   const panelBox = { minWidth: 260, background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 8, boxShadow: "0 12px 32px rgba(26,42,42,0.12)", padding: 8 };
-  const panelLink = (active) => ({ display: "block", padding: "11px 14px", borderRadius: 6, fontFamily: FONT, fontSize: 16, fontWeight: 600, color: active ? C.text : C.textMuted, background: active ? C.surface : "none", textDecoration: "none", whiteSpace: "nowrap" });
+  const panelLink = (active) => ({ display: "block", padding: "11px 14px", borderRadius: 6, fontFamily: FONT, fontSize: 16, fontWeight: 600, color: C.text, background: active ? C.surface : "none", textDecoration: "none", whiteSpace: "nowrap" });
 
   return (
     <>
@@ -127,16 +127,16 @@ export default function Nav() {
           <div className="mob-menu" style={{ background: C.bg, borderBottom: `1px solid ${C.border}`, padding: "8px 32px 20px", maxHeight: "calc(100vh - 72px)", overflow: "auto" }}>
             <Link href={shop.href} style={{ display: "block", textAlign: "center", background: C.tafel, color: C.white, borderRadius: 6, padding: "16px", fontFamily: FONT, fontSize: 16, fontWeight: 700, textDecoration: "none", marginBottom: 12 }}>{shop.long}</Link>
             <a href={CONTACT.tel1} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, border: `1.5px solid ${C.tafel}`, borderRadius: 6, color: C.text, padding: "14px 16px", fontFamily: FONT, fontSize: 16, fontWeight: 700, textDecoration: "none", marginBottom: 12 }}><span style={{ color: C.tafel, display: "inline-flex" }}><PhoneIcon/></span>Anrufen: {CONTACT.phone1}</a>
-            <Link href="/" style={{ display: "block", padding: "14px 16px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: pathname === "/" ? C.text : C.textMuted, background: pathname === "/" ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>Startseite</Link>
+            <Link href="/" style={{ display: "block", padding: "14px 16px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: C.text, background: pathname === "/" ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>Startseite</Link>
             {NAV.map((n) => n.children ? (
               <div key={n.id}>
                 <div style={{ padding: "14px 16px 6px", fontFamily: FONT, fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: C.textMuted }}>{n.label}</div>
                 {n.children.map((c) => (
-                  <Link key={c.id} href={c.href} style={{ display: "block", padding: "12px 28px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: isActive(c.href) ? C.text : C.textMuted, background: isActive(c.href) ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>{c.label}</Link>
+                  <Link key={c.id} href={c.href} style={{ display: "block", padding: "12px 28px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: C.text, background: isActive(c.href) ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>{c.label}</Link>
                 ))}
               </div>
             ) : (
-              <Link key={n.id} href={n.href} style={{ display: "block", padding: "14px 16px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: isActive(n.href) ? C.text : C.textMuted, background: isActive(n.href) ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>{n.label}</Link>
+              <Link key={n.id} href={n.href} style={{ display: "block", padding: "14px 16px", fontFamily: FONT, fontSize: 16, fontWeight: 600, color: C.text, background: isActive(n.href) ? C.surface : "none", borderRadius: 6, textDecoration: "none" }}>{n.label}</Link>
             ))}
           </div>
         )}
