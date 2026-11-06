@@ -72,7 +72,7 @@ export function AddToCartBtn({ product, label, en = false }) {
   const handleAdd = () => { add(product, qty); setAdded(true); setTimeout(() => { setAdded(false); setQty(1); }, 1500); };
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-      <div style={{ display: "flex", alignItems: "center", border: `1px solid ${C.border}`, background: C.bgCard }}>
+      <div className="qty-box" style={{ display: "flex", alignItems: "center", border: `1px solid ${C.border}`, background: C.bgCard, overflow: "hidden" }}>
         <button onClick={() => setQty(q => Math.max(1, q - 1))} aria-label={`${label || product.short || product.name}: ${en ? "decrease quantity" : "Menge verringern"}`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>−</button>
         <QtyInput value={qty} onChange={setQty} onEnter={handleAdd} label={`${label || product.short || product.name}: ${en ? "quantity" : "Menge"}`} style={{ width: 44, height: 40 }}/>
         <button onClick={() => setQty(q => q + 1)} aria-label={`${label || product.short || product.name}: ${en ? "increase quantity" : "Menge erhöhen"}`} style={{ width: 32, height: 40, background: "none", border: "none", cursor: "pointer", fontSize: 18, color: C.text, display: "flex", alignItems: "center", justifyContent: "center" }}>+</button>

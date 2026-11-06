@@ -57,7 +57,7 @@ export default function Nav() {
                 <Link key={n.id} href={n.href} style={linkStyle(isActive(n.href))}>{n.label}</Link>
               ))}
               <span aria-hidden="true" style={{ flex: 1, minWidth: 6 }}/>
-              <Link href={quote.href} style={{ background: C.dark, color: C.white, padding: "12px 22px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
+              <Link href={quote.href} className="nav-shop" style={{ background: C.dark, color: C.white, padding: "12px 22px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap" }}>{quote.short}</Link>
             </div>
             {/* Handy: kompakter Shop-Knopf direkt in der Kopfzeile (Desktop-Knopf steckt in .desk-nav) */}
             <Link href={quote.href} className="mob-shop" style={{ display: "none", background: C.dark, color: C.white, padding: "0 14px", height: 36, alignItems: "center", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", whiteSpace: "nowrap", marginLeft: 4 }}>{quote.short}</Link>
@@ -73,7 +73,7 @@ export default function Nav() {
         {open && (
           <div className="mob-menu" style={{ background: C.bg, borderBottom: `1px solid ${C.border}`, padding: "8px 32px 20px", maxHeight: "calc(100vh - 72px)", overflow: "auto" }}>
             {/* Shop zuerst: schwarzer Knopf über der Liste */}
-            <Link href={quote.href} style={{ display: "block", textAlign: "center", background: C.dark, color: C.white, padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", marginBottom: 12 }}>{quote.long}</Link>
+            <Link href={quote.href} className="nav-shop" style={{ display: "block", textAlign: "center", background: C.dark, color: C.white, padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", marginBottom: 12 }}>{quote.long}</Link>
             {items.map(n => n.children ? (
               <div key={n.id}>
                 <div style={{ padding: "14px 16px 6px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted }}>{n.label}</div>

@@ -2,6 +2,9 @@
 body { margin: 0; background: #E4F0F0; }
 ::selection { background: #1A9E9E; color: #FFF; }
 
+/* Knöpfe und Eingabefelder leicht abgerundet (6 px); Karten, Bilder und Flächen bleiben eckig */
+button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, select, textarea { border-radius: 6px; }
+
 /* Schriften: Archivo (Breitenachse) für Überschriften, Preise und Kennwerte, schmal und schwer gesetzt;
    Source Sans 3 für Fließtext. Die Schriftfamilien stehen inline in den Komponenten, Breite und Gewicht gelten zentral hier. */
 [style*="Archivo Variable"] { font-stretch: 84%; letter-spacing: -0.01em !important; }
@@ -31,10 +34,6 @@ body { margin: 0; background: #E4F0F0; }
   .hero-right { margin-top: 0 !important; }
   .press-g > div { flex-basis: 100% !important; }
   .hero-circle { display: none !important; }
-  /* Drei Hinweiskärtchen nebeneinander in einer Zeile, Breite aus dem Platz statt fester 160 px */
-  .hero-plates, .shop-plates { flex-wrap: nowrap !important; justify-content: center !important; gap: 8px !important; padding: 6px 0 !important; }
-  .hero-plates > div, .shop-plates > div { width: calc((100% - 16px) / 3) !important; min-width: 0 !important; height: 96px !important; padding: 6px !important; }
-  .hero-plates span, .shop-plates span { font-size: 8.5px !important; }
   .region-btns { flex-direction: column !important; align-items: center !important; }
   .region-btns button { width: 100% !important; max-width: 320px !important; }
   section { padding-left: 16px !important; padding-right: 16px !important; }
