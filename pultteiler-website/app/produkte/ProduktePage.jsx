@@ -100,7 +100,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
   const toggleBtn = (r, label) => {
     const active = shown === r;
     const style = {
-      padding: "12px 24px", background: active ? C.accentText : C.bgCard, color: active ? C.white : C.textMuted,
+      padding: "12px 24px", background: active ? C.tafel : C.bgCard, color: active ? C.white : C.textMuted,
       border: `1px solid ${active ? C.accentText : C.border}`, cursor: "pointer", transition: "all 0.2s",
       fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none",
     };

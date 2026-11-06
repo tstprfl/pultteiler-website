@@ -3,7 +3,7 @@ body { margin: 0; background: #E4F0F0; }
 ::selection { background: #1A9E9E; color: #FFF; }
 
 /* Knöpfe und Eingabefelder leicht abgerundet (6 px); Karten, Bilder und Flächen bleiben eckig */
-button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, select, textarea { border-radius: 6px; }
+button, .btn-primary, .btn-secondary, .nav-shop, .qty-box, input, select, textarea { border-radius: 6px; }
 
 /* Schriften: Archivo (Breitenachse) für Überschriften, Preise und Kennwerte, schmal und schwer gesetzt;
    Source Sans 3 für Fließtext. Die Schriftfamilien stehen inline in den Komponenten, Breite und Gewicht gelten zentral hier. */
@@ -23,20 +23,15 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
 }
 
 /* Telefonnummer in der Desktop-Leiste nur, wenn genug Platz ist */
-@media (max-width: 1299px) { .nav-phone { display: none !important; } }
-
 /* Kopfzeile: einheitliche Hover-Fläche für Telefon, Warenkorb und Menü */
-@media (hover: hover) { .hdr-item:hover { background: #D5E5E5 !important; } .hdr-fill:hover { background: #0E5A5A !important; } }
+@media (hover: hover) { .hdr-item:hover { background: #D5E5E5 !important; } .hdr-fill:hover { background: #234536 !important; } .dd-link:hover { background: #D5E5E5 !important; color: #1A2A2A !important; } .btn-primary:hover { background: #234536 !important; } }
 
-/* Navigation bricht früher um, da sie mehr Einträge hat */
+/* Handy und Tablet: Menüknopf statt Menüleiste; Shop und Einkaufskorb bleiben sichtbar */
 @media (max-width: 1120px) {
   .desk-nav { display: none !important; }
   .mob-btn { display: block !important; }
-  .mob-shop { display: inline-flex !important; }
-  .nav-cart-label { display: none !important; }
-  .cart-count { position: absolute !important; top: 0; right: 0; min-width: 18px !important; height: 18px !important; padding: 0 4px !important; font-size: 11px !important; }
-  .nav-cart { padding: 0 8px !important; }
-  .mob-shop { font-size: 14px !important; padding: 0 12px !important; }
+  .nav-shop { height: 38px !important; padding: 0 14px !important; font-size: 15px !important; }
+  .nav-cart { width: 40px !important; height: 40px !important; }
   .mob-phone { display: inline-flex !important; }
 }
 
@@ -62,7 +57,7 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
   .footer-legal > div { flex-wrap: wrap !important; gap: 12px 20px !important; }
 }
 
-/* Kopfzeile auf schmalen Telefonen: kleineres Logo und weniger Rand, damit Logo, DE|EN, Warenkorb und Menü in eine Zeile passen */
+/* Kopfzeile auf schmalen Telefonen: kleineres Logo und weniger Rand, damit Logo, Shop, Einkaufskorb und Menü in eine Zeile passen */
 @media (max-width: 480px) {
   /* Shop: Länderauswahl teilt sich die volle Breite statt überzustehen */
   .region-toggle { width: 100% !important; }
@@ -74,14 +69,14 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
   .nav-logo { gap: 8px !important; }
   .nav-logo img { width: 44px !important; height: 44px !important; }
   .nav-word { font-size: 22px !important; }
-  .nav-cart { padding: 8px 8px !important; }
+  .nav-shop { padding: 0 12px !important; }
 }
 
-/* Sehr schmale Telefone (bis 360 px): Wortmarke und Sprachschalter noch etwas kompakter */
+/* Sehr schmale Telefone (bis 360 px): Wortmarke und Shop-Knopf noch etwas kompakter */
 @media (max-width: 360px) {
   .nav-logo img { width: 40px !important; height: 40px !important; }
   .nav-word { font-size: 20px !important; }
-  .nav-cart { padding: 8px 6px !important; }
+  .nav-shop { padding: 0 10px !important; font-size: 14px !important; }
   .mob-btn { padding: 8px 4px !important; }
 }
 

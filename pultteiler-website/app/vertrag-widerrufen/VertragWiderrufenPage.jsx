@@ -96,7 +96,7 @@ export default function VertragWiderrufenPage() {
                   <label htmlFor="wr-waren" style={{ ...label, fontWeight: 600 }}>Waren</label>
                   <textarea id="wr-waren" name="waren" rows={3} required placeholder="z. B. 1 Koffer-Set A Gelb" style={{ ...inp, resize: "vertical" }}/>
                 </fieldset>
-                <button type="submit" disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.accentText, color: C.white, border: "none", borderRadius: 6, padding: "17px", fontFamily: font, fontSize: 16, fontWeight: 700, letterSpacing: "0.04em", cursor: sending ? "wait" : "pointer" }}>
+                <button type="submit" disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.tafel, color: C.white, border: "none", borderRadius: 6, padding: "17px", fontFamily: font, fontSize: 16, fontWeight: 700, letterSpacing: "0.04em", cursor: sending ? "wait" : "pointer" }}>
                   {sending ? "Wird übermittelt ..." : "Widerruf bestätigen"}
                 </button>
                 {error && <div role="alert" style={{ background: "#FEF2F2", border: `1px solid ${C.red}`, borderRadius: 6, padding: "12px 16px", marginTop: 14, fontFamily: font, fontSize: 14, color: C.red, lineHeight: 1.5 }}>{error}</div>}

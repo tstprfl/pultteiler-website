@@ -87,7 +87,7 @@ export default function ArticleLayout({ meta, children, related = [], lang = "de
               {t.ctaText(YEARS)}
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href={t.shop} style={{ background: C.accentText, color: C.white, padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.shopCta} →</a>
+              <a href={t.shop} style={{ background: C.tafel, color: C.white, padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.shopCta} →</a>
               <a href={t.contact} style={{ background: "transparent", color: C.white, border: "1.5px solid rgba(255,255,255,0.35)", padding: "13px 28px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textDecoration: "none", display: "inline-block" }}>{t.contactCta}</a>
             </div>
           </aside>

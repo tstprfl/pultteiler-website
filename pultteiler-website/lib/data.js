@@ -49,8 +49,9 @@ export const GALLERY = [
   { src: "/images/nahaufnahme.jpeg", label: "Nahaufnahme Trennwände", cat: "Detail" },
 ];
 
+// Hauptmenü: wenige Punkte, Unterseiten klappen beim Drüberfahren auf (Desktop) bzw. stehen gruppiert im Handy-Menü.
+// „Start“ entfällt im Menü, das Logo führt zur Startseite. kind: "contact" zeigt Telefon und E-Mail im Aufklappfeld.
 export const NAV = [
-  { id: "home", label: "Start", href: "/" },
   {
     id: "schule",
     label: "Für Ihre Schule",
@@ -60,10 +61,18 @@ export const NAV = [
       { id: "hochschulen", label: "Hochschulen & Prüfungszentren", href: "/hochschulen" },
     ],
   },
-  { id: "ratgeber", label: "Ratgeber", href: "/ratgeber" },
-  { id: "anleitung", label: "So funktioniert's", href: "/anleitung" },
+  {
+    id: "infos",
+    label: "Infos",
+    children: [
+      { id: "anleitung", label: "So funktioniert's", href: "/anleitung" },
+      { id: "ratgeber", label: "Ratgeber", href: "/ratgeber" },
+      { id: "galerie", label: "Referenzen & Galerie", href: "/galerie" },
+      { id: "versand", label: "Versand & Rückgabe", href: "/versand" },
+    ],
+  },
   { id: "ueber-uns", label: "Über uns", href: "/ueber-uns" },
-  { id: "kontakt", label: "Kontakt", href: "/kontakt" },
+  { id: "kontakt", label: "Kontakt", href: "/kontakt", kind: "contact" },
 ];
 
 // Weitere Seiten (nur im Footer verlinkt)

@@ -14,4 +14,6 @@ export const C = {
   green: "#126E6E",
   red: "#C44D3F",
   dark: "#1A2A2A",
+  tafel: "#2E5745",        // Tafelgrün: Shop-Knöpfe und Warenkorb (Weiß darauf 8:1)
+  tafelHover: "#234536",
 };

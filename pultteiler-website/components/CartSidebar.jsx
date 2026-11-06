@@ -148,7 +148,7 @@ export default function CartSidebar({ onClose }) {
               {shipping > 0 && setCount > 0 && setCount < freeShippingSets && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, margin: "0 0 8px" }}>{tx(`Ab ${freeShippingSets} Koffer-Sets entfällt der Versand.`, `Shipping is free from ${freeShippingSets} case sets.`)}</p>}
               {vatRate > 0 && <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.textMuted }}>{vatLabel}</span><span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text }}>{fmt(vat)}</span></div>}
               <div style={{ display: "flex", justifyContent: "space-between", borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 8, marginBottom: 20 }}><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 22, color: C.text }}>{tx("Gesamt", "Total")}</span><span style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.accentText }}>{fmt(grandTotal)}</span></div>
-              <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.accentText, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Jetzt bestellen →", "Order now →")}</button>
+              <button onClick={() => setStep("checkout")} style={{ width: "100%", background: C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Jetzt bestellen →", "Order now →")}</button>
               <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{en
                 ? (region === "CH" ? "Tax-free and duty-free. Payment on invoice." : region === "DE" ? "Prices incl. 20% VAT. Tax-free at the net price with a German VAT ID. Payment on invoice." : "Prices incl. 20% VAT. Payment on invoice.")
                 : (region === "CH" ? "Steuerfrei und unverzollt. Zahlung per Rechnung." : region === "DE" ? "Preise inkl. 20% USt. Mit deutscher UID-Nummer steuerfrei zum Nettopreis. Zahlung per Rechnung." : "Preise inkl. 20% USt. Zahlung per Rechnung.")}</p>
@@ -199,7 +199,7 @@ export default function CartSidebar({ onClose }) {
                 <input type="checkbox" name="Zahlung" value="Rechnung" required style={{ marginTop: 3, accentColor: C.accent, width: 16, height: 16, flexShrink: 0 }}/>
                 <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 1.5 }}>{tx("Zahlung per Rechnung: Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.", "Payment on invoice: you receive the invoice with the delivery or by email.")}</span>
               </label>
-              <button type="submit" style={{ width: "100%", background: C.accentText, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter zur Kontrolle →", "Continue to review →")}</button>
+              <button type="submit" style={{ width: "100%", background: C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter zur Kontrolle →", "Continue to review →")}</button>
             </form>
           </div>
         )}
@@ -261,7 +261,7 @@ export default function CartSidebar({ onClose }) {
                 <li>Nach dem Absenden erhalten Sie eine Bestätigung Ihrer Bestellung per E-Mail.</li>
               </ul>
             </div>
-            <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.accentText, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
+            <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
               {sending ? tx("Wird gesendet ...", "Sending ...") : tx("Zahlungspflichtig bestellen", "Order with obligation to pay")}
             </button>
             <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, color: C.textMuted, textAlign: "center", marginTop: 12 }}>{tx("Zahlung per Rechnung. Sie erhalten die Rechnung mit der Lieferung oder per E-Mail.", "Payment on invoice. You receive the invoice with the delivery or by email.")}</p>
@@ -281,7 +281,7 @@ export default function CartSidebar({ onClose }) {
               <h3 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 28, color: C.text, margin: "0 0 12px" }}>{tx("Bestellung eingegangen", "Order received")}</h3>
               {confirmedOrderNr && <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, color: C.accentText, fontWeight: 600, letterSpacing: "0.08em", margin: "0 0 12px" }}>{tx("Bestellnr.", "Order no.")} {confirmedOrderNr}</p>}
               <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.textMuted, lineHeight: 1.6, maxWidth: 300, margin: "0 auto 24px" }}>{tx("Vielen Dank für Ihre Bestellung! Wir haben Ihre Anfrage erhalten und melden uns in Kürze mit einer Bestätigung per E-Mail.", "Thank you for your order! We have received it and will get back to you shortly with a confirmation by email.")}</p>
-              <button onClick={onClose} style={{ background: C.accentText, color: C.white, border: "none", padding: "14px 32px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter einkaufen", "Continue shopping")}</button>
+              <button onClick={onClose} style={{ background: C.tafel, color: C.white, border: "none", padding: "14px 32px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer" }}>{tx("Weiter einkaufen", "Continue shopping")}</button>
             </div>
           </div>
         )}
