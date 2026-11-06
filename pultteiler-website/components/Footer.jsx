@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { C } from "@/lib/colors";
-import { SCHOOLS_TEXT, YEARS } from "@/lib/site";
+import { SCHOOLS_TEXT, YEARS, CONTACT } from "@/lib/site";
 import Img from "@/components/Img";
 
 const COLS = [
@@ -59,7 +59,7 @@ export default function Footer() {
         ))}
         <div>
           <h2 style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", color: C.textMuted, margin: "0 0 20px" }}>Kontakt</h2>
-          <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 2 }}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster<br/><a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>+43 (0) 676 935 40 33<br/>+43 (0) 699 129 613 70</p>
+          <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 13, color: C.text, lineHeight: 2 }}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster<br/><a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/><a href={CONTACT.tel1} style={{ color: C.text, textDecoration: "none", fontWeight: 600 }}>{CONTACT.phone1}</a><br/><a href={CONTACT.tel2} style={{ color: C.text, textDecoration: "none", fontWeight: 600 }}>{CONTACT.phone2}</a></p>
         </div>
       </div>
       <div className="footer-legal" style={{ maxWidth: 1280, margin: "48px auto 0", borderTop: `1px solid ${C.border}`, paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, alignItems: "center" }}>

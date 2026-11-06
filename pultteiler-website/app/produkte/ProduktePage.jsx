@@ -126,7 +126,7 @@ export default function Produkte({ land = "ATDE", lang = "de" }) {
           {/* Region-Umschalter — Produkte bleiben immer sichtbar */}
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 32 }}>
             <span style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted }}>{t.land}</span>
-            <div style={{ display: "flex", gap: 2 }}>
+            <div className="region-toggle" style={{ display: "flex", gap: 2 }}>
               {toggleBtn("AT", t.countries.AT)}
               {toggleBtn("DE", t.countries.DE)}
               {toggleBtn("CH", t.countries.CH)}

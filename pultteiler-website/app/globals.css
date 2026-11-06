@@ -22,11 +22,15 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
   .hover-zoom:hover img { transform: scale(1.05); }
 }
 
+/* Telefonnummer in der Desktop-Leiste nur, wenn genug Platz ist */
+@media (max-width: 1239px) { .nav-phone { display: none !important; } }
+
 /* Navigation bricht früher um, da sie mehr Einträge hat */
 @media (max-width: 1120px) {
   .desk-nav { display: none !important; }
   .mob-btn { display: block !important; }
   .mob-shop { display: inline-flex !important; }
+  .mob-phone { display: inline-flex !important; }
 }
 
 @media (max-width: 768px) {
@@ -53,6 +57,9 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
 
 /* Kopfzeile auf schmalen Telefonen: kleineres Logo und weniger Rand, damit Logo, DE|EN, Warenkorb und Menü in eine Zeile passen */
 @media (max-width: 480px) {
+  /* Shop: Länderauswahl teilt sich die volle Breite statt überzustehen */
+  .region-toggle { width: 100% !important; }
+  .region-toggle > * { flex: 1 1 0 !important; padding: 12px 4px !important; text-align: center !important; min-width: 0 !important; }
   /* Nur auf schmalen Handys: Shop-Knopf über die volle Breite, die beiden anderen teilen sich die Zeile darunter */
   .hero-btns a { flex: 1 1 auto !important; text-align: center !important; padding-left: 16px !important; padding-right: 16px !important; }
   .hero-btns a.btn-primary { flex-basis: 100% !important; }
@@ -70,3 +77,6 @@ button, .btn-primary, .btn-secondary, .nav-shop, .mob-shop, .qty-box, input, sel
   .nav-cart { padding: 8px 6px !important; }
   .mob-btn { padding: 8px 4px !important; }
 }
+
+/* Sehr schmale Telefone: Hörer-Symbol ausblenden, Nummer steht im Menü und auf der Startseite */
+@media (max-width: 345px) { .mob-phone { display: none !important; } }

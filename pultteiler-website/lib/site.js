@@ -102,5 +102,7 @@ export const CONTACT = {
   email: "blaschegg@traunseenet.at",
   phone1: "+43 (0) 676 935 40 33",
   phone2: "+43 (0) 699 129 613 70",
+  tel1: "tel:+436769354033",
+  tel2: "tel:+4369912961370",
   uid: "ATU37758404",
 };

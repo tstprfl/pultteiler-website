@@ -10,6 +10,7 @@ export const ARTICLES = [
     teaser: "Abschreiben passiert beim Sitznachbarn, nicht über Reihen hinweg: Was Feldexperimente an Universitäten zeigen, und was daraus für die Trennwand folgt.",
     date: "2026-10-10",
     img: "/images/kurhaus-saal-totale.jpg",
+    imgAlt: "Prüfungssaal mit Trennwänden auf jedem Tisch",
   },
   {
     slug: "sichtschutz-klassenarbeit",
@@ -19,6 +20,7 @@ export const ARTICLES = [
     teaser: "Warum ein Sichtschutz bei Klassenarbeiten sinnvoll ist, welche Anforderungen er erfüllen muss und wie der Einsatz in der Praxis gelingt.",
     date: "2026-07-23",
     img: "/images/klassenzimmer.png",
+    imgAlt: "Sichtschutz auf Schultischen während einer Klassenarbeit",
   },
   {
     slug: "trennwand-schultisch-pruefung",
@@ -28,6 +30,7 @@ export const ARTICLES = [
     teaser: "Größen, Befestigung, Material, Handhabung: die praxisnahe Kaufberatung für Trennwände auf Schultischen.",
     date: "2026-07-23",
     img: "/images/nahaufnahme.jpeg",
+    imgAlt: "Nahaufnahme einer Trennwand mit Klammerbefestigung auf einem Schultisch",
   },
   {
     slug: "abschreiben-verhindern-schularbeit",
@@ -37,6 +40,7 @@ export const ARTICLES = [
     teaser: "Gruppen teilen, zwei Angaben, strenger Sitzplan oder Sichtschutz? Sieben Methoden gegen Abschreiben im ehrlichen Vergleich.",
     date: "2026-07-23",
     img: "/images/pultteiler-2.jpg",
+    imgAlt: "Klassenraum mit Sichtschutz-Trennwänden während einer Schularbeit",
   },
   {
     slug: "reizarmer-arbeitsplatz-schule",
@@ -46,5 +50,6 @@ export const ARTICLES = [
     teaser: "Wie ein reizarmer Arbeitsplatz Kindern beim Konzentrieren hilft und wie Schulen ihn ohne Umbau einrichten.",
     date: "2026-07-23",
     img: "/images/pultteiler-einsatz.jpg",
+    imgAlt: "Schüler arbeitet konzentriert an einem reizarm gestalteten Arbeitsplatz mit Sichtschutz",
   },
 ];

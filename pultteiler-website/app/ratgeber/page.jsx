@@ -25,7 +25,7 @@ export default function Page() {
             {ARTICLES.map((a) => (
               <Link key={a.slug} href={`/ratgeber/${a.slug}`} className="hover-lift hover-zoom" style={{ background: C.bgCard, border: `1px solid ${C.border}`, textDecoration: "none", display: "flex", flexDirection: "column" }}>
                 <div style={{ height: 200, overflow: "hidden", borderBottom: `1px solid ${C.border}` }}>
-                  <Img sizes="(max-width: 768px) 100vw, 33vw" src={a.img} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
+                  <Img sizes="(max-width: 768px) 100vw, 33vw" src={a.img} alt={a.imgAlt || a.title} loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}/>
                 </div>
                 <div style={{ padding: "26px 28px 30px", flex: 1, display: "flex", flexDirection: "column" }}>
                   <h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 26, color: C.text, margin: "0 0 10px", lineHeight: 1.08, letterSpacing: "0.02em" }}>{a.title}</h2>
