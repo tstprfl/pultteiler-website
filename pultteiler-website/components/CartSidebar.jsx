@@ -4,6 +4,7 @@ import { C } from "@/lib/colors";
 import { loadEmailJS } from "@/lib/emailjs";
 import { useCart } from "@/components/CartProvider";
 import { useDialog, QtyInput } from "@/components/ui";
+import Gewaehrleistungshinweis from "@/components/Gewaehrleistung";
 import Img from "@/components/Img";
 import { localizeProduct } from "@/lib/en";
 
@@ -262,6 +263,9 @@ export default function CartSidebar({ onClose }) {
                 <li>Eingabefehler können Sie über „Zurück zur Eingabe“ oben korrigieren. Vertragssprache ist Deutsch.</li>
                 <li>Nach dem Absenden erhalten Sie eine Bestätigung Ihrer Bestellung per E-Mail.</li>
               </ul>
+            </div>
+            <div style={{ marginBottom: 16 }}>
+              <Gewaehrleistungshinweis maxWidth="100%"/>
             </div>
             <button onClick={handleSubmit} disabled={sending} style={{ width: "100%", background: sending ? C.textMuted : C.tafel, color: C.white, border: "none", padding: "16px", fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.1em", cursor: sending ? "wait" : "pointer" }}>
               {sending ? tx("Wird gesendet ...", "Sending ...") : tx("Zahlungspflichtig bestellen", "Order with obligation to pay")}

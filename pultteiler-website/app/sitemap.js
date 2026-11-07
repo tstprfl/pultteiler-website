@@ -26,6 +26,7 @@ const LASTMOD = {
   "/impressum": "2026-11-06",
   "/versand": "2026-11-06",
   "/widerrufsbelehrung": "2026-11-06",
+  "/gewaehrleistung": "2026-11-07",
   "/vertrag-widerrufen": "2026-11-06",
 };
 
@@ -49,6 +50,7 @@ export default function sitemap() {
     { path: "/agb", changeFrequency: "yearly", priority: 0.3 },
     { path: "/datenschutz", changeFrequency: "yearly", priority: 0.3 },
     { path: "/widerrufsbelehrung", changeFrequency: "yearly", priority: 0.3 },
+    { path: "/gewaehrleistung", changeFrequency: "yearly", priority: 0.3 },
     { path: "/vertrag-widerrufen", changeFrequency: "yearly", priority: 0.3 },
   ];
   return pages.map(({ path, ...p }) => ({

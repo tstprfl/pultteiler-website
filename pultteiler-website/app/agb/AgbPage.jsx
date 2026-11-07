@@ -1,6 +1,7 @@
 "use client";
 import { C } from "@/lib/colors";
 import { Heading } from "@/components/ui";
+import Gewaehrleistungshinweis from "@/components/Gewaehrleistung";
 import Widerrufsbelehrung from "@/components/Widerrufsbelehrung";
 
 const s = { fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 15, color: "#5A6B6B", lineHeight: 1.75, margin: "0 0 20px" };
@@ -33,6 +34,7 @@ export default function AgbPage() {
             <p style={s}>Die gelieferte Ware bleibt bis zur vollständigen Bezahlung des Kaufpreises Eigentum des Verkäufers.</p>
             <h2 style={h}>§ 7 Gewährleistung</h2>
             <p style={s}>Es gelten die gesetzlichen Gewährleistungsbestimmungen, für Verbraucher jene des Verbrauchergewährleistungsgesetzes (VGG), im Übrigen jene des ABGB. Gegenüber Verbrauchern beträgt die Gewährleistungsfrist zwei Jahre ab Übergabe der Ware. Für Unternehmer beträgt die Gewährleistungsfrist ein Jahr, sofern nicht anders vereinbart.</p>
+            <div style={{ margin: "8px 0 28px" }}><Gewaehrleistungshinweis maxWidth={560}/></div>
             <h2 style={h}>§ 8 Haftung</h2>
             <p style={s}>Die Haftung des Verkäufers für leichte Fahrlässigkeit ist ausgeschlossen, soweit gesetzlich zulässig. Dies gilt nicht für Personenschäden oder für Verbrauchergeschäfte, bei denen zwingende gesetzliche Bestimmungen einer Haftungsbeschränkung entgegenstehen.</p>
             <h2 style={h}>§ 9 Steuerfreie Lieferung</h2>

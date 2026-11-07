@@ -37,7 +37,7 @@ const COLS = [
   },
 ];
 
-const LEGAL_DE = [{ href: "/impressum", label: "Impressum" }, { href: "/agb", label: "AGB" }, { href: "/widerrufsbelehrung", label: "Widerrufsbelehrung" }, { href: "/datenschutz", label: "Datenschutz" }];
+const LEGAL_DE = [{ href: "/impressum", label: "Impressum" }, { href: "/agb", label: "AGB" }, { href: "/widerrufsbelehrung", label: "Widerrufsbelehrung" }, { href: "/gewaehrleistung", label: "Gewährleistung" }, { href: "/datenschutz", label: "Datenschutz" }];
 
 export default function Footer() {
   const cols = COLS;
