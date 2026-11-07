@@ -4,7 +4,7 @@
 // Es werden ZWEI Accounts genutzt:
 //   • ALTER Account  → Kontaktformular, Warenkorb-Bestellung, Benachrichtigung
 //                      an dich bei Angebotsanfragen. Bleibt unverändert.
-//   • NEUER Account  → NUR die Eingangsbestätigung an die anfragende Schule.
+//   • NEUER Account  → NUR die Eingangsbestätigung an den Kunden nach einem Online-Widerruf.
 // ═══════════════════════════════════════════════════════════════════════════
 
 // ── ALTER Account (unverändert lassen) ──────────────────────────────────────
@@ -12,15 +12,11 @@ export const EMAILJS_PUBLIC_KEY = "xV1NC72BHupwuOiKH";
 export const EMAILJS_SERVICE = "service_cobcbsg";
 export const TEMPLATE_ANFRAGE = "template_7kke6e4";   // Benachrichtigung an Blaschegg
 
-// ── NEUER Account — nur für die Angebots-Eingangsbestätigung ─────────────────
-// Hier die drei Werte aus dem NEUEN EmailJS-Account eintragen:
-//   CONFIRM_PUBLIC_KEY → Account → General → "Public Key"
-//   CONFIRM_SERVICE    → Email Services → Service-ID (z. B. service_xxxxxxx)
-//   CONFIRM_TEMPLATE   → Email Templates → Template-ID (To Email = {{kunde_email}})
-// Solange einer der Werte leer ist, wird KEINE Bestätigung versendet.
+// ── NEUER Account (Paul Steiner) — Widerrufs-Eingangsbestätigung ─────────────
+// Der alte Account hat im Gratis-Tarif keinen Platz für weitere Vorlagen.
+// template_8cnl2hb (frühere Angebots-Bestätigung) wird nicht mehr verwendet.
 export const CONFIRM_PUBLIC_KEY = "4ArIDu6wgLlsklooH";
 export const CONFIRM_SERVICE = "service_b7kmnmd";
-export const CONFIRM_TEMPLATE = "template_8cnl2hb";
 
 // Lädt das EmailJS-SDK aus dem eigenen Bundle (npm-Paket, kein externes CDN)
 // und initialisiert es mit dem ALTEN Account.
@@ -34,7 +30,7 @@ export const loadEmailJS = async () => {
 };
 
 // ── Online-Widerruf (§ 13a FAGG) ─────────────────────────────────────────────
-// Eingangsbestätigung an den Kunden: eigene Vorlage im ALTEN Account (service_cobcbsg) mit
+// Eingangsbestätigung an den Kunden (§ 13a Abs 5 FAGG): Vorlage „Widerruf Eingangsbestätigung“ im NEUEN Account,
 // "To Email" = {{kunde_email}}. Platzhalter: {{name}}, {{vertrag}}, {{kunde_email}}, {{eingang}}, {{inhalt}}.
-// Solange leer, wird die Bestätigung nur auf der Seite angezeigt (die Meldung an Blaschegg geht immer raus).
-export const TEMPLATE_WIDERRUF_KUNDE = "";
+// Die Meldung an Blaschegg geht über den alten Account (TEMPLATE_ANFRAGE).
+export const TEMPLATE_WIDERRUF_KUNDE = "template_sgfwgr6";

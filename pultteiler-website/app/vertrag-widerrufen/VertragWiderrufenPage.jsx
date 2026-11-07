@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { C } from "@/lib/colors";
 import { CONTACT } from "@/lib/site";
-import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, TEMPLATE_WIDERRUF_KUNDE } from "@/lib/emailjs";
+import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, TEMPLATE_WIDERRUF_KUNDE, CONFIRM_SERVICE, CONFIRM_PUBLIC_KEY } from "@/lib/emailjs";
 import { Heading } from "@/components/ui";
 
 // Online-Rücktrittsfunktion nach § 13a FAGG:
@@ -40,11 +40,11 @@ export default function VertragWiderrufenPage() {
         bestellung: `${inhalt}\n\nEingang: ${eingang} (Wien)`, versand: "–", gesamt: "–",
         adresse: name, telefon: "–", uid: "–", einkaufergruppe: "–", anmerkungen: "Widerruf über pultteiler.eu/vertrag-widerrufen",
       });
-      // Eingangsbestätigung an den Kunden, sobald die Vorlage hinterlegt ist
+      // Eingangsbestätigung an den Kunden (zweiter EmailJS-Account)
       let mailOk = false;
       if (TEMPLATE_WIDERRUF_KUNDE) {
         try {
-          await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_WIDERRUF_KUNDE, { name, vertrag, kunde_email: email, eingang, inhalt });
+          await window.emailjs.send(CONFIRM_SERVICE, TEMPLATE_WIDERRUF_KUNDE, { name, vertrag, kunde_email: email, eingang, inhalt }, { publicKey: CONFIRM_PUBLIC_KEY });
           mailOk = true;
         } catch (err) { console.warn("Eingangsbestätigung konnte nicht gesendet werden:", err); }
       }
