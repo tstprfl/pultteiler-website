@@ -16,7 +16,7 @@ export default function Page() {
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <Heading as="h1" overline="Rechtliches" title="Gesetzliche Gewährleistung"/>
           <p style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 16, color: "#3A4A4A", lineHeight: 1.7, margin: "0 0 24px" }}>
-            Für alle Bestellungen gilt die gesetzliche Gewährleistung. Die folgende Mitteilung ist gesetzlich vorgegeben (§ 4 Abs. 1 Z 12 FAGG). Bei einem Mangel erreichen Sie uns unter +43 (0) 676 935 40 33 oder blaschegg@traunseenet.at.
+            Für alle Bestellungen gilt die gesetzliche Gewährleistung. Die folgende Mitteilung ist gesetzlich vorgegeben (§ 4 Abs. 1 Z 12 FAGG). Bei einem Mangel erreichen Sie uns unter +43 676 935 40 33 oder blaschegg@traunseenet.at.
           </p>
           <Gewaehrleistungshinweis maxWidth={800}/>
         </div>

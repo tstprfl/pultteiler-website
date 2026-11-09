@@ -13,7 +13,7 @@ export default function DatenschutzPage() {
           <Heading as="h1" overline="Rechtliches" title="Datenschutzerklärung"/>
           <div className="card-pad" style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "48px 40px" }}>
             <h2 style={{ ...h, marginTop: 0 }}>1. Verantwortlicher</h2>
-            <p style={s}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster, Österreich<br/>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon: +43 (0) 676 935 40 33</p>
+            <p style={s}>Schulmittel Blaschegg<br/>Michael Blaschegg<br/>Stücklbachstraße 13, 4813 Altmünster, Österreich<br/>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon: +43 676 935 40 33</p>
 
             <h2 style={h}>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
             <p style={s}>Wir erheben und verarbeiten personenbezogene Daten nur im Rahmen der geltenden Datenschutzgesetze, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO) und des österreichischen Datenschutzgesetzes (DSG). Personenbezogene Daten werden nur erhoben, wenn Sie uns diese freiwillig mitteilen, z.B. bei einer Bestellung, Kontaktanfrage oder Registrierung.</p>

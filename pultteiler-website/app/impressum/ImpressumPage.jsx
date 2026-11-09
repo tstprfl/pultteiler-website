@@ -17,7 +17,7 @@ export default function ImpressumPage() {
             <h2 style={h}>Standort der Gewerbeberechtigung</h2>
             <p style={s}>Stücklbachstraße 13<br/>4813 Altmünster<br/>Österreich</p>
             <h2 style={h}>Kontaktdaten</h2>
-            <p style={s}>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon: +43 (0) 676 935 40 33<br/>Zusatznummer: +43 (0) 699 129 613 70<br/>Festnetz: +43 (0) 7612 87147</p>
+            <p style={s}>E-Mail: <a href="mailto:blaschegg@traunseenet.at" style={{ color: C.accentText, textDecoration: "none" }}>blaschegg@traunseenet.at</a><br/>Telefon: +43 676 935 40 33<br/>Zusatznummer: +43 699 129 613 70<br/>Festnetz: +43 7612 87147</p>
             <h2 style={h}>Unternehmensdaten</h2>
             <p style={s}>Umsatzsteueridentifikationsnummer: ATU37758404<br/>Unternehmensregister: R013F6512<br/>Gewerbebehörde: Bezirkshauptmannschaft Gmunden<br/>Mitglied der Wirtschaftskammer Oberösterreich<br/>Berufsrecht: Gewerbeordnung (GewO), abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener noreferrer" style={{ color: C.accentText, textDecoration: "none" }}>www.ris.bka.gv.at</a></p>
             <h2 style={h}>Bankverbindungen</h2>

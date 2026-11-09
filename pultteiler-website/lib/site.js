@@ -100,11 +100,11 @@ export const CONTACT = {
   city: "4813 Altmünster",
   country: "Österreich",
   email: "blaschegg@traunseenet.at",
-  phone1: "+43 (0) 676 935 40 33",
-  phone2: "+43 (0) 699 129 613 70",
+  phone1: "+43 676 935 40 33",
+  phone2: "+43 699 129 613 70",
   tel1: "tel:+436769354033",
   tel2: "tel:+4369912961370",
-  phone3: "+43 (0) 7612 87147",      // Festnetz (Altmünster)
+  phone3: "+43 7612 87147",      // Festnetz (Altmünster)
   tel3: "tel:+43761287147",
   uid: "ATU37758404",
 };
