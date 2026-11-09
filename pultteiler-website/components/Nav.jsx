@@ -94,7 +94,8 @@ export default function Nav() {
                           <div style={{ padding: "8px 10px", minWidth: 300 }}>
                             <div style={{ fontFamily: FONT, fontSize: 14, color: C.textMuted, marginBottom: 4 }}>Rufen Sie uns an</div>
                             <a href={CONTACT.tel1} style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: FONT, fontSize: 20, fontWeight: 700, color: C.text, textDecoration: "none", marginBottom: 6 }}><span style={{ color: C.tafel, display: "inline-flex" }}><PhoneIcon/></span>{CONTACT.phone1}</a>
-                            <a href={CONTACT.tel2} style={{ display: "block", fontFamily: FONT, fontSize: 15, color: C.textMuted, textDecoration: "none", margin: "0 0 12px 30px", whiteSpace: "nowrap" }}>Zusatznummer: <strong style={{ color: C.text }}>{CONTACT.phone2}</strong></a>
+                            <a href={CONTACT.tel2} style={{ display: "block", fontFamily: FONT, fontSize: 15, color: C.textMuted, textDecoration: "none", margin: "0 0 4px 30px", whiteSpace: "nowrap" }}>Zusatznummer: <strong style={{ color: C.text }}>{CONTACT.phone2}</strong></a>
+                            <a href={CONTACT.tel3} style={{ display: "block", fontFamily: FONT, fontSize: 15, color: C.textMuted, textDecoration: "none", margin: "0 0 12px 30px", whiteSpace: "nowrap" }}>Festnetz: <strong style={{ color: C.text }}>{CONTACT.phone3}</strong></a>
                             <a href={`mailto:${CONTACT.email}`} style={{ display: "block", fontFamily: FONT, fontSize: 15, color: C.accentText, textDecoration: "none", marginBottom: 14 }}>{CONTACT.email}</a>
                             <Link href="/kontakt" style={{ display: "block", textAlign: "center", border: `1.5px solid ${C.tafel}`, borderRadius: 6, padding: "10px 14px", fontFamily: FONT, fontSize: 15, fontWeight: 700, color: C.tafel, textDecoration: "none" }}>Zum Kontaktformular</Link>
                           </div>

@@ -65,6 +65,8 @@ button, .btn-primary, .btn-secondary, .nav-shop, .qty-box, input, select, textar
 @media (max-width: 480px) {
   /* Shop: Länderauswahl teilt sich die volle Breite statt überzustehen */
   .cart-body { padding: 12px 18px !important; }
+  /* Kontakt: Telefon-Knöpfe dürfen umbrechen statt über den Kasten hinauszuragen */
+  .call-btns a { white-space: normal !important; flex-wrap: wrap !important; row-gap: 2px !important; padding-left: 12px !important; padding-right: 12px !important; text-align: center !important; }
   .region-toggle { width: 100% !important; }
   .region-toggle > * { flex: 1 1 0 !important; padding: 12px 4px !important; text-align: center !important; min-width: 0 !important; }
   /* Nur auf schmalen Handys: Shop-Knopf über die volle Breite, die beiden anderen teilen sich die Zeile darunter */

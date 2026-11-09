@@ -104,5 +104,7 @@ export const CONTACT = {
   phone2: "+43 (0) 699 129 613 70",
   tel1: "tel:+436769354033",
   tel2: "tel:+4369912961370",
+  phone3: "+43 (0) 7612 87147",      // Festnetz (Altmünster)
+  tel3: "tel:+43761287147",
   uid: "ATU37758404",
 };
