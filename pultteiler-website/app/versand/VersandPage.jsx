@@ -17,7 +17,7 @@ export default function VersandPage() {
               {[
                 { icon: "🇦🇹", label: "Österreich", val: "€ 10,00 je Paket", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
                 { icon: "🇩🇪", label: "Deutschland", val: "€ 12,00 je Paket", sub: "inkl. USt, ab 3 Koffer-Sets kostenlos" },
-                { icon: "🇨🇭", label: "Schweiz", val: "€ 25,00 je Paket", sub: "steuerfrei und unverzollt, ab 3 Koffer-Sets kostenlos" },
+                { icon: "🇨🇭", label: "Schweiz", val: "€ 28,00 je Koffer-Set", sub: "steuerfrei und unverzollt, jedes Set ein Paket, Ersatzteile je Paket" },
                 { icon: "🌍", label: "Andere Länder", val: "Auf Anfrage", sub: "Bitte kontaktieren Sie uns" },
               ].map((m, i) => (
                 <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, padding: "28px 24px", textAlign: "center", transition: "border-color 0.3s" }} onMouseEnter={e => e.currentTarget.style.borderColor = C.accent} onMouseLeave={e => e.currentTarget.style.borderColor = C.border}>
@@ -37,8 +37,8 @@ export default function VersandPage() {
             <h2 style={h}>3. Versandkosten im Detail</h2>
             {bullet("Österreich: € 10,00 Versandpauschale je Paket (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
             {bullet("Deutschland: € 12,00 Versandpauschale je Paket (inkl. 20% USt), für Koffer-Sets und Ersatzteile")}
-            {bullet("Schweiz: € 25,00 Versandpauschale je Paket, steuerfrei und unverzollt")}
-            {bullet("Koffer-Sets: bis 2 Sets ein Paket je Bestellung, ab 3 Koffer-Sets in einer Bestellung versandkostenfrei in alle drei Länder")}
+            {bullet("Schweiz: € 28,00 Versandpauschale je Paket, steuerfrei und unverzollt. Jedes Koffer-Set wird als eigenes Paket versandt, also € 28,00 je Koffer-Set. Eine versandkostenfreie Lieferung in die Schweiz gibt es nicht.")}
+            {bullet("Koffer-Sets nach Österreich und Deutschland: bis 2 Sets ein Paket je Bestellung, ab 3 Koffer-Sets in einer Bestellung versandkostenfrei")}
             {bullet("Ersatzteile: in ein Paket passen bis zu 24 Klammer-Doppelpacks oder 12 Teilerplatten, ein leerer Koffer wird einzeln versandt. Größere Mengen werden auf mehrere Pakete verteilt, die Versandpauschale gilt je Paket. Der Warenkorb zeigt die Anzahl der Pakete.")}
             {bullet("Andere Länder: Versandkosten auf Anfrage, bitte kontaktieren Sie uns")}
             <p style={s}>Alle Preise im Shop für Österreich und Deutschland verstehen sich inklusive 20% Umsatzsteuer; die enthaltene Steuer wird im Warenkorb und auf der Rechnung ausgewiesen.</p>

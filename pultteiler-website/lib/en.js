@@ -30,7 +30,7 @@ export const COUNTRIES_EN = [
     lines: [
       "Purchase on invoice, no prepayment, no credit card",
       "Tax-free, duty-free delivery: the quoted price is your final price",
-      "Free shipping from 3 case sets",
+      "Shipping € 28.00 per case set",
     ],
   },
   {

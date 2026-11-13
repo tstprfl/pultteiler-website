@@ -54,7 +54,7 @@ export const COUNTRY_INFO = [
     lines: [
       "Kauf auf Rechnung, keine Vorkasse, keine Kreditkarte",
       "Steuerfreie, unverzollte Lieferung, Endpreis ohne Zollgebühren",
-      "Versandkostenfrei ab 3 Koffer-Sets",
+      "Versand € 28,00 je Koffer-Set",
     ],
   },
 ];

@@ -22,15 +22,17 @@ export function CartProvider({ children }) {
   const count = items.reduce((s, i) => s + i.qty, 0);
   const setIds = SETS.map(s => s.id);
   const setCount = items.filter(i => setIds.includes(i.id)).reduce((s, i) => s + i.qty, 0);
-  // Versandpauschale je Paket und Lieferland (brutto), ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
+  // Versandpauschale je Paket und Lieferland (brutto). AT und DE: ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
+  // Schweiz: jedes Koffer-Set ein eigenes Paket, nie versandkostenfrei (freeShippingSets = null).
   // Ersatzteile werden nach Stück je Paket (perPackage) auf Pakete verteilt, z.B. 50 Klammer-Doppelpacks ergeben 3 Pakete.
-  const packages = countPackages(items);
-  const shipping = items.length === 0 ? 0 : (setCount >= FREE_SHIPPING_SETS ? 0 : SHIPPING[region] * packages);
+  const freeShippingSets = FREE_SHIPPING_SETS[region] ?? null;
+  const packages = countPackages(items, region);
+  const shipping = items.length === 0 ? 0 : (freeShippingSets !== null && setCount >= freeShippingSets ? 0 : SHIPPING[region] * packages);
   // AT und DE: Preise inkl. 20% USt, die enthaltene USt wird ausgewiesen; Schweiz steuerfrei
   const vatRate = region === "CH" ? 0 : VAT_RATE;
   const grandTotal = total + shipping;
   const vat = grandTotal - grandTotal / (1 + vatRate);
-  return <CartCtx.Provider value={{ items, add, remove, updateQty, clear, total, count, region, setRegion, getPrice, shipping, packages, setCount, freeShippingSets: FREE_SHIPPING_SETS, vatRate, vat, grandTotal }}>{children}</CartCtx.Provider>;
+  return <CartCtx.Provider value={{ items, add, remove, updateQty, clear, total, count, region, setRegion, getPrice, shipping, packages, setCount, freeShippingSets, vatRate, vat, grandTotal }}>{children}</CartCtx.Provider>;
 }
 
 export function useCart() { return useContext(CartCtx); }

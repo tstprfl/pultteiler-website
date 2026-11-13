@@ -16,8 +16,8 @@ const eur = (n, en) => (en ? `€ ${n.toFixed(2)}` : `€ ${n.toFixed(2).replace
 const konditionen = (en) => {
   const details = <Link href={en ? "/en/shipping" : "/versand"} style={{ color: C.accentText }}>{en ? "Shipping details" : "Details zum Versand"}</Link>;
   const free = en
-    ? { label: `From ${FREE_SHIPPING_SETS} case sets`, val: "Free shipping", sub: "applies to every order with 3 or more sets" }
-    : { label: `Ab ${FREE_SHIPPING_SETS} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" };
+    ? { label: `From ${FREE_SHIPPING_SETS.AT} case sets`, val: "Free shipping", sub: "applies to every order with 3 or more sets" }
+    : { label: `Ab ${FREE_SHIPPING_SETS.AT} Koffer-Sets`, val: "Versandkostenfrei", sub: "gilt für jede Bestellung mit 3 oder mehr Sets" };
   const pay = en
     ? { label: "Payment", val: "On invoice", sub: "no prepayment, no credit card" }
     : { label: "Zahlung", val: "Auf Rechnung", sub: "keine Vorkasse, keine Kreditkarte" };
@@ -43,8 +43,7 @@ const konditionen = (en) => {
     ],
     CH: [
       en ? { label: "Prices", val: "Tax-free", sub: "duty-free" } : { label: "Preise", val: "Steuerfrei", sub: "unverzollt" },
-      { label: en ? "Shipping to Switzerland" : "Versand Schweiz", val: perParcel("CH"), sub: en ? <>Shipping costs depend on the quantity. {details}</> : <>Die Versandkosten richten sich nach der Stückzahl. {details}</> },
-      free,
+      { label: en ? "Shipping to Switzerland" : "Versand Schweiz", val: en ? `${eur(SHIPPING.CH, en)} per case set` : `${eur(SHIPPING.CH)} je Koffer-Set`, sub: en ? <>Each case set is shipped as its own parcel, spare parts {perParcel("CH")}. No free shipping. {details}</> : <>Jedes Koffer-Set wird einzeln versandt, Ersatzteile {perParcel("CH")}. Keine versandkostenfreie Lieferung. {details}</> },
       pay,
     ],
   };

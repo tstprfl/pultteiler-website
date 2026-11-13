@@ -1,24 +1,28 @@
 // Preise AT/DE BRUTTO inkl. 20% USt (priceAT), Schweiz steuerfrei (priceCH).
 // Schweizer Ersatzteilpreise (Oktober 2026) abgeleitet aus dem Verhältnis Schweiz zu Österreich der Koffer-Sets
 // (237/261 und 249/275, Mittel rd. 0,907), auf 10 Cent gerundet. Mit deutscher UID-Nummer gilt der Nettopreis (brutto / 1,2).
-// Preisliste Stand Oktober 2026. Versand je Paket und Lieferland (brutto) siehe SHIPPING, ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
-// Ersatzteile: perPackage = Stück, die in ein Paket passen. Mehr Stück ergeben ein weiteres Paket und damit eine weitere Versandpauschale.
-// Koffer-Sets zählen als ein Paket je Bestellung (bis FREE_SHIPPING_SETS, danach frei), Ersatzteile werden daneben in eigene Pakete gerechnet.
+// Preisliste Stand Oktober 2026. Versand je Paket und Lieferland (brutto) siehe SHIPPING.
+// Österreich und Deutschland: Koffer-Sets zählen als ein Paket je Bestellung, ab FREE_SHIPPING_SETS Koffer-Sets versandkostenfrei.
+// Schweiz (November 2026): jedes Koffer-Set ist ein eigenes Paket (SET_PER_PACKAGE), keine versandkostenfreie Lieferung.
+// Ersatzteile: perPackage = Stück, die in ein Paket passen. Mehr Stück ergeben ein weiteres Paket und damit eine weitere Versandpauschale;
+// sie werden neben den Koffer-Sets in eigene Pakete gerechnet.
 export const VAT_RATE = 0.20;
-export const SHIPPING = { AT: 10.00, DE: 12.00, CH: 25.00 };
-export const FREE_SHIPPING_SETS = 3;
+export const SHIPPING = { AT: 10.00, DE: 12.00, CH: 28.00 };
+export const FREE_SHIPPING_SETS = { AT: 3, DE: 3, CH: null };
+export const SET_PER_PACKAGE = { AT: false, DE: false, CH: true };
 
-// Anzahl der Pakete einer Bestellung (Warenkorbzeilen mit id, qty und optional perPackage)
-export function countPackages(items) {
+// Anzahl der Pakete einer Bestellung (Warenkorbzeilen mit id, qty und optional perPackage) je Lieferland
+export function countPackages(items, region = "AT") {
   if (!items.length) return 0;
   const setIds = SETS.map(s => s.id);
-  const hasSets = items.some(i => setIds.includes(i.id) && i.qty > 0);
+  const setQty = items.filter(i => setIds.includes(i.id)).reduce((s, i) => s + i.qty, 0);
+  const setPackages = SET_PER_PACKAGE[region] ? setQty : (setQty > 0 ? 1 : 0);
   // Ersatzteile: jedes Teil belegt 1/perPackage eines Pakets, Summe aufgerundet
   const partsShare = items
     .filter(i => !setIds.includes(i.id))
     .reduce((s, i) => s + i.qty / (i.perPackage || 1), 0);
   const partsPackages = Math.ceil(partsShare - 1e-9);
-  return Math.max(hasSets ? 1 : 0, partsPackages, 1);
+  return Math.max(setPackages + partsPackages, 1);
 }
 
 export const SETS = [
