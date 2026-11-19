@@ -39,13 +39,28 @@ export default function CartSidebar({ onClose }) {
   // (der zuvor fokussierte Knopf verschwindet beim Schrittwechsel)
   useEffect(() => { titleRef.current?.focus(); }, [step]);
 
-  const generateOrderNr = () => {
+  // Bestellnummer vom Server (/api/bestellnummer): Jahr, Tag, Monat und je Tag ab 01 fortlaufende Nummer, z.B. 2026191101.
+  // Ist der Zähler nicht erreichbar, gibt es eine Ersatznummer mit „X“ (Datum und Zufallszahl), damit die Bestellung nicht verloren geht.
+  // Schlägt der Versand fehl, behält der nächste Versuch dieselbe Nummer.
+  const orderNrRef = useRef("");
+  const ersatzOrderNr = () => {
     const now = new Date();
     const y = now.getFullYear();
     const m = String(now.getMonth() + 1).padStart(2, "0");
     const d = String(now.getDate()).padStart(2, "0");
-    const rand = String(Math.floor(Math.random() * 100)).padStart(2, "0");
-    return `${y}${m}${d}${rand}`;
+    const rand = String(Math.floor(Math.random() * 1000)).padStart(3, "0");
+    return `${y}${d}${m}X${rand}`;
+  };
+  const getOrderNr = async () => {
+    if (orderNrRef.current) return orderNrRef.current;
+    try {
+      const res = await fetch("/api/bestellnummer", { method: "POST", cache: "no-store" });
+      const data = res.ok ? await res.json() : null;
+      orderNrRef.current = data?.orderNr || ersatzOrderNr();
+    } catch {
+      orderNrRef.current = ersatzOrderNr();
+    }
+    return orderNrRef.current;
   };
 
   const orderSummaryForMailto = () => {
@@ -68,7 +83,7 @@ export default function CartSidebar({ onClose }) {
   const handleSubmit = async () => {
     setSending(true);
     setError("");
-    const orderNr = generateOrderNr();
+    const orderNr = await getOrderNr();
     const shippingText = shippingLabelDe;
     const bestellungText = items.map(i => `${i.qty}x ${i.name}: ${fmt(getPrice(i) * i.qty)}`).join("\n")
       + `\n\nZwischensumme: ${fmt(total)}\nVersand: ${shippingLabelDe}` + (vatRate > 0 ? `\nGesamt inkl. USt: ${fmt(grandTotal)} (${vatLabelDe}: ${fmt(vat)})` : "\nSteuerfrei (Schweiz)");
@@ -94,6 +109,7 @@ export default function CartSidebar({ onClose }) {
       if (!en) { try { await window.emailjs.send("service_cobcbsg", "template_ko0cjvs", templateParams); } catch (e) { console.warn("Kunden-E-Mail konnte nicht gesendet werden:", e); } }
       setStep("confirmed");
       setConfirmedOrderNr(orderNr);
+      orderNrRef.current = "";
       clear();
     } catch (err) {
       setError(tx("Bestellung konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail an blaschegg@traunseenet.at", "The order could not be sent. Please try again or contact us directly by email at blaschegg@traunseenet.at"));
