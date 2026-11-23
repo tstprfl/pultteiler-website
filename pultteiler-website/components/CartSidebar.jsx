@@ -7,6 +7,7 @@ import { useDialog, QtyInput } from "@/components/ui";
 import Gewaehrleistungshinweis from "@/components/Gewaehrleistung";
 import Img from "@/components/Img";
 import { localizeProduct } from "@/lib/en";
+import { useSpamschutz, Honeypot, HONEYPOT_FELD } from "@/lib/spamschutz";
 
 // Warenkorb auf Deutsch oder Englisch, je nach Sprache der aktuellen Seite.
 // Die Bestellung erreicht Blaschegg immer mit deutschen Produktnamen; englische Bestellungen sind im Betreff mit (EN) markiert
@@ -34,6 +35,9 @@ export default function CartSidebar({ onClose }) {
     : (region === "CH" ? "Schweiz (steuerfrei und unverzollt)" : region === "DE" ? "Deutschland (Preise inkl. 20% USt)" : "Österreich (Preise inkl. 20% USt)");
   const panelRef = useRef(null);
   const titleRef = useRef(null);
+  // Spamschutz: Prüfung beim Schritt "Weiter zur Kontrolle", Ergebnis bis zum Absenden gemerkt
+  const istSpam = useSpamschutz();
+  const spamRef = useRef(false);
   useDialog(panelRef, onClose);
   // Beim Öffnen und bei jedem Schrittwechsel Fokus auf die Überschrift setzen
   // (der zuvor fokussierte Knopf verschwindet beim Schrittwechsel)
@@ -76,6 +80,8 @@ export default function CartSidebar({ onClose }) {
     const fd = new FormData(e.target);
     const vals = {};
     fd.forEach((v, k) => { if (!k.startsWith("_")) vals[k] = v; });
+    spamRef.current = istSpam(fd);
+    delete vals[HONEYPOT_FELD];
     setFormValues(vals);
     setStep("kontrolle");
   };
@@ -104,6 +110,7 @@ export default function CartSidebar({ onClose }) {
       anmerkungen: formValues["Anmerkungen"] || "–",
     };
     try {
+      if (spamRef.current) throw new Error("Spamschutz");   // keine Mail, normale Fehlermeldung
       await loadEmailJS();
       await window.emailjs.send("service_cobcbsg", "template_7kke6e4", templateParams);
       if (!en) { try { await window.emailjs.send("service_cobcbsg", "template_ko0cjvs", templateParams); } catch (e) { console.warn("Kunden-E-Mail konnte nicht gesendet werden:", e); } }
@@ -202,6 +209,7 @@ export default function CartSidebar({ onClose }) {
             </div>
             <div style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, marginBottom: 12 }}>{tx("Rechnungsadresse", "Billing address")}</div>
             <form onSubmit={goToKontrolle}>
+              <Honeypot/>
               <input aria-label={tx("Name oder Schulname", "Name or school name")} type="text" name="Name / Schule" placeholder={tx("Name oder Schulname *", "Name or school name *")} required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input aria-label={tx("Ansprechperson", "Contact person")} type="text" name="Ansprechperson" placeholder={tx("Ansprechperson", "Contact person")} style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>
               <input aria-label={tx("Straße und Hausnummer", "Street and number")} type="text" name="Adresse" placeholder={tx("Straße und Hausnummer *", "Street and number *")} required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/>

@@ -4,11 +4,13 @@ import { C } from "@/lib/colors";
 import { CONTACT } from "@/lib/site";
 import { loadEmailJS } from "@/lib/emailjs";
 import { Reveal, Heading, Btn } from "@/components/ui";
+import { useSpamschutz, Honeypot } from "@/lib/spamschutz";
 
 export default function KontaktPage() {
   const [sent, setSent] = useState(false);
   const [contactSending, setContactSending] = useState(false);
   const [contactError, setContactError] = useState("");
+  const istSpam = useSpamschutz();
   const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, color: C.text, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s" };
 
   const handleContactSubmit = async (e) => {
@@ -19,6 +21,7 @@ export default function KontaktPage() {
     const data = {};
     fd.forEach((v, k) => { data[k] = v; });
     try {
+      if (istSpam(fd)) throw new Error("Spamschutz");   // keine Mail, normale Fehlermeldung
       await loadEmailJS();
       await window.emailjs.send("service_cobcbsg", "template_7kke6e4", {
         kunde_email: data["email"] || "", order_nr: "KONTAKT", region: "Kontaktanfrage", betreff: `Kontaktanfrage von ${data["Name"] || "unbekannt"}`,
@@ -56,6 +59,7 @@ export default function KontaktPage() {
               ) : (
                 <><h2 style={{ fontFamily: "'Archivo Variable', sans-serif", fontWeight: 600, fontSize: 24, color: C.text, margin: "0 0 28px" }}>Nachricht senden</h2>
                 <form onSubmit={handleContactSubmit}>
+                  <Honeypot/>
                   {[{ label: "Name / Institution", ph: "Ihr Name oder Schulname", type: "text", name: "Name" }, { label: "E-Mail", ph: "ihre@email.at", type: "email", name: "email" }].map((f, i) => (
                     <div key={i} style={{ marginBottom: 16 }}><label style={{ fontFamily: "'Source Sans 3 Variable', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: "0.12em", color: C.textMuted, display: "block", marginBottom: 8 }} htmlFor={`kontakt-${f.name}`}>{f.label}</label><input id={`kontakt-${f.name}`} type={f.type} name={f.name} placeholder={f.ph} required style={inp} onFocus={e => e.target.style.borderColor = C.accent} onBlur={e => e.target.style.borderColor = C.border}/></div>
                   ))}

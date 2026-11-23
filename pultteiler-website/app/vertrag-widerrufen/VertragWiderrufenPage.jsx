@@ -4,6 +4,7 @@ import { C } from "@/lib/colors";
 import { CONTACT } from "@/lib/site";
 import { loadEmailJS, EMAILJS_SERVICE, TEMPLATE_ANFRAGE, TEMPLATE_WIDERRUF_KUNDE, CONFIRM_SERVICE, CONFIRM_PUBLIC_KEY } from "@/lib/emailjs";
 import { Heading } from "@/components/ui";
+import { useSpamschutz, Honeypot } from "@/lib/spamschutz";
 
 // Online-Rücktrittsfunktion nach § 13a FAGG:
 // Abs 3: Name, Angaben zum Vertrag, E-Mail für die Eingangsbestätigung; Abs 4: Knopf „Widerruf bestätigen“;
@@ -13,6 +14,7 @@ const font = "'Source Sans 3 Variable', sans-serif";
 export default function VertragWiderrufenPage() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const istSpam = useSpamschutz();
   const [done, setDone] = useState(null);   // { name, vertrag, email, eingang, inhalt, mailOk }
 
   const inp = { width: "100%", padding: "14px 16px", background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 6, fontFamily: font, fontSize: 16, color: C.text, boxSizing: "border-box" };
@@ -32,6 +34,7 @@ export default function VertragWiderrufenPage() {
     const eingang = new Date().toLocaleString("de-AT", { timeZone: "Europe/Vienna", day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit" });
     const inhalt = `Hiermit widerrufe ich den von mir abgeschlossenen Vertrag (${vertrag}). Name: ${name}. E-Mail für die Eingangsbestätigung: ${email}.`;
     try {
+      if (istSpam(fd)) throw new Error("Spamschutz");   // keine Mail, normale Fehlermeldung mit Hinweis auf E-Mail und Post
       await loadEmailJS();
       // Meldung an Blaschegg (gleiche Vorlage wie Kontakt und Bestellung)
       await window.emailjs.send(EMAILJS_SERVICE, TEMPLATE_ANFRAGE, {
@@ -78,6 +81,7 @@ export default function VertragWiderrufenPage() {
               </div>
             ) : (
               <form onSubmit={submit}>
+                <Honeypot/>
                 <div style={{ marginBottom: 20 }}>
                   <label htmlFor="wr-name" style={label}>Ihr Name *</label>
                   <input id="wr-name" name="name" type="text" required autoComplete="name" style={inp}/>
